@@ -1,11 +1,15 @@
 """
 Заготовка — симулятор доставки (один файл).
-Запуск: python main.py input.csv
+
+Запуск:
+  python main.py input_simple.csv    # быстрая проверка (1 курьер, 2 заказа)
+  python main.py input_complex.csv   # полный тест (2 курьера, 5 заказов)
 
 Перед олимпиадой сверь с условием:
   - статусы заказа (сейчас 5 штук — ориентир)
   - SHOW_PERCENT — нужен ли процент в отчёте
   - формат CSV и вывода
+  - два примера входа: простой + сложный
 """
 
 import sys
@@ -385,7 +389,9 @@ class DeliverySimulator:
 def main():
     if len(sys.argv) != 2:
         print("Использование: python main.py <файл.csv>")
-        print("Пример:        python main.py input.csv")
+        print("Примеры:")
+        print("  python main.py input_simple.csv")
+        print("  python main.py input_complex.csv")
         sys.exit(1)
 
     couriers, orders = load_data(sys.argv[1])

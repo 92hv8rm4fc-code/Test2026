@@ -15,8 +15,14 @@
 ## Запуск
 
 ```
-python main.py input.csv
+python main.py input_simple.csv
+python main.py input_complex.csv
 ```
+
+| Файл | Назначение |
+|------|------------|
+| `input_simple.csv` | Быстрая проверка: 1 курьер, 2 заказа, всё вовремя |
+| `input_complex.csv` | Полный тест: 2 курьера, 5 заказов, FAILED и несколько маршрутов |
 
 ## Формат входного файла
 
@@ -77,10 +83,20 @@ main()
 - Файл не найден — сообщение и выход
 - Битая строка CSV — предупреждение, строка пропускается
 
-## Пример
+## Примеры
+
+### Простой (input_simple.csv)
 
 ```
-python main.py input.csv
+python main.py input_simple.csv
 ```
 
-<!-- Вставь фрагмент реального вывода после теста -->
+<!-- фрагмент вывода -->
+
+### Сложный (input_complex.csv)
+
+```
+python main.py input_complex.csv
+```
+
+<!-- фрагмент вывода -->

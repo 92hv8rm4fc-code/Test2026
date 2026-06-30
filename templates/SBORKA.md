@@ -3,8 +3,9 @@
 ## Быстрый старт
 
 ```bash
-cp templates/main.py templates/input.csv ./
-python main.py input.csv
+cp templates/main.py templates/input_simple.csv templates/input_complex.csv ./
+python main.py input_simple.csv
+python main.py input_complex.csv
 ```
 
 Один файл `main.py` — всё внутри, ничего склеивать не нужно.
@@ -42,7 +43,8 @@ python main.py input.csv
 | Файл | Назначение |
 |------|------------|
 | `main.py` | **Главная заготовка** — копируй на олимпиаду |
-| `input.csv` | Тестовые данные |
+| `input_simple.csv` | Простой тест: 1 курьер, 2 заказа |
+| `input_complex.csv` | Сложный тест: 2 курьера, 5 заказов |
 | `README.md` | Шаблон документации |
 | `PROMPT_OLIMPIADA.md` | Промпт для AI с фото задания |
 
