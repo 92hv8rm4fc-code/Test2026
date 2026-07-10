@@ -31,6 +31,9 @@
         <button class="tab-button" type="button" data-tab-target="pokedexTab">
           Мой Pokedex
         </button>
+        <button class="tab-button" type="button" data-tab-target="wishlistTab">
+          Wishlist
+        </button>
       </nav>
 
       <section id="binderTab" class="tab-panel active">
@@ -187,6 +190,23 @@
           <p>Нажми на покемона в сетке, чтобы увидеть детали.</p>
         </aside>
       </section>
+
+      <section id="wishlistTab" class="tab-panel">
+        <section class="panel wishlist-panel">
+          <div class="section-heading">
+            <div>
+              <h2>Wishlist</h2>
+              <p id="wishlistSummary">Пока нет желаемых покемонов.</p>
+            </div>
+            <div class="section-heading-actions">
+              <button id="copyWishlist" class="ghost-button" type="button">Скопировать список</button>
+              <button id="clearWishlist" class="danger-button" type="button">Очистить</button>
+            </div>
+          </div>
+          <p id="wishlistStatus" class="status" role="status"></p>
+          <div id="wishlistList" class="collection-list wishlist-list"></div>
+        </section>
+      </section>
     </main>
 
     <template id="pokemonTemplate">
@@ -201,7 +221,10 @@
             <h3></h3>
             <div class="type-list"></div>
             <dl class="facts"></dl>
-            <button class="add-button" type="button">Добавить в биндер</button>
+            <div class="pokemon-actions">
+              <button class="add-button" type="button">Добавить в биндер</button>
+              <button class="wishlist-button" type="button">В wishlist</button>
+            </div>
           </div>
         </div>
       </div>

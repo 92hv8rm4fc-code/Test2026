@@ -12,6 +12,7 @@ const STORAGE_KEYS = {
   pokedexShowUncollected: "pokemonBinder.pokedexShowUncollected",
   collectionFilters: "pokemonBinder.collectionFilters",
   pokedexFilters: "pokemonBinder.pokedexFilters",
+  wishlist: "pokemonBinder.wishlist",
 };
 
 const POKEMON_INDEX_URL = "./data/pokemon-index.json";
@@ -133,12 +134,18 @@ const elements = {
   pokedexStatus: document.querySelector("#pokedexStatus"),
   pokedexSummary: document.querySelector("#pokedexSummary"),
   pokedexDetails: document.querySelector("#pokedexDetails"),
+  wishlistList: document.querySelector("#wishlistList"),
+  wishlistSummary: document.querySelector("#wishlistSummary"),
+  wishlistStatus: document.querySelector("#wishlistStatus"),
+  copyWishlist: document.querySelector("#copyWishlist"),
+  clearWishlist: document.querySelector("#clearWishlist"),
 };
 
 let settings = loadSettings();
 let collection = loadCollection();
 let collectionFilters = loadCollectionFilters();
 let pokedexFilters = loadPokedexFilters();
+let wishlist = loadWishlist();
 let currentPokemon = null;
 let pokemonIndex = loadPokemonIndexCache();
 let pokedexEntries = [];
@@ -154,6 +161,7 @@ function init() {
   hydrateCollectionFiltersForm();
   hydratePokedexFiltersForm();
   renderCollection();
+  renderWishlist();
   updateCapacity();
   renderPokemonSuggestions();
   loadPokemonIndex();
@@ -174,6 +182,8 @@ function init() {
   elements.pokedexTypeFilter.addEventListener("change", handlePokedexFiltersChange);
   elements.pokedexSortPrimary.addEventListener("change", handlePokedexFiltersChange);
   elements.pokedexSortSecondary.addEventListener("change", handlePokedexFiltersChange);
+  elements.copyWishlist.addEventListener("click", copyWishlistToClipboard);
+  elements.clearWishlist.addEventListener("click", clearWishlist);
 
   elements.tabButtons.forEach((button) => {
     button.addEventListener("click", () => switchTab(button.dataset.tabTarget));
@@ -709,6 +719,7 @@ function renderPokemon(pokemon) {
   const types = fragment.querySelector(".type-list");
   const facts = fragment.querySelector(".facts");
   const addButton = fragment.querySelector(".add-button");
+  const wishlistButton = fragment.querySelector(".wishlist-button");
 
   image.src = pokemon.sprite;
   image.alt = `${pokemon.name} artwork`;
@@ -737,7 +748,9 @@ function renderPokemon(pokemon) {
   const placement = createPlacementPreview(pokemon);
   addButton.disabled = !canPokemonFitInBinder(pokemon.id);
   addButton.addEventListener("click", () => addPokemonToBinder(pokemon));
-  fragment.querySelector(".pokemon-details").insertBefore(placement, addButton);
+  updateWishlistButton(wishlistButton, pokemon);
+  wishlistButton.addEventListener("click", () => toggleWishlistPokemon(pokemon, wishlistButton));
+  fragment.querySelector(".pokemon-details").insertBefore(placement, fragment.querySelector(".pokemon-actions"));
   elements.pokemonResult.className = "pokemon-result";
   elements.pokemonResult.replaceChildren(card);
 
@@ -825,6 +838,9 @@ function renderPokedexDetails(pokemon) {
 
   body.append(number, title, note, types, facts);
 
+  const actions = document.createElement("div");
+  actions.className = "pokemon-actions";
+
   if (!collectionEntry) {
     const placement = createPlacementPreview(pokemon);
     const addButton = document.createElement("button");
@@ -835,8 +851,19 @@ function renderPokedexDetails(pokemon) {
       addPokemonToBinder(pokemon);
       renderPokedexDetails(pokemon);
     });
-    body.append(placement, addButton);
+    body.append(placement);
+    actions.append(addButton);
   }
+
+  const wishlistButton = document.createElement("button");
+  wishlistButton.type = "button";
+  wishlistButton.className = "wishlist-button";
+  updateWishlistButton(wishlistButton, pokemon);
+  wishlistButton.addEventListener("click", () => {
+    toggleWishlistPokemon(pokemon, wishlistButton);
+  });
+  actions.append(wishlistButton);
+  body.append(actions);
 
   card.append(image, body);
   wrapper.append(evolutionWrap, card);
@@ -1028,6 +1055,171 @@ function recalculateSlots() {
 
 function formatSlot(slot) {
   return `биндер ${slot.binder}, лист ${slot.sheet}, ${slot.side} сторона, ячейка ${slot.cell}`;
+}
+
+function isInWishlist(pokemonId) {
+  return wishlist.some((entry) => entry.pokemon.id === pokemonId);
+}
+
+function updateWishlistButton(button, pokemon) {
+  const inWishlist = isInWishlist(pokemon.id);
+  button.textContent = inWishlist ? "Убрать из wishlist" : "В wishlist";
+  button.classList.toggle("in-wishlist", inWishlist);
+  button.setAttribute("aria-pressed", String(inWishlist));
+}
+
+function addToWishlist(pokemon) {
+  if (isInWishlist(pokemon.id)) {
+    setWishlistStatus(`${pokemon.name} уже в wishlist.`, true);
+    return;
+  }
+
+  wishlist = [
+    ...wishlist,
+    {
+      key: crypto.randomUUID ? crypto.randomUUID() : `${pokemon.id}-${Date.now()}`,
+      pokemon,
+      addedAt: new Date().toISOString(),
+    },
+  ].sort((left, right) => left.pokemon.id - right.pokemon.id);
+
+  saveWishlist();
+  renderWishlist();
+  setWishlistStatus(`${pokemon.name} добавлен в wishlist.`);
+}
+
+function removeFromWishlist(pokemonId) {
+  const removedEntry = wishlist.find((entry) => entry.pokemon.id === pokemonId);
+  wishlist = wishlist.filter((entry) => entry.pokemon.id !== pokemonId);
+  saveWishlist();
+  renderWishlist();
+
+  if (removedEntry) {
+    setWishlistStatus(`${removedEntry.pokemon.name} убран из wishlist.`);
+  }
+}
+
+function toggleWishlistPokemon(pokemon, button = null) {
+  if (isInWishlist(pokemon.id)) {
+    removeFromWishlist(pokemon.id);
+  } else {
+    addToWishlist(pokemon);
+  }
+
+  if (button) {
+    updateWishlistButton(button, pokemon);
+  }
+}
+
+function formatWishlistLine(pokemon) {
+  return `${pokemon.id} ${pokemon.name}`;
+}
+
+function buildWishlistClipboardText() {
+  return [...wishlist]
+    .sort((left, right) => left.pokemon.id - right.pokemon.id)
+    .map((entry) => formatWishlistLine(entry.pokemon))
+    .join("\n");
+}
+
+async function copyWishlistToClipboard() {
+  if (!wishlist.length) {
+    setWishlistStatus("Wishlist пуст — нечего копировать.", true);
+    return;
+  }
+
+  const text = buildWishlistClipboardText();
+
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "absolute";
+      textarea.style.left = "-9999px";
+      document.body.append(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      textarea.remove();
+    }
+
+    setWishlistStatus(`Скопировано ${wishlist.length} покемонов в буфер обмена.`);
+  } catch {
+    setWishlistStatus("Не удалось скопировать список. Попробуй ещё раз.", true);
+  }
+}
+
+function clearWishlist() {
+  if (!wishlist.length) {
+    return;
+  }
+
+  const shouldClear = window.confirm("Очистить весь wishlist?");
+  if (!shouldClear) {
+    return;
+  }
+
+  wishlist = [];
+  saveWishlist();
+  renderWishlist();
+  setWishlistStatus("Wishlist очищен.");
+}
+
+function renderWishlist() {
+  elements.copyWishlist.disabled = !wishlist.length;
+  elements.clearWishlist.disabled = !wishlist.length;
+
+  elements.wishlistSummary.textContent = wishlist.length
+    ? `В wishlist ${wishlist.length} покемонов.`
+    : "Пока нет желаемых покемонов.";
+
+  if (!wishlist.length) {
+    const empty = document.createElement("div");
+    empty.className = "collection-empty";
+    empty.textContent = "Добавь покемона в wishlist через поиск или вкладку Pokedex.";
+    elements.wishlistList.replaceChildren(empty);
+    return;
+  }
+
+  const items = wishlist.map((entry) => {
+    const item = document.createElement("article");
+    item.className = "collection-item wishlist-item";
+
+    const colors = getTypeTileColors(entry.pokemon.types || []);
+    item.style.background = colors.collectedBg;
+    item.style.borderColor = colors.border;
+
+    const image = document.createElement("img");
+    image.src = entry.pokemon.sprite || getPokemonArtworkUrl(entry.pokemon.id);
+    image.alt = entry.pokemon.name;
+
+    const info = document.createElement("div");
+    const title = document.createElement("h3");
+    title.textContent = `#${entry.pokemon.id} ${entry.pokemon.name}`;
+    const line = document.createElement("p");
+    line.className = "slot";
+    line.textContent = formatWishlistLine(entry.pokemon);
+    info.append(title, line);
+
+    const remove = document.createElement("button");
+    remove.className = "remove-button";
+    remove.type = "button";
+    remove.textContent = "x";
+    remove.ariaLabel = `Убрать ${entry.pokemon.name} из wishlist`;
+    remove.addEventListener("click", () => removeFromWishlist(entry.pokemon.id));
+
+    item.append(image, info, remove);
+    return item;
+  });
+
+  elements.wishlistList.replaceChildren(...items);
+}
+
+function setWishlistStatus(message, isError = false) {
+  elements.wishlistStatus.textContent = message;
+  elements.wishlistStatus.classList.toggle("error", isError);
 }
 
 function renderCollection() {
@@ -1299,4 +1491,17 @@ function loadPokedexFilters() {
 
 function savePokedexFilters() {
   localStorage.setItem(STORAGE_KEYS.pokedexFilters, JSON.stringify(pokedexFilters));
+}
+
+function loadWishlist() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEYS.wishlist));
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveWishlist() {
+  localStorage.setItem(STORAGE_KEYS.wishlist, JSON.stringify(wishlist));
 }
