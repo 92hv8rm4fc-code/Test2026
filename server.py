@@ -1,4 +1,5 @@
 import json
+import re
 import sqlite3
 import urllib.request
 from datetime import datetime, timezone
@@ -11,9 +12,12 @@ from urllib.parse import unquote
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data"
 DETAILS_DIR = DATA_DIR / "pokemon-details"
+EVOLUTION_DIR = DATA_DIR / "evolution-chains"
 DB_PATH = DATA_DIR / "pokedex.sqlite"
 INDEX_PATH = DATA_DIR / "pokemon-index.json"
 OFFICIAL_DEX_MAX = 1025
+POKEAPI_HEADERS = {"User-Agent": "pokemon-binder-pokedex/0.1"}
+SPECIES_ID_PATTERN = re.compile(r"/pokemon-species/(\d+)/")
 
 
 def init_db():
@@ -97,6 +101,72 @@ def get_pokemon(query):
     return read_cached_pokemon(pokemon_id) or fetch_and_cache_pokemon(pokemon_id)
 
 
+def species_id_from_url(url):
+    match = SPECIES_ID_PATTERN.search(url)
+    return int(match.group(1)) if match else None
+
+
+def flatten_evolution_chain(chain_node):
+    entries = []
+
+    def walk(node):
+        species_id = species_id_from_url(node["species"]["url"])
+        if species_id is None:
+            return
+
+        entries.append(
+            {
+                "id": species_id,
+                "name": node["species"]["name"],
+            }
+        )
+
+        for child in node.get("evolves_to", []):
+            walk(child)
+
+    walk(chain_node)
+    return entries
+
+
+def read_cached_evolution_chain(pokemon_id):
+    path = EVOLUTION_DIR / f"{pokemon_id}.json"
+    if not path.exists():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def fetch_and_cache_evolution_chain(pokemon_id):
+    species_request = urllib.request.Request(
+        f"https://pokeapi.co/api/v2/pokemon-species/{pokemon_id}",
+        headers=POKEAPI_HEADERS,
+    )
+    with urllib.request.urlopen(species_request, timeout=45) as response:
+        species_data = json.load(response)
+
+    evolution_request = urllib.request.Request(
+        species_data["evolution_chain"]["url"],
+        headers=POKEAPI_HEADERS,
+    )
+    with urllib.request.urlopen(evolution_request, timeout=45) as response:
+        chain_data = json.load(response)
+
+    payload = {
+        "currentId": pokemon_id,
+        "chain": flatten_evolution_chain(chain_data["chain"]),
+    }
+
+    EVOLUTION_DIR.mkdir(parents=True, exist_ok=True)
+    (EVOLUTION_DIR / f"{pokemon_id}.json").write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    return payload
+
+
+def get_evolution_chain(pokemon_id):
+    return read_cached_evolution_chain(pokemon_id) or fetch_and_cache_evolution_chain(pokemon_id)
+
+
 class PokedexHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(ROOT), **kwargs)
@@ -113,6 +183,22 @@ class PokedexHandler(SimpleHTTPRequestHandler):
                 self.send_json({"error": "Pokemon not found"}, HTTPStatus.NOT_FOUND)
                 return
             self.send_json(pokemon)
+            return
+
+        if self.path.startswith("/api/evolution/"):
+            query = unquote(self.path.removeprefix("/api/evolution/"))
+            pokemon_id = pokemon_id_from_query(query)
+            if pokemon_id is None:
+                self.send_json({"error": "Pokemon not found"}, HTTPStatus.NOT_FOUND)
+                return
+
+            try:
+                self.send_json(get_evolution_chain(pokemon_id))
+            except Exception:
+                self.send_json(
+                    {"error": "Failed to load evolution chain"},
+                    HTTPStatus.BAD_GATEWAY,
+                )
             return
 
         super().do_GET()

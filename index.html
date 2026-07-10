@@ -101,6 +101,36 @@
             </div>
             <button id="clearCollection" class="danger-button" type="button">Очистить список</button>
           </div>
+          <div class="filter-bar" aria-label="Фильтры и сортировка биндера">
+            <label>
+              Поиск по имени
+              <input id="collectionSearch" type="search" placeholder="Например: char" autocomplete="off" />
+            </label>
+            <label>
+              Тип
+              <select id="collectionTypeFilter">
+                <option value="">Все типы</option>
+              </select>
+            </label>
+            <label>
+              Сортировка 1
+              <select id="collectionSortPrimary">
+                <option value="type">По типу</option>
+                <option value="name">По имени</option>
+                <option value="number">По номеру</option>
+                <option value="binder">По позиции в биндере</option>
+              </select>
+            </label>
+            <label>
+              Сортировка 2
+              <select id="collectionSortSecondary">
+                <option value="name">По имени</option>
+                <option value="type">По типу</option>
+                <option value="number">По номеру</option>
+                <option value="none">Без второй сортировки</option>
+              </select>
+            </label>
+          </div>
           <div id="collectionList" class="collection-list"></div>
         </section>
       </section>
@@ -120,6 +150,35 @@
               <button id="refreshPokedex" class="ghost-button" type="button">Обновить</button>
             </div>
           </div>
+          <div class="filter-bar pokedex-filter-bar" aria-label="Фильтры и сортировка Pokedex">
+            <label>
+              Поиск по имени
+              <input id="pokedexSearch" type="search" placeholder="Например: pika" autocomplete="off" />
+            </label>
+            <label>
+              Тип
+              <select id="pokedexTypeFilter">
+                <option value="">Все типы</option>
+              </select>
+            </label>
+            <label>
+              Сортировка 1
+              <select id="pokedexSortPrimary">
+                <option value="number">По номеру</option>
+                <option value="type">По типу</option>
+                <option value="name">По имени</option>
+              </select>
+            </label>
+            <label>
+              Сортировка 2
+              <select id="pokedexSortSecondary">
+                <option value="name">По имени</option>
+                <option value="type">По типу</option>
+                <option value="number">По номеру</option>
+                <option value="none">Без второй сортировки</option>
+              </select>
+            </label>
+          </div>
           <p id="pokedexStatus" class="status" role="status"></p>
           <div id="pokedexGrid" class="pokedex-grid"></div>
         </section>
@@ -132,15 +191,18 @@
 
     <template id="pokemonTemplate">
       <div class="pokemon-card">
-        <div class="pokemon-art-wrap">
-          <img class="pokemon-art" alt="" />
-        </div>
-        <div class="pokemon-details">
-          <p class="pokemon-number"></p>
-          <h3></h3>
-          <div class="type-list"></div>
-          <dl class="facts"></dl>
-          <button class="add-button" type="button">Добавить в биндер</button>
+        <div class="evolution-strip-wrap"></div>
+        <div class="pokemon-card__body">
+          <div class="pokemon-art-wrap">
+            <img class="pokemon-art" alt="" />
+          </div>
+          <div class="pokemon-details">
+            <p class="pokemon-number"></p>
+            <h3></h3>
+            <div class="type-list"></div>
+            <dl class="facts"></dl>
+            <button class="add-button" type="button">Добавить в биндер</button>
+          </div>
         </div>
       </div>
     </template>

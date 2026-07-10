@@ -10,13 +10,52 @@ const STORAGE_KEYS = {
   collection: "pokemonBinder.collection",
   pokemonIndex: "pokemonBinder.pokemonIndex",
   pokedexShowUncollected: "pokemonBinder.pokedexShowUncollected",
+  collectionFilters: "pokemonBinder.collectionFilters",
+  pokedexFilters: "pokemonBinder.pokedexFilters",
 };
 
 const POKEMON_INDEX_URL = "./data/pokemon-index.json";
 const POKEMON_API_URL = "./api/pokemon";
 const COLLECTION_API_URL = "./api/collection";
+const EVOLUTION_API_URL = "./api/evolution";
+const POKEMON_DETAILS_URL = "./data/pokemon-details";
 const OFFICIAL_DEX_SIZE = 1025;
 const POKEDEX_FALLBACK_LIMIT = OFFICIAL_DEX_SIZE;
+
+const DEFAULT_COLLECTION_FILTERS = {
+  search: "",
+  type: "",
+  sortPrimary: "type",
+  sortSecondary: "name",
+};
+
+const DEFAULT_POKEDEX_FILTERS = {
+  search: "",
+  type: "",
+  sortPrimary: "number",
+  sortSecondary: "name",
+};
+
+const ALL_TYPES = [
+  "bug",
+  "dark",
+  "dragon",
+  "electric",
+  "fairy",
+  "fighting",
+  "fire",
+  "flying",
+  "ghost",
+  "grass",
+  "ground",
+  "ice",
+  "normal",
+  "poison",
+  "psychic",
+  "rock",
+  "steel",
+  "water",
+];
 
 const TYPE_COLORS = {
   bug: "#92bc2c",
@@ -39,6 +78,27 @@ const TYPE_COLORS = {
   water: "#539ddf",
 };
 
+const TYPE_TILE_COLORS = {
+  bug: { bg: "#eef4e3", border: "#d4e2bc", collectedBg: "#e4efd4" },
+  dark: { bg: "#ececee", border: "#d0d0d6", collectedBg: "#e2e2e8" },
+  dragon: { bg: "#e4eef8", border: "#b8d0ec", collectedBg: "#d6e6f4" },
+  electric: { bg: "#faf6df", border: "#efe4a8", collectedBg: "#f5efcb" },
+  fairy: { bg: "#faeef8", border: "#ecd4ea", collectedBg: "#f4e6f2" },
+  fighting: { bg: "#f8e8ec", border: "#e8bcc8", collectedBg: "#f2dce2" },
+  fire: { bg: "#fbf0e6", border: "#f0d4b8", collectedBg: "#f6e6d4" },
+  flying: { bg: "#eef2fa", border: "#ccd8f0", collectedBg: "#e4eaf6" },
+  ghost: { bg: "#eceef8", border: "#c8cce8", collectedBg: "#e0e4f2" },
+  grass: { bg: "#eaf4ea", border: "#c4dfc4", collectedBg: "#deeede" },
+  ground: { bg: "#f6ece6", border: "#e6cbb8", collectedBg: "#efe2d8" },
+  ice: { bg: "#e8f6f2", border: "#bfe4da", collectedBg: "#d8eee8" },
+  normal: { bg: "#f0f0ee", border: "#d6d6d4", collectedBg: "#e8e8e6" },
+  poison: { bg: "#f4eaf6", border: "#dcc8e4", collectedBg: "#ecdef0" },
+  psychic: { bg: "#faecea", border: "#f0ccc8", collectedBg: "#f4e4e2" },
+  rock: { bg: "#f4f0e8", border: "#ddd0b8", collectedBg: "#ece6da" },
+  steel: { bg: "#e8f0f2", border: "#c0d4da", collectedBg: "#dce8ec" },
+  water: { bg: "#e8f2fa", border: "#b8d4ec", collectedBg: "#d8e8f4" },
+};
+
 const elements = {
   tabButtons: document.querySelectorAll(".tab-button"),
   tabPanels: document.querySelectorAll(".tab-panel"),
@@ -57,10 +117,18 @@ const elements = {
   clearCollection: document.querySelector("#clearCollection"),
   collectionList: document.querySelector("#collectionList"),
   collectionSummary: document.querySelector("#collectionSummary"),
+  collectionSearch: document.querySelector("#collectionSearch"),
+  collectionTypeFilter: document.querySelector("#collectionTypeFilter"),
+  collectionSortPrimary: document.querySelector("#collectionSortPrimary"),
+  collectionSortSecondary: document.querySelector("#collectionSortSecondary"),
   capacityText: document.querySelector("#capacityText"),
   freeSlots: document.querySelector("#freeSlots"),
   refreshPokedex: document.querySelector("#refreshPokedex"),
   showUncollectedPokemon: document.querySelector("#showUncollectedPokemon"),
+  pokedexSearch: document.querySelector("#pokedexSearch"),
+  pokedexTypeFilter: document.querySelector("#pokedexTypeFilter"),
+  pokedexSortPrimary: document.querySelector("#pokedexSortPrimary"),
+  pokedexSortSecondary: document.querySelector("#pokedexSortSecondary"),
   pokedexGrid: document.querySelector("#pokedexGrid"),
   pokedexStatus: document.querySelector("#pokedexStatus"),
   pokedexSummary: document.querySelector("#pokedexSummary"),
@@ -69,6 +137,8 @@ const elements = {
 
 let settings = loadSettings();
 let collection = loadCollection();
+let collectionFilters = loadCollectionFilters();
+let pokedexFilters = loadPokedexFilters();
 let currentPokemon = null;
 let pokemonIndex = loadPokemonIndexCache();
 let pokedexEntries = [];
@@ -80,6 +150,9 @@ init();
 
 function init() {
   hydrateSettingsForm();
+  populateTypeFilterOptions();
+  hydrateCollectionFiltersForm();
+  hydratePokedexFiltersForm();
   renderCollection();
   updateCapacity();
   renderPokemonSuggestions();
@@ -93,6 +166,14 @@ function init() {
   elements.refreshPokedex.addEventListener("click", () => loadPokedex(true));
   elements.showUncollectedPokemon.checked = showUncollectedPokemon;
   elements.showUncollectedPokemon.addEventListener("change", handlePokedexFilterChange);
+  elements.collectionSearch.addEventListener("input", handleCollectionFiltersChange);
+  elements.collectionTypeFilter.addEventListener("change", handleCollectionFiltersChange);
+  elements.collectionSortPrimary.addEventListener("change", handleCollectionFiltersChange);
+  elements.collectionSortSecondary.addEventListener("change", handleCollectionFiltersChange);
+  elements.pokedexSearch.addEventListener("input", handlePokedexFiltersChange);
+  elements.pokedexTypeFilter.addEventListener("change", handlePokedexFiltersChange);
+  elements.pokedexSortPrimary.addEventListener("change", handlePokedexFiltersChange);
+  elements.pokedexSortSecondary.addEventListener("change", handlePokedexFiltersChange);
 
   elements.tabButtons.forEach((button) => {
     button.addEventListener("click", () => switchTab(button.dataset.tabTarget));
@@ -247,6 +328,229 @@ function renderPokemonSuggestions() {
   elements.pokemonSuggestions.replaceChildren(...options);
 }
 
+function populateTypeFilterOptions() {
+  [elements.collectionTypeFilter, elements.pokedexTypeFilter].forEach((select) => {
+    ALL_TYPES.forEach((type) => {
+      const option = document.createElement("option");
+      option.value = type;
+      option.textContent = type;
+      select.append(option);
+    });
+  });
+}
+
+function hydrateCollectionFiltersForm() {
+  elements.collectionSearch.value = collectionFilters.search;
+  elements.collectionTypeFilter.value = collectionFilters.type;
+  elements.collectionSortPrimary.value = collectionFilters.sortPrimary;
+  elements.collectionSortSecondary.value = collectionFilters.sortSecondary;
+}
+
+function hydratePokedexFiltersForm() {
+  elements.pokedexSearch.value = pokedexFilters.search;
+  elements.pokedexTypeFilter.value = pokedexFilters.type;
+  elements.pokedexSortPrimary.value = pokedexFilters.sortPrimary;
+  elements.pokedexSortSecondary.value = pokedexFilters.sortSecondary;
+}
+
+function handleCollectionFiltersChange() {
+  collectionFilters = {
+    search: elements.collectionSearch.value.trim().toLowerCase(),
+    type: elements.collectionTypeFilter.value,
+    sortPrimary: elements.collectionSortPrimary.value,
+    sortSecondary: elements.collectionSortSecondary.value,
+  };
+  saveCollectionFilters();
+  renderCollection();
+}
+
+function handlePokedexFiltersChange() {
+  pokedexFilters = {
+    search: elements.pokedexSearch.value.trim().toLowerCase(),
+    type: elements.pokedexTypeFilter.value,
+    sortPrimary: elements.pokedexSortPrimary.value,
+    sortSecondary: elements.pokedexSortSecondary.value,
+  };
+  savePokedexFilters();
+  renderPokedexGrid();
+}
+
+function getPrimaryType(subject) {
+  const types = subject.pokemon?.types || subject.types || [];
+  return types[0] || "normal";
+}
+
+function matchesSearchQuery(subject, query) {
+  if (!query) {
+    return true;
+  }
+
+  const name = subject.pokemon?.name || subject.name || "";
+  return name.includes(query);
+}
+
+function matchesTypeFilter(subject, typeFilter) {
+  if (!typeFilter) {
+    return true;
+  }
+
+  const types = subject.pokemon?.types || subject.types || [];
+  return types.includes(typeFilter);
+}
+
+function compareBySortKey(left, right, key) {
+  switch (key) {
+    case "type":
+      return getPrimaryType(left).localeCompare(getPrimaryType(right));
+    case "name": {
+      const leftName = left.pokemon?.name || left.name || "";
+      const rightName = right.pokemon?.name || right.name || "";
+      return leftName.localeCompare(rightName);
+    }
+    case "number":
+      return (left.pokemon?.id || left.id) - (right.pokemon?.id || right.id);
+    case "binder":
+      return (left.pokemon?.id || left.id) - (right.pokemon?.id || right.id);
+    default:
+      return 0;
+  }
+}
+
+function sortEntries(entries, primary, secondary) {
+  return [...entries].sort((left, right) => {
+    const primaryDiff = compareBySortKey(left, right, primary);
+    if (primaryDiff !== 0 || secondary === "none") {
+      return primaryDiff;
+    }
+
+    return compareBySortKey(left, right, secondary);
+  });
+}
+
+function getTypeTileColors(types) {
+  return TYPE_TILE_COLORS[getPrimaryType({ types })] || TYPE_TILE_COLORS.normal;
+}
+
+function applyTypeTileColors(tile, types, isCollected) {
+  const colors = getTypeTileColors(types);
+  tile.style.background = isCollected ? colors.collectedBg : colors.bg;
+  tile.style.borderColor = colors.border;
+}
+
+async function enrichPokedexWithTypes() {
+  const batchSize = 80;
+
+  for (let index = 0; index < pokedexEntries.length; index += batchSize) {
+    const batch = pokedexEntries.slice(index, index + batchSize);
+    await Promise.all(
+      batch.map(async (entry) => {
+        if (entry.types?.length) {
+          return;
+        }
+
+        try {
+          const response = await fetchWithTimeout(`${POKEMON_DETAILS_URL}/${entry.id}.json`, 5000);
+          if (!response.ok) {
+            return;
+          }
+
+          const details = await response.json();
+          entry.types = details.types || [];
+        } catch {
+          entry.types = [];
+        }
+      }),
+    );
+  }
+}
+
+async function fetchEvolutionChain(pokemonId) {
+  const response = await fetchWithTimeout(`${EVOLUTION_API_URL}/${pokemonId}`, 45000);
+  if (!response.ok) {
+    throw new Error("Evolution chain is unavailable");
+  }
+
+  return response.json();
+}
+
+function buildEvolutionStrip(evolutionData, currentId, onSelect) {
+  const strip = document.createElement("div");
+  strip.className = "evolution-strip";
+
+  evolutionData.chain.forEach((stage, index) => {
+    if (index > 0) {
+      const arrow = document.createElement("span");
+      arrow.className = "evolution-arrow";
+      arrow.textContent = "→";
+      arrow.setAttribute("aria-hidden", "true");
+      strip.append(arrow);
+    }
+
+    const item = document.createElement("button");
+    item.type = "button";
+    item.className = `evolution-item${stage.id === currentId ? " current" : ""}`;
+    item.disabled = stage.id === currentId;
+
+    const image = document.createElement("img");
+    image.src = getPokemonArtworkUrl(stage.id);
+    image.alt = stage.name;
+    image.loading = "lazy";
+
+    const label = document.createElement("span");
+    label.textContent = stage.name;
+
+    item.append(image, label);
+
+    if (stage.id !== currentId && onSelect) {
+      item.addEventListener("click", () => onSelect(stage));
+    }
+
+    strip.append(item);
+  });
+
+  return strip;
+}
+
+async function renderEvolutionStrip(container, pokemon, onSelect) {
+  container.replaceChildren(makeParagraph("Загружаю эволюции..."));
+
+  try {
+    const evolutionData = await fetchEvolutionChain(pokemon.id);
+    if (evolutionData.chain.length <= 1) {
+      container.replaceChildren();
+      return;
+    }
+
+    container.replaceChildren(buildEvolutionStrip(evolutionData, pokemon.id, onSelect));
+  } catch (error) {
+    console.warn("Evolution chain was not loaded:", error);
+    container.replaceChildren();
+  }
+}
+
+async function openPokemonFromEvolution(stage) {
+  setStatus(`Открываю #${stage.id} ${stage.name}...`);
+
+  try {
+    const response = await fetchWithTimeout(
+      `${POKEMON_API_URL}/${encodeURIComponent(stage.name)}`,
+      45000,
+    );
+
+    if (!response.ok) {
+      throw new Error("Не удалось открыть покемона из цепочки эволюции.");
+    }
+
+    const pokemon = normalizePokemon(await response.json());
+    currentPokemon = pokemon;
+    elements.pokemonQuery.value = pokemon.name;
+    renderPokemon(pokemon);
+    setStatus(`Нашёл #${pokemon.id} ${pokemon.name}.`);
+  } catch (error) {
+    setStatus(error.message, true);
+  }
+}
+
 async function loadPokedex(forceRefresh = false) {
   if (isPokedexLoading || (pokedexEntries.length && !forceRefresh)) {
     return;
@@ -264,6 +568,7 @@ async function loadPokedex(forceRefresh = false) {
     }
 
     pokedexEntries = [...pokemonIndex];
+    await enrichPokedexWithTypes();
 
     renderPokedexGrid();
     setPokedexStatus(`Загружено ${pokedexEntries.length} покемонов.`);
@@ -293,12 +598,21 @@ function renderPokedexGrid() {
   }
 
   const collectedIds = getCollectedPokemonIds();
-  const visibleEntries = showUncollectedPokemon
+  let visibleEntries = showUncollectedPokemon
     ? pokedexEntries
     : pokedexEntries.filter((entry) => collectedIds.has(entry.id));
 
+  visibleEntries = visibleEntries.filter(
+    (entry) => matchesSearchQuery(entry, pokedexFilters.search) && matchesTypeFilter(entry, pokedexFilters.type),
+  );
+  visibleEntries = sortEntries(
+    visibleEntries,
+    pokedexFilters.sortPrimary,
+    pokedexFilters.sortSecondary,
+  );
+
   elements.pokedexSummary.textContent = showUncollectedPokemon
-    ? `Собрано ${collectedIds.size} из ${pokedexEntries.length} покемонов.`
+    ? `Собрано ${collectedIds.size} из ${pokedexEntries.length} покемонов. Показано ${visibleEntries.length}.`
     : `Показано ${visibleEntries.length} собранных покемонов.`;
 
   if (!visibleEntries.length) {
@@ -330,6 +644,7 @@ function renderPokedexGrid() {
     const name = document.createElement("strong");
     name.textContent = entry.name;
 
+    applyTypeTileColors(tile, entry.types || [], isCollected);
     tile.append(image, number, name);
     tile.addEventListener("click", () => showPokedexDetails(entry));
     return tile;
@@ -425,6 +740,9 @@ function renderPokemon(pokemon) {
   fragment.querySelector(".pokemon-details").insertBefore(placement, addButton);
   elements.pokemonResult.className = "pokemon-result";
   elements.pokemonResult.replaceChildren(card);
+
+  const evolutionWrap = card.querySelector(".evolution-strip-wrap");
+  renderEvolutionStrip(evolutionWrap, pokemon, (stage) => openPokemonFromEvolution(stage));
 }
 
 async function showPokedexDetails(entry) {
@@ -454,6 +772,15 @@ async function showPokedexDetails(entry) {
 
 function renderPokedexDetails(pokemon) {
   const collectionEntry = collection.find((entry) => entry.pokemon.id === pokemon.id);
+  const wrapper = document.createElement("div");
+  wrapper.className = "pokedex-details-layout";
+
+  const evolutionWrap = document.createElement("div");
+  evolutionWrap.className = "evolution-strip-wrap";
+  renderEvolutionStrip(evolutionWrap, pokemon, async (stage) => {
+    await showPokedexDetails({ id: stage.id, name: stage.name });
+  });
+
   const card = document.createElement("div");
   card.className = "pokedex-details-card";
 
@@ -512,8 +839,9 @@ function renderPokedexDetails(pokemon) {
   }
 
   card.append(image, body);
+  wrapper.append(evolutionWrap, card);
   elements.pokedexDetails.className = "panel pokedex-details";
-  elements.pokedexDetails.replaceChildren(card);
+  elements.pokedexDetails.replaceChildren(wrapper);
 }
 
 function makeParagraph(text) {
@@ -704,8 +1032,18 @@ function formatSlot(slot) {
 
 function renderCollection() {
   const capacity = getCapacity(settings);
+  const visibleCollection = sortEntries(
+    collection.filter(
+      (entry) =>
+        matchesSearchQuery(entry, collectionFilters.search) &&
+        matchesTypeFilter(entry, collectionFilters.type),
+    ),
+    collectionFilters.sortPrimary,
+    collectionFilters.sortSecondary,
+  );
+
   elements.collectionSummary.textContent = collection.length
-    ? `Добавлено ${collection.length} из ${capacity} возможных карточек.`
+    ? `Добавлено ${collection.length} из ${capacity} возможных карточек. Показано ${visibleCollection.length}.`
     : "Пока нет добавленных покемонов.";
 
   if (!collection.length) {
@@ -716,9 +1054,21 @@ function renderCollection() {
     return;
   }
 
-  const items = collection.map((entry) => {
+  if (!visibleCollection.length) {
+    const empty = document.createElement("div");
+    empty.className = "collection-empty";
+    empty.textContent = "Ни одна карточка не подходит под выбранные фильтры.";
+    elements.collectionList.replaceChildren(empty);
+    return;
+  }
+
+  const items = visibleCollection.map((entry) => {
     const item = document.createElement("article");
     item.className = "collection-item";
+
+    const colors = getTypeTileColors(entry.pokemon.types);
+    item.style.background = colors.collectedBg;
+    item.style.borderColor = colors.border;
 
     const image = document.createElement("img");
     image.src = entry.pokemon.sprite;
@@ -923,4 +1273,30 @@ function loadPokemonIndexCache() {
 
 function savePokemonIndexCache() {
   localStorage.setItem(STORAGE_KEYS.pokemonIndex, JSON.stringify(pokemonIndex));
+}
+
+function loadCollectionFilters() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEYS.collectionFilters));
+    return { ...DEFAULT_COLLECTION_FILTERS, ...parsed };
+  } catch {
+    return { ...DEFAULT_COLLECTION_FILTERS };
+  }
+}
+
+function saveCollectionFilters() {
+  localStorage.setItem(STORAGE_KEYS.collectionFilters, JSON.stringify(collectionFilters));
+}
+
+function loadPokedexFilters() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(STORAGE_KEYS.pokedexFilters));
+    return { ...DEFAULT_POKEDEX_FILTERS, ...parsed };
+  } catch {
+    return { ...DEFAULT_POKEDEX_FILTERS };
+  }
+}
+
+function savePokedexFilters() {
+  localStorage.setItem(STORAGE_KEYS.pokedexFilters, JSON.stringify(pokedexFilters));
 }
