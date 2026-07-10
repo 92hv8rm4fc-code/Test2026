@@ -1,0 +1,41 @@
+{
+  "id": 180,
+  "name": "flaaffy",
+  "height": 0.8,
+  "weight": 13.3,
+  "baseExperience": 128,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/180.png",
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    "static",
+    "plus"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

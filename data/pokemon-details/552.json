@@ -1,0 +1,43 @@
+{
+  "id": 552,
+  "name": "krokorok",
+  "height": 1.0,
+  "weight": 33.4,
+  "baseExperience": 123,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/552.png",
+  "types": [
+    "ground",
+    "dark"
+  ],
+  "abilities": [
+    "intimidate",
+    "moxie",
+    "anger-point"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 82
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 74
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 20,
+  "name": "raticate",
+  "height": 0.7,
+  "weight": 18.5,
+  "baseExperience": 145,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/20.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "run-away",
+    "guts",
+    "hustle"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 81
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 97
+    }
+  ]
+}

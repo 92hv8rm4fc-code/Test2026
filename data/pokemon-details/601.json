@@ -1,0 +1,42 @@
+{
+  "id": 601,
+  "name": "klinklang",
+  "height": 0.6,
+  "weight": 81.0,
+  "baseExperience": 234,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/601.png",
+  "types": [
+    "steel"
+  ],
+  "abilities": [
+    "plus",
+    "minus",
+    "clear-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 115
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

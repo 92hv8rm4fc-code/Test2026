@@ -1,0 +1,43 @@
+{
+  "id": 900,
+  "name": "kleavor",
+  "height": 1.8,
+  "weight": 89.0,
+  "baseExperience": 175,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/900.png",
+  "types": [
+    "bug",
+    "rock"
+  ],
+  "abilities": [
+    "swarm",
+    "sheer-force",
+    "sharpness"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 135
+    },
+    {
+      "name": "defense",
+      "value": 95
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

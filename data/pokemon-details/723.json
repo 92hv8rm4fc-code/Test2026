@@ -1,0 +1,42 @@
+{
+  "id": 723,
+  "name": "dartrix",
+  "height": 0.7,
+  "weight": 16.0,
+  "baseExperience": 147,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/723.png",
+  "types": [
+    "grass",
+    "flying"
+  ],
+  "abilities": [
+    "overgrow",
+    "long-reach"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 78
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 75
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 52
+    }
+  ]
+}

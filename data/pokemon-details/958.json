@@ -1,0 +1,43 @@
+{
+  "id": 958,
+  "name": "tinkatuff",
+  "height": 0.7,
+  "weight": 59.1,
+  "baseExperience": 133,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/958.png",
+  "types": [
+    "fairy",
+    "steel"
+  ],
+  "abilities": [
+    "mold-breaker",
+    "own-tempo",
+    "pickpocket"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 82
+    },
+    {
+      "name": "speed",
+      "value": 78
+    }
+  ]
+}

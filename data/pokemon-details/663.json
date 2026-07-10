@@ -1,0 +1,42 @@
+{
+  "id": 663,
+  "name": "talonflame",
+  "height": 1.2,
+  "weight": 24.5,
+  "baseExperience": 175,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/663.png",
+  "types": [
+    "fire",
+    "flying"
+  ],
+  "abilities": [
+    "flame-body",
+    "gale-wings"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 78
+    },
+    {
+      "name": "attack",
+      "value": 81
+    },
+    {
+      "name": "defense",
+      "value": 71
+    },
+    {
+      "name": "special-attack",
+      "value": 74
+    },
+    {
+      "name": "special-defense",
+      "value": 69
+    },
+    {
+      "name": "speed",
+      "value": 126
+    }
+  ]
+}

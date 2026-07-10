@@ -1,0 +1,42 @@
+{
+  "id": 645,
+  "name": "landorus-incarnate",
+  "height": 1.5,
+  "weight": 68.0,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/645.png",
+  "types": [
+    "ground",
+    "flying"
+  ],
+  "abilities": [
+    "sand-force",
+    "sheer-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 89
+    },
+    {
+      "name": "attack",
+      "value": 125
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 115
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 101
+    }
+  ]
+}

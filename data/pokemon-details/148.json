@@ -1,0 +1,41 @@
+{
+  "id": 148,
+  "name": "dragonair",
+  "height": 4.0,
+  "weight": 16.5,
+  "baseExperience": 147,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/148.png",
+  "types": [
+    "dragon"
+  ],
+  "abilities": [
+    "shed-skin",
+    "marvel-scale"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 61
+    },
+    {
+      "name": "attack",
+      "value": 84
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

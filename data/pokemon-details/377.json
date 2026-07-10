@@ -1,0 +1,41 @@
+{
+  "id": 377,
+  "name": "regirock",
+  "height": 1.7,
+  "weight": 230.0,
+  "baseExperience": 261,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/377.png",
+  "types": [
+    "rock"
+  ],
+  "abilities": [
+    "clear-body",
+    "sturdy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 200
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 100
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

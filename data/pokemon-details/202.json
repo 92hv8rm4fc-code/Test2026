@@ -1,0 +1,41 @@
+{
+  "id": 202,
+  "name": "wobbuffet",
+  "height": 1.3,
+  "weight": 28.5,
+  "baseExperience": 142,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/202.png",
+  "types": [
+    "psychic"
+  ],
+  "abilities": [
+    "shadow-tag",
+    "telepathy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 190
+    },
+    {
+      "name": "attack",
+      "value": 33
+    },
+    {
+      "name": "defense",
+      "value": 58
+    },
+    {
+      "name": "special-attack",
+      "value": 33
+    },
+    {
+      "name": "special-defense",
+      "value": 58
+    },
+    {
+      "name": "speed",
+      "value": 33
+    }
+  ]
+}

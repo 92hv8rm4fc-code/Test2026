@@ -1,0 +1,42 @@
+{
+  "id": 785,
+  "name": "tapu-koko",
+  "height": 1.8,
+  "weight": 20.5,
+  "baseExperience": 257,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/785.png",
+  "types": [
+    "electric",
+    "fairy"
+  ],
+  "abilities": [
+    "electric-surge",
+    "telepathy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 115
+    },
+    {
+      "name": "defense",
+      "value": 85
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 75
+    },
+    {
+      "name": "speed",
+      "value": 130
+    }
+  ]
+}

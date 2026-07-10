@@ -1,0 +1,42 @@
+{
+  "id": 642,
+  "name": "thundurus-incarnate",
+  "height": 1.5,
+  "weight": 61.0,
+  "baseExperience": 261,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/642.png",
+  "types": [
+    "electric",
+    "flying"
+  ],
+  "abilities": [
+    "prankster",
+    "defiant"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 79
+    },
+    {
+      "name": "attack",
+      "value": 115
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 125
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 111
+    }
+  ]
+}

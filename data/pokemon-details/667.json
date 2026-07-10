@@ -1,0 +1,43 @@
+{
+  "id": 667,
+  "name": "litleo",
+  "height": 0.6,
+  "weight": 13.5,
+  "baseExperience": 74,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/667.png",
+  "types": [
+    "fire",
+    "normal"
+  ],
+  "abilities": [
+    "rivalry",
+    "unnerve",
+    "moxie"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 62
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 58
+    },
+    {
+      "name": "special-attack",
+      "value": 73
+    },
+    {
+      "name": "special-defense",
+      "value": 54
+    },
+    {
+      "name": "speed",
+      "value": 72
+    }
+  ]
+}

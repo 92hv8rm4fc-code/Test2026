@@ -1,0 +1,42 @@
+{
+  "id": 713,
+  "name": "avalugg",
+  "height": 2.0,
+  "weight": 505.0,
+  "baseExperience": 180,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/713.png",
+  "types": [
+    "ice"
+  ],
+  "abilities": [
+    "own-tempo",
+    "ice-body",
+    "sturdy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 95
+    },
+    {
+      "name": "attack",
+      "value": 117
+    },
+    {
+      "name": "defense",
+      "value": 184
+    },
+    {
+      "name": "special-attack",
+      "value": 44
+    },
+    {
+      "name": "special-defense",
+      "value": 46
+    },
+    {
+      "name": "speed",
+      "value": 28
+    }
+  ]
+}

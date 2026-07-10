@@ -1,0 +1,43 @@
+{
+  "id": 435,
+  "name": "skuntank",
+  "height": 1.0,
+  "weight": 38.0,
+  "baseExperience": 168,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/435.png",
+  "types": [
+    "poison",
+    "dark"
+  ],
+  "abilities": [
+    "stench",
+    "aftermath",
+    "keen-eye"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 103
+    },
+    {
+      "name": "attack",
+      "value": 93
+    },
+    {
+      "name": "defense",
+      "value": 67
+    },
+    {
+      "name": "special-attack",
+      "value": 71
+    },
+    {
+      "name": "special-defense",
+      "value": 61
+    },
+    {
+      "name": "speed",
+      "value": 84
+    }
+  ]
+}

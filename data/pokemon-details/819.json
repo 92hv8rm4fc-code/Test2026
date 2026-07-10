@@ -1,0 +1,41 @@
+{
+  "id": 819,
+  "name": "skwovet",
+  "height": 0.3,
+  "weight": 2.5,
+  "baseExperience": 55,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/819.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "cheek-pouch",
+    "gluttony"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 35
+    },
+    {
+      "name": "speed",
+      "value": 25
+    }
+  ]
+}

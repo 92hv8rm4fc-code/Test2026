@@ -1,0 +1,42 @@
+{
+  "id": 487,
+  "name": "giratina-altered",
+  "height": 4.5,
+  "weight": 750.0,
+  "baseExperience": 306,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/487.png",
+  "types": [
+    "ghost",
+    "dragon"
+  ],
+  "abilities": [
+    "pressure",
+    "telepathy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 150
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 120
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 120
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

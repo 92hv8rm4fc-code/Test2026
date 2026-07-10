@@ -1,0 +1,40 @@
+{
+  "id": 351,
+  "name": "castform",
+  "height": 0.3,
+  "weight": 0.8,
+  "baseExperience": 147,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/351.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "forecast"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

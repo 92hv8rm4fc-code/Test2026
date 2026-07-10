@@ -1,0 +1,43 @@
+{
+  "id": 688,
+  "name": "binacle",
+  "height": 0.5,
+  "weight": 31.0,
+  "baseExperience": 61,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/688.png",
+  "types": [
+    "rock",
+    "water"
+  ],
+  "abilities": [
+    "tough-claws",
+    "sniper",
+    "pickpocket"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 42
+    },
+    {
+      "name": "attack",
+      "value": 52
+    },
+    {
+      "name": "defense",
+      "value": 67
+    },
+    {
+      "name": "special-attack",
+      "value": 39
+    },
+    {
+      "name": "special-defense",
+      "value": 56
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 764,
+  "name": "comfey",
+  "height": 0.1,
+  "weight": 0.3,
+  "baseExperience": 170,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/764.png",
+  "types": [
+    "fairy"
+  ],
+  "abilities": [
+    "flower-veil",
+    "triage",
+    "natural-cure"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 51
+    },
+    {
+      "name": "attack",
+      "value": 52
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 82
+    },
+    {
+      "name": "special-defense",
+      "value": 110
+    },
+    {
+      "name": "speed",
+      "value": 100
+    }
+  ]
+}

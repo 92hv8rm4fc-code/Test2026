@@ -1,0 +1,42 @@
+{
+  "id": 118,
+  "name": "goldeen",
+  "height": 0.6,
+  "weight": 15.0,
+  "baseExperience": 64,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/118.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "swift-swim",
+    "water-veil",
+    "lightning-rod"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 67
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 63
+    }
+  ]
+}

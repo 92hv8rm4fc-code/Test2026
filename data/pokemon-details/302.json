@@ -1,0 +1,43 @@
+{
+  "id": 302,
+  "name": "sableye",
+  "height": 0.5,
+  "weight": 11.0,
+  "baseExperience": 133,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/302.png",
+  "types": [
+    "dark",
+    "ghost"
+  ],
+  "abilities": [
+    "keen-eye",
+    "stall",
+    "prankster"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 75
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

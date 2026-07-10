@@ -1,0 +1,42 @@
+{
+  "id": 508,
+  "name": "stoutland",
+  "height": 1.2,
+  "weight": 61.0,
+  "baseExperience": 225,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/508.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "intimidate",
+    "sand-rush",
+    "scrappy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 85
+    },
+    {
+      "name": "attack",
+      "value": 110
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 80
+    }
+  ]
+}

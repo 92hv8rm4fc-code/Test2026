@@ -1,0 +1,42 @@
+{
+  "id": 727,
+  "name": "incineroar",
+  "height": 1.8,
+  "weight": 83.0,
+  "baseExperience": 239,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/727.png",
+  "types": [
+    "fire",
+    "dark"
+  ],
+  "abilities": [
+    "blaze",
+    "intimidate"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 95
+    },
+    {
+      "name": "attack",
+      "value": 115
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

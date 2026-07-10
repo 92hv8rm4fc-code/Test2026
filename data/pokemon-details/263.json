@@ -1,0 +1,42 @@
+{
+  "id": 263,
+  "name": "zigzagoon",
+  "height": 0.4,
+  "weight": 17.5,
+  "baseExperience": 56,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/263.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "pickup",
+    "gluttony",
+    "quick-feet"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 38
+    },
+    {
+      "name": "attack",
+      "value": 30
+    },
+    {
+      "name": "defense",
+      "value": 41
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 41
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

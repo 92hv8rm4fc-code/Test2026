@@ -1,0 +1,42 @@
+{
+  "id": 216,
+  "name": "teddiursa",
+  "height": 0.6,
+  "weight": 8.8,
+  "baseExperience": 66,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/216.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "pickup",
+    "quick-feet",
+    "honey-gather"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 40
+    }
+  ]
+}

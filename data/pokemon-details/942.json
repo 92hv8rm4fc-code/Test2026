@@ -1,0 +1,42 @@
+{
+  "id": 942,
+  "name": "maschiff",
+  "height": 0.5,
+  "weight": 16.0,
+  "baseExperience": 68,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/942.png",
+  "types": [
+    "dark"
+  ],
+  "abilities": [
+    "intimidate",
+    "run-away",
+    "stakeout"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 78
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 51
+    },
+    {
+      "name": "speed",
+      "value": 51
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 837,
+  "name": "rolycoly",
+  "height": 0.3,
+  "weight": 12.0,
+  "baseExperience": 48,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/837.png",
+  "types": [
+    "rock"
+  ],
+  "abilities": [
+    "steam-engine",
+    "heatproof",
+    "flash-fire"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 30
+    },
+    {
+      "name": "attack",
+      "value": 40
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

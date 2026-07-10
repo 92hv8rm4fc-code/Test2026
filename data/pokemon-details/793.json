@@ -1,0 +1,41 @@
+{
+  "id": 793,
+  "name": "nihilego",
+  "height": 1.2,
+  "weight": 55.5,
+  "baseExperience": 257,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/793.png",
+  "types": [
+    "rock",
+    "poison"
+  ],
+  "abilities": [
+    "beast-boost"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 109
+    },
+    {
+      "name": "attack",
+      "value": 53
+    },
+    {
+      "name": "defense",
+      "value": 47
+    },
+    {
+      "name": "special-attack",
+      "value": 127
+    },
+    {
+      "name": "special-defense",
+      "value": 131
+    },
+    {
+      "name": "speed",
+      "value": 103
+    }
+  ]
+}

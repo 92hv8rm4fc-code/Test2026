@@ -1,0 +1,42 @@
+{
+  "id": 117,
+  "name": "seadra",
+  "height": 1.2,
+  "weight": 25.0,
+  "baseExperience": 154,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/117.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "poison-point",
+    "sniper",
+    "damp"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 95
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

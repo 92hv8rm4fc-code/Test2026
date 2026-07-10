@@ -1,0 +1,43 @@
+{
+  "id": 171,
+  "name": "lanturn",
+  "height": 1.2,
+  "weight": 22.5,
+  "baseExperience": 161,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/171.png",
+  "types": [
+    "water",
+    "electric"
+  ],
+  "abilities": [
+    "volt-absorb",
+    "illuminate",
+    "water-absorb"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 125
+    },
+    {
+      "name": "attack",
+      "value": 58
+    },
+    {
+      "name": "defense",
+      "value": 58
+    },
+    {
+      "name": "special-attack",
+      "value": 76
+    },
+    {
+      "name": "special-defense",
+      "value": 76
+    },
+    {
+      "name": "speed",
+      "value": 67
+    }
+  ]
+}

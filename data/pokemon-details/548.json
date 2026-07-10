@@ -1,0 +1,42 @@
+{
+  "id": 548,
+  "name": "petilil",
+  "height": 0.5,
+  "weight": 6.6,
+  "baseExperience": 56,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/548.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "chlorophyll",
+    "own-tempo",
+    "leaf-guard"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 35
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

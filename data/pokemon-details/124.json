@@ -1,0 +1,43 @@
+{
+  "id": 124,
+  "name": "jynx",
+  "height": 1.4,
+  "weight": 40.6,
+  "baseExperience": 159,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/124.png",
+  "types": [
+    "ice",
+    "psychic"
+  ],
+  "abilities": [
+    "oblivious",
+    "forewarn",
+    "dry-skin"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 35
+    },
+    {
+      "name": "special-attack",
+      "value": 115
+    },
+    {
+      "name": "special-defense",
+      "value": 95
+    },
+    {
+      "name": "speed",
+      "value": 95
+    }
+  ]
+}

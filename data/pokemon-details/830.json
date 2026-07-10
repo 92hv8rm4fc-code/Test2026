@@ -1,0 +1,42 @@
+{
+  "id": 830,
+  "name": "eldegoss",
+  "height": 0.5,
+  "weight": 2.5,
+  "baseExperience": 161,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/830.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "cotton-down",
+    "regenerator",
+    "effect-spore"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 120
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

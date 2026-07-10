@@ -1,0 +1,43 @@
+{
+  "id": 519,
+  "name": "pidove",
+  "height": 0.3,
+  "weight": 2.1,
+  "baseExperience": 53,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/519.png",
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "big-pecks",
+    "super-luck",
+    "rivalry"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 36
+    },
+    {
+      "name": "special-defense",
+      "value": 30
+    },
+    {
+      "name": "speed",
+      "value": 43
+    }
+  ]
+}

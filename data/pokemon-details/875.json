@@ -1,0 +1,40 @@
+{
+  "id": 875,
+  "name": "eiscue-ice",
+  "height": 1.4,
+  "weight": 89.0,
+  "baseExperience": 165,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/875.png",
+  "types": [
+    "ice"
+  ],
+  "abilities": [
+    "ice-face"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 110
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

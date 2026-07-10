@@ -1,0 +1,40 @@
+{
+  "id": 897,
+  "name": "spectrier",
+  "height": 2.0,
+  "weight": 44.5,
+  "baseExperience": 290,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/897.png",
+  "types": [
+    "ghost"
+  ],
+  "abilities": [
+    "grim-neigh"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 145
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 130
+    }
+  ]
+}

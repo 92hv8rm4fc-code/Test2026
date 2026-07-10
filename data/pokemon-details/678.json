@@ -1,0 +1,42 @@
+{
+  "id": 678,
+  "name": "meowstic-male",
+  "height": 0.6,
+  "weight": 8.5,
+  "baseExperience": 163,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/678.png",
+  "types": [
+    "psychic"
+  ],
+  "abilities": [
+    "keen-eye",
+    "infiltrator",
+    "prankster"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 74
+    },
+    {
+      "name": "attack",
+      "value": 48
+    },
+    {
+      "name": "defense",
+      "value": 76
+    },
+    {
+      "name": "special-attack",
+      "value": 83
+    },
+    {
+      "name": "special-defense",
+      "value": 81
+    },
+    {
+      "name": "speed",
+      "value": 104
+    }
+  ]
+}

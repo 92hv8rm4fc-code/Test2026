@@ -1,0 +1,43 @@
+{
+  "id": 740,
+  "name": "crabominable",
+  "height": 1.7,
+  "weight": 180.0,
+  "baseExperience": 167,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/740.png",
+  "types": [
+    "fighting",
+    "ice"
+  ],
+  "abilities": [
+    "hyper-cutter",
+    "iron-fist",
+    "anger-point"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 97
+    },
+    {
+      "name": "attack",
+      "value": 132
+    },
+    {
+      "name": "defense",
+      "value": 77
+    },
+    {
+      "name": "special-attack",
+      "value": 62
+    },
+    {
+      "name": "special-defense",
+      "value": 67
+    },
+    {
+      "name": "speed",
+      "value": 43
+    }
+  ]
+}

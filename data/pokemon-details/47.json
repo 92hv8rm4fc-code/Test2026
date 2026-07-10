@@ -1,0 +1,43 @@
+{
+  "id": 47,
+  "name": "parasect",
+  "height": 1.0,
+  "weight": 29.5,
+  "baseExperience": 142,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/47.png",
+  "types": [
+    "bug",
+    "grass"
+  ],
+  "abilities": [
+    "effect-spore",
+    "dry-skin",
+    "damp"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 80
+    },
+    {
+      "name": "special-attack",
+      "value": 60
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

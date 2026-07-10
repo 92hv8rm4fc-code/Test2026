@@ -1,0 +1,42 @@
+{
+  "id": 326,
+  "name": "grumpig",
+  "height": 0.9,
+  "weight": 71.5,
+  "baseExperience": 165,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/326.png",
+  "types": [
+    "psychic"
+  ],
+  "abilities": [
+    "thick-fat",
+    "own-tempo",
+    "gluttony"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 90
+    },
+    {
+      "name": "special-defense",
+      "value": 110
+    },
+    {
+      "name": "speed",
+      "value": 80
+    }
+  ]
+}

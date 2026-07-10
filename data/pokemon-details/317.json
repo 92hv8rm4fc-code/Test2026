@@ -1,0 +1,42 @@
+{
+  "id": 317,
+  "name": "swalot",
+  "height": 1.7,
+  "weight": 80.0,
+  "baseExperience": 163,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/317.png",
+  "types": [
+    "poison"
+  ],
+  "abilities": [
+    "liquid-ooze",
+    "sticky-hold",
+    "gluttony"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 73
+    },
+    {
+      "name": "defense",
+      "value": 83
+    },
+    {
+      "name": "special-attack",
+      "value": 73
+    },
+    {
+      "name": "special-defense",
+      "value": 83
+    },
+    {
+      "name": "speed",
+      "value": 55
+    }
+  ]
+}

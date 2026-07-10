@@ -1,0 +1,41 @@
+{
+  "id": 720,
+  "name": "hoopa",
+  "height": 0.5,
+  "weight": 9.0,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/720.png",
+  "types": [
+    "psychic",
+    "ghost"
+  ],
+  "abilities": [
+    "magician"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 110
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 150
+    },
+    {
+      "name": "special-defense",
+      "value": 130
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

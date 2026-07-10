@@ -1,0 +1,43 @@
+{
+  "id": 87,
+  "name": "dewgong",
+  "height": 1.7,
+  "weight": 120.0,
+  "baseExperience": 166,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/87.png",
+  "types": [
+    "water",
+    "ice"
+  ],
+  "abilities": [
+    "thick-fat",
+    "hydration",
+    "ice-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 90
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 80
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 95
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

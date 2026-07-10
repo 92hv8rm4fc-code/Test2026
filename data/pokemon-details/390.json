@@ -1,0 +1,41 @@
+{
+  "id": 390,
+  "name": "chimchar",
+  "height": 0.5,
+  "weight": 6.2,
+  "baseExperience": 62,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/390.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "blaze",
+    "iron-fist"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 44
+    },
+    {
+      "name": "attack",
+      "value": 58
+    },
+    {
+      "name": "defense",
+      "value": 44
+    },
+    {
+      "name": "special-attack",
+      "value": 58
+    },
+    {
+      "name": "special-defense",
+      "value": 44
+    },
+    {
+      "name": "speed",
+      "value": 61
+    }
+  ]
+}

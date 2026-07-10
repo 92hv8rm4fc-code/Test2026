@@ -1,0 +1,41 @@
+{
+  "id": 1000,
+  "name": "gholdengo",
+  "height": 1.2,
+  "weight": 30.0,
+  "baseExperience": 275,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1000.png",
+  "types": [
+    "steel",
+    "ghost"
+  ],
+  "abilities": [
+    "good-as-gold"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 87
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 95
+    },
+    {
+      "name": "special-attack",
+      "value": 133
+    },
+    {
+      "name": "special-defense",
+      "value": 91
+    },
+    {
+      "name": "speed",
+      "value": 84
+    }
+  ]
+}

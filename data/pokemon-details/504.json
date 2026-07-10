@@ -1,0 +1,42 @@
+{
+  "id": 504,
+  "name": "patrat",
+  "height": 0.5,
+  "weight": 11.6,
+  "baseExperience": 51,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/504.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "run-away",
+    "keen-eye",
+    "analytic"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 39
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 39
+    },
+    {
+      "name": "speed",
+      "value": 42
+    }
+  ]
+}

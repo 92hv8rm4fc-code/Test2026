@@ -1,0 +1,43 @@
+{
+  "id": 111,
+  "name": "rhyhorn",
+  "height": 1.0,
+  "weight": 115.0,
+  "baseExperience": 69,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/111.png",
+  "types": [
+    "ground",
+    "rock"
+  ],
+  "abilities": [
+    "lightning-rod",
+    "rock-head",
+    "reckless"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 95
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 30
+    },
+    {
+      "name": "speed",
+      "value": 25
+    }
+  ]
+}

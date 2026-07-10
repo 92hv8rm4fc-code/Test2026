@@ -1,0 +1,42 @@
+{
+  "id": 591,
+  "name": "amoonguss",
+  "height": 0.6,
+  "weight": 10.5,
+  "baseExperience": 162,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/591.png",
+  "types": [
+    "grass",
+    "poison"
+  ],
+  "abilities": [
+    "effect-spore",
+    "regenerator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 114
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 85
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

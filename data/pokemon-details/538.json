@@ -1,0 +1,42 @@
+{
+  "id": 538,
+  "name": "throh",
+  "height": 1.3,
+  "weight": 55.5,
+  "baseExperience": 163,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/538.png",
+  "types": [
+    "fighting"
+  ],
+  "abilities": [
+    "guts",
+    "inner-focus",
+    "mold-breaker"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 120
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 85
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

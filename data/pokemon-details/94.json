@@ -1,0 +1,41 @@
+{
+  "id": 94,
+  "name": "gengar",
+  "height": 1.5,
+  "weight": 40.5,
+  "baseExperience": 225,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png",
+  "types": [
+    "ghost",
+    "poison"
+  ],
+  "abilities": [
+    "cursed-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 130
+    },
+    {
+      "name": "special-defense",
+      "value": 75
+    },
+    {
+      "name": "speed",
+      "value": 110
+    }
+  ]
+}

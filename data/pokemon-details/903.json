@@ -1,0 +1,43 @@
+{
+  "id": 903,
+  "name": "sneasler",
+  "height": 1.3,
+  "weight": 43.0,
+  "baseExperience": 102,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/903.png",
+  "types": [
+    "fighting",
+    "poison"
+  ],
+  "abilities": [
+    "pressure",
+    "unburden",
+    "poison-touch"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 130
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 120
+    }
+  ]
+}

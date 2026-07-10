@@ -1,0 +1,42 @@
+{
+  "id": 831,
+  "name": "wooloo",
+  "height": 0.6,
+  "weight": 6.0,
+  "baseExperience": 122,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/831.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "fluffy",
+    "run-away",
+    "bulletproof"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 42
+    },
+    {
+      "name": "attack",
+      "value": 40
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 48
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 422,
+  "name": "shellos",
+  "height": 0.3,
+  "weight": 6.3,
+  "baseExperience": 65,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/422.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "sticky-hold",
+    "storm-drain",
+    "sand-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 76
+    },
+    {
+      "name": "attack",
+      "value": 48
+    },
+    {
+      "name": "defense",
+      "value": 48
+    },
+    {
+      "name": "special-attack",
+      "value": 57
+    },
+    {
+      "name": "special-defense",
+      "value": 62
+    },
+    {
+      "name": "speed",
+      "value": 34
+    }
+  ]
+}

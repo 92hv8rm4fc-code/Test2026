@@ -1,0 +1,42 @@
+{
+  "id": 662,
+  "name": "fletchinder",
+  "height": 0.7,
+  "weight": 16.0,
+  "baseExperience": 134,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/662.png",
+  "types": [
+    "fire",
+    "flying"
+  ],
+  "abilities": [
+    "flame-body",
+    "gale-wings"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 62
+    },
+    {
+      "name": "attack",
+      "value": 73
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 56
+    },
+    {
+      "name": "special-defense",
+      "value": 52
+    },
+    {
+      "name": "speed",
+      "value": 84
+    }
+  ]
+}

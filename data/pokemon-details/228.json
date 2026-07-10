@@ -1,0 +1,43 @@
+{
+  "id": 228,
+  "name": "houndour",
+  "height": 0.6,
+  "weight": 10.8,
+  "baseExperience": 66,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/228.png",
+  "types": [
+    "dark",
+    "fire"
+  ],
+  "abilities": [
+    "early-bird",
+    "flash-fire",
+    "unnerve"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 30
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 313,
+  "name": "volbeat",
+  "height": 0.7,
+  "weight": 17.7,
+  "baseExperience": 151,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/313.png",
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    "illuminate",
+    "swarm",
+    "prankster"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 73
+    },
+    {
+      "name": "defense",
+      "value": 75
+    },
+    {
+      "name": "special-attack",
+      "value": 47
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

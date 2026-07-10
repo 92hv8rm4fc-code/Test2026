@@ -1,0 +1,41 @@
+{
+  "id": 408,
+  "name": "cranidos",
+  "height": 0.9,
+  "weight": 31.5,
+  "baseExperience": 70,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/408.png",
+  "types": [
+    "rock"
+  ],
+  "abilities": [
+    "mold-breaker",
+    "sheer-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 67
+    },
+    {
+      "name": "attack",
+      "value": 125
+    },
+    {
+      "name": "defense",
+      "value": 40
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 30
+    },
+    {
+      "name": "speed",
+      "value": 58
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 947,
+  "name": "brambleghast",
+  "height": 1.2,
+  "weight": 6.0,
+  "baseExperience": 168,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/947.png",
+  "types": [
+    "grass",
+    "ghost"
+  ],
+  "abilities": [
+    "wind-rider",
+    "infiltrator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 115
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

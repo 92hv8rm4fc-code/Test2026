@@ -1,0 +1,41 @@
+{
+  "id": 964,
+  "name": "palafin-zero",
+  "height": 1.3,
+  "weight": 60.2,
+  "baseExperience": 160,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/964.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "zero-to-hero",
+    "zero-to-hero"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 72
+    },
+    {
+      "name": "special-attack",
+      "value": 53
+    },
+    {
+      "name": "special-defense",
+      "value": 62
+    },
+    {
+      "name": "speed",
+      "value": 100
+    }
+  ]
+}

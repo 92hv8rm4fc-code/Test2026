@@ -1,0 +1,42 @@
+{
+  "id": 23,
+  "name": "ekans",
+  "height": 2.0,
+  "weight": 6.9,
+  "baseExperience": 58,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/23.png",
+  "types": [
+    "poison"
+  ],
+  "abilities": [
+    "intimidate",
+    "shed-skin",
+    "unnerve"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 35
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 44
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 54
+    },
+    {
+      "name": "speed",
+      "value": 55
+    }
+  ]
+}

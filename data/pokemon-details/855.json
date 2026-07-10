@@ -1,0 +1,41 @@
+{
+  "id": 855,
+  "name": "polteageist",
+  "height": 0.2,
+  "weight": 0.4,
+  "baseExperience": 178,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/855.png",
+  "types": [
+    "ghost"
+  ],
+  "abilities": [
+    "weak-armor",
+    "cursed-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 134
+    },
+    {
+      "name": "special-defense",
+      "value": 114
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": 711,
+  "name": "gourgeist-average",
+  "height": 0.9,
+  "weight": 12.5,
+  "baseExperience": 173,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/711.png",
+  "types": [
+    "ghost",
+    "grass"
+  ],
+  "abilities": [
+    "pickup",
+    "frisk",
+    "insomnia"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 90
+    },
+    {
+      "name": "defense",
+      "value": 122
+    },
+    {
+      "name": "special-attack",
+      "value": 58
+    },
+    {
+      "name": "special-defense",
+      "value": 75
+    },
+    {
+      "name": "speed",
+      "value": 84
+    }
+  ]
+}

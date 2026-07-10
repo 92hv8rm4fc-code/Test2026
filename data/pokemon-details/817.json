@@ -1,0 +1,41 @@
+{
+  "id": 817,
+  "name": "drizzile",
+  "height": 0.7,
+  "weight": 11.5,
+  "baseExperience": 147,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/817.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "torrent",
+    "sniper"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 734,
+  "name": "yungoos",
+  "height": 0.4,
+  "weight": 6.0,
+  "baseExperience": 51,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/734.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "stakeout",
+    "strong-jaw",
+    "adaptability"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 48
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 30
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 30
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

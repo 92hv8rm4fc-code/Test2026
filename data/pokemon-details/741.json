@@ -1,0 +1,41 @@
+{
+  "id": 741,
+  "name": "oricorio-baile",
+  "height": 0.6,
+  "weight": 3.4,
+  "baseExperience": 167,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/741.png",
+  "types": [
+    "fire",
+    "flying"
+  ],
+  "abilities": [
+    "dancer"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 98
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 93
+    }
+  ]
+}

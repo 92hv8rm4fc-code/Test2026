@@ -1,0 +1,43 @@
+{
+  "id": 551,
+  "name": "sandile",
+  "height": 0.7,
+  "weight": 15.2,
+  "baseExperience": 58,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/551.png",
+  "types": [
+    "ground",
+    "dark"
+  ],
+  "abilities": [
+    "intimidate",
+    "moxie",
+    "anger-point"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 72
+    },
+    {
+      "name": "defense",
+      "value": 35
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 35
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

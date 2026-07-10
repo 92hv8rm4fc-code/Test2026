@@ -1,0 +1,42 @@
+{
+  "id": 696,
+  "name": "tyrunt",
+  "height": 0.8,
+  "weight": 26.0,
+  "baseExperience": 72,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/696.png",
+  "types": [
+    "rock",
+    "dragon"
+  ],
+  "abilities": [
+    "strong-jaw",
+    "sturdy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 58
+    },
+    {
+      "name": "attack",
+      "value": 89
+    },
+    {
+      "name": "defense",
+      "value": 77
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 48
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": 383,
+  "name": "groudon",
+  "height": 3.5,
+  "weight": 950.0,
+  "baseExperience": 302,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/383.png",
+  "types": [
+    "ground"
+  ],
+  "abilities": [
+    "drought"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 150
+    },
+    {
+      "name": "defense",
+      "value": 140
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": 809,
+  "name": "melmetal",
+  "height": 2.5,
+  "weight": 800.0,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/809.png",
+  "types": [
+    "steel"
+  ],
+  "abilities": [
+    "iron-fist"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 135
+    },
+    {
+      "name": "attack",
+      "value": 143
+    },
+    {
+      "name": "defense",
+      "value": 143
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 34
+    }
+  ]
+}

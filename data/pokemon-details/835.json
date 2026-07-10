@@ -1,0 +1,41 @@
+{
+  "id": 835,
+  "name": "yamper",
+  "height": 0.3,
+  "weight": 13.5,
+  "baseExperience": 54,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/835.png",
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    "ball-fetch",
+    "rattled"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 59
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 26
+    }
+  ]
+}

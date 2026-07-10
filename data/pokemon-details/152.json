@@ -1,0 +1,41 @@
+{
+  "id": 152,
+  "name": "chikorita",
+  "height": 0.9,
+  "weight": 6.4,
+  "baseExperience": 64,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/152.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "overgrow",
+    "leaf-guard"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 49
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 49
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

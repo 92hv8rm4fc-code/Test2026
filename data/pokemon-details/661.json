@@ -1,0 +1,42 @@
+{
+  "id": 661,
+  "name": "fletchling",
+  "height": 0.3,
+  "weight": 1.7,
+  "baseExperience": 56,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/661.png",
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "big-pecks",
+    "gale-wings"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 43
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 38
+    },
+    {
+      "name": "speed",
+      "value": 62
+    }
+  ]
+}

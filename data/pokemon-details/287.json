@@ -1,0 +1,40 @@
+{
+  "id": 287,
+  "name": "slakoth",
+  "height": 0.8,
+  "weight": 24.0,
+  "baseExperience": 56,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/287.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "truant"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 35
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

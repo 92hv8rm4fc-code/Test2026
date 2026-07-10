@@ -1,0 +1,40 @@
+{
+  "id": 803,
+  "name": "poipole",
+  "height": 0.6,
+  "weight": 1.8,
+  "baseExperience": 189,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/803.png",
+  "types": [
+    "poison"
+  ],
+  "abilities": [
+    "beast-boost"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 67
+    },
+    {
+      "name": "attack",
+      "value": 73
+    },
+    {
+      "name": "defense",
+      "value": 67
+    },
+    {
+      "name": "special-attack",
+      "value": 73
+    },
+    {
+      "name": "special-defense",
+      "value": 67
+    },
+    {
+      "name": "speed",
+      "value": 73
+    }
+  ]
+}

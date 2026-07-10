@@ -1,0 +1,41 @@
+{
+  "id": 501,
+  "name": "oshawott",
+  "height": 0.5,
+  "weight": 5.9,
+  "baseExperience": 62,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/501.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "torrent",
+    "shell-armor"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 63
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

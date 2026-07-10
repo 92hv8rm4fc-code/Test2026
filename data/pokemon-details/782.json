@@ -1,0 +1,42 @@
+{
+  "id": 782,
+  "name": "jangmo-o",
+  "height": 0.6,
+  "weight": 29.7,
+  "baseExperience": 60,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/782.png",
+  "types": [
+    "dragon"
+  ],
+  "abilities": [
+    "bulletproof",
+    "soundproof",
+    "overcoat"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

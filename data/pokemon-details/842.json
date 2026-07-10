@@ -1,0 +1,43 @@
+{
+  "id": 842,
+  "name": "appletun",
+  "height": 0.4,
+  "weight": 13.0,
+  "baseExperience": 170,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/842.png",
+  "types": [
+    "grass",
+    "dragon"
+  ],
+  "abilities": [
+    "ripen",
+    "gluttony",
+    "thick-fat"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 110
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 80
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 341,
+  "name": "corphish",
+  "height": 0.6,
+  "weight": 11.5,
+  "baseExperience": 62,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/341.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "hyper-cutter",
+    "shell-armor",
+    "adaptability"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 43
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 35
+    },
+    {
+      "name": "speed",
+      "value": 35
+    }
+  ]
+}

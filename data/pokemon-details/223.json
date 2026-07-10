@@ -1,0 +1,42 @@
+{
+  "id": 223,
+  "name": "remoraid",
+  "height": 0.6,
+  "weight": 12.0,
+  "baseExperience": 60,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/223.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "hustle",
+    "sniper",
+    "moody"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 35
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 35
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 35
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

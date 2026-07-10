@@ -1,0 +1,42 @@
+{
+  "id": 617,
+  "name": "accelgor",
+  "height": 0.8,
+  "weight": 25.3,
+  "baseExperience": 173,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/617.png",
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    "hydration",
+    "sticky-hold",
+    "unburden"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 40
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 145
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 378,
+  "name": "regice",
+  "height": 1.8,
+  "weight": 175.0,
+  "baseExperience": 261,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/378.png",
+  "types": [
+    "ice"
+  ],
+  "abilities": [
+    "clear-body",
+    "ice-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 200
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

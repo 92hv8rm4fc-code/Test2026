@@ -1,0 +1,43 @@
+{
+  "id": 303,
+  "name": "mawile",
+  "height": 0.6,
+  "weight": 11.5,
+  "baseExperience": 133,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/303.png",
+  "types": [
+    "steel",
+    "fairy"
+  ],
+  "abilities": [
+    "hyper-cutter",
+    "intimidate",
+    "sheer-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 85
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

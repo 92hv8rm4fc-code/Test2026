@@ -1,0 +1,41 @@
+{
+  "id": 854,
+  "name": "sinistea",
+  "height": 0.1,
+  "weight": 0.2,
+  "baseExperience": 62,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/854.png",
+  "types": [
+    "ghost"
+  ],
+  "abilities": [
+    "weak-armor",
+    "cursed-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 74
+    },
+    {
+      "name": "special-defense",
+      "value": 54
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

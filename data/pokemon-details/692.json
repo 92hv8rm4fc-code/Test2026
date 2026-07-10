@@ -1,0 +1,40 @@
+{
+  "id": 692,
+  "name": "clauncher",
+  "height": 0.5,
+  "weight": 8.3,
+  "baseExperience": 66,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/692.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "mega-launcher"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 53
+    },
+    {
+      "name": "defense",
+      "value": 62
+    },
+    {
+      "name": "special-attack",
+      "value": 58
+    },
+    {
+      "name": "special-defense",
+      "value": 63
+    },
+    {
+      "name": "speed",
+      "value": 44
+    }
+  ]
+}

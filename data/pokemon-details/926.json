@@ -1,0 +1,41 @@
+{
+  "id": 926,
+  "name": "fidough",
+  "height": 0.3,
+  "weight": 10.9,
+  "baseExperience": 62,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/926.png",
+  "types": [
+    "fairy"
+  ],
+  "abilities": [
+    "own-tempo",
+    "klutz"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 37
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

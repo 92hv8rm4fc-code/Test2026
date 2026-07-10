@@ -1,0 +1,42 @@
+{
+  "id": 349,
+  "name": "feebas",
+  "height": 0.6,
+  "weight": 7.4,
+  "baseExperience": 40,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/349.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "swift-swim",
+    "oblivious",
+    "adaptability"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 20
+    },
+    {
+      "name": "attack",
+      "value": 15
+    },
+    {
+      "name": "defense",
+      "value": 20
+    },
+    {
+      "name": "special-attack",
+      "value": 10
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 80
+    }
+  ]
+}

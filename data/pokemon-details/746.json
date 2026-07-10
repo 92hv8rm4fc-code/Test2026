@@ -1,0 +1,40 @@
+{
+  "id": 746,
+  "name": "wishiwashi-solo",
+  "height": 0.2,
+  "weight": 0.3,
+  "baseExperience": 61,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/746.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "schooling"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 20
+    },
+    {
+      "name": "defense",
+      "value": 20
+    },
+    {
+      "name": "special-attack",
+      "value": 25
+    },
+    {
+      "name": "special-defense",
+      "value": 25
+    },
+    {
+      "name": "speed",
+      "value": 40
+    }
+  ]
+}

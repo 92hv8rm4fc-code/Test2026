@@ -1,0 +1,41 @@
+{
+  "id": 132,
+  "name": "ditto",
+  "height": 0.3,
+  "weight": 4.0,
+  "baseExperience": 101,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/132.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "limber",
+    "imposter"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 48
+    },
+    {
+      "name": "attack",
+      "value": 48
+    },
+    {
+      "name": "defense",
+      "value": 48
+    },
+    {
+      "name": "special-attack",
+      "value": 48
+    },
+    {
+      "name": "special-defense",
+      "value": 48
+    },
+    {
+      "name": "speed",
+      "value": 48
+    }
+  ]
+}

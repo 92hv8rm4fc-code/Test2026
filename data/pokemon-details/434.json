@@ -1,0 +1,43 @@
+{
+  "id": 434,
+  "name": "stunky",
+  "height": 0.4,
+  "weight": 19.2,
+  "baseExperience": 66,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/434.png",
+  "types": [
+    "poison",
+    "dark"
+  ],
+  "abilities": [
+    "stench",
+    "aftermath",
+    "keen-eye"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 63
+    },
+    {
+      "name": "attack",
+      "value": 63
+    },
+    {
+      "name": "defense",
+      "value": 47
+    },
+    {
+      "name": "special-attack",
+      "value": 41
+    },
+    {
+      "name": "special-defense",
+      "value": 41
+    },
+    {
+      "name": "speed",
+      "value": 74
+    }
+  ]
+}

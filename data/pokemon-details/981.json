@@ -1,0 +1,43 @@
+{
+  "id": 981,
+  "name": "farigiraf",
+  "height": 3.2,
+  "weight": 160.0,
+  "baseExperience": 260,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/981.png",
+  "types": [
+    "normal",
+    "psychic"
+  ],
+  "abilities": [
+    "cud-chew",
+    "armor-tail",
+    "sap-sipper"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 120
+    },
+    {
+      "name": "attack",
+      "value": 90
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 110
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

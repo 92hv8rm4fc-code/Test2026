@@ -1,0 +1,42 @@
+{
+  "id": 248,
+  "name": "tyranitar",
+  "height": 2.0,
+  "weight": 202.0,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/248.png",
+  "types": [
+    "rock",
+    "dark"
+  ],
+  "abilities": [
+    "sand-stream",
+    "unnerve"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 134
+    },
+    {
+      "name": "defense",
+      "value": 110
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 100
+    },
+    {
+      "name": "speed",
+      "value": 61
+    }
+  ]
+}

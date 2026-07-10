@@ -1,0 +1,42 @@
+{
+  "id": 300,
+  "name": "skitty",
+  "height": 0.6,
+  "weight": 11.0,
+  "baseExperience": 52,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/300.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "cute-charm",
+    "normalize",
+    "wonder-skin"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 35
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

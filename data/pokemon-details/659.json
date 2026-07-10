@@ -1,0 +1,42 @@
+{
+  "id": 659,
+  "name": "bunnelby",
+  "height": 0.4,
+  "weight": 5.0,
+  "baseExperience": 47,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/659.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "pickup",
+    "cheek-pouch",
+    "huge-power"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 38
+    },
+    {
+      "name": "attack",
+      "value": 36
+    },
+    {
+      "name": "defense",
+      "value": 38
+    },
+    {
+      "name": "special-attack",
+      "value": 32
+    },
+    {
+      "name": "special-defense",
+      "value": 36
+    },
+    {
+      "name": "speed",
+      "value": 57
+    }
+  ]
+}

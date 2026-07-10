@@ -1,0 +1,41 @@
+{
+  "id": 700,
+  "name": "sylveon",
+  "height": 1.0,
+  "weight": 23.5,
+  "baseExperience": 184,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/700.png",
+  "types": [
+    "fairy"
+  ],
+  "abilities": [
+    "cute-charm",
+    "pixilate"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 95
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 110
+    },
+    {
+      "name": "special-defense",
+      "value": 130
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

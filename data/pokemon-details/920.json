@@ -1,0 +1,42 @@
+{
+  "id": 920,
+  "name": "lokix",
+  "height": 1.0,
+  "weight": 17.5,
+  "baseExperience": 158,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/920.png",
+  "types": [
+    "bug",
+    "dark"
+  ],
+  "abilities": [
+    "swarm",
+    "tinted-lens"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 71
+    },
+    {
+      "name": "attack",
+      "value": 102
+    },
+    {
+      "name": "defense",
+      "value": 78
+    },
+    {
+      "name": "special-attack",
+      "value": 52
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 92
+    }
+  ]
+}

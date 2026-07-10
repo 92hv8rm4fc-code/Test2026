@@ -1,0 +1,43 @@
+{
+  "id": 851,
+  "name": "centiskorch",
+  "height": 3.0,
+  "weight": 120.0,
+  "baseExperience": 184,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/851.png",
+  "types": [
+    "fire",
+    "bug"
+  ],
+  "abilities": [
+    "flash-fire",
+    "white-smoke",
+    "flame-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 115
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 90
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

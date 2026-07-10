@@ -1,0 +1,42 @@
+{
+  "id": 535,
+  "name": "tympole",
+  "height": 0.5,
+  "weight": 4.5,
+  "baseExperience": 59,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/535.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "swift-swim",
+    "hydration",
+    "water-absorb"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 40
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 40
+    },
+    {
+      "name": "speed",
+      "value": 64
+    }
+  ]
+}

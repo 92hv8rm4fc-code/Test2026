@@ -1,0 +1,43 @@
+{
+  "id": 747,
+  "name": "mareanie",
+  "height": 0.4,
+  "weight": 8.0,
+  "baseExperience": 61,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/747.png",
+  "types": [
+    "poison",
+    "water"
+  ],
+  "abilities": [
+    "merciless",
+    "limber",
+    "regenerator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 53
+    },
+    {
+      "name": "defense",
+      "value": 62
+    },
+    {
+      "name": "special-attack",
+      "value": 43
+    },
+    {
+      "name": "special-defense",
+      "value": 52
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

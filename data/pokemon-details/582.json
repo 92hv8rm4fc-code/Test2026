@@ -1,0 +1,42 @@
+{
+  "id": 582,
+  "name": "vanillite",
+  "height": 0.4,
+  "weight": 5.7,
+  "baseExperience": 61,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/582.png",
+  "types": [
+    "ice"
+  ],
+  "abilities": [
+    "ice-body",
+    "snow-cloak",
+    "weak-armor"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 36
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 44
+    }
+  ]
+}

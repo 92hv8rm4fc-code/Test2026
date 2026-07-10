@@ -1,0 +1,42 @@
+{
+  "id": 137,
+  "name": "porygon",
+  "height": 0.8,
+  "weight": 36.5,
+  "baseExperience": 79,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/137.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "trace",
+    "download",
+    "analytic"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 85
+    },
+    {
+      "name": "special-defense",
+      "value": 75
+    },
+    {
+      "name": "speed",
+      "value": 40
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": 595,
+  "name": "joltik",
+  "height": 0.1,
+  "weight": 0.6,
+  "baseExperience": 64,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/595.png",
+  "types": [
+    "bug",
+    "electric"
+  ],
+  "abilities": [
+    "compound-eyes",
+    "unnerve",
+    "swarm"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 47
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 57
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

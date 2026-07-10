@@ -1,0 +1,40 @@
+{
+  "id": 492,
+  "name": "shaymin-land",
+  "height": 0.2,
+  "weight": 2.1,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/492.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "natural-cure"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 100
+    },
+    {
+      "name": "speed",
+      "value": 100
+    }
+  ]
+}

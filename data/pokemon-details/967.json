@@ -1,0 +1,42 @@
+{
+  "id": 967,
+  "name": "cyclizar",
+  "height": 1.6,
+  "weight": 63.0,
+  "baseExperience": 175,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/967.png",
+  "types": [
+    "dragon",
+    "normal"
+  ],
+  "abilities": [
+    "shed-skin",
+    "regenerator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 85
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 121
+    }
+  ]
+}

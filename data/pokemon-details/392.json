@@ -1,0 +1,42 @@
+{
+  "id": 392,
+  "name": "infernape",
+  "height": 1.2,
+  "weight": 55.0,
+  "baseExperience": 240,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/392.png",
+  "types": [
+    "fire",
+    "fighting"
+  ],
+  "abilities": [
+    "blaze",
+    "iron-fist"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 76
+    },
+    {
+      "name": "attack",
+      "value": 104
+    },
+    {
+      "name": "defense",
+      "value": 71
+    },
+    {
+      "name": "special-attack",
+      "value": 104
+    },
+    {
+      "name": "special-defense",
+      "value": 71
+    },
+    {
+      "name": "speed",
+      "value": 108
+    }
+  ]
+}

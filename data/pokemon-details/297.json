@@ -1,0 +1,42 @@
+{
+  "id": 297,
+  "name": "hariyama",
+  "height": 2.3,
+  "weight": 253.8,
+  "baseExperience": 166,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/297.png",
+  "types": [
+    "fighting"
+  ],
+  "abilities": [
+    "thick-fat",
+    "guts",
+    "sheer-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 144
+    },
+    {
+      "name": "attack",
+      "value": 120
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

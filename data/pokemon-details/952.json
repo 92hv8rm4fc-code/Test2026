@@ -1,0 +1,43 @@
+{
+  "id": 952,
+  "name": "scovillain",
+  "height": 0.9,
+  "weight": 15.0,
+  "baseExperience": 170,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/952.png",
+  "types": [
+    "grass",
+    "fire"
+  ],
+  "abilities": [
+    "chlorophyll",
+    "insomnia",
+    "moody"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 108
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 108
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 75
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": 480,
+  "name": "uxie",
+  "height": 0.3,
+  "weight": 0.3,
+  "baseExperience": 261,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/480.png",
+  "types": [
+    "psychic"
+  ],
+  "abilities": [
+    "levitate"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 130
+    },
+    {
+      "name": "special-attack",
+      "value": 75
+    },
+    {
+      "name": "special-defense",
+      "value": 130
+    },
+    {
+      "name": "speed",
+      "value": 95
+    }
+  ]
+}

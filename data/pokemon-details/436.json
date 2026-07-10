@@ -1,0 +1,43 @@
+{
+  "id": 436,
+  "name": "bronzor",
+  "height": 0.5,
+  "weight": 60.5,
+  "baseExperience": 60,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/436.png",
+  "types": [
+    "steel",
+    "psychic"
+  ],
+  "abilities": [
+    "levitate",
+    "heatproof",
+    "heavy-metal"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 57
+    },
+    {
+      "name": "attack",
+      "value": 24
+    },
+    {
+      "name": "defense",
+      "value": 86
+    },
+    {
+      "name": "special-attack",
+      "value": 24
+    },
+    {
+      "name": "special-defense",
+      "value": 86
+    },
+    {
+      "name": "speed",
+      "value": 23
+    }
+  ]
+}

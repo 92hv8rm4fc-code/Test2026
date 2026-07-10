@@ -1,0 +1,41 @@
+{
+  "id": 647,
+  "name": "keldeo-ordinary",
+  "height": 1.4,
+  "weight": 48.5,
+  "baseExperience": 261,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/647.png",
+  "types": [
+    "water",
+    "fighting"
+  ],
+  "abilities": [
+    "justified"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 91
+    },
+    {
+      "name": "attack",
+      "value": 72
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 129
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 108
+    }
+  ]
+}

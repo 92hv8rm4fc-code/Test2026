@@ -1,0 +1,42 @@
+{
+  "id": 975,
+  "name": "cetitan",
+  "height": 4.5,
+  "weight": 700.0,
+  "baseExperience": 182,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/975.png",
+  "types": [
+    "ice"
+  ],
+  "abilities": [
+    "thick-fat",
+    "slush-rush",
+    "sheer-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 170
+    },
+    {
+      "name": "attack",
+      "value": 113
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 73
+    }
+  ]
+}

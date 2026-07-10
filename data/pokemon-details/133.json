@@ -1,0 +1,42 @@
+{
+  "id": 133,
+  "name": "eevee",
+  "height": 0.3,
+  "weight": 6.5,
+  "baseExperience": 65,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "run-away",
+    "adaptability",
+    "anticipation"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 55
+    }
+  ]
+}

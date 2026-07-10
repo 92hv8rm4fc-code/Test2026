@@ -1,0 +1,43 @@
+{
+  "id": 400,
+  "name": "bibarel",
+  "height": 1.0,
+  "weight": 31.5,
+  "baseExperience": 144,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/400.png",
+  "types": [
+    "normal",
+    "water"
+  ],
+  "abilities": [
+    "simple",
+    "unaware",
+    "moody"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 79
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 71
+    }
+  ]
+}

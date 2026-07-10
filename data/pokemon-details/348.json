@@ -1,0 +1,42 @@
+{
+  "id": 348,
+  "name": "armaldo",
+  "height": 1.5,
+  "weight": 68.2,
+  "baseExperience": 173,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/348.png",
+  "types": [
+    "rock",
+    "bug"
+  ],
+  "abilities": [
+    "battle-armor",
+    "swift-swim"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 125
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

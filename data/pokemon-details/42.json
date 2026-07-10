@@ -1,0 +1,42 @@
+{
+  "id": 42,
+  "name": "golbat",
+  "height": 1.6,
+  "weight": 55.0,
+  "baseExperience": 159,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/42.png",
+  "types": [
+    "poison",
+    "flying"
+  ],
+  "abilities": [
+    "inner-focus",
+    "infiltrator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 75
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

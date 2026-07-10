@@ -1,0 +1,43 @@
+{
+  "id": 138,
+  "name": "omanyte",
+  "height": 0.4,
+  "weight": 7.5,
+  "baseExperience": 71,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/138.png",
+  "types": [
+    "rock",
+    "water"
+  ],
+  "abilities": [
+    "swift-swim",
+    "shell-armor",
+    "weak-armor"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 35
+    },
+    {
+      "name": "attack",
+      "value": 40
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 90
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 35
+    }
+  ]
+}

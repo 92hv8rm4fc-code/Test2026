@@ -1,0 +1,41 @@
+{
+  "id": 927,
+  "name": "dachsbun",
+  "height": 0.5,
+  "weight": 14.9,
+  "baseExperience": 167,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/927.png",
+  "types": [
+    "fairy"
+  ],
+  "abilities": [
+    "well-baked-body",
+    "aroma-veil"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 57
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 115
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 95
+    }
+  ]
+}

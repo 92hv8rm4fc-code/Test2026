@@ -1,0 +1,42 @@
+{
+  "id": 67,
+  "name": "machoke",
+  "height": 1.5,
+  "weight": 70.5,
+  "baseExperience": 142,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/67.png",
+  "types": [
+    "fighting"
+  ],
+  "abilities": [
+    "guts",
+    "no-guard",
+    "steadfast"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

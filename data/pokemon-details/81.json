@@ -1,0 +1,43 @@
+{
+  "id": 81,
+  "name": "magnemite",
+  "height": 0.3,
+  "weight": 6.0,
+  "baseExperience": 65,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/81.png",
+  "types": [
+    "electric",
+    "steel"
+  ],
+  "abilities": [
+    "magnet-pull",
+    "sturdy",
+    "analytic"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 25
+    },
+    {
+      "name": "attack",
+      "value": 35
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

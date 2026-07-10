@@ -1,0 +1,43 @@
+{
+  "id": 545,
+  "name": "scolipede",
+  "height": 2.5,
+  "weight": 200.5,
+  "baseExperience": 218,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/545.png",
+  "types": [
+    "bug",
+    "poison"
+  ],
+  "abilities": [
+    "poison-point",
+    "swarm",
+    "speed-boost"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 89
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 69
+    },
+    {
+      "name": "speed",
+      "value": 112
+    }
+  ]
+}

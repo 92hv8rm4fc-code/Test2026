@@ -1,0 +1,40 @@
+{
+  "id": 615,
+  "name": "cryogonal",
+  "height": 1.1,
+  "weight": 148.0,
+  "baseExperience": 180,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/615.png",
+  "types": [
+    "ice"
+  ],
+  "abilities": [
+    "levitate"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 135
+    },
+    {
+      "name": "speed",
+      "value": 105
+    }
+  ]
+}

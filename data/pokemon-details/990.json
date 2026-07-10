@@ -1,0 +1,41 @@
+{
+  "id": 990,
+  "name": "iron-treads",
+  "height": 0.9,
+  "weight": 240.0,
+  "baseExperience": 285,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/990.png",
+  "types": [
+    "ground",
+    "steel"
+  ],
+  "abilities": [
+    "quark-drive"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 90
+    },
+    {
+      "name": "attack",
+      "value": 112
+    },
+    {
+      "name": "defense",
+      "value": 120
+    },
+    {
+      "name": "special-attack",
+      "value": 72
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 106
+    }
+  ]
+}

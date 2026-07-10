@@ -1,0 +1,42 @@
+{
+  "id": 246,
+  "name": "larvitar",
+  "height": 0.6,
+  "weight": 72.0,
+  "baseExperience": 60,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/246.png",
+  "types": [
+    "rock",
+    "ground"
+  ],
+  "abilities": [
+    "guts",
+    "sand-veil"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 64
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 41
+    }
+  ]
+}

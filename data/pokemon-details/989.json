@@ -1,0 +1,41 @@
+{
+  "id": 989,
+  "name": "sandy-shocks",
+  "height": 2.3,
+  "weight": 60.0,
+  "baseExperience": 285,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/989.png",
+  "types": [
+    "electric",
+    "ground"
+  ],
+  "abilities": [
+    "protosynthesis"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 85
+    },
+    {
+      "name": "attack",
+      "value": 81
+    },
+    {
+      "name": "defense",
+      "value": 97
+    },
+    {
+      "name": "special-attack",
+      "value": 121
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 101
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 478,
+  "name": "froslass",
+  "height": 1.3,
+  "weight": 26.6,
+  "baseExperience": 168,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/478.png",
+  "types": [
+    "ice",
+    "ghost"
+  ],
+  "abilities": [
+    "snow-cloak",
+    "cursed-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 110
+    }
+  ]
+}

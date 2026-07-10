@@ -1,0 +1,41 @@
+{
+  "id": 672,
+  "name": "skiddo",
+  "height": 0.9,
+  "weight": 31.0,
+  "baseExperience": 70,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/672.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "sap-sipper",
+    "grass-pelt"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 66
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 48
+    },
+    {
+      "name": "special-attack",
+      "value": 62
+    },
+    {
+      "name": "special-defense",
+      "value": 57
+    },
+    {
+      "name": "speed",
+      "value": 52
+    }
+  ]
+}

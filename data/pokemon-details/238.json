@@ -1,0 +1,43 @@
+{
+  "id": 238,
+  "name": "smoochum",
+  "height": 0.4,
+  "weight": 6.0,
+  "baseExperience": 61,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/238.png",
+  "types": [
+    "ice",
+    "psychic"
+  ],
+  "abilities": [
+    "oblivious",
+    "forewarn",
+    "hydration"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 30
+    },
+    {
+      "name": "defense",
+      "value": 15
+    },
+    {
+      "name": "special-attack",
+      "value": 85
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

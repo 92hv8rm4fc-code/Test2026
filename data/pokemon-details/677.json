@@ -1,0 +1,42 @@
+{
+  "id": 677,
+  "name": "espurr",
+  "height": 0.3,
+  "weight": 3.5,
+  "baseExperience": 71,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/677.png",
+  "types": [
+    "psychic"
+  ],
+  "abilities": [
+    "keen-eye",
+    "infiltrator",
+    "own-tempo"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 62
+    },
+    {
+      "name": "attack",
+      "value": 48
+    },
+    {
+      "name": "defense",
+      "value": 54
+    },
+    {
+      "name": "special-attack",
+      "value": 63
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 68
+    }
+  ]
+}

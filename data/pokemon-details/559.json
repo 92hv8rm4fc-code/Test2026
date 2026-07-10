@@ -1,0 +1,43 @@
+{
+  "id": 559,
+  "name": "scraggy",
+  "height": 0.6,
+  "weight": 11.8,
+  "baseExperience": 70,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/559.png",
+  "types": [
+    "dark",
+    "fighting"
+  ],
+  "abilities": [
+    "shed-skin",
+    "moxie",
+    "intimidate"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 48
+    }
+  ]
+}

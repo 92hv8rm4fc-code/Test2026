@@ -1,0 +1,42 @@
+{
+  "id": 185,
+  "name": "sudowoodo",
+  "height": 1.2,
+  "weight": 38.0,
+  "baseExperience": 144,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/185.png",
+  "types": [
+    "rock"
+  ],
+  "abilities": [
+    "sturdy",
+    "rock-head",
+    "rattled"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 115
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

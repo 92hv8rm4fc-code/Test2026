@@ -1,0 +1,41 @@
+{
+  "id": 991,
+  "name": "iron-bundle",
+  "height": 0.6,
+  "weight": 11.0,
+  "baseExperience": 285,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/991.png",
+  "types": [
+    "ice",
+    "water"
+  ],
+  "abilities": [
+    "quark-drive"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 56
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 114
+    },
+    {
+      "name": "special-attack",
+      "value": 124
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 136
+    }
+  ]
+}

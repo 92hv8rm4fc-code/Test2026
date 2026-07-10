@@ -1,0 +1,42 @@
+{
+  "id": 353,
+  "name": "shuppet",
+  "height": 0.6,
+  "weight": 2.3,
+  "baseExperience": 59,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/353.png",
+  "types": [
+    "ghost"
+  ],
+  "abilities": [
+    "insomnia",
+    "frisk",
+    "cursed-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 44
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 35
+    },
+    {
+      "name": "special-attack",
+      "value": 63
+    },
+    {
+      "name": "special-defense",
+      "value": 33
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

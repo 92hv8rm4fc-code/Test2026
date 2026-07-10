@@ -1,0 +1,42 @@
+{
+  "id": 556,
+  "name": "maractus",
+  "height": 1.0,
+  "weight": 28.0,
+  "baseExperience": 161,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/556.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "water-absorb",
+    "chlorophyll",
+    "storm-drain"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 86
+    },
+    {
+      "name": "defense",
+      "value": 67
+    },
+    {
+      "name": "special-attack",
+      "value": 106
+    },
+    {
+      "name": "special-defense",
+      "value": 67
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

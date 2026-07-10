@@ -1,0 +1,41 @@
+{
+  "id": 852,
+  "name": "clobbopus",
+  "height": 0.6,
+  "weight": 4.0,
+  "baseExperience": 62,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/852.png",
+  "types": [
+    "fighting"
+  ],
+  "abilities": [
+    "limber",
+    "technician"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 68
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 32
+    }
+  ]
+}

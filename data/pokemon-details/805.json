@@ -1,0 +1,41 @@
+{
+  "id": 805,
+  "name": "stakataka",
+  "height": 5.5,
+  "weight": 820.0,
+  "baseExperience": 257,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/805.png",
+  "types": [
+    "rock",
+    "steel"
+  ],
+  "abilities": [
+    "beast-boost"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 61
+    },
+    {
+      "name": "attack",
+      "value": 131
+    },
+    {
+      "name": "defense",
+      "value": 211
+    },
+    {
+      "name": "special-attack",
+      "value": 53
+    },
+    {
+      "name": "special-defense",
+      "value": 101
+    },
+    {
+      "name": "speed",
+      "value": 13
+    }
+  ]
+}

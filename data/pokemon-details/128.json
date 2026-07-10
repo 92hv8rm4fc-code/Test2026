@@ -1,0 +1,42 @@
+{
+  "id": 128,
+  "name": "tauros",
+  "height": 1.4,
+  "weight": 88.4,
+  "baseExperience": 172,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/128.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "intimidate",
+    "anger-point",
+    "sheer-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 95
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 110
+    }
+  ]
+}

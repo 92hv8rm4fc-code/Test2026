@@ -1,0 +1,43 @@
+{
+  "id": 660,
+  "name": "diggersby",
+  "height": 1.0,
+  "weight": 42.4,
+  "baseExperience": 148,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/660.png",
+  "types": [
+    "normal",
+    "ground"
+  ],
+  "abilities": [
+    "pickup",
+    "cheek-pouch",
+    "huge-power"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 85
+    },
+    {
+      "name": "attack",
+      "value": 56
+    },
+    {
+      "name": "defense",
+      "value": 77
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 77
+    },
+    {
+      "name": "speed",
+      "value": 78
+    }
+  ]
+}

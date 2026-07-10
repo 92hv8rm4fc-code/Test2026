@@ -1,0 +1,42 @@
+{
+  "id": 376,
+  "name": "metagross",
+  "height": 1.6,
+  "weight": 550.0,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/376.png",
+  "types": [
+    "steel",
+    "psychic"
+  ],
+  "abilities": [
+    "clear-body",
+    "light-metal"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 135
+    },
+    {
+      "name": "defense",
+      "value": 130
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

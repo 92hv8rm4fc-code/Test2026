@@ -1,0 +1,43 @@
+{
+  "id": 193,
+  "name": "yanma",
+  "height": 1.2,
+  "weight": 38.0,
+  "baseExperience": 78,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/193.png",
+  "types": [
+    "bug",
+    "flying"
+  ],
+  "abilities": [
+    "speed-boost",
+    "compound-eyes",
+    "frisk"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 75
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 95
+    }
+  ]
+}

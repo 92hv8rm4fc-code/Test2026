@@ -1,0 +1,40 @@
+{
+  "id": 772,
+  "name": "type-null",
+  "height": 1.9,
+  "weight": 120.5,
+  "baseExperience": 107,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/772.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "battle-armor"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 95
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 95
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 95
+    },
+    {
+      "name": "speed",
+      "value": 59
+    }
+  ]
+}

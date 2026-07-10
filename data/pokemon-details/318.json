@@ -1,0 +1,42 @@
+{
+  "id": 318,
+  "name": "carvanha",
+  "height": 0.8,
+  "weight": 20.8,
+  "baseExperience": 61,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/318.png",
+  "types": [
+    "water",
+    "dark"
+  ],
+  "abilities": [
+    "rough-skin",
+    "speed-boost"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 90
+    },
+    {
+      "name": "defense",
+      "value": 20
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 20
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

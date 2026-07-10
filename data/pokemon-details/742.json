@@ -1,0 +1,43 @@
+{
+  "id": 742,
+  "name": "cutiefly",
+  "height": 0.1,
+  "weight": 0.2,
+  "baseExperience": 61,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/742.png",
+  "types": [
+    "bug",
+    "fairy"
+  ],
+  "abilities": [
+    "honey-gather",
+    "shield-dust",
+    "sweet-veil"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 40
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 40
+    },
+    {
+      "name": "speed",
+      "value": 84
+    }
+  ]
+}

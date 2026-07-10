@@ -1,0 +1,40 @@
+{
+  "id": 807,
+  "name": "zeraora",
+  "height": 1.5,
+  "weight": 44.5,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/807.png",
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    "volt-absorb"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 88
+    },
+    {
+      "name": "attack",
+      "value": 112
+    },
+    {
+      "name": "defense",
+      "value": 75
+    },
+    {
+      "name": "special-attack",
+      "value": 102
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 143
+    }
+  ]
+}

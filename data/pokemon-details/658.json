@@ -1,0 +1,42 @@
+{
+  "id": 658,
+  "name": "greninja",
+  "height": 1.5,
+  "weight": 40.0,
+  "baseExperience": 239,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/658.png",
+  "types": [
+    "water",
+    "dark"
+  ],
+  "abilities": [
+    "torrent",
+    "protean"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 72
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 67
+    },
+    {
+      "name": "special-attack",
+      "value": 103
+    },
+    {
+      "name": "special-defense",
+      "value": 71
+    },
+    {
+      "name": "speed",
+      "value": 122
+    }
+  ]
+}

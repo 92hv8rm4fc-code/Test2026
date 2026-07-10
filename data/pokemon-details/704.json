@@ -1,0 +1,42 @@
+{
+  "id": 704,
+  "name": "goomy",
+  "height": 0.3,
+  "weight": 2.8,
+  "baseExperience": 60,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/704.png",
+  "types": [
+    "dragon"
+  ],
+  "abilities": [
+    "sap-sipper",
+    "hydration",
+    "gooey"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 35
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 75
+    },
+    {
+      "name": "speed",
+      "value": 40
+    }
+  ]
+}

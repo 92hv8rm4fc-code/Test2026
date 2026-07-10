@@ -1,0 +1,42 @@
+{
+  "id": 411,
+  "name": "bastiodon",
+  "height": 1.3,
+  "weight": 149.5,
+  "baseExperience": 173,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/411.png",
+  "types": [
+    "rock",
+    "steel"
+  ],
+  "abilities": [
+    "sturdy",
+    "soundproof"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 52
+    },
+    {
+      "name": "defense",
+      "value": 168
+    },
+    {
+      "name": "special-attack",
+      "value": 47
+    },
+    {
+      "name": "special-defense",
+      "value": 138
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

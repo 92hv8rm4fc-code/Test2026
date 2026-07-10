@@ -1,0 +1,42 @@
+{
+  "id": 761,
+  "name": "bounsweet",
+  "height": 0.3,
+  "weight": 3.2,
+  "baseExperience": 42,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/761.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "leaf-guard",
+    "oblivious",
+    "sweet-veil"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 42
+    },
+    {
+      "name": "attack",
+      "value": 30
+    },
+    {
+      "name": "defense",
+      "value": 38
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 38
+    },
+    {
+      "name": "speed",
+      "value": 32
+    }
+  ]
+}

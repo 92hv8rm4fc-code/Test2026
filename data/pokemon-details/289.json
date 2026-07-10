@@ -1,0 +1,40 @@
+{
+  "id": 289,
+  "name": "slaking",
+  "height": 2.0,
+  "weight": 130.5,
+  "baseExperience": 252,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/289.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "truant"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 150
+    },
+    {
+      "name": "attack",
+      "value": 160
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 100
+    }
+  ]
+}

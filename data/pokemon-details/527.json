@@ -1,0 +1,43 @@
+{
+  "id": 527,
+  "name": "woobat",
+  "height": 0.4,
+  "weight": 2.1,
+  "baseExperience": 65,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/527.png",
+  "types": [
+    "psychic",
+    "flying"
+  ],
+  "abilities": [
+    "unaware",
+    "klutz",
+    "simple"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 43
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 43
+    },
+    {
+      "name": "speed",
+      "value": 72
+    }
+  ]
+}

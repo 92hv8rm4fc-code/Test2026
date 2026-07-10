@@ -1,0 +1,43 @@
+{
+  "id": 214,
+  "name": "heracross",
+  "height": 1.5,
+  "weight": 54.0,
+  "baseExperience": 175,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/214.png",
+  "types": [
+    "bug",
+    "fighting"
+  ],
+  "abilities": [
+    "swarm",
+    "guts",
+    "moxie"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 125
+    },
+    {
+      "name": "defense",
+      "value": 75
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 95
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": 170,
+  "name": "chinchou",
+  "height": 0.5,
+  "weight": 12.0,
+  "baseExperience": 66,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/170.png",
+  "types": [
+    "water",
+    "electric"
+  ],
+  "abilities": [
+    "volt-absorb",
+    "illuminate",
+    "water-absorb"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 38
+    },
+    {
+      "name": "defense",
+      "value": 38
+    },
+    {
+      "name": "special-attack",
+      "value": 56
+    },
+    {
+      "name": "special-defense",
+      "value": 56
+    },
+    {
+      "name": "speed",
+      "value": 67
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 594,
+  "name": "alomomola",
+  "height": 1.2,
+  "weight": 31.6,
+  "baseExperience": 165,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/594.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "healer",
+    "hydration",
+    "regenerator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 165
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 80
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

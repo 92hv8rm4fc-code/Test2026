@@ -1,0 +1,42 @@
+{
+  "id": 523,
+  "name": "zebstrika",
+  "height": 1.6,
+  "weight": 79.5,
+  "baseExperience": 174,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/523.png",
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    "lightning-rod",
+    "motor-drive",
+    "sap-sipper"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 63
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 63
+    },
+    {
+      "name": "speed",
+      "value": 116
+    }
+  ]
+}

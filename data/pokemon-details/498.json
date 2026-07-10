@@ -1,0 +1,41 @@
+{
+  "id": 498,
+  "name": "tepig",
+  "height": 0.5,
+  "weight": 9.9,
+  "baseExperience": 62,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/498.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "blaze",
+    "thick-fat"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 63
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

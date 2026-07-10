@@ -1,0 +1,41 @@
+{
+  "id": 754,
+  "name": "lurantis",
+  "height": 0.9,
+  "weight": 18.5,
+  "baseExperience": 168,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/754.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "leaf-guard",
+    "contrary"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 105
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

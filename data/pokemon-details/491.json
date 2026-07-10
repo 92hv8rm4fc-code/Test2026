@@ -1,0 +1,40 @@
+{
+  "id": 491,
+  "name": "darkrai",
+  "height": 1.5,
+  "weight": 50.5,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/491.png",
+  "types": [
+    "dark"
+  ],
+  "abilities": [
+    "bad-dreams"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 90
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 135
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 125
+    }
+  ]
+}

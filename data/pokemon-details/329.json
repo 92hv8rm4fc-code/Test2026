@@ -1,0 +1,41 @@
+{
+  "id": 329,
+  "name": "vibrava",
+  "height": 1.1,
+  "weight": 15.3,
+  "baseExperience": 119,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/329.png",
+  "types": [
+    "ground",
+    "dragon"
+  ],
+  "abilities": [
+    "levitate"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

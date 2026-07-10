@@ -1,0 +1,42 @@
+{
+  "id": 321,
+  "name": "wailord",
+  "height": 14.5,
+  "weight": 398.0,
+  "baseExperience": 175,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/321.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "water-veil",
+    "oblivious",
+    "pressure"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 170
+    },
+    {
+      "name": "attack",
+      "value": 90
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 90
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

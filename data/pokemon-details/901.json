@@ -1,0 +1,43 @@
+{
+  "id": 901,
+  "name": "ursaluna",
+  "height": 2.4,
+  "weight": 290.0,
+  "baseExperience": 275,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/901.png",
+  "types": [
+    "ground",
+    "normal"
+  ],
+  "abilities": [
+    "guts",
+    "bulletproof",
+    "unnerve"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 130
+    },
+    {
+      "name": "attack",
+      "value": 140
+    },
+    {
+      "name": "defense",
+      "value": 105
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

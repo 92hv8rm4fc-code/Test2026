@@ -1,0 +1,41 @@
+{
+  "id": 820,
+  "name": "greedent",
+  "height": 0.6,
+  "weight": 6.0,
+  "baseExperience": 161,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/820.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "cheek-pouch",
+    "gluttony"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 120
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 95
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 75
+    },
+    {
+      "name": "speed",
+      "value": 20
+    }
+  ]
+}

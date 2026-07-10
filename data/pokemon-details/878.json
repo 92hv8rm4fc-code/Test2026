@@ -1,0 +1,41 @@
+{
+  "id": 878,
+  "name": "cufant",
+  "height": 1.2,
+  "weight": 100.0,
+  "baseExperience": 66,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/878.png",
+  "types": [
+    "steel"
+  ],
+  "abilities": [
+    "sheer-force",
+    "heavy-metal"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 72
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 49
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 49
+    },
+    {
+      "name": "speed",
+      "value": 40
+    }
+  ]
+}

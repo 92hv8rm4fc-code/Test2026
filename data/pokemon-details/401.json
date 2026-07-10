@@ -1,0 +1,41 @@
+{
+  "id": 401,
+  "name": "kricketot",
+  "height": 0.3,
+  "weight": 2.2,
+  "baseExperience": 39,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/401.png",
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    "shed-skin",
+    "run-away"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 37
+    },
+    {
+      "name": "attack",
+      "value": 25
+    },
+    {
+      "name": "defense",
+      "value": 41
+    },
+    {
+      "name": "special-attack",
+      "value": 25
+    },
+    {
+      "name": "special-defense",
+      "value": 41
+    },
+    {
+      "name": "speed",
+      "value": 25
+    }
+  ]
+}

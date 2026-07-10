@@ -1,0 +1,42 @@
+{
+  "id": 712,
+  "name": "bergmite",
+  "height": 1.0,
+  "weight": 99.5,
+  "baseExperience": 61,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/712.png",
+  "types": [
+    "ice"
+  ],
+  "abilities": [
+    "own-tempo",
+    "ice-body",
+    "sturdy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 69
+    },
+    {
+      "name": "defense",
+      "value": 85
+    },
+    {
+      "name": "special-attack",
+      "value": 32
+    },
+    {
+      "name": "special-defense",
+      "value": 35
+    },
+    {
+      "name": "speed",
+      "value": 28
+    }
+  ]
+}

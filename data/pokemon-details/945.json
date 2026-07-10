@@ -1,0 +1,43 @@
+{
+  "id": 945,
+  "name": "grafaiai",
+  "height": 0.7,
+  "weight": 27.2,
+  "baseExperience": 170,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/945.png",
+  "types": [
+    "poison",
+    "normal"
+  ],
+  "abilities": [
+    "unburden",
+    "poison-touch",
+    "prankster"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 63
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 72
+    },
+    {
+      "name": "speed",
+      "value": 110
+    }
+  ]
+}

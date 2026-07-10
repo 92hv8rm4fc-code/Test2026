@@ -1,0 +1,42 @@
+{
+  "id": 127,
+  "name": "pinsir",
+  "height": 1.5,
+  "weight": 55.0,
+  "baseExperience": 175,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/127.png",
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    "hyper-cutter",
+    "mold-breaker",
+    "moxie"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 125
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 1006,
+  "name": "iron-valiant",
+  "height": 1.4,
+  "weight": 35.0,
+  "baseExperience": 295,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1006.png",
+  "types": [
+    "fairy",
+    "fighting"
+  ],
+  "abilities": [
+    "quark-drive"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 74
+    },
+    {
+      "name": "attack",
+      "value": 130
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 120
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 116
+    }
+  ]
+}

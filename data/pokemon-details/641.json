@@ -1,0 +1,41 @@
+{
+  "id": 641,
+  "name": "tornadus-incarnate",
+  "height": 1.5,
+  "weight": 63.0,
+  "baseExperience": 261,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/641.png",
+  "types": [
+    "flying"
+  ],
+  "abilities": [
+    "prankster",
+    "defiant"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 79
+    },
+    {
+      "name": "attack",
+      "value": 115
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 125
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 111
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 735,
+  "name": "gumshoos",
+  "height": 0.7,
+  "weight": 14.2,
+  "baseExperience": 146,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/735.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "stakeout",
+    "strong-jaw",
+    "adaptability"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 88
+    },
+    {
+      "name": "attack",
+      "value": 110
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

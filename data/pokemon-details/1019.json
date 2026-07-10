@@ -1,0 +1,43 @@
+{
+  "id": 1019,
+  "name": "hydrapple",
+  "height": 1.8,
+  "weight": 93.0,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1019.png",
+  "types": [
+    "grass",
+    "dragon"
+  ],
+  "abilities": [
+    "supersweet-syrup",
+    "regenerator",
+    "sticky-hold"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 106
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 110
+    },
+    {
+      "name": "special-attack",
+      "value": 120
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 44
+    }
+  ]
+}

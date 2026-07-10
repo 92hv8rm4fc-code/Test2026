@@ -1,0 +1,42 @@
+{
+  "id": 324,
+  "name": "torkoal",
+  "height": 0.5,
+  "weight": 80.4,
+  "baseExperience": 165,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/324.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "white-smoke",
+    "drought",
+    "shell-armor"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 140
+    },
+    {
+      "name": "special-attack",
+      "value": 85
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 20
+    }
+  ]
+}

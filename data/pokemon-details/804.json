@@ -1,0 +1,41 @@
+{
+  "id": 804,
+  "name": "naganadel",
+  "height": 3.6,
+  "weight": 150.0,
+  "baseExperience": 243,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/804.png",
+  "types": [
+    "poison",
+    "dragon"
+  ],
+  "abilities": [
+    "beast-boost"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 73
+    },
+    {
+      "name": "attack",
+      "value": 73
+    },
+    {
+      "name": "defense",
+      "value": 73
+    },
+    {
+      "name": "special-attack",
+      "value": 127
+    },
+    {
+      "name": "special-defense",
+      "value": 73
+    },
+    {
+      "name": "speed",
+      "value": 121
+    }
+  ]
+}

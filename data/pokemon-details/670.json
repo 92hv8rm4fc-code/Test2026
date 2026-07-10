@@ -1,0 +1,41 @@
+{
+  "id": 670,
+  "name": "floette",
+  "height": 0.2,
+  "weight": 0.9,
+  "baseExperience": 130,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/670.png",
+  "types": [
+    "fairy"
+  ],
+  "abilities": [
+    "flower-veil",
+    "symbiosis"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 54
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 47
+    },
+    {
+      "name": "special-attack",
+      "value": 75
+    },
+    {
+      "name": "special-defense",
+      "value": 98
+    },
+    {
+      "name": "speed",
+      "value": 52
+    }
+  ]
+}

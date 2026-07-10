@@ -1,0 +1,41 @@
+{
+  "id": 797,
+  "name": "celesteela",
+  "height": 9.2,
+  "weight": 999.9,
+  "baseExperience": 257,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/797.png",
+  "types": [
+    "steel",
+    "flying"
+  ],
+  "abilities": [
+    "beast-boost"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 97
+    },
+    {
+      "name": "attack",
+      "value": 101
+    },
+    {
+      "name": "defense",
+      "value": 103
+    },
+    {
+      "name": "special-attack",
+      "value": 107
+    },
+    {
+      "name": "special-defense",
+      "value": 101
+    },
+    {
+      "name": "speed",
+      "value": 61
+    }
+  ]
+}

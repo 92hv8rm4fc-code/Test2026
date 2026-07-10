@@ -1,0 +1,42 @@
+{
+  "id": 655,
+  "name": "delphox",
+  "height": 1.5,
+  "weight": 39.0,
+  "baseExperience": 240,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/655.png",
+  "types": [
+    "fire",
+    "psychic"
+  ],
+  "abilities": [
+    "blaze",
+    "magician"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 69
+    },
+    {
+      "name": "defense",
+      "value": 72
+    },
+    {
+      "name": "special-attack",
+      "value": 114
+    },
+    {
+      "name": "special-defense",
+      "value": 100
+    },
+    {
+      "name": "speed",
+      "value": 104
+    }
+  ]
+}

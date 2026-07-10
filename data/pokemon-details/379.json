@@ -1,0 +1,41 @@
+{
+  "id": 379,
+  "name": "registeel",
+  "height": 1.9,
+  "weight": 205.0,
+  "baseExperience": 261,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/379.png",
+  "types": [
+    "steel"
+  ],
+  "abilities": [
+    "clear-body",
+    "light-metal"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 150
+    },
+    {
+      "name": "special-attack",
+      "value": 75
+    },
+    {
+      "name": "special-defense",
+      "value": 150
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

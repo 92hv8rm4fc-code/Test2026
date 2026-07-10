@@ -1,0 +1,42 @@
+{
+  "id": 410,
+  "name": "shieldon",
+  "height": 0.5,
+  "weight": 57.0,
+  "baseExperience": 70,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/410.png",
+  "types": [
+    "rock",
+    "steel"
+  ],
+  "abilities": [
+    "sturdy",
+    "soundproof"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 30
+    },
+    {
+      "name": "attack",
+      "value": 42
+    },
+    {
+      "name": "defense",
+      "value": 118
+    },
+    {
+      "name": "special-attack",
+      "value": 42
+    },
+    {
+      "name": "special-defense",
+      "value": 88
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

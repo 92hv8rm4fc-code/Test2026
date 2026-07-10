@@ -1,0 +1,41 @@
+{
+  "id": 963,
+  "name": "finizen",
+  "height": 1.3,
+  "weight": 60.2,
+  "baseExperience": 63,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/963.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "water-veil",
+    "water-veil"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 40
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 40
+    },
+    {
+      "name": "speed",
+      "value": 75
+    }
+  ]
+}

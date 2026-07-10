@@ -1,0 +1,43 @@
+{
+  "id": 439,
+  "name": "mime-jr",
+  "height": 0.6,
+  "weight": 13.0,
+  "baseExperience": 62,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/439.png",
+  "types": [
+    "psychic",
+    "fairy"
+  ],
+  "abilities": [
+    "soundproof",
+    "filter",
+    "technician"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 20
+    },
+    {
+      "name": "attack",
+      "value": 25
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 129,
+  "name": "magikarp",
+  "height": 0.9,
+  "weight": 10.0,
+  "baseExperience": 40,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/129.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "swift-swim",
+    "rattled"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 20
+    },
+    {
+      "name": "attack",
+      "value": 10
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 15
+    },
+    {
+      "name": "special-defense",
+      "value": 20
+    },
+    {
+      "name": "speed",
+      "value": 80
+    }
+  ]
+}

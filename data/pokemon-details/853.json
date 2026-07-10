@@ -1,0 +1,41 @@
+{
+  "id": 853,
+  "name": "grapploct",
+  "height": 1.6,
+  "weight": 39.0,
+  "baseExperience": 168,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/853.png",
+  "types": [
+    "fighting"
+  ],
+  "abilities": [
+    "limber",
+    "technician"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 118
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 42
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 721,
+  "name": "volcanion",
+  "height": 1.7,
+  "weight": 195.0,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/721.png",
+  "types": [
+    "fire",
+    "water"
+  ],
+  "abilities": [
+    "water-absorb"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 110
+    },
+    {
+      "name": "defense",
+      "value": 120
+    },
+    {
+      "name": "special-attack",
+      "value": 130
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

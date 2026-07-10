@@ -1,0 +1,41 @@
+{
+  "id": 231,
+  "name": "phanpy",
+  "height": 0.5,
+  "weight": 33.5,
+  "baseExperience": 66,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/231.png",
+  "types": [
+    "ground"
+  ],
+  "abilities": [
+    "pickup",
+    "sand-veil"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 90
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 40
+    },
+    {
+      "name": "speed",
+      "value": 40
+    }
+  ]
+}

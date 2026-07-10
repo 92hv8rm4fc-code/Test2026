@@ -1,0 +1,42 @@
+{
+  "id": 578,
+  "name": "duosion",
+  "height": 0.6,
+  "weight": 8.0,
+  "baseExperience": 130,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/578.png",
+  "types": [
+    "psychic"
+  ],
+  "abilities": [
+    "overcoat",
+    "magic-guard",
+    "regenerator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 40
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 125
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

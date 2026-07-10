@@ -1,0 +1,43 @@
+{
+  "id": 564,
+  "name": "tirtouga",
+  "height": 0.7,
+  "weight": 16.5,
+  "baseExperience": 71,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/564.png",
+  "types": [
+    "water",
+    "rock"
+  ],
+  "abilities": [
+    "solid-rock",
+    "sturdy",
+    "swift-swim"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 54
+    },
+    {
+      "name": "attack",
+      "value": 78
+    },
+    {
+      "name": "defense",
+      "value": 103
+    },
+    {
+      "name": "special-attack",
+      "value": 53
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 22
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": 861,
+  "name": "grimmsnarl",
+  "height": 1.5,
+  "weight": 61.0,
+  "baseExperience": 255,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/861.png",
+  "types": [
+    "dark",
+    "fairy"
+  ],
+  "abilities": [
+    "prankster",
+    "frisk",
+    "pickpocket"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 95
+    },
+    {
+      "name": "attack",
+      "value": 120
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 75
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

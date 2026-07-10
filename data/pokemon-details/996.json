@@ -1,0 +1,42 @@
+{
+  "id": 996,
+  "name": "frigibax",
+  "height": 0.5,
+  "weight": 17.0,
+  "baseExperience": 64,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/996.png",
+  "types": [
+    "dragon",
+    "ice"
+  ],
+  "abilities": [
+    "thermal-exchange",
+    "ice-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 55
+    }
+  ]
+}

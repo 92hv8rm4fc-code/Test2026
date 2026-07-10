@@ -1,0 +1,43 @@
+{
+  "id": 48,
+  "name": "venonat",
+  "height": 1.0,
+  "weight": 30.0,
+  "baseExperience": 61,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/48.png",
+  "types": [
+    "bug",
+    "poison"
+  ],
+  "abilities": [
+    "compound-eyes",
+    "tinted-lens",
+    "run-away"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

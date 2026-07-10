@@ -1,0 +1,43 @@
+{
+  "id": 840,
+  "name": "applin",
+  "height": 0.2,
+  "weight": 0.5,
+  "baseExperience": 52,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/840.png",
+  "types": [
+    "grass",
+    "dragon"
+  ],
+  "abilities": [
+    "ripen",
+    "gluttony",
+    "bulletproof"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 40
+    },
+    {
+      "name": "defense",
+      "value": 80
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 40
+    },
+    {
+      "name": "speed",
+      "value": 20
+    }
+  ]
+}

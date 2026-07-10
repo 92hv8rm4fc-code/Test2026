@@ -1,0 +1,41 @@
+{
+  "id": 986,
+  "name": "brute-bonnet",
+  "height": 1.2,
+  "weight": 21.0,
+  "baseExperience": 285,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/986.png",
+  "types": [
+    "grass",
+    "dark"
+  ],
+  "abilities": [
+    "protosynthesis"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 111
+    },
+    {
+      "name": "attack",
+      "value": 127
+    },
+    {
+      "name": "defense",
+      "value": 99
+    },
+    {
+      "name": "special-attack",
+      "value": 79
+    },
+    {
+      "name": "special-defense",
+      "value": 99
+    },
+    {
+      "name": "speed",
+      "value": 55
+    }
+  ]
+}

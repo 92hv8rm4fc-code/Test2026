@@ -1,0 +1,41 @@
+{
+  "id": 160,
+  "name": "feraligatr",
+  "height": 2.3,
+  "weight": 88.8,
+  "baseExperience": 239,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/160.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "torrent",
+    "sheer-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 85
+    },
+    {
+      "name": "attack",
+      "value": 105
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 79
+    },
+    {
+      "name": "special-defense",
+      "value": 83
+    },
+    {
+      "name": "speed",
+      "value": 78
+    }
+  ]
+}

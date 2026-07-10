@@ -1,0 +1,42 @@
+{
+  "id": 573,
+  "name": "cinccino",
+  "height": 0.5,
+  "weight": 7.5,
+  "baseExperience": 165,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/573.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "cute-charm",
+    "technician",
+    "skill-link"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 115
+    }
+  ]
+}

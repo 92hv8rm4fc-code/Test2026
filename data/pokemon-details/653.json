@@ -1,0 +1,41 @@
+{
+  "id": 653,
+  "name": "fennekin",
+  "height": 0.4,
+  "weight": 9.4,
+  "baseExperience": 61,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/653.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "blaze",
+    "magician"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 40
+    },
+    {
+      "name": "special-attack",
+      "value": 62
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

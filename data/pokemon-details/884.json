@@ -1,0 +1,43 @@
+{
+  "id": 884,
+  "name": "duraludon",
+  "height": 1.8,
+  "weight": 40.0,
+  "baseExperience": 187,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/884.png",
+  "types": [
+    "steel",
+    "dragon"
+  ],
+  "abilities": [
+    "light-metal",
+    "heavy-metal",
+    "stalwart"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 115
+    },
+    {
+      "name": "special-attack",
+      "value": 120
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

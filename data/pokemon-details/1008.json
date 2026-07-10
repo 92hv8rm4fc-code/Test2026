@@ -1,0 +1,41 @@
+{
+  "id": 1008,
+  "name": "miraidon",
+  "height": 3.5,
+  "weight": 240.0,
+  "baseExperience": 335,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1008.png",
+  "types": [
+    "electric",
+    "dragon"
+  ],
+  "abilities": [
+    "hadron-engine"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 135
+    },
+    {
+      "name": "special-defense",
+      "value": 115
+    },
+    {
+      "name": "speed",
+      "value": 135
+    }
+  ]
+}

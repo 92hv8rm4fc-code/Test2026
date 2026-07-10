@@ -1,0 +1,42 @@
+{
+  "id": 397,
+  "name": "staravia",
+  "height": 0.6,
+  "weight": 15.5,
+  "baseExperience": 119,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/397.png",
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "intimidate",
+    "reckless"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 40
+    },
+    {
+      "name": "speed",
+      "value": 80
+    }
+  ]
+}

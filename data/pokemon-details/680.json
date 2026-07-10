@@ -1,0 +1,41 @@
+{
+  "id": 680,
+  "name": "doublade",
+  "height": 0.8,
+  "weight": 4.5,
+  "baseExperience": 157,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/680.png",
+  "types": [
+    "steel",
+    "ghost"
+  ],
+  "abilities": [
+    "no-guard"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 59
+    },
+    {
+      "name": "attack",
+      "value": 110
+    },
+    {
+      "name": "defense",
+      "value": 150
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 49
+    },
+    {
+      "name": "speed",
+      "value": 35
+    }
+  ]
+}

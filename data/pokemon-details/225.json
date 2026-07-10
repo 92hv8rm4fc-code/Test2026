@@ -1,0 +1,43 @@
+{
+  "id": 225,
+  "name": "delibird",
+  "height": 0.9,
+  "weight": 16.0,
+  "baseExperience": 116,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/225.png",
+  "types": [
+    "ice",
+    "flying"
+  ],
+  "abilities": [
+    "vital-spirit",
+    "hustle",
+    "insomnia"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 75
+    }
+  ]
+}

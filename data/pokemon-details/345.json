@@ -1,0 +1,42 @@
+{
+  "id": 345,
+  "name": "lileep",
+  "height": 1.0,
+  "weight": 23.8,
+  "baseExperience": 71,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/345.png",
+  "types": [
+    "rock",
+    "grass"
+  ],
+  "abilities": [
+    "suction-cups",
+    "storm-drain"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 66
+    },
+    {
+      "name": "attack",
+      "value": 41
+    },
+    {
+      "name": "defense",
+      "value": 77
+    },
+    {
+      "name": "special-attack",
+      "value": 61
+    },
+    {
+      "name": "special-defense",
+      "value": 87
+    },
+    {
+      "name": "speed",
+      "value": 23
+    }
+  ]
+}

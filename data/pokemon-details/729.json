@@ -1,0 +1,41 @@
+{
+  "id": 729,
+  "name": "brionne",
+  "height": 0.6,
+  "weight": 17.5,
+  "baseExperience": 147,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/729.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "torrent",
+    "liquid-voice"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 69
+    },
+    {
+      "name": "defense",
+      "value": 69
+    },
+    {
+      "name": "special-attack",
+      "value": 91
+    },
+    {
+      "name": "special-defense",
+      "value": 81
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

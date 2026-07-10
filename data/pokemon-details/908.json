@@ -1,0 +1,42 @@
+{
+  "id": 908,
+  "name": "meowscarada",
+  "height": 1.5,
+  "weight": 31.2,
+  "baseExperience": 265,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/908.png",
+  "types": [
+    "grass",
+    "dark"
+  ],
+  "abilities": [
+    "overgrow",
+    "protean"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 76
+    },
+    {
+      "name": "attack",
+      "value": 110
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 81
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 123
+    }
+  ]
+}

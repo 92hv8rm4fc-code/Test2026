@@ -1,0 +1,41 @@
+{
+  "id": 367,
+  "name": "huntail",
+  "height": 1.7,
+  "weight": 27.0,
+  "baseExperience": 170,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/367.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "swift-swim",
+    "water-veil"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 104
+    },
+    {
+      "name": "defense",
+      "value": 105
+    },
+    {
+      "name": "special-attack",
+      "value": 94
+    },
+    {
+      "name": "special-defense",
+      "value": 75
+    },
+    {
+      "name": "speed",
+      "value": 52
+    }
+  ]
+}

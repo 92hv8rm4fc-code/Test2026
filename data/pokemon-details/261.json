@@ -1,0 +1,42 @@
+{
+  "id": 261,
+  "name": "poochyena",
+  "height": 0.5,
+  "weight": 13.6,
+  "baseExperience": 56,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/261.png",
+  "types": [
+    "dark"
+  ],
+  "abilities": [
+    "run-away",
+    "quick-feet",
+    "rattled"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 35
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 35
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 30
+    },
+    {
+      "name": "speed",
+      "value": 35
+    }
+  ]
+}

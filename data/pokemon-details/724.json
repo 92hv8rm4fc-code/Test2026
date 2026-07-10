@@ -1,0 +1,42 @@
+{
+  "id": 724,
+  "name": "decidueye",
+  "height": 1.6,
+  "weight": 36.6,
+  "baseExperience": 239,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/724.png",
+  "types": [
+    "grass",
+    "ghost"
+  ],
+  "abilities": [
+    "overgrow",
+    "long-reach"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 78
+    },
+    {
+      "name": "attack",
+      "value": 107
+    },
+    {
+      "name": "defense",
+      "value": 75
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 100
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

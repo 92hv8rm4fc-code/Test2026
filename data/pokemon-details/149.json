@@ -1,0 +1,42 @@
+{
+  "id": 149,
+  "name": "dragonite",
+  "height": 2.2,
+  "weight": 210.0,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png",
+  "types": [
+    "dragon",
+    "flying"
+  ],
+  "abilities": [
+    "inner-focus",
+    "multiscale"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 91
+    },
+    {
+      "name": "attack",
+      "value": 134
+    },
+    {
+      "name": "defense",
+      "value": 95
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 100
+    },
+    {
+      "name": "speed",
+      "value": 80
+    }
+  ]
+}

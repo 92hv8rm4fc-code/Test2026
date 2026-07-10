@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon Binder Pokedex</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Pokemon TCG binder helper</p>
+          <h1>Твой живой Pokedex для карточек</h1>
+          <p class="hero__text">
+            Найди покемона по имени или номеру, посмотри данные из PokeAPI и добавь его
+            в свободную ячейку своего биндера.
+          </p>
+        </div>
+        <div class="capacity-card" aria-live="polite">
+          <span>Свободно</span>
+          <strong id="freeSlots">0</strong>
+          <small id="capacityText">Настрой параметры биндера</small>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="Разделы приложения">
+        <button class="tab-button active" type="button" data-tab-target="binderTab">
+          Поиск и биндер
+        </button>
+        <button class="tab-button" type="button" data-tab-target="pokedexTab">
+          Мой Pokedex
+        </button>
+      </nav>
+
+      <section id="binderTab" class="tab-panel active">
+        <section class="grid">
+          <article class="panel search-panel">
+            <h2>Поиск покемона</h2>
+            <form id="searchForm" class="search-form">
+              <label for="pokemonQuery">Имя или номер</label>
+              <div class="input-row">
+                <input
+                  id="pokemonQuery"
+                  name="pokemonQuery"
+                  type="search"
+                  list="pokemonSuggestions"
+                  placeholder="Например: pikachu или 25"
+                  autocomplete="off"
+                  required
+                />
+                <datalist id="pokemonSuggestions"></datalist>
+                <button type="submit">Найти</button>
+              </div>
+            </form>
+            <p id="searchStatus" class="status" role="status"></p>
+            <div id="pokemonResult" class="pokemon-result empty">
+              <p>Здесь появится найденный покемон.</p>
+            </div>
+          </article>
+
+          <article class="panel settings-panel">
+            <div class="section-heading">
+              <div>
+                <h2>Настройки биндера</h2>
+                <p>По умолчанию: 2 биндера, 30 листов, 2 стороны, 9 ячеек на сторону.</p>
+              </div>
+              <button id="resetSettings" class="ghost-button" type="button">Сбросить</button>
+            </div>
+
+            <form id="settingsForm" class="settings-form">
+              <label>
+                Биндеров
+                <input id="binderCount" type="number" min="1" max="20" required />
+              </label>
+              <label>
+                Листов в биндере
+                <input id="sheetsPerBinder" type="number" min="1" max="200" required />
+              </label>
+              <label>
+                Сторон у листа
+                <select id="sidesPerSheet">
+                  <option value="2">Две стороны</option>
+                  <option value="1">Одна сторона</option>
+                </select>
+              </label>
+              <label>
+                Ячеек на сторону
+                <input id="slotsPerSide" type="number" min="1" max="36" required />
+              </label>
+              <button type="submit">Сохранить настройки</button>
+            </form>
+          </article>
+        </section>
+
+        <section class="panel collection-panel">
+          <div class="section-heading">
+            <div>
+              <h2>Мой биндер</h2>
+              <p id="collectionSummary">Пока нет добавленных покемонов.</p>
+            </div>
+            <button id="clearCollection" class="danger-button" type="button">Очистить список</button>
+          </div>
+          <div id="collectionList" class="collection-list"></div>
+        </section>
+      </section>
+
+      <section id="pokedexTab" class="tab-panel">
+        <section class="panel pokedex-panel">
+          <div class="section-heading">
+            <div>
+              <h2>Мой Pokedex</h2>
+              <p id="pokedexSummary">Здесь будет общий список покемонов и твой прогресс.</p>
+            </div>
+            <div class="section-heading-actions">
+              <label class="pokedex-filter">
+                <input id="showUncollectedPokemon" type="checkbox" checked />
+                <span>Показывать не собранных</span>
+              </label>
+              <button id="refreshPokedex" class="ghost-button" type="button">Обновить</button>
+            </div>
+          </div>
+          <p id="pokedexStatus" class="status" role="status"></p>
+          <div id="pokedexGrid" class="pokedex-grid"></div>
+        </section>
+
+        <aside id="pokedexDetails" class="panel pokedex-details empty" aria-live="polite">
+          <p>Нажми на покемона в сетке, чтобы увидеть детали.</p>
+        </aside>
+      </section>
+    </main>
+
+    <template id="pokemonTemplate">
+      <div class="pokemon-card">
+        <div class="pokemon-art-wrap">
+          <img class="pokemon-art" alt="" />
+        </div>
+        <div class="pokemon-details">
+          <p class="pokemon-number"></p>
+          <h3></h3>
+          <div class="type-list"></div>
+          <dl class="facts"></dl>
+          <button class="add-button" type="button">Добавить в биндер</button>
+        </div>
+      </div>
+    </template>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>

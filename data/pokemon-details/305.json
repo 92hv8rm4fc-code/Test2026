@@ -1,0 +1,43 @@
+{
+  "id": 305,
+  "name": "lairon",
+  "height": 0.9,
+  "weight": 120.0,
+  "baseExperience": 151,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/305.png",
+  "types": [
+    "steel",
+    "rock"
+  ],
+  "abilities": [
+    "sturdy",
+    "rock-head",
+    "heavy-metal"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 90
+    },
+    {
+      "name": "defense",
+      "value": 140
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 40
+    }
+  ]
+}

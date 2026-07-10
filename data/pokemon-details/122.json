@@ -1,0 +1,43 @@
+{
+  "id": 122,
+  "name": "mr-mime",
+  "height": 1.3,
+  "weight": 54.5,
+  "baseExperience": 161,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/122.png",
+  "types": [
+    "psychic",
+    "fairy"
+  ],
+  "abilities": [
+    "soundproof",
+    "filter",
+    "technician"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 120
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

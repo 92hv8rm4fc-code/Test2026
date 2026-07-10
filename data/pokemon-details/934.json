@@ -1,0 +1,42 @@
+{
+  "id": 934,
+  "name": "garganacl",
+  "height": 2.3,
+  "weight": 240.0,
+  "baseExperience": 250,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/934.png",
+  "types": [
+    "rock"
+  ],
+  "abilities": [
+    "purifying-salt",
+    "sturdy",
+    "clear-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 130
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 35
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 336,
+  "name": "seviper",
+  "height": 2.7,
+  "weight": 52.5,
+  "baseExperience": 160,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/336.png",
+  "types": [
+    "poison"
+  ],
+  "abilities": [
+    "shed-skin",
+    "infiltrator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 73
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

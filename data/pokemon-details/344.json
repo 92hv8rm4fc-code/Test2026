@@ -1,0 +1,41 @@
+{
+  "id": 344,
+  "name": "claydol",
+  "height": 1.5,
+  "weight": 108.0,
+  "baseExperience": 175,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/344.png",
+  "types": [
+    "ground",
+    "psychic"
+  ],
+  "abilities": [
+    "levitate"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 105
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 120
+    },
+    {
+      "name": "speed",
+      "value": 75
+    }
+  ]
+}

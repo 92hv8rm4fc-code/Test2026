@@ -1,0 +1,43 @@
+{
+  "id": 973,
+  "name": "flamigo",
+  "height": 1.6,
+  "weight": 37.0,
+  "baseExperience": 175,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/973.png",
+  "types": [
+    "flying",
+    "fighting"
+  ],
+  "abilities": [
+    "scrappy",
+    "tangled-feet",
+    "costar"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 82
+    },
+    {
+      "name": "attack",
+      "value": 115
+    },
+    {
+      "name": "defense",
+      "value": 74
+    },
+    {
+      "name": "special-attack",
+      "value": 75
+    },
+    {
+      "name": "special-defense",
+      "value": 64
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

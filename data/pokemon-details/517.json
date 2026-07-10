@@ -1,0 +1,42 @@
+{
+  "id": 517,
+  "name": "munna",
+  "height": 0.6,
+  "weight": 23.3,
+  "baseExperience": 58,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/517.png",
+  "types": [
+    "psychic"
+  ],
+  "abilities": [
+    "forewarn",
+    "synchronize",
+    "telepathy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 76
+    },
+    {
+      "name": "attack",
+      "value": 25
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 67
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 24
+    }
+  ]
+}

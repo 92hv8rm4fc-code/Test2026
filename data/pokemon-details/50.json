@@ -1,0 +1,42 @@
+{
+  "id": 50,
+  "name": "diglett",
+  "height": 0.2,
+  "weight": 0.8,
+  "baseExperience": 53,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/50.png",
+  "types": [
+    "ground"
+  ],
+  "abilities": [
+    "sand-veil",
+    "arena-trap",
+    "sand-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 10
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 25
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 95
+    }
+  ]
+}

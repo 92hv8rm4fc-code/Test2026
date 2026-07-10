@@ -1,0 +1,42 @@
+{
+  "id": 938,
+  "name": "tadbulb",
+  "height": 0.3,
+  "weight": 0.4,
+  "baseExperience": 54,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/938.png",
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    "own-tempo",
+    "static",
+    "damp"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 61
+    },
+    {
+      "name": "attack",
+      "value": 31
+    },
+    {
+      "name": "defense",
+      "value": 41
+    },
+    {
+      "name": "special-attack",
+      "value": 59
+    },
+    {
+      "name": "special-defense",
+      "value": 35
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

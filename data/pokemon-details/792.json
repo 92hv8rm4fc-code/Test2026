@@ -1,0 +1,41 @@
+{
+  "id": 792,
+  "name": "lunala",
+  "height": 4.0,
+  "weight": 120.0,
+  "baseExperience": 306,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/792.png",
+  "types": [
+    "psychic",
+    "ghost"
+  ],
+  "abilities": [
+    "shadow-shield"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 137
+    },
+    {
+      "name": "attack",
+      "value": 113
+    },
+    {
+      "name": "defense",
+      "value": 89
+    },
+    {
+      "name": "special-attack",
+      "value": 137
+    },
+    {
+      "name": "special-defense",
+      "value": 107
+    },
+    {
+      "name": "speed",
+      "value": 97
+    }
+  ]
+}

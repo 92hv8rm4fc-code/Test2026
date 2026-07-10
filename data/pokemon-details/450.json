@@ -1,0 +1,41 @@
+{
+  "id": 450,
+  "name": "hippowdon",
+  "height": 2.0,
+  "weight": 300.0,
+  "baseExperience": 184,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/450.png",
+  "types": [
+    "ground"
+  ],
+  "abilities": [
+    "sand-stream",
+    "sand-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 108
+    },
+    {
+      "name": "attack",
+      "value": 112
+    },
+    {
+      "name": "defense",
+      "value": 118
+    },
+    {
+      "name": "special-attack",
+      "value": 68
+    },
+    {
+      "name": "special-defense",
+      "value": 72
+    },
+    {
+      "name": "speed",
+      "value": 47
+    }
+  ]
+}

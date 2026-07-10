@@ -1,0 +1,43 @@
+{
+  "id": 91,
+  "name": "cloyster",
+  "height": 1.5,
+  "weight": 132.5,
+  "baseExperience": 184,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/91.png",
+  "types": [
+    "water",
+    "ice"
+  ],
+  "abilities": [
+    "shell-armor",
+    "skill-link",
+    "overcoat"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 180
+    },
+    {
+      "name": "special-attack",
+      "value": 85
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

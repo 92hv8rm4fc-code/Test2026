@@ -1,0 +1,41 @@
+{
+  "id": 992,
+  "name": "iron-hands",
+  "height": 1.8,
+  "weight": 380.7,
+  "baseExperience": 285,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/992.png",
+  "types": [
+    "fighting",
+    "electric"
+  ],
+  "abilities": [
+    "quark-drive"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 154
+    },
+    {
+      "name": "attack",
+      "value": 140
+    },
+    {
+      "name": "defense",
+      "value": 108
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 68
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": 208,
+  "name": "steelix",
+  "height": 9.2,
+  "weight": 400.0,
+  "baseExperience": 179,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/208.png",
+  "types": [
+    "steel",
+    "ground"
+  ],
+  "abilities": [
+    "rock-head",
+    "sturdy",
+    "sheer-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 200
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

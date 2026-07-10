@@ -1,0 +1,41 @@
+{
+  "id": 14,
+  "name": "kakuna",
+  "height": 0.6,
+  "weight": 10.0,
+  "baseExperience": 72,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/14.png",
+  "types": [
+    "bug",
+    "poison"
+  ],
+  "abilities": [
+    "shed-skin"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 25
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 25
+    },
+    {
+      "name": "special-defense",
+      "value": 25
+    },
+    {
+      "name": "speed",
+      "value": 35
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 21,
+  "name": "spearow",
+  "height": 0.3,
+  "weight": 2.0,
+  "baseExperience": 52,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png",
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "keen-eye",
+    "sniper"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 30
+    },
+    {
+      "name": "special-attack",
+      "value": 31
+    },
+    {
+      "name": "special-defense",
+      "value": 31
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

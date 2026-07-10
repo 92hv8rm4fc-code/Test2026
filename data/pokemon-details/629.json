@@ -1,0 +1,43 @@
+{
+  "id": 629,
+  "name": "vullaby",
+  "height": 0.5,
+  "weight": 9.0,
+  "baseExperience": 74,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/629.png",
+  "types": [
+    "dark",
+    "flying"
+  ],
+  "abilities": [
+    "big-pecks",
+    "overcoat",
+    "weak-armor"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 75
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

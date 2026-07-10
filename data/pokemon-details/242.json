@@ -1,0 +1,42 @@
+{
+  "id": 242,
+  "name": "blissey",
+  "height": 1.5,
+  "weight": 46.8,
+  "baseExperience": 608,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/242.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "natural-cure",
+    "serene-grace",
+    "healer"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 255
+    },
+    {
+      "name": "attack",
+      "value": 10
+    },
+    {
+      "name": "defense",
+      "value": 10
+    },
+    {
+      "name": "special-attack",
+      "value": 75
+    },
+    {
+      "name": "special-defense",
+      "value": 135
+    },
+    {
+      "name": "speed",
+      "value": 55
+    }
+  ]
+}

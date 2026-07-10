@@ -1,0 +1,43 @@
+{
+  "id": 340,
+  "name": "whiscash",
+  "height": 0.9,
+  "weight": 23.6,
+  "baseExperience": 164,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/340.png",
+  "types": [
+    "water",
+    "ground"
+  ],
+  "abilities": [
+    "oblivious",
+    "anticipation",
+    "hydration"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 110
+    },
+    {
+      "name": "attack",
+      "value": 78
+    },
+    {
+      "name": "defense",
+      "value": 73
+    },
+    {
+      "name": "special-attack",
+      "value": 76
+    },
+    {
+      "name": "special-defense",
+      "value": 71
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

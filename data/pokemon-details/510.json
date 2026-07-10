@@ -1,0 +1,42 @@
+{
+  "id": 510,
+  "name": "liepard",
+  "height": 1.1,
+  "weight": 37.5,
+  "baseExperience": 156,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/510.png",
+  "types": [
+    "dark"
+  ],
+  "abilities": [
+    "limber",
+    "unburden",
+    "prankster"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 64
+    },
+    {
+      "name": "attack",
+      "value": 88
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 88
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 106
+    }
+  ]
+}

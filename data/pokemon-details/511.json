@@ -1,0 +1,41 @@
+{
+  "id": 511,
+  "name": "pansage",
+  "height": 0.6,
+  "weight": 10.5,
+  "baseExperience": 63,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/511.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "gluttony",
+    "overgrow"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 53
+    },
+    {
+      "name": "defense",
+      "value": 48
+    },
+    {
+      "name": "special-attack",
+      "value": 53
+    },
+    {
+      "name": "special-defense",
+      "value": 48
+    },
+    {
+      "name": "speed",
+      "value": 64
+    }
+  ]
+}

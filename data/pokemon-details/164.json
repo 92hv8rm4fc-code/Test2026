@@ -1,0 +1,43 @@
+{
+  "id": 164,
+  "name": "noctowl",
+  "height": 1.6,
+  "weight": 40.8,
+  "baseExperience": 158,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/164.png",
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "insomnia",
+    "keen-eye",
+    "tinted-lens"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 86
+    },
+    {
+      "name": "special-defense",
+      "value": 96
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": 866,
+  "name": "mr-rime",
+  "height": 1.5,
+  "weight": 58.2,
+  "baseExperience": 182,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/866.png",
+  "types": [
+    "ice",
+    "psychic"
+  ],
+  "abilities": [
+    "tangled-feet",
+    "screen-cleaner",
+    "ice-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 75
+    },
+    {
+      "name": "special-attack",
+      "value": 110
+    },
+    {
+      "name": "special-defense",
+      "value": 100
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

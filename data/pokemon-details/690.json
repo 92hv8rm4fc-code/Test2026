@@ -1,0 +1,43 @@
+{
+  "id": 690,
+  "name": "skrelp",
+  "height": 0.5,
+  "weight": 7.3,
+  "baseExperience": 64,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/690.png",
+  "types": [
+    "poison",
+    "water"
+  ],
+  "abilities": [
+    "poison-point",
+    "poison-touch",
+    "adaptability"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 60
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

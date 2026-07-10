@@ -1,0 +1,41 @@
+{
+  "id": 846,
+  "name": "arrokuda",
+  "height": 0.5,
+  "weight": 1.0,
+  "baseExperience": 56,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/846.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "swift-swim",
+    "propeller-tail"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 41
+    },
+    {
+      "name": "attack",
+      "value": 63
+    },
+    {
+      "name": "defense",
+      "value": 40
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 30
+    },
+    {
+      "name": "speed",
+      "value": 66
+    }
+  ]
+}

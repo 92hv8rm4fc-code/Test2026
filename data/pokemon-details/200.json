@@ -1,0 +1,40 @@
+{
+  "id": 200,
+  "name": "misdreavus",
+  "height": 0.7,
+  "weight": 1.0,
+  "baseExperience": 87,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/200.png",
+  "types": [
+    "ghost"
+  ],
+  "abilities": [
+    "levitate"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 85
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

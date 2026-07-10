@@ -1,0 +1,43 @@
+{
+  "id": 668,
+  "name": "pyroar",
+  "height": 1.5,
+  "weight": 81.5,
+  "baseExperience": 177,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/668.png",
+  "types": [
+    "fire",
+    "normal"
+  ],
+  "abilities": [
+    "rivalry",
+    "unnerve",
+    "moxie"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 86
+    },
+    {
+      "name": "attack",
+      "value": 68
+    },
+    {
+      "name": "defense",
+      "value": 72
+    },
+    {
+      "name": "special-attack",
+      "value": 109
+    },
+    {
+      "name": "special-defense",
+      "value": 66
+    },
+    {
+      "name": "speed",
+      "value": 106
+    }
+  ]
+}

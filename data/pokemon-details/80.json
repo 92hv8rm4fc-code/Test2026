@@ -1,0 +1,43 @@
+{
+  "id": 80,
+  "name": "slowbro",
+  "height": 1.6,
+  "weight": 78.5,
+  "baseExperience": 172,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png",
+  "types": [
+    "water",
+    "psychic"
+  ],
+  "abilities": [
+    "oblivious",
+    "own-tempo",
+    "regenerator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 95
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 110
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 387,
+  "name": "turtwig",
+  "height": 0.4,
+  "weight": 10.2,
+  "baseExperience": 64,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/387.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "overgrow",
+    "shell-armor"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 68
+    },
+    {
+      "name": "defense",
+      "value": 64
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 31
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 646,
+  "name": "kyurem",
+  "height": 3.0,
+  "weight": 325.0,
+  "baseExperience": 297,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/646.png",
+  "types": [
+    "dragon",
+    "ice"
+  ],
+  "abilities": [
+    "pressure"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 125
+    },
+    {
+      "name": "attack",
+      "value": 130
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 130
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 95
+    }
+  ]
+}

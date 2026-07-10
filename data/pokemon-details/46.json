@@ -1,0 +1,43 @@
+{
+  "id": 46,
+  "name": "paras",
+  "height": 0.3,
+  "weight": 5.4,
+  "baseExperience": 57,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/46.png",
+  "types": [
+    "bug",
+    "grass"
+  ],
+  "abilities": [
+    "effect-spore",
+    "dry-skin",
+    "damp"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 35
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 25
+    }
+  ]
+}

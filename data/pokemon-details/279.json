@@ -1,0 +1,43 @@
+{
+  "id": 279,
+  "name": "pelipper",
+  "height": 1.2,
+  "weight": 28.0,
+  "baseExperience": 154,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/279.png",
+  "types": [
+    "water",
+    "flying"
+  ],
+  "abilities": [
+    "keen-eye",
+    "drizzle",
+    "rain-dish"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

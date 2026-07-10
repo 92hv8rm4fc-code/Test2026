@@ -1,0 +1,42 @@
+{
+  "id": 456,
+  "name": "finneon",
+  "height": 0.4,
+  "weight": 7.0,
+  "baseExperience": 66,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/456.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "swift-swim",
+    "storm-drain",
+    "water-veil"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 49
+    },
+    {
+      "name": "attack",
+      "value": 49
+    },
+    {
+      "name": "defense",
+      "value": 56
+    },
+    {
+      "name": "special-attack",
+      "value": 49
+    },
+    {
+      "name": "special-defense",
+      "value": 61
+    },
+    {
+      "name": "speed",
+      "value": 66
+    }
+  ]
+}

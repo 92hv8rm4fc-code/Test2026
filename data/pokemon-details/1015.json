@@ -1,0 +1,42 @@
+{
+  "id": 1015,
+  "name": "munkidori",
+  "height": 1.0,
+  "weight": 12.2,
+  "baseExperience": 278,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1015.png",
+  "types": [
+    "poison",
+    "psychic"
+  ],
+  "abilities": [
+    "toxic-chain",
+    "frisk"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 88
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 66
+    },
+    {
+      "name": "special-attack",
+      "value": 130
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 106
+    }
+  ]
+}

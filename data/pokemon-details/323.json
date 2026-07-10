@@ -1,0 +1,43 @@
+{
+  "id": 323,
+  "name": "camerupt",
+  "height": 1.9,
+  "weight": 220.0,
+  "baseExperience": 161,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/323.png",
+  "types": [
+    "fire",
+    "ground"
+  ],
+  "abilities": [
+    "magma-armor",
+    "solid-rock",
+    "anger-point"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 105
+    },
+    {
+      "name": "special-defense",
+      "value": 75
+    },
+    {
+      "name": "speed",
+      "value": 40
+    }
+  ]
+}

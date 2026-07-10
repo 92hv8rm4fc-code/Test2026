@@ -1,0 +1,42 @@
+{
+  "id": 442,
+  "name": "spiritomb",
+  "height": 1.0,
+  "weight": 108.0,
+  "baseExperience": 170,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/442.png",
+  "types": [
+    "ghost",
+    "dark"
+  ],
+  "abilities": [
+    "pressure",
+    "infiltrator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 92
+    },
+    {
+      "name": "defense",
+      "value": 108
+    },
+    {
+      "name": "special-attack",
+      "value": 92
+    },
+    {
+      "name": "special-defense",
+      "value": 108
+    },
+    {
+      "name": "speed",
+      "value": 35
+    }
+  ]
+}

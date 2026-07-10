@@ -1,0 +1,42 @@
+{
+  "id": 843,
+  "name": "silicobra",
+  "height": 2.2,
+  "weight": 7.6,
+  "baseExperience": 63,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/843.png",
+  "types": [
+    "ground"
+  ],
+  "abilities": [
+    "sand-spit",
+    "shed-skin",
+    "sand-veil"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 52
+    },
+    {
+      "name": "attack",
+      "value": 57
+    },
+    {
+      "name": "defense",
+      "value": 75
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 46
+    }
+  ]
+}

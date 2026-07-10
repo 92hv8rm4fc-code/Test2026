@@ -1,0 +1,41 @@
+{
+  "id": 892,
+  "name": "urshifu-single-strike",
+  "height": 1.9,
+  "weight": 105.0,
+  "baseExperience": 275,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/892.png",
+  "types": [
+    "fighting",
+    "dark"
+  ],
+  "abilities": [
+    "unseen-fist"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 130
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 63
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 97
+    }
+  ]
+}

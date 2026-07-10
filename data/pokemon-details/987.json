@@ -1,0 +1,41 @@
+{
+  "id": 987,
+  "name": "flutter-mane",
+  "height": 1.4,
+  "weight": 4.0,
+  "baseExperience": 285,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/987.png",
+  "types": [
+    "ghost",
+    "fairy"
+  ],
+  "abilities": [
+    "protosynthesis"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 135
+    },
+    {
+      "name": "special-defense",
+      "value": 135
+    },
+    {
+      "name": "speed",
+      "value": 135
+    }
+  ]
+}

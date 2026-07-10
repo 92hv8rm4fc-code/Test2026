@@ -1,0 +1,43 @@
+{
+  "id": 212,
+  "name": "scizor",
+  "height": 1.8,
+  "weight": 118.0,
+  "baseExperience": 175,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/212.png",
+  "types": [
+    "bug",
+    "steel"
+  ],
+  "abilities": [
+    "swarm",
+    "technician",
+    "light-metal"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 130
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

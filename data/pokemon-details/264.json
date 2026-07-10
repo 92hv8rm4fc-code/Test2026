@@ -1,0 +1,42 @@
+{
+  "id": 264,
+  "name": "linoone",
+  "height": 0.5,
+  "weight": 32.5,
+  "baseExperience": 147,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/264.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "pickup",
+    "gluttony",
+    "quick-feet"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 78
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 61
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 61
+    },
+    {
+      "name": "speed",
+      "value": 100
+    }
+  ]
+}

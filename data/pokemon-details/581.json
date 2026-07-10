@@ -1,0 +1,43 @@
+{
+  "id": 581,
+  "name": "swanna",
+  "height": 1.3,
+  "weight": 24.2,
+  "baseExperience": 166,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/581.png",
+  "types": [
+    "water",
+    "flying"
+  ],
+  "abilities": [
+    "keen-eye",
+    "big-pecks",
+    "hydration"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 87
+    },
+    {
+      "name": "defense",
+      "value": 63
+    },
+    {
+      "name": "special-attack",
+      "value": 87
+    },
+    {
+      "name": "special-defense",
+      "value": 63
+    },
+    {
+      "name": "speed",
+      "value": 98
+    }
+  ]
+}

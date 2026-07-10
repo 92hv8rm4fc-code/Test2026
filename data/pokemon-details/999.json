@@ -1,0 +1,40 @@
+{
+  "id": 999,
+  "name": "gimmighoul",
+  "height": 0.3,
+  "weight": 5.0,
+  "baseExperience": 60,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/999.png",
+  "types": [
+    "ghost"
+  ],
+  "abilities": [
+    "rattled"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 30
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 75
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 10
+    }
+  ]
+}

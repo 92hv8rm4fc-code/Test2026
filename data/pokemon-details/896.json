@@ -1,0 +1,40 @@
+{
+  "id": 896,
+  "name": "glastrier",
+  "height": 2.2,
+  "weight": 800.0,
+  "baseExperience": 290,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/896.png",
+  "types": [
+    "ice"
+  ],
+  "abilities": [
+    "chilling-neigh"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 145
+    },
+    {
+      "name": "defense",
+      "value": 130
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 110
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

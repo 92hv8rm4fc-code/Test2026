@@ -1,0 +1,42 @@
+{
+  "id": 485,
+  "name": "heatran",
+  "height": 1.7,
+  "weight": 430.0,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/485.png",
+  "types": [
+    "fire",
+    "steel"
+  ],
+  "abilities": [
+    "flash-fire",
+    "flame-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 91
+    },
+    {
+      "name": "attack",
+      "value": 90
+    },
+    {
+      "name": "defense",
+      "value": 106
+    },
+    {
+      "name": "special-attack",
+      "value": 130
+    },
+    {
+      "name": "special-defense",
+      "value": 106
+    },
+    {
+      "name": "speed",
+      "value": 77
+    }
+  ]
+}

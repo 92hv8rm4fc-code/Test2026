@@ -1,0 +1,41 @@
+{
+  "id": 37,
+  "name": "vulpix",
+  "height": 0.6,
+  "weight": 9.9,
+  "baseExperience": 60,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/37.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "flash-fire",
+    "drought"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 38
+    },
+    {
+      "name": "attack",
+      "value": 41
+    },
+    {
+      "name": "defense",
+      "value": 40
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

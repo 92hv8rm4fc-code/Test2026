@@ -1,0 +1,42 @@
+{
+  "id": 636,
+  "name": "larvesta",
+  "height": 1.1,
+  "weight": 28.8,
+  "baseExperience": 72,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/636.png",
+  "types": [
+    "bug",
+    "fire"
+  ],
+  "abilities": [
+    "flame-body",
+    "swarm"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

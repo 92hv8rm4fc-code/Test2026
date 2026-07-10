@@ -1,0 +1,40 @@
+{
+  "id": 486,
+  "name": "regigigas",
+  "height": 3.7,
+  "weight": 420.0,
+  "baseExperience": 302,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/486.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "slow-start"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 110
+    },
+    {
+      "name": "attack",
+      "value": 160
+    },
+    {
+      "name": "defense",
+      "value": 110
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 110
+    },
+    {
+      "name": "speed",
+      "value": 100
+    }
+  ]
+}

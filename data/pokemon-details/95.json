@@ -1,0 +1,43 @@
+{
+  "id": 95,
+  "name": "onix",
+  "height": 8.8,
+  "weight": 210.0,
+  "baseExperience": 77,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/95.png",
+  "types": [
+    "rock",
+    "ground"
+  ],
+  "abilities": [
+    "rock-head",
+    "sturdy",
+    "weak-armor"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 35
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 160
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

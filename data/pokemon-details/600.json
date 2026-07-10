@@ -1,0 +1,42 @@
+{
+  "id": 600,
+  "name": "klang",
+  "height": 0.6,
+  "weight": 51.0,
+  "baseExperience": 154,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/600.png",
+  "types": [
+    "steel"
+  ],
+  "abilities": [
+    "plus",
+    "minus",
+    "clear-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 95
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

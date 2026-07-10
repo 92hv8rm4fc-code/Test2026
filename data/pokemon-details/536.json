@@ -1,0 +1,43 @@
+{
+  "id": 536,
+  "name": "palpitoad",
+  "height": 0.8,
+  "weight": 17.0,
+  "baseExperience": 134,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/536.png",
+  "types": [
+    "water",
+    "ground"
+  ],
+  "abilities": [
+    "swift-swim",
+    "hydration",
+    "water-absorb"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 69
+    }
+  ]
+}

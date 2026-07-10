@@ -1,0 +1,41 @@
+{
+  "id": 335,
+  "name": "zangoose",
+  "height": 1.3,
+  "weight": 40.3,
+  "baseExperience": 160,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/335.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "immunity",
+    "toxic-boost"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 73
+    },
+    {
+      "name": "attack",
+      "value": 115
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 60
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

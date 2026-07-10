@@ -1,0 +1,42 @@
+{
+  "id": 56,
+  "name": "mankey",
+  "height": 0.5,
+  "weight": 28.0,
+  "baseExperience": 61,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/56.png",
+  "types": [
+    "fighting"
+  ],
+  "abilities": [
+    "vital-spirit",
+    "anger-point",
+    "defiant"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 35
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

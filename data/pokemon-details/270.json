@@ -1,0 +1,43 @@
+{
+  "id": 270,
+  "name": "lotad",
+  "height": 0.5,
+  "weight": 2.6,
+  "baseExperience": 44,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/270.png",
+  "types": [
+    "water",
+    "grass"
+  ],
+  "abilities": [
+    "swift-swim",
+    "rain-dish",
+    "own-tempo"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 30
+    },
+    {
+      "name": "defense",
+      "value": 30
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

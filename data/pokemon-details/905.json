@@ -1,0 +1,42 @@
+{
+  "id": 905,
+  "name": "enamorus-incarnate",
+  "height": 1.6,
+  "weight": 48.0,
+  "baseExperience": 116,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/905.png",
+  "types": [
+    "fairy",
+    "flying"
+  ],
+  "abilities": [
+    "cute-charm",
+    "contrary"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 74
+    },
+    {
+      "name": "attack",
+      "value": 115
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 135
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 106
+    }
+  ]
+}

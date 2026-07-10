@@ -1,0 +1,42 @@
+{
+  "id": 347,
+  "name": "anorith",
+  "height": 0.7,
+  "weight": 12.5,
+  "baseExperience": 71,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/347.png",
+  "types": [
+    "rock",
+    "bug"
+  ],
+  "abilities": [
+    "battle-armor",
+    "swift-swim"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 75
+    }
+  ]
+}

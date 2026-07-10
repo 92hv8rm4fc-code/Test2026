@@ -1,0 +1,42 @@
+{
+  "id": 432,
+  "name": "purugly",
+  "height": 1.0,
+  "weight": 43.8,
+  "baseExperience": 158,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/432.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "thick-fat",
+    "own-tempo",
+    "defiant"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 71
+    },
+    {
+      "name": "attack",
+      "value": 82
+    },
+    {
+      "name": "defense",
+      "value": 64
+    },
+    {
+      "name": "special-attack",
+      "value": 64
+    },
+    {
+      "name": "special-defense",
+      "value": 59
+    },
+    {
+      "name": "speed",
+      "value": 112
+    }
+  ]
+}

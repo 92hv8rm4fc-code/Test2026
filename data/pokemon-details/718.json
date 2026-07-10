@@ -1,0 +1,41 @@
+{
+  "id": 718,
+  "name": "zygarde-50",
+  "height": 5.0,
+  "weight": 305.0,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/718.png",
+  "types": [
+    "dragon",
+    "ground"
+  ],
+  "abilities": [
+    "aura-break"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 108
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 121
+    },
+    {
+      "name": "special-attack",
+      "value": 81
+    },
+    {
+      "name": "special-defense",
+      "value": 95
+    },
+    {
+      "name": "speed",
+      "value": 95
+    }
+  ]
+}

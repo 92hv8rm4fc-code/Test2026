@@ -1,0 +1,41 @@
+{
+  "id": 157,
+  "name": "typhlosion",
+  "height": 1.7,
+  "weight": 79.5,
+  "baseExperience": 240,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/157.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "blaze",
+    "flash-fire"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 78
+    },
+    {
+      "name": "attack",
+      "value": 84
+    },
+    {
+      "name": "defense",
+      "value": 78
+    },
+    {
+      "name": "special-attack",
+      "value": 109
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 100
+    }
+  ]
+}

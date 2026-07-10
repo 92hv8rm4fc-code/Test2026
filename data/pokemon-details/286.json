@@ -1,0 +1,43 @@
+{
+  "id": 286,
+  "name": "breloom",
+  "height": 1.2,
+  "weight": 39.2,
+  "baseExperience": 161,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/286.png",
+  "types": [
+    "grass",
+    "fighting"
+  ],
+  "abilities": [
+    "effect-spore",
+    "poison-heal",
+    "technician"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 130
+    },
+    {
+      "name": "defense",
+      "value": 80
+    },
+    {
+      "name": "special-attack",
+      "value": 60
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

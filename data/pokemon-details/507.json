@@ -1,0 +1,42 @@
+{
+  "id": 507,
+  "name": "herdier",
+  "height": 0.9,
+  "weight": 14.7,
+  "baseExperience": 130,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/507.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "intimidate",
+    "sand-rush",
+    "scrappy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

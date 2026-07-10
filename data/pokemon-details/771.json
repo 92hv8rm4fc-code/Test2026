@@ -1,0 +1,41 @@
+{
+  "id": 771,
+  "name": "pyukumuku",
+  "height": 0.3,
+  "weight": 1.2,
+  "baseExperience": 144,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/771.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "innards-out",
+    "unaware"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 130
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 130
+    },
+    {
+      "name": "speed",
+      "value": 5
+    }
+  ]
+}

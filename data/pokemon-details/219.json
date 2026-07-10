@@ -1,0 +1,43 @@
+{
+  "id": 219,
+  "name": "magcargo",
+  "height": 0.8,
+  "weight": 55.0,
+  "baseExperience": 151,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/219.png",
+  "types": [
+    "fire",
+    "rock"
+  ],
+  "abilities": [
+    "magma-armor",
+    "flame-body",
+    "weak-armor"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 120
+    },
+    {
+      "name": "special-attack",
+      "value": 90
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

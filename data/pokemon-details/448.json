@@ -1,0 +1,43 @@
+{
+  "id": 448,
+  "name": "lucario",
+  "height": 1.2,
+  "weight": 54.0,
+  "baseExperience": 184,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/448.png",
+  "types": [
+    "fighting",
+    "steel"
+  ],
+  "abilities": [
+    "steadfast",
+    "inner-focus",
+    "justified"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 110
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 115
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

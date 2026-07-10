@@ -1,0 +1,42 @@
+{
+  "id": 99,
+  "name": "kingler",
+  "height": 1.3,
+  "weight": 60.0,
+  "baseExperience": 166,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/99.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "hyper-cutter",
+    "shell-armor",
+    "sheer-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 130
+    },
+    {
+      "name": "defense",
+      "value": 115
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 75
+    }
+  ]
+}

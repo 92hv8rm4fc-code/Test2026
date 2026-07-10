@@ -1,0 +1,42 @@
+{
+  "id": 465,
+  "name": "tangrowth",
+  "height": 2.0,
+  "weight": 128.6,
+  "baseExperience": 187,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/465.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "chlorophyll",
+    "leaf-guard",
+    "regenerator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 125
+    },
+    {
+      "name": "special-attack",
+      "value": 110
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

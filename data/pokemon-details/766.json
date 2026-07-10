@@ -1,0 +1,41 @@
+{
+  "id": 766,
+  "name": "passimian",
+  "height": 2.0,
+  "weight": 82.8,
+  "baseExperience": 172,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/766.png",
+  "types": [
+    "fighting"
+  ],
+  "abilities": [
+    "receiver",
+    "defiant"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 120
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 80
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 513,
+  "name": "pansear",
+  "height": 0.6,
+  "weight": 11.0,
+  "baseExperience": 63,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/513.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "gluttony",
+    "blaze"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 53
+    },
+    {
+      "name": "defense",
+      "value": 48
+    },
+    {
+      "name": "special-attack",
+      "value": 53
+    },
+    {
+      "name": "special-defense",
+      "value": 48
+    },
+    {
+      "name": "speed",
+      "value": 64
+    }
+  ]
+}

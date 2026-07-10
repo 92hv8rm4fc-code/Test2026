@@ -1,0 +1,42 @@
+{
+  "id": 53,
+  "name": "persian",
+  "height": 1.0,
+  "weight": 32.0,
+  "baseExperience": 154,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/53.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "limber",
+    "technician",
+    "unnerve"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 115
+    }
+  ]
+}

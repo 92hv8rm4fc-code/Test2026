@@ -1,0 +1,43 @@
+{
+  "id": 213,
+  "name": "shuckle",
+  "height": 0.6,
+  "weight": 20.5,
+  "baseExperience": 177,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/213.png",
+  "types": [
+    "bug",
+    "rock"
+  ],
+  "abilities": [
+    "sturdy",
+    "gluttony",
+    "contrary"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 20
+    },
+    {
+      "name": "attack",
+      "value": 10
+    },
+    {
+      "name": "defense",
+      "value": 230
+    },
+    {
+      "name": "special-attack",
+      "value": 10
+    },
+    {
+      "name": "special-defense",
+      "value": 230
+    },
+    {
+      "name": "speed",
+      "value": 5
+    }
+  ]
+}

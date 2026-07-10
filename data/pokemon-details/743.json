@@ -1,0 +1,43 @@
+{
+  "id": 743,
+  "name": "ribombee",
+  "height": 0.2,
+  "weight": 0.5,
+  "baseExperience": 162,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/743.png",
+  "types": [
+    "bug",
+    "fairy"
+  ],
+  "abilities": [
+    "honey-gather",
+    "shield-dust",
+    "sweet-veil"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 124
+    }
+  ]
+}

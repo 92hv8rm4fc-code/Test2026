@@ -1,0 +1,42 @@
+{
+  "id": 375,
+  "name": "metang",
+  "height": 1.2,
+  "weight": 202.5,
+  "baseExperience": 147,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/375.png",
+  "types": [
+    "steel",
+    "psychic"
+  ],
+  "abilities": [
+    "clear-body",
+    "light-metal"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

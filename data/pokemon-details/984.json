@@ -1,0 +1,41 @@
+{
+  "id": 984,
+  "name": "great-tusk",
+  "height": 2.2,
+  "weight": 320.0,
+  "baseExperience": 285,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/984.png",
+  "types": [
+    "ground",
+    "fighting"
+  ],
+  "abilities": [
+    "protosynthesis"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 115
+    },
+    {
+      "name": "attack",
+      "value": 131
+    },
+    {
+      "name": "defense",
+      "value": 131
+    },
+    {
+      "name": "special-attack",
+      "value": 53
+    },
+    {
+      "name": "special-defense",
+      "value": 53
+    },
+    {
+      "name": "speed",
+      "value": 87
+    }
+  ]
+}

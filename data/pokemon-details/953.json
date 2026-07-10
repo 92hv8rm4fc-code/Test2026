@@ -1,0 +1,41 @@
+{
+  "id": 953,
+  "name": "rellor",
+  "height": 0.2,
+  "weight": 1.0,
+  "baseExperience": 54,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/953.png",
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    "compound-eyes",
+    "shed-skin"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 41
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 31
+    },
+    {
+      "name": "special-defense",
+      "value": 58
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

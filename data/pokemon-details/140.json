@@ -1,0 +1,43 @@
+{
+  "id": 140,
+  "name": "kabuto",
+  "height": 0.5,
+  "weight": 11.5,
+  "baseExperience": 71,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/140.png",
+  "types": [
+    "rock",
+    "water"
+  ],
+  "abilities": [
+    "swift-swim",
+    "battle-armor",
+    "weak-armor"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 30
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 55
+    }
+  ]
+}

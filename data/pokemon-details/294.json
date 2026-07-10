@@ -1,0 +1,41 @@
+{
+  "id": 294,
+  "name": "loudred",
+  "height": 1.0,
+  "weight": 40.5,
+  "baseExperience": 126,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/294.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "soundproof",
+    "scrappy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 84
+    },
+    {
+      "name": "attack",
+      "value": 71
+    },
+    {
+      "name": "defense",
+      "value": 43
+    },
+    {
+      "name": "special-attack",
+      "value": 71
+    },
+    {
+      "name": "special-defense",
+      "value": 43
+    },
+    {
+      "name": "speed",
+      "value": 48
+    }
+  ]
+}

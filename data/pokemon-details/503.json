@@ -1,0 +1,41 @@
+{
+  "id": 503,
+  "name": "samurott",
+  "height": 1.5,
+  "weight": 94.6,
+  "baseExperience": 238,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/503.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "torrent",
+    "shell-armor"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 95
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 85
+    },
+    {
+      "name": "special-attack",
+      "value": 108
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

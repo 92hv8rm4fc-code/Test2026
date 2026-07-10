@@ -1,0 +1,43 @@
+{
+  "id": 695,
+  "name": "heliolisk",
+  "height": 1.0,
+  "weight": 21.0,
+  "baseExperience": 168,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/695.png",
+  "types": [
+    "electric",
+    "normal"
+  ],
+  "abilities": [
+    "dry-skin",
+    "sand-veil",
+    "solar-power"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 62
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 52
+    },
+    {
+      "name": "special-attack",
+      "value": 109
+    },
+    {
+      "name": "special-defense",
+      "value": 94
+    },
+    {
+      "name": "speed",
+      "value": 109
+    }
+  ]
+}

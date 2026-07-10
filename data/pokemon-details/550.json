@@ -1,0 +1,42 @@
+{
+  "id": 550,
+  "name": "basculin-red-striped",
+  "height": 1.0,
+  "weight": 18.0,
+  "baseExperience": 161,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/550.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "reckless",
+    "adaptability",
+    "mold-breaker"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 92
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 98
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": 980,
+  "name": "clodsire",
+  "height": 1.8,
+  "weight": 223.0,
+  "baseExperience": 151,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/980.png",
+  "types": [
+    "poison",
+    "ground"
+  ],
+  "abilities": [
+    "poison-point",
+    "water-absorb",
+    "unaware"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 130
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 100
+    },
+    {
+      "name": "speed",
+      "value": 20
+    }
+  ]
+}

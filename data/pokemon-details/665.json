@@ -1,0 +1,41 @@
+{
+  "id": 665,
+  "name": "spewpa",
+  "height": 0.3,
+  "weight": 8.4,
+  "baseExperience": 75,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/665.png",
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    "shed-skin",
+    "friend-guard"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 22
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 27
+    },
+    {
+      "name": "special-defense",
+      "value": 30
+    },
+    {
+      "name": "speed",
+      "value": 29
+    }
+  ]
+}

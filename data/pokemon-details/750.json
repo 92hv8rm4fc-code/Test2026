@@ -1,0 +1,42 @@
+{
+  "id": 750,
+  "name": "mudsdale",
+  "height": 2.5,
+  "weight": 920.0,
+  "baseExperience": 175,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/750.png",
+  "types": [
+    "ground"
+  ],
+  "abilities": [
+    "own-tempo",
+    "stamina",
+    "inner-focus"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 125
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 35
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": 75,
+  "name": "graveler",
+  "height": 1.0,
+  "weight": 105.0,
+  "baseExperience": 137,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/75.png",
+  "types": [
+    "rock",
+    "ground"
+  ],
+  "abilities": [
+    "rock-head",
+    "sturdy",
+    "sand-veil"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 115
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 35
+    }
+  ]
+}

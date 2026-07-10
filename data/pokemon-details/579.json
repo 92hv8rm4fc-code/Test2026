@@ -1,0 +1,42 @@
+{
+  "id": 579,
+  "name": "reuniclus",
+  "height": 1.0,
+  "weight": 20.1,
+  "baseExperience": 221,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/579.png",
+  "types": [
+    "psychic"
+  ],
+  "abilities": [
+    "overcoat",
+    "magic-guard",
+    "regenerator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 110
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 75
+    },
+    {
+      "name": "special-attack",
+      "value": 125
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

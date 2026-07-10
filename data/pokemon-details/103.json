@@ -1,0 +1,42 @@
+{
+  "id": 103,
+  "name": "exeggutor",
+  "height": 2.0,
+  "weight": 120.0,
+  "baseExperience": 186,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/103.png",
+  "types": [
+    "grass",
+    "psychic"
+  ],
+  "abilities": [
+    "chlorophyll",
+    "harvest"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 95
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 85
+    },
+    {
+      "name": "special-attack",
+      "value": 125
+    },
+    {
+      "name": "special-defense",
+      "value": 75
+    },
+    {
+      "name": "speed",
+      "value": 55
+    }
+  ]
+}

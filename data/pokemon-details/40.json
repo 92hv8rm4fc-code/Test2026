@@ -1,0 +1,43 @@
+{
+  "id": 40,
+  "name": "wigglytuff",
+  "height": 1.0,
+  "weight": 12.0,
+  "baseExperience": 196,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/40.png",
+  "types": [
+    "normal",
+    "fairy"
+  ],
+  "abilities": [
+    "cute-charm",
+    "competitive",
+    "frisk"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 140
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 85
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

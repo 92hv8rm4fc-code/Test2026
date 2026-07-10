@@ -1,0 +1,40 @@
+{
+  "id": 894,
+  "name": "regieleki",
+  "height": 1.2,
+  "weight": 145.0,
+  "baseExperience": 290,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/894.png",
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    "transistor"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 200
+    }
+  ]
+}

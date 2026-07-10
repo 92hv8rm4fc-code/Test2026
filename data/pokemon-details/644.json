@@ -1,0 +1,41 @@
+{
+  "id": 644,
+  "name": "zekrom",
+  "height": 2.9,
+  "weight": 345.0,
+  "baseExperience": 306,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/644.png",
+  "types": [
+    "dragon",
+    "electric"
+  ],
+  "abilities": [
+    "teravolt"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 150
+    },
+    {
+      "name": "defense",
+      "value": 120
+    },
+    {
+      "name": "special-attack",
+      "value": 120
+    },
+    {
+      "name": "special-defense",
+      "value": 100
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

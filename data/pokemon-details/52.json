@@ -1,0 +1,42 @@
+{
+  "id": 52,
+  "name": "meowth",
+  "height": 0.4,
+  "weight": 4.2,
+  "baseExperience": 58,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/52.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "pickup",
+    "technician",
+    "unnerve"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 35
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 40
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

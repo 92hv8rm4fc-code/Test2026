@@ -1,0 +1,42 @@
+{
+  "id": 101,
+  "name": "electrode",
+  "height": 1.2,
+  "weight": 66.6,
+  "baseExperience": 172,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/101.png",
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    "soundproof",
+    "static",
+    "aftermath"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 150
+    }
+  ]
+}

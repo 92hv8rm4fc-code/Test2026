@@ -1,0 +1,42 @@
+{
+  "id": 78,
+  "name": "rapidash",
+  "height": 1.7,
+  "weight": 95.0,
+  "baseExperience": 175,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/78.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "run-away",
+    "flash-fire",
+    "flame-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 105
+    }
+  ]
+}

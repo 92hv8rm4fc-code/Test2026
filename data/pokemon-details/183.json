@@ -1,0 +1,43 @@
+{
+  "id": 183,
+  "name": "marill",
+  "height": 0.4,
+  "weight": 8.5,
+  "baseExperience": 88,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/183.png",
+  "types": [
+    "water",
+    "fairy"
+  ],
+  "abilities": [
+    "thick-fat",
+    "huge-power",
+    "sap-sipper"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 20
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 20
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 40
+    }
+  ]
+}

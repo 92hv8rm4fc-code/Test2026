@@ -1,0 +1,42 @@
+{
+  "id": 13,
+  "name": "weedle",
+  "height": 0.3,
+  "weight": 3.2,
+  "baseExperience": 39,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/13.png",
+  "types": [
+    "bug",
+    "poison"
+  ],
+  "abilities": [
+    "shield-dust",
+    "run-away"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 35
+    },
+    {
+      "name": "defense",
+      "value": 30
+    },
+    {
+      "name": "special-attack",
+      "value": 20
+    },
+    {
+      "name": "special-defense",
+      "value": 20
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

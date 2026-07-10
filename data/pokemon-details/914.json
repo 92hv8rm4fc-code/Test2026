@@ -1,0 +1,42 @@
+{
+  "id": 914,
+  "name": "quaquaval",
+  "height": 1.8,
+  "weight": 61.9,
+  "baseExperience": 265,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/914.png",
+  "types": [
+    "water",
+    "fighting"
+  ],
+  "abilities": [
+    "torrent",
+    "moxie"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 85
+    },
+    {
+      "name": "attack",
+      "value": 120
+    },
+    {
+      "name": "defense",
+      "value": 80
+    },
+    {
+      "name": "special-attack",
+      "value": 85
+    },
+    {
+      "name": "special-defense",
+      "value": 75
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

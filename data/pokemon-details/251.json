@@ -1,0 +1,41 @@
+{
+  "id": 251,
+  "name": "celebi",
+  "height": 0.6,
+  "weight": 5.0,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/251.png",
+  "types": [
+    "psychic",
+    "grass"
+  ],
+  "abilities": [
+    "natural-cure"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 100
+    },
+    {
+      "name": "speed",
+      "value": 100
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 26,
+  "name": "raichu",
+  "height": 0.8,
+  "weight": 30.0,
+  "baseExperience": 218,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png",
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    "static",
+    "lightning-rod"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 90
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 90
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 110
+    }
+  ]
+}

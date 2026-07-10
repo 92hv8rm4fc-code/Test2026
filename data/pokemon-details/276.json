@@ -1,0 +1,42 @@
+{
+  "id": 276,
+  "name": "taillow",
+  "height": 0.3,
+  "weight": 2.3,
+  "baseExperience": 54,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/276.png",
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "guts",
+    "scrappy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 30
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 30
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 12,
+  "name": "butterfree",
+  "height": 1.1,
+  "weight": 32.0,
+  "baseExperience": 178,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png",
+  "types": [
+    "bug",
+    "flying"
+  ],
+  "abilities": [
+    "compound-eyes",
+    "tinted-lens"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 90
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 649,
+  "name": "genesect",
+  "height": 1.5,
+  "weight": 82.5,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/649.png",
+  "types": [
+    "bug",
+    "steel"
+  ],
+  "abilities": [
+    "download"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 71
+    },
+    {
+      "name": "attack",
+      "value": 120
+    },
+    {
+      "name": "defense",
+      "value": 95
+    },
+    {
+      "name": "special-attack",
+      "value": 120
+    },
+    {
+      "name": "special-defense",
+      "value": 95
+    },
+    {
+      "name": "speed",
+      "value": 99
+    }
+  ]
+}

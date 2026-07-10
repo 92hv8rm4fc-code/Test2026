@@ -1,0 +1,41 @@
+{
+  "id": 566,
+  "name": "archen",
+  "height": 0.5,
+  "weight": 9.5,
+  "baseExperience": 71,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/566.png",
+  "types": [
+    "rock",
+    "flying"
+  ],
+  "abilities": [
+    "defeatist"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 112
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 74
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

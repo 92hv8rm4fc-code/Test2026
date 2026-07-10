@@ -1,0 +1,42 @@
+{
+  "id": 619,
+  "name": "mienfoo",
+  "height": 0.9,
+  "weight": 20.0,
+  "baseExperience": 70,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/619.png",
+  "types": [
+    "fighting"
+  ],
+  "abilities": [
+    "inner-focus",
+    "regenerator",
+    "reckless"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

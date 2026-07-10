@@ -1,0 +1,43 @@
+{
+  "id": 298,
+  "name": "azurill",
+  "height": 0.2,
+  "weight": 2.0,
+  "baseExperience": 38,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/298.png",
+  "types": [
+    "normal",
+    "fairy"
+  ],
+  "abilities": [
+    "thick-fat",
+    "huge-power",
+    "sap-sipper"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 20
+    },
+    {
+      "name": "defense",
+      "value": 40
+    },
+    {
+      "name": "special-attack",
+      "value": 20
+    },
+    {
+      "name": "special-defense",
+      "value": 40
+    },
+    {
+      "name": "speed",
+      "value": 20
+    }
+  ]
+}

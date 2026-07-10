@@ -1,0 +1,43 @@
+{
+  "id": 783,
+  "name": "hakamo-o",
+  "height": 1.2,
+  "weight": 47.0,
+  "baseExperience": 147,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/783.png",
+  "types": [
+    "dragon",
+    "fighting"
+  ],
+  "abilities": [
+    "bulletproof",
+    "soundproof",
+    "overcoat"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

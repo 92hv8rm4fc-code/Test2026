@@ -1,0 +1,43 @@
+{
+  "id": 687,
+  "name": "malamar",
+  "height": 1.5,
+  "weight": 47.0,
+  "baseExperience": 169,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/687.png",
+  "types": [
+    "dark",
+    "psychic"
+  ],
+  "abilities": [
+    "contrary",
+    "suction-cups",
+    "infiltrator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 86
+    },
+    {
+      "name": "attack",
+      "value": 92
+    },
+    {
+      "name": "defense",
+      "value": 88
+    },
+    {
+      "name": "special-attack",
+      "value": 68
+    },
+    {
+      "name": "special-defense",
+      "value": 75
+    },
+    {
+      "name": "speed",
+      "value": 73
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 664,
+  "name": "scatterbug",
+  "height": 0.3,
+  "weight": 2.5,
+  "baseExperience": 40,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/664.png",
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    "shield-dust",
+    "compound-eyes",
+    "friend-guard"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 38
+    },
+    {
+      "name": "attack",
+      "value": 35
+    },
+    {
+      "name": "defense",
+      "value": 40
+    },
+    {
+      "name": "special-attack",
+      "value": 27
+    },
+    {
+      "name": "special-defense",
+      "value": 25
+    },
+    {
+      "name": "speed",
+      "value": 35
+    }
+  ]
+}

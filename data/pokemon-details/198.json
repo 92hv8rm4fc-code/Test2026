@@ -1,0 +1,43 @@
+{
+  "id": 198,
+  "name": "murkrow",
+  "height": 0.5,
+  "weight": 2.1,
+  "baseExperience": 81,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/198.png",
+  "types": [
+    "dark",
+    "flying"
+  ],
+  "abilities": [
+    "insomnia",
+    "super-luck",
+    "prankster"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 42
+    },
+    {
+      "name": "special-attack",
+      "value": 85
+    },
+    {
+      "name": "special-defense",
+      "value": 42
+    },
+    {
+      "name": "speed",
+      "value": 91
+    }
+  ]
+}

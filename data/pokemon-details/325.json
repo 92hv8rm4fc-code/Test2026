@@ -1,0 +1,42 @@
+{
+  "id": 325,
+  "name": "spoink",
+  "height": 0.7,
+  "weight": 30.6,
+  "baseExperience": 66,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/325.png",
+  "types": [
+    "psychic"
+  ],
+  "abilities": [
+    "thick-fat",
+    "own-tempo",
+    "gluttony"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 25
+    },
+    {
+      "name": "defense",
+      "value": 35
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 943,
+  "name": "mabosstiff",
+  "height": 1.1,
+  "weight": 61.0,
+  "baseExperience": 177,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/943.png",
+  "types": [
+    "dark"
+  ],
+  "abilities": [
+    "intimidate",
+    "guard-dog",
+    "stakeout"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 120
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 60
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

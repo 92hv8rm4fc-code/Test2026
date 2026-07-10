@@ -1,0 +1,41 @@
+{
+  "id": 245,
+  "name": "suicune",
+  "height": 2.0,
+  "weight": 187.0,
+  "baseExperience": 261,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/245.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "pressure",
+    "inner-focus"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 115
+    },
+    {
+      "name": "special-attack",
+      "value": 90
+    },
+    {
+      "name": "special-defense",
+      "value": 115
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

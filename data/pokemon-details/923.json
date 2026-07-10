@@ -1,0 +1,43 @@
+{
+  "id": 923,
+  "name": "pawmot",
+  "height": 0.9,
+  "weight": 41.0,
+  "baseExperience": 245,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/923.png",
+  "types": [
+    "electric",
+    "fighting"
+  ],
+  "abilities": [
+    "volt-absorb",
+    "natural-cure",
+    "iron-fist"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 115
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 105
+    }
+  ]
+}

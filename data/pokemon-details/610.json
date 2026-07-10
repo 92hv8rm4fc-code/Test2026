@@ -1,0 +1,42 @@
+{
+  "id": 610,
+  "name": "axew",
+  "height": 0.6,
+  "weight": 18.0,
+  "baseExperience": 64,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/610.png",
+  "types": [
+    "dragon"
+  ],
+  "abilities": [
+    "rivalry",
+    "mold-breaker",
+    "unnerve"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 46
+    },
+    {
+      "name": "attack",
+      "value": 87
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 40
+    },
+    {
+      "name": "speed",
+      "value": 57
+    }
+  ]
+}

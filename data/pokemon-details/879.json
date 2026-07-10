@@ -1,0 +1,41 @@
+{
+  "id": 879,
+  "name": "copperajah",
+  "height": 3.0,
+  "weight": 650.0,
+  "baseExperience": 175,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/879.png",
+  "types": [
+    "steel"
+  ],
+  "abilities": [
+    "sheer-force",
+    "heavy-metal"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 122
+    },
+    {
+      "name": "attack",
+      "value": 130
+    },
+    {
+      "name": "defense",
+      "value": 69
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 69
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

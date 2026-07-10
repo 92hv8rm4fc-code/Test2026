@@ -1,0 +1,40 @@
+{
+  "id": 874,
+  "name": "stonjourner",
+  "height": 2.5,
+  "weight": 520.0,
+  "baseExperience": 165,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/874.png",
+  "types": [
+    "rock"
+  ],
+  "abilities": [
+    "power-spot"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 125
+    },
+    {
+      "name": "defense",
+      "value": 135
+    },
+    {
+      "name": "special-attack",
+      "value": 20
+    },
+    {
+      "name": "special-defense",
+      "value": 20
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

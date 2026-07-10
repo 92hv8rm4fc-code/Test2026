@@ -1,0 +1,42 @@
+{
+  "id": 921,
+  "name": "pawmi",
+  "height": 0.3,
+  "weight": 2.5,
+  "baseExperience": 48,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/921.png",
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    "static",
+    "natural-cure",
+    "iron-fist"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 20
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 25
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

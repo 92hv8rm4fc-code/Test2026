@@ -1,0 +1,42 @@
+{
+  "id": 6,
+  "name": "charizard",
+  "height": 1.7,
+  "weight": 90.5,
+  "baseExperience": 240,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+  "types": [
+    "fire",
+    "flying"
+  ],
+  "abilities": [
+    "blaze",
+    "solar-power"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 78
+    },
+    {
+      "name": "attack",
+      "value": 84
+    },
+    {
+      "name": "defense",
+      "value": 78
+    },
+    {
+      "name": "special-attack",
+      "value": 109
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 100
+    }
+  ]
+}

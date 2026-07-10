@@ -1,0 +1,43 @@
+{
+  "id": 609,
+  "name": "chandelure",
+  "height": 1.0,
+  "weight": 34.3,
+  "baseExperience": 234,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/609.png",
+  "types": [
+    "ghost",
+    "fire"
+  ],
+  "abilities": [
+    "flash-fire",
+    "flame-body",
+    "infiltrator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 145
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 80
+    }
+  ]
+}

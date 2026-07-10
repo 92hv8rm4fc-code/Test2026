@@ -1,0 +1,41 @@
+{
+  "id": 912,
+  "name": "quaxly",
+  "height": 0.5,
+  "weight": 6.1,
+  "baseExperience": 62,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/912.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "torrent",
+    "moxie"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

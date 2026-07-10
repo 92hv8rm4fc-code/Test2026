@@ -1,0 +1,43 @@
+{
+  "id": 931,
+  "name": "squawkabilly-green-plumage",
+  "height": 0.6,
+  "weight": 2.4,
+  "baseExperience": 146,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/931.png",
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "intimidate",
+    "hustle",
+    "guts"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 82
+    },
+    {
+      "name": "attack",
+      "value": 96
+    },
+    {
+      "name": "defense",
+      "value": 51
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 51
+    },
+    {
+      "name": "speed",
+      "value": 92
+    }
+  ]
+}

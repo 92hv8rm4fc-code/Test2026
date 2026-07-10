@@ -1,0 +1,41 @@
+{
+  "id": 1003,
+  "name": "ting-lu",
+  "height": 2.7,
+  "weight": 699.7,
+  "baseExperience": 285,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1003.png",
+  "types": [
+    "dark",
+    "ground"
+  ],
+  "abilities": [
+    "vessel-of-ruin"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 155
+    },
+    {
+      "name": "attack",
+      "value": 110
+    },
+    {
+      "name": "defense",
+      "value": 125
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

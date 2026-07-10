@@ -1,0 +1,41 @@
+{
+  "id": 985,
+  "name": "scream-tail",
+  "height": 1.2,
+  "weight": 8.0,
+  "baseExperience": 285,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/985.png",
+  "types": [
+    "fairy",
+    "psychic"
+  ],
+  "abilities": [
+    "protosynthesis"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 115
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 99
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 115
+    },
+    {
+      "name": "speed",
+      "value": 111
+    }
+  ]
+}

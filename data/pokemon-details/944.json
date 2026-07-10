@@ -1,0 +1,43 @@
+{
+  "id": 944,
+  "name": "shroodle",
+  "height": 0.2,
+  "weight": 0.7,
+  "baseExperience": 58,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/944.png",
+  "types": [
+    "poison",
+    "normal"
+  ],
+  "abilities": [
+    "unburden",
+    "pickpocket",
+    "prankster"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 35
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 35
+    },
+    {
+      "name": "speed",
+      "value": 75
+    }
+  ]
+}

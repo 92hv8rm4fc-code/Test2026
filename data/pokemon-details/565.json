@@ -1,0 +1,43 @@
+{
+  "id": 565,
+  "name": "carracosta",
+  "height": 1.2,
+  "weight": 81.0,
+  "baseExperience": 173,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/565.png",
+  "types": [
+    "water",
+    "rock"
+  ],
+  "abilities": [
+    "solid-rock",
+    "sturdy",
+    "swift-swim"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 74
+    },
+    {
+      "name": "attack",
+      "value": 108
+    },
+    {
+      "name": "defense",
+      "value": 133
+    },
+    {
+      "name": "special-attack",
+      "value": 83
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 32
+    }
+  ]
+}

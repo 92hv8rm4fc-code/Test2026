@@ -1,0 +1,42 @@
+{
+  "id": 110,
+  "name": "weezing",
+  "height": 1.2,
+  "weight": 9.5,
+  "baseExperience": 172,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/110.png",
+  "types": [
+    "poison"
+  ],
+  "abilities": [
+    "levitate",
+    "neutralizing-gas",
+    "stench"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 90
+    },
+    {
+      "name": "defense",
+      "value": 120
+    },
+    {
+      "name": "special-attack",
+      "value": 85
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

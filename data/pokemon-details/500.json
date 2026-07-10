@@ -1,0 +1,42 @@
+{
+  "id": 500,
+  "name": "emboar",
+  "height": 1.6,
+  "weight": 150.0,
+  "baseExperience": 238,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/500.png",
+  "types": [
+    "fire",
+    "fighting"
+  ],
+  "abilities": [
+    "blaze",
+    "reckless"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 110
+    },
+    {
+      "name": "attack",
+      "value": 123
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

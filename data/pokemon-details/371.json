@@ -1,0 +1,41 @@
+{
+  "id": 371,
+  "name": "bagon",
+  "height": 0.6,
+  "weight": 42.1,
+  "baseExperience": 60,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/371.png",
+  "types": [
+    "dragon"
+  ],
+  "abilities": [
+    "rock-head",
+    "sheer-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 30
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

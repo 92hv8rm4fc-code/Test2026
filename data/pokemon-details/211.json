@@ -1,0 +1,43 @@
+{
+  "id": 211,
+  "name": "qwilfish",
+  "height": 0.5,
+  "weight": 3.9,
+  "baseExperience": 88,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/211.png",
+  "types": [
+    "water",
+    "poison"
+  ],
+  "abilities": [
+    "poison-point",
+    "swift-swim",
+    "intimidate"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 85
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

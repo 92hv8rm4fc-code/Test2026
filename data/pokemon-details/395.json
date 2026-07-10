@@ -1,0 +1,42 @@
+{
+  "id": 395,
+  "name": "empoleon",
+  "height": 1.7,
+  "weight": 84.5,
+  "baseExperience": 239,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/395.png",
+  "types": [
+    "water",
+    "steel"
+  ],
+  "abilities": [
+    "torrent",
+    "competitive"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 84
+    },
+    {
+      "name": "attack",
+      "value": 86
+    },
+    {
+      "name": "defense",
+      "value": 88
+    },
+    {
+      "name": "special-attack",
+      "value": 111
+    },
+    {
+      "name": "special-defense",
+      "value": 101
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

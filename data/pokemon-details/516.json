@@ -1,0 +1,41 @@
+{
+  "id": 516,
+  "name": "simipour",
+  "height": 1.0,
+  "weight": 29.0,
+  "baseExperience": 174,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/516.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "gluttony",
+    "torrent"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 98
+    },
+    {
+      "name": "defense",
+      "value": 63
+    },
+    {
+      "name": "special-attack",
+      "value": 98
+    },
+    {
+      "name": "special-defense",
+      "value": 63
+    },
+    {
+      "name": "speed",
+      "value": 101
+    }
+  ]
+}

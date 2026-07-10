@@ -1,0 +1,42 @@
+{
+  "id": 939,
+  "name": "bellibolt",
+  "height": 1.2,
+  "weight": 113.0,
+  "baseExperience": 173,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/939.png",
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    "electromorphosis",
+    "static",
+    "damp"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 109
+    },
+    {
+      "name": "attack",
+      "value": 64
+    },
+    {
+      "name": "defense",
+      "value": 91
+    },
+    {
+      "name": "special-attack",
+      "value": 103
+    },
+    {
+      "name": "special-defense",
+      "value": 83
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

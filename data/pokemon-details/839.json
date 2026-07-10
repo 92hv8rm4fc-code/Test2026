@@ -1,0 +1,43 @@
+{
+  "id": 839,
+  "name": "coalossal",
+  "height": 2.8,
+  "weight": 310.5,
+  "baseExperience": 255,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/839.png",
+  "types": [
+    "rock",
+    "fire"
+  ],
+  "abilities": [
+    "steam-engine",
+    "flame-body",
+    "flash-fire"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 110
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 120
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

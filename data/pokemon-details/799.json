@@ -1,0 +1,41 @@
+{
+  "id": 799,
+  "name": "guzzlord",
+  "height": 5.5,
+  "weight": 888.0,
+  "baseExperience": 257,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/799.png",
+  "types": [
+    "dark",
+    "dragon"
+  ],
+  "abilities": [
+    "beast-boost"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 223
+    },
+    {
+      "name": "attack",
+      "value": 101
+    },
+    {
+      "name": "defense",
+      "value": 53
+    },
+    {
+      "name": "special-attack",
+      "value": 97
+    },
+    {
+      "name": "special-defense",
+      "value": 53
+    },
+    {
+      "name": "speed",
+      "value": 43
+    }
+  ]
+}

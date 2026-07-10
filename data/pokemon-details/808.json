@@ -1,0 +1,40 @@
+{
+  "id": 808,
+  "name": "meltan",
+  "height": 0.2,
+  "weight": 8.0,
+  "baseExperience": 135,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/808.png",
+  "types": [
+    "steel"
+  ],
+  "abilities": [
+    "magnet-pull"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 46
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 35
+    },
+    {
+      "name": "speed",
+      "value": 34
+    }
+  ]
+}

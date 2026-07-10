@@ -1,0 +1,43 @@
+{
+  "id": 369,
+  "name": "relicanth",
+  "height": 1.0,
+  "weight": 23.4,
+  "baseExperience": 170,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/369.png",
+  "types": [
+    "water",
+    "rock"
+  ],
+  "abilities": [
+    "swift-swim",
+    "rock-head",
+    "sturdy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 90
+    },
+    {
+      "name": "defense",
+      "value": 130
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 55
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 405,
+  "name": "luxray",
+  "height": 1.4,
+  "weight": 42.0,
+  "baseExperience": 235,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/405.png",
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    "rivalry",
+    "intimidate",
+    "guts"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 120
+    },
+    {
+      "name": "defense",
+      "value": 79
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 79
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

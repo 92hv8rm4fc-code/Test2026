@@ -1,0 +1,42 @@
+{
+  "id": 143,
+  "name": "snorlax",
+  "height": 2.1,
+  "weight": 460.0,
+  "baseExperience": 189,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/143.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "immunity",
+    "thick-fat",
+    "gluttony"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 160
+    },
+    {
+      "name": "attack",
+      "value": 110
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 110
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

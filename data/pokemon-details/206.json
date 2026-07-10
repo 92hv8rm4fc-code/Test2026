@@ -1,0 +1,42 @@
+{
+  "id": 206,
+  "name": "dunsparce",
+  "height": 1.5,
+  "weight": 14.0,
+  "baseExperience": 145,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/206.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "serene-grace",
+    "run-away",
+    "rattled"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

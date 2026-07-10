@@ -1,0 +1,42 @@
+{
+  "id": 977,
+  "name": "dondozo",
+  "height": 12.0,
+  "weight": 220.0,
+  "baseExperience": 265,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/977.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "unaware",
+    "oblivious",
+    "water-veil"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 150
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 115
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 35
+    }
+  ]
+}

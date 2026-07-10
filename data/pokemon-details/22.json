@@ -1,0 +1,42 @@
+{
+  "id": 22,
+  "name": "fearow",
+  "height": 1.2,
+  "weight": 38.0,
+  "baseExperience": 155,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/22.png",
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "keen-eye",
+    "sniper"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 90
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 61
+    },
+    {
+      "name": "special-defense",
+      "value": 61
+    },
+    {
+      "name": "speed",
+      "value": 100
+    }
+  ]
+}

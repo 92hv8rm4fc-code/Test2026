@@ -1,0 +1,42 @@
+{
+  "id": 788,
+  "name": "tapu-fini",
+  "height": 1.3,
+  "weight": 21.2,
+  "baseExperience": 257,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/788.png",
+  "types": [
+    "water",
+    "fairy"
+  ],
+  "abilities": [
+    "misty-surge",
+    "telepathy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 115
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 130
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": 849,
+  "name": "toxtricity-amped",
+  "height": 1.6,
+  "weight": 40.0,
+  "baseExperience": 176,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/849.png",
+  "types": [
+    "electric",
+    "poison"
+  ],
+  "abilities": [
+    "punk-rock",
+    "plus",
+    "technician"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 98
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 114
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 75
+    }
+  ]
+}

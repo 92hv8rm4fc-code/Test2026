@@ -1,0 +1,42 @@
+{
+  "id": 966,
+  "name": "revavroom",
+  "height": 1.8,
+  "weight": 120.0,
+  "baseExperience": 175,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/966.png",
+  "types": [
+    "steel",
+    "poison"
+  ],
+  "abilities": [
+    "overcoat",
+    "filter"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 119
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 54
+    },
+    {
+      "name": "special-defense",
+      "value": 67
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

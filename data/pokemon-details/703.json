@@ -1,0 +1,42 @@
+{
+  "id": 703,
+  "name": "carbink",
+  "height": 0.3,
+  "weight": 5.7,
+  "baseExperience": 100,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/703.png",
+  "types": [
+    "rock",
+    "fairy"
+  ],
+  "abilities": [
+    "clear-body",
+    "sturdy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 150
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 150
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

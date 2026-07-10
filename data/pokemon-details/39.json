@@ -1,0 +1,43 @@
+{
+  "id": 39,
+  "name": "jigglypuff",
+  "height": 0.5,
+  "weight": 5.5,
+  "baseExperience": 95,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png",
+  "types": [
+    "normal",
+    "fairy"
+  ],
+  "abilities": [
+    "cute-charm",
+    "competitive",
+    "friend-guard"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 115
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 20
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 25
+    },
+    {
+      "name": "speed",
+      "value": 20
+    }
+  ]
+}

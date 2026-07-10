@@ -1,0 +1,41 @@
+{
+  "id": 1007,
+  "name": "koraidon",
+  "height": 2.5,
+  "weight": 303.0,
+  "baseExperience": 335,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1007.png",
+  "types": [
+    "fighting",
+    "dragon"
+  ],
+  "abilities": [
+    "orichalcum-pulse"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 135
+    },
+    {
+      "name": "defense",
+      "value": 115
+    },
+    {
+      "name": "special-attack",
+      "value": 85
+    },
+    {
+      "name": "special-defense",
+      "value": 100
+    },
+    {
+      "name": "speed",
+      "value": 135
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 173,
+  "name": "cleffa",
+  "height": 0.3,
+  "weight": 3.0,
+  "baseExperience": 44,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/173.png",
+  "types": [
+    "fairy"
+  ],
+  "abilities": [
+    "cute-charm",
+    "magic-guard",
+    "friend-guard"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 25
+    },
+    {
+      "name": "defense",
+      "value": 28
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 55
+    },
+    {
+      "name": "speed",
+      "value": 15
+    }
+  ]
+}

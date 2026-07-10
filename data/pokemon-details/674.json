@@ -1,0 +1,42 @@
+{
+  "id": 674,
+  "name": "pancham",
+  "height": 0.6,
+  "weight": 8.0,
+  "baseExperience": 70,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/674.png",
+  "types": [
+    "fighting"
+  ],
+  "abilities": [
+    "iron-fist",
+    "mold-breaker",
+    "scrappy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 67
+    },
+    {
+      "name": "attack",
+      "value": 82
+    },
+    {
+      "name": "defense",
+      "value": 62
+    },
+    {
+      "name": "special-attack",
+      "value": 46
+    },
+    {
+      "name": "special-defense",
+      "value": 48
+    },
+    {
+      "name": "speed",
+      "value": 43
+    }
+  ]
+}

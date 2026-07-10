@@ -1,0 +1,41 @@
+{
+  "id": 776,
+  "name": "turtonator",
+  "height": 2.0,
+  "weight": 212.0,
+  "baseExperience": 170,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/776.png",
+  "types": [
+    "fire",
+    "dragon"
+  ],
+  "abilities": [
+    "shell-armor"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 78
+    },
+    {
+      "name": "defense",
+      "value": 135
+    },
+    {
+      "name": "special-attack",
+      "value": 91
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 36
+    }
+  ]
+}

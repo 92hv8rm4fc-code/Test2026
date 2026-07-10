@@ -1,0 +1,42 @@
+{
+  "id": 319,
+  "name": "sharpedo",
+  "height": 1.8,
+  "weight": 88.8,
+  "baseExperience": 161,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/319.png",
+  "types": [
+    "water",
+    "dark"
+  ],
+  "abilities": [
+    "rough-skin",
+    "speed-boost"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 120
+    },
+    {
+      "name": "defense",
+      "value": 40
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 40
+    },
+    {
+      "name": "speed",
+      "value": 95
+    }
+  ]
+}

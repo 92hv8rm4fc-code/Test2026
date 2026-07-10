@@ -1,0 +1,43 @@
+{
+  "id": 675,
+  "name": "pangoro",
+  "height": 2.1,
+  "weight": 136.0,
+  "baseExperience": 173,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/675.png",
+  "types": [
+    "fighting",
+    "dark"
+  ],
+  "abilities": [
+    "iron-fist",
+    "mold-breaker",
+    "scrappy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 95
+    },
+    {
+      "name": "attack",
+      "value": 124
+    },
+    {
+      "name": "defense",
+      "value": 78
+    },
+    {
+      "name": "special-attack",
+      "value": 69
+    },
+    {
+      "name": "special-defense",
+      "value": 71
+    },
+    {
+      "name": "speed",
+      "value": 58
+    }
+  ]
+}

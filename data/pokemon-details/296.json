@@ -1,0 +1,42 @@
+{
+  "id": 296,
+  "name": "makuhita",
+  "height": 1.0,
+  "weight": 86.4,
+  "baseExperience": 47,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/296.png",
+  "types": [
+    "fighting"
+  ],
+  "abilities": [
+    "thick-fat",
+    "guts",
+    "sheer-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 72
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 30
+    },
+    {
+      "name": "special-attack",
+      "value": 20
+    },
+    {
+      "name": "special-defense",
+      "value": 30
+    },
+    {
+      "name": "speed",
+      "value": 25
+    }
+  ]
+}

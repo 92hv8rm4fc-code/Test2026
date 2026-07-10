@@ -1,0 +1,42 @@
+{
+  "id": 88,
+  "name": "grimer",
+  "height": 0.9,
+  "weight": 30.0,
+  "baseExperience": 65,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/88.png",
+  "types": [
+    "poison"
+  ],
+  "abilities": [
+    "stench",
+    "sticky-hold",
+    "poison-touch"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 25
+    }
+  ]
+}

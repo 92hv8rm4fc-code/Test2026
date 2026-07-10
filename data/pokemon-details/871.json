@@ -1,0 +1,41 @@
+{
+  "id": 871,
+  "name": "pincurchin",
+  "height": 0.3,
+  "weight": 1.0,
+  "baseExperience": 152,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/871.png",
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    "lightning-rod",
+    "electric-surge"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 48
+    },
+    {
+      "name": "attack",
+      "value": 101
+    },
+    {
+      "name": "defense",
+      "value": 95
+    },
+    {
+      "name": "special-attack",
+      "value": 91
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 15
+    }
+  ]
+}

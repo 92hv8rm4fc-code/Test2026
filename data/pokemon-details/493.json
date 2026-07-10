@@ -1,0 +1,40 @@
+{
+  "id": 493,
+  "name": "arceus",
+  "height": 3.2,
+  "weight": 320.0,
+  "baseExperience": 324,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/493.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "multitype"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 120
+    },
+    {
+      "name": "attack",
+      "value": 120
+    },
+    {
+      "name": "defense",
+      "value": 120
+    },
+    {
+      "name": "special-attack",
+      "value": 120
+    },
+    {
+      "name": "special-defense",
+      "value": 120
+    },
+    {
+      "name": "speed",
+      "value": 120
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 250,
+  "name": "ho-oh",
+  "height": 3.8,
+  "weight": 199.0,
+  "baseExperience": 306,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/250.png",
+  "types": [
+    "fire",
+    "flying"
+  ],
+  "abilities": [
+    "pressure",
+    "regenerator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 106
+    },
+    {
+      "name": "attack",
+      "value": 130
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 110
+    },
+    {
+      "name": "special-defense",
+      "value": 154
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

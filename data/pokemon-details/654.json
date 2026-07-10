@@ -1,0 +1,41 @@
+{
+  "id": 654,
+  "name": "braixen",
+  "height": 1.0,
+  "weight": 14.5,
+  "baseExperience": 143,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/654.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "blaze",
+    "magician"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 59
+    },
+    {
+      "name": "attack",
+      "value": 59
+    },
+    {
+      "name": "defense",
+      "value": 58
+    },
+    {
+      "name": "special-attack",
+      "value": 90
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 73
+    }
+  ]
+}

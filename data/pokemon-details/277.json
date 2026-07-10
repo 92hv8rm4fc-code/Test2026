@@ -1,0 +1,42 @@
+{
+  "id": 277,
+  "name": "swellow",
+  "height": 0.7,
+  "weight": 19.8,
+  "baseExperience": 159,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/277.png",
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "guts",
+    "scrappy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 60
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 75
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 125
+    }
+  ]
+}

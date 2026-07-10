@@ -1,0 +1,43 @@
+{
+  "id": 904,
+  "name": "overqwil",
+  "height": 2.5,
+  "weight": 60.5,
+  "baseExperience": 179,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/904.png",
+  "types": [
+    "dark",
+    "poison"
+  ],
+  "abilities": [
+    "poison-point",
+    "swift-swim",
+    "intimidate"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 85
+    },
+    {
+      "name": "attack",
+      "value": 115
+    },
+    {
+      "name": "defense",
+      "value": 95
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

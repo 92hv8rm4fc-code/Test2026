@@ -1,0 +1,41 @@
+{
+  "id": 10,
+  "name": "caterpie",
+  "height": 0.3,
+  "weight": 2.9,
+  "baseExperience": 39,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png",
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    "shield-dust",
+    "run-away"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 30
+    },
+    {
+      "name": "defense",
+      "value": 35
+    },
+    {
+      "name": "special-attack",
+      "value": 20
+    },
+    {
+      "name": "special-defense",
+      "value": 20
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

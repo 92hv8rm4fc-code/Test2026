@@ -1,0 +1,42 @@
+{
+  "id": 699,
+  "name": "aurorus",
+  "height": 2.7,
+  "weight": 225.0,
+  "baseExperience": 104,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/699.png",
+  "types": [
+    "rock",
+    "ice"
+  ],
+  "abilities": [
+    "refrigerate",
+    "snow-warning"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 123
+    },
+    {
+      "name": "attack",
+      "value": 77
+    },
+    {
+      "name": "defense",
+      "value": 72
+    },
+    {
+      "name": "special-attack",
+      "value": 99
+    },
+    {
+      "name": "special-defense",
+      "value": 92
+    },
+    {
+      "name": "speed",
+      "value": 58
+    }
+  ]
+}

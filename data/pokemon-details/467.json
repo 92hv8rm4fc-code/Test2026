@@ -1,0 +1,41 @@
+{
+  "id": 467,
+  "name": "magmortar",
+  "height": 1.6,
+  "weight": 68.0,
+  "baseExperience": 243,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/467.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "flame-body",
+    "vital-spirit"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 67
+    },
+    {
+      "name": "special-attack",
+      "value": 125
+    },
+    {
+      "name": "special-defense",
+      "value": 95
+    },
+    {
+      "name": "speed",
+      "value": 83
+    }
+  ]
+}

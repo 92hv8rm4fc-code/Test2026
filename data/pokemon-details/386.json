@@ -1,0 +1,40 @@
+{
+  "id": 386,
+  "name": "deoxys-normal",
+  "height": 1.7,
+  "weight": 60.8,
+  "baseExperience": 270,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/386.png",
+  "types": [
+    "psychic"
+  ],
+  "abilities": [
+    "pressure"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 150
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 150
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 150
+    }
+  ]
+}

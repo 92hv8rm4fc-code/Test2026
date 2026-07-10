@@ -1,0 +1,43 @@
+{
+  "id": 622,
+  "name": "golett",
+  "height": 1.0,
+  "weight": 92.0,
+  "baseExperience": 61,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/622.png",
+  "types": [
+    "ground",
+    "ghost"
+  ],
+  "abilities": [
+    "iron-fist",
+    "klutz",
+    "no-guard"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 59
+    },
+    {
+      "name": "attack",
+      "value": 74
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 35
+    }
+  ]
+}

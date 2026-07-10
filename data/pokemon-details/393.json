@@ -1,0 +1,41 @@
+{
+  "id": 393,
+  "name": "piplup",
+  "height": 0.4,
+  "weight": 5.2,
+  "baseExperience": 63,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/393.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "torrent",
+    "competitive"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 53
+    },
+    {
+      "name": "attack",
+      "value": 51
+    },
+    {
+      "name": "defense",
+      "value": 53
+    },
+    {
+      "name": "special-attack",
+      "value": 61
+    },
+    {
+      "name": "special-defense",
+      "value": 56
+    },
+    {
+      "name": "speed",
+      "value": 40
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": 421,
+  "name": "cherrim",
+  "height": 0.5,
+  "weight": 9.3,
+  "baseExperience": 158,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/421.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "flower-gift"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 87
+    },
+    {
+      "name": "special-defense",
+      "value": 78
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

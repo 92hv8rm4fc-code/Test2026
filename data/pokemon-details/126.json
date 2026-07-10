@@ -1,0 +1,41 @@
+{
+  "id": 126,
+  "name": "magmar",
+  "height": 1.3,
+  "weight": 44.5,
+  "baseExperience": 173,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/126.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "flame-body",
+    "vital-spirit"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 95
+    },
+    {
+      "name": "defense",
+      "value": 57
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 93
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 818,
+  "name": "inteleon",
+  "height": 1.9,
+  "weight": 45.2,
+  "baseExperience": 265,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/818.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "torrent",
+    "sniper"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 125
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 120
+    }
+  ]
+}

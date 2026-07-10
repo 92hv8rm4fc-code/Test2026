@@ -1,0 +1,42 @@
+{
+  "id": 568,
+  "name": "trubbish",
+  "height": 0.6,
+  "weight": 31.0,
+  "baseExperience": 66,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/568.png",
+  "types": [
+    "poison"
+  ],
+  "abilities": [
+    "stench",
+    "sticky-hold",
+    "aftermath"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 62
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 62
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

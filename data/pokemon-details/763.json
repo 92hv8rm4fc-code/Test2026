@@ -1,0 +1,42 @@
+{
+  "id": 763,
+  "name": "tsareena",
+  "height": 1.2,
+  "weight": 21.4,
+  "baseExperience": 230,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/763.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "leaf-guard",
+    "queenly-majesty",
+    "sweet-veil"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 72
+    },
+    {
+      "name": "attack",
+      "value": 120
+    },
+    {
+      "name": "defense",
+      "value": 98
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 98
+    },
+    {
+      "name": "speed",
+      "value": 72
+    }
+  ]
+}

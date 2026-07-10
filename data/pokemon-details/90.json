@@ -1,0 +1,42 @@
+{
+  "id": 90,
+  "name": "shellder",
+  "height": 0.3,
+  "weight": 4.0,
+  "baseExperience": 61,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/90.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "shell-armor",
+    "skill-link",
+    "overcoat"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 30
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 25
+    },
+    {
+      "name": "speed",
+      "value": 40
+    }
+  ]
+}

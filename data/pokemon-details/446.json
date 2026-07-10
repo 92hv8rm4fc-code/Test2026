@@ -1,0 +1,42 @@
+{
+  "id": 446,
+  "name": "munchlax",
+  "height": 0.6,
+  "weight": 105.0,
+  "baseExperience": 78,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/446.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "pickup",
+    "thick-fat",
+    "gluttony"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 135
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 40
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 5
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 427,
+  "name": "buneary",
+  "height": 0.4,
+  "weight": 5.5,
+  "baseExperience": 70,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/427.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "run-away",
+    "klutz",
+    "limber"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 66
+    },
+    {
+      "name": "defense",
+      "value": 44
+    },
+    {
+      "name": "special-attack",
+      "value": 44
+    },
+    {
+      "name": "special-defense",
+      "value": 56
+    },
+    {
+      "name": "speed",
+      "value": 85
+    }
+  ]
+}

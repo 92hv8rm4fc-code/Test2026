@@ -1,0 +1,42 @@
+{
+  "id": 531,
+  "name": "audino",
+  "height": 1.1,
+  "weight": 31.0,
+  "baseExperience": 390,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/531.png",
+  "types": [
+    "normal"
+  ],
+  "abilities": [
+    "healer",
+    "regenerator",
+    "klutz"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 103
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 86
+    },
+    {
+      "name": "special-attack",
+      "value": 60
+    },
+    {
+      "name": "special-defense",
+      "value": 86
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 993,
+  "name": "iron-jugulis",
+  "height": 1.3,
+  "weight": 111.0,
+  "baseExperience": 285,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/993.png",
+  "types": [
+    "dark",
+    "flying"
+  ],
+  "abilities": [
+    "quark-drive"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 94
+    },
+    {
+      "name": "attack",
+      "value": 80
+    },
+    {
+      "name": "defense",
+      "value": 86
+    },
+    {
+      "name": "special-attack",
+      "value": 122
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 108
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 477,
+  "name": "dusknoir",
+  "height": 2.2,
+  "weight": 106.6,
+  "baseExperience": 236,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/477.png",
+  "types": [
+    "ghost"
+  ],
+  "abilities": [
+    "pressure",
+    "frisk"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 45
+    },
+    {
+      "name": "attack",
+      "value": 100
+    },
+    {
+      "name": "defense",
+      "value": 135
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 135
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

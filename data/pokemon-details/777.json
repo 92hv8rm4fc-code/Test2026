@@ -1,0 +1,43 @@
+{
+  "id": 777,
+  "name": "togedemaru",
+  "height": 0.3,
+  "weight": 3.3,
+  "baseExperience": 152,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/777.png",
+  "types": [
+    "electric",
+    "steel"
+  ],
+  "abilities": [
+    "iron-barbs",
+    "lightning-rod",
+    "sturdy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 65
+    },
+    {
+      "name": "attack",
+      "value": 98
+    },
+    {
+      "name": "defense",
+      "value": 63
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 73
+    },
+    {
+      "name": "speed",
+      "value": 96
+    }
+  ]
+}

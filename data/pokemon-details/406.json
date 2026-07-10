@@ -1,0 +1,43 @@
+{
+  "id": 406,
+  "name": "budew",
+  "height": 0.2,
+  "weight": 1.2,
+  "baseExperience": 56,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/406.png",
+  "types": [
+    "grass",
+    "poison"
+  ],
+  "abilities": [
+    "natural-cure",
+    "poison-point",
+    "leaf-guard"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 30
+    },
+    {
+      "name": "defense",
+      "value": 35
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 70
+    },
+    {
+      "name": "speed",
+      "value": 55
+    }
+  ]
+}

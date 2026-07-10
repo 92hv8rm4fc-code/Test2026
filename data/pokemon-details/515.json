@@ -1,0 +1,41 @@
+{
+  "id": 515,
+  "name": "panpour",
+  "height": 0.6,
+  "weight": 13.5,
+  "baseExperience": 63,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/515.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "gluttony",
+    "torrent"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 53
+    },
+    {
+      "name": "defense",
+      "value": 48
+    },
+    {
+      "name": "special-attack",
+      "value": 53
+    },
+    {
+      "name": "special-defense",
+      "value": 48
+    },
+    {
+      "name": "speed",
+      "value": 64
+    }
+  ]
+}

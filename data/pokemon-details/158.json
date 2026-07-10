@@ -1,0 +1,41 @@
+{
+  "id": 158,
+  "name": "totodile",
+  "height": 0.6,
+  "weight": 9.5,
+  "baseExperience": 63,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/158.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "torrent",
+    "sheer-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 64
+    },
+    {
+      "name": "special-attack",
+      "value": 44
+    },
+    {
+      "name": "special-defense",
+      "value": 48
+    },
+    {
+      "name": "speed",
+      "value": 43
+    }
+  ]
+}

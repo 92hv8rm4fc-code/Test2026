@@ -1,0 +1,41 @@
+{
+  "id": 811,
+  "name": "thwackey",
+  "height": 0.7,
+  "weight": 14.0,
+  "baseExperience": 147,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/811.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "overgrow",
+    "grassy-surge"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 55
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 80
+    }
+  ]
+}

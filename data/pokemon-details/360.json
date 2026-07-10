@@ -1,0 +1,41 @@
+{
+  "id": 360,
+  "name": "wynaut",
+  "height": 0.6,
+  "weight": 14.0,
+  "baseExperience": 52,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/360.png",
+  "types": [
+    "psychic"
+  ],
+  "abilities": [
+    "shadow-tag",
+    "telepathy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 95
+    },
+    {
+      "name": "attack",
+      "value": 23
+    },
+    {
+      "name": "defense",
+      "value": 48
+    },
+    {
+      "name": "special-attack",
+      "value": 23
+    },
+    {
+      "name": "special-defense",
+      "value": 48
+    },
+    {
+      "name": "speed",
+      "value": 23
+    }
+  ]
+}

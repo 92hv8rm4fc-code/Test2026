@@ -1,0 +1,40 @@
+{
+  "id": 268,
+  "name": "cascoon",
+  "height": 0.7,
+  "weight": 11.5,
+  "baseExperience": 72,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/268.png",
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    "shed-skin"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 35
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 25
+    },
+    {
+      "name": "special-defense",
+      "value": 25
+    },
+    {
+      "name": "speed",
+      "value": 15
+    }
+  ]
+}

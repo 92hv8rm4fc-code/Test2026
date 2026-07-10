@@ -1,0 +1,43 @@
+{
+  "id": 592,
+  "name": "frillish",
+  "height": 1.2,
+  "weight": 33.0,
+  "baseExperience": 67,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/592.png",
+  "types": [
+    "water",
+    "ghost"
+  ],
+  "abilities": [
+    "water-absorb",
+    "cursed-body",
+    "damp"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 55
+    },
+    {
+      "name": "attack",
+      "value": 40
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 40
+    }
+  ]
+}

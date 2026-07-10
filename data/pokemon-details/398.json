@@ -1,0 +1,42 @@
+{
+  "id": 398,
+  "name": "staraptor",
+  "height": 1.2,
+  "weight": 24.9,
+  "baseExperience": 218,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/398.png",
+  "types": [
+    "normal",
+    "flying"
+  ],
+  "abilities": [
+    "intimidate",
+    "reckless"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 85
+    },
+    {
+      "name": "attack",
+      "value": 120
+    },
+    {
+      "name": "defense",
+      "value": 70
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 100
+    }
+  ]
+}

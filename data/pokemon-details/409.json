@@ -1,0 +1,41 @@
+{
+  "id": 409,
+  "name": "rampardos",
+  "height": 1.6,
+  "weight": 102.5,
+  "baseExperience": 173,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/409.png",
+  "types": [
+    "rock"
+  ],
+  "abilities": [
+    "mold-breaker",
+    "sheer-force"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 97
+    },
+    {
+      "name": "attack",
+      "value": 165
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 58
+    }
+  ]
+}

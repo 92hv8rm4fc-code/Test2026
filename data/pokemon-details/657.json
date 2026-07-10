@@ -1,0 +1,41 @@
+{
+  "id": 657,
+  "name": "frogadier",
+  "height": 0.6,
+  "weight": 10.9,
+  "baseExperience": 142,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/657.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "torrent",
+    "protean"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 54
+    },
+    {
+      "name": "attack",
+      "value": 63
+    },
+    {
+      "name": "defense",
+      "value": 52
+    },
+    {
+      "name": "special-attack",
+      "value": 83
+    },
+    {
+      "name": "special-defense",
+      "value": 56
+    },
+    {
+      "name": "speed",
+      "value": 97
+    }
+  ]
+}

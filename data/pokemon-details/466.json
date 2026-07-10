@@ -1,0 +1,41 @@
+{
+  "id": 466,
+  "name": "electivire",
+  "height": 1.8,
+  "weight": 138.6,
+  "baseExperience": 243,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/466.png",
+  "types": [
+    "electric"
+  ],
+  "abilities": [
+    "motor-drive",
+    "vital-spirit"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 75
+    },
+    {
+      "name": "attack",
+      "value": 123
+    },
+    {
+      "name": "defense",
+      "value": 67
+    },
+    {
+      "name": "special-attack",
+      "value": 95
+    },
+    {
+      "name": "special-defense",
+      "value": 85
+    },
+    {
+      "name": "speed",
+      "value": 95
+    }
+  ]
+}

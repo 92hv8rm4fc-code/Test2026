@@ -1,0 +1,41 @@
+{
+  "id": 1010,
+  "name": "iron-leaves",
+  "height": 1.5,
+  "weight": 125.0,
+  "baseExperience": 295,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1010.png",
+  "types": [
+    "grass",
+    "psychic"
+  ],
+  "abilities": [
+    "quark-drive"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 90
+    },
+    {
+      "name": "attack",
+      "value": 130
+    },
+    {
+      "name": "defense",
+      "value": 88
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 108
+    },
+    {
+      "name": "speed",
+      "value": 104
+    }
+  ]
+}

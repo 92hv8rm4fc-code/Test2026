@@ -1,0 +1,43 @@
+{
+  "id": 632,
+  "name": "durant",
+  "height": 0.3,
+  "weight": 33.0,
+  "baseExperience": 169,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/632.png",
+  "types": [
+    "bug",
+    "steel"
+  ],
+  "abilities": [
+    "swarm",
+    "hustle",
+    "truant"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 58
+    },
+    {
+      "name": "attack",
+      "value": 109
+    },
+    {
+      "name": "defense",
+      "value": 112
+    },
+    {
+      "name": "special-attack",
+      "value": 48
+    },
+    {
+      "name": "special-defense",
+      "value": 48
+    },
+    {
+      "name": "speed",
+      "value": 109
+    }
+  ]
+}

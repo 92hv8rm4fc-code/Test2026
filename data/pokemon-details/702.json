@@ -1,0 +1,43 @@
+{
+  "id": 702,
+  "name": "dedenne",
+  "height": 0.2,
+  "weight": 2.2,
+  "baseExperience": 151,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/702.png",
+  "types": [
+    "electric",
+    "fairy"
+  ],
+  "abilities": [
+    "cheek-pouch",
+    "pickup",
+    "plus"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 67
+    },
+    {
+      "name": "attack",
+      "value": 58
+    },
+    {
+      "name": "defense",
+      "value": 57
+    },
+    {
+      "name": "special-attack",
+      "value": 81
+    },
+    {
+      "name": "special-defense",
+      "value": 67
+    },
+    {
+      "name": "speed",
+      "value": 101
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": 357,
+  "name": "tropius",
+  "height": 2.0,
+  "weight": 100.0,
+  "baseExperience": 161,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/357.png",
+  "types": [
+    "grass",
+    "flying"
+  ],
+  "abilities": [
+    "chlorophyll",
+    "solar-power",
+    "harvest"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 99
+    },
+    {
+      "name": "attack",
+      "value": 68
+    },
+    {
+      "name": "defense",
+      "value": 83
+    },
+    {
+      "name": "special-attack",
+      "value": 72
+    },
+    {
+      "name": "special-defense",
+      "value": 87
+    },
+    {
+      "name": "speed",
+      "value": 51
+    }
+  ]
+}

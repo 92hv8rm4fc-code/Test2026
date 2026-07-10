@@ -1,0 +1,41 @@
+{
+  "id": 913,
+  "name": "quaxwell",
+  "height": 1.2,
+  "weight": 21.5,
+  "baseExperience": 144,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/913.png",
+  "types": [
+    "water"
+  ],
+  "abilities": [
+    "torrent",
+    "moxie"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 60
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

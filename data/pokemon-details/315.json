@@ -1,0 +1,43 @@
+{
+  "id": 315,
+  "name": "roselia",
+  "height": 0.3,
+  "weight": 2.0,
+  "baseExperience": 140,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/315.png",
+  "types": [
+    "grass",
+    "poison"
+  ],
+  "abilities": [
+    "natural-cure",
+    "poison-point",
+    "leaf-guard"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 60
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 100
+    },
+    {
+      "name": "special-defense",
+      "value": 80
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

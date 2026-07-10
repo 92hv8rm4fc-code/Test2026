@@ -1,0 +1,41 @@
+{
+  "id": 995,
+  "name": "iron-thorns",
+  "height": 1.6,
+  "weight": 303.0,
+  "baseExperience": 285,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/995.png",
+  "types": [
+    "rock",
+    "electric"
+  ],
+  "abilities": [
+    "quark-drive"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 100
+    },
+    {
+      "name": "attack",
+      "value": 134
+    },
+    {
+      "name": "defense",
+      "value": 110
+    },
+    {
+      "name": "special-attack",
+      "value": 70
+    },
+    {
+      "name": "special-defense",
+      "value": 84
+    },
+    {
+      "name": "speed",
+      "value": 72
+    }
+  ]
+}

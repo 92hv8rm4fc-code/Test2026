@@ -1,0 +1,42 @@
+{
+  "id": 77,
+  "name": "ponyta",
+  "height": 1.0,
+  "weight": 30.0,
+  "baseExperience": 82,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/77.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "run-away",
+    "flash-fire",
+    "flame-body"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 85
+    },
+    {
+      "name": "defense",
+      "value": 55
+    },
+    {
+      "name": "special-attack",
+      "value": 65
+    },
+    {
+      "name": "special-defense",
+      "value": 65
+    },
+    {
+      "name": "speed",
+      "value": 90
+    }
+  ]
+}

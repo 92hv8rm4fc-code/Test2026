@@ -1,0 +1,42 @@
+{
+  "id": 970,
+  "name": "glimmora",
+  "height": 1.5,
+  "weight": 45.0,
+  "baseExperience": 184,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/970.png",
+  "types": [
+    "rock",
+    "poison"
+  ],
+  "abilities": [
+    "toxic-debris",
+    "corrosion"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 83
+    },
+    {
+      "name": "attack",
+      "value": 55
+    },
+    {
+      "name": "defense",
+      "value": 90
+    },
+    {
+      "name": "special-attack",
+      "value": 130
+    },
+    {
+      "name": "special-defense",
+      "value": 81
+    },
+    {
+      "name": "speed",
+      "value": 86
+    }
+  ]
+}

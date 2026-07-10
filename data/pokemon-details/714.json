@@ -1,0 +1,43 @@
+{
+  "id": 714,
+  "name": "noibat",
+  "height": 0.5,
+  "weight": 8.0,
+  "baseExperience": 49,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/714.png",
+  "types": [
+    "flying",
+    "dragon"
+  ],
+  "abilities": [
+    "frisk",
+    "infiltrator",
+    "telepathy"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 30
+    },
+    {
+      "name": "defense",
+      "value": 35
+    },
+    {
+      "name": "special-attack",
+      "value": 45
+    },
+    {
+      "name": "special-defense",
+      "value": 40
+    },
+    {
+      "name": "speed",
+      "value": 55
+    }
+  ]
+}

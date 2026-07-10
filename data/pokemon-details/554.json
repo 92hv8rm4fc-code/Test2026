@@ -1,0 +1,41 @@
+{
+  "id": 554,
+  "name": "darumaka",
+  "height": 0.6,
+  "weight": 37.5,
+  "baseExperience": 63,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/554.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "hustle",
+    "inner-focus"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 90
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 15
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

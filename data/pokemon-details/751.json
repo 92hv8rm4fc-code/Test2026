@@ -1,0 +1,42 @@
+{
+  "id": 751,
+  "name": "dewpider",
+  "height": 0.3,
+  "weight": 4.0,
+  "baseExperience": 54,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/751.png",
+  "types": [
+    "water",
+    "bug"
+  ],
+  "abilities": [
+    "water-bubble",
+    "water-absorb"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 38
+    },
+    {
+      "name": "attack",
+      "value": 40
+    },
+    {
+      "name": "defense",
+      "value": 52
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 72
+    },
+    {
+      "name": "speed",
+      "value": 27
+    }
+  ]
+}

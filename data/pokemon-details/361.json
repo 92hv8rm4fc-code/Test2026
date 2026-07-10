@@ -1,0 +1,42 @@
+{
+  "id": 361,
+  "name": "snorunt",
+  "height": 0.7,
+  "weight": 16.8,
+  "baseExperience": 60,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/361.png",
+  "types": [
+    "ice"
+  ],
+  "abilities": [
+    "inner-focus",
+    "ice-body",
+    "moody"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 50
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 50
+    },
+    {
+      "name": "special-defense",
+      "value": 50
+    },
+    {
+      "name": "speed",
+      "value": 50
+    }
+  ]
+}

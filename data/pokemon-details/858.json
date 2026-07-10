@@ -1,0 +1,43 @@
+{
+  "id": 858,
+  "name": "hatterene",
+  "height": 2.1,
+  "weight": 5.1,
+  "baseExperience": 255,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/858.png",
+  "types": [
+    "psychic",
+    "fairy"
+  ],
+  "abilities": [
+    "healer",
+    "anticipation",
+    "magic-bounce"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 57
+    },
+    {
+      "name": "attack",
+      "value": 90
+    },
+    {
+      "name": "defense",
+      "value": 95
+    },
+    {
+      "name": "special-attack",
+      "value": 136
+    },
+    {
+      "name": "special-defense",
+      "value": 103
+    },
+    {
+      "name": "speed",
+      "value": 29
+    }
+  ]
+}

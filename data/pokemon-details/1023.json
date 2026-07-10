@@ -1,0 +1,41 @@
+{
+  "id": 1023,
+  "name": "iron-crown",
+  "height": 1.6,
+  "weight": 156.0,
+  "baseExperience": 295,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1023.png",
+  "types": [
+    "steel",
+    "psychic"
+  ],
+  "abilities": [
+    "quark-drive"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 90
+    },
+    {
+      "name": "attack",
+      "value": 72
+    },
+    {
+      "name": "defense",
+      "value": 100
+    },
+    {
+      "name": "special-attack",
+      "value": 122
+    },
+    {
+      "name": "special-defense",
+      "value": 108
+    },
+    {
+      "name": "speed",
+      "value": 98
+    }
+  ]
+}

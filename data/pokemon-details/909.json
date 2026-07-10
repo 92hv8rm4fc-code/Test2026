@@ -1,0 +1,41 @@
+{
+  "id": 909,
+  "name": "fuecoco",
+  "height": 0.4,
+  "weight": 9.8,
+  "baseExperience": 62,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/909.png",
+  "types": [
+    "fire"
+  ],
+  "abilities": [
+    "blaze",
+    "unaware"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 67
+    },
+    {
+      "name": "attack",
+      "value": 45
+    },
+    {
+      "name": "defense",
+      "value": 59
+    },
+    {
+      "name": "special-attack",
+      "value": 63
+    },
+    {
+      "name": "special-defense",
+      "value": 40
+    },
+    {
+      "name": "speed",
+      "value": 36
+    }
+  ]
+}

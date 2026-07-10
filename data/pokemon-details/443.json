@@ -1,0 +1,42 @@
+{
+  "id": 443,
+  "name": "gible",
+  "height": 0.7,
+  "weight": 20.5,
+  "baseExperience": 60,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/443.png",
+  "types": [
+    "dragon",
+    "ground"
+  ],
+  "abilities": [
+    "sand-veil",
+    "rough-skin"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 58
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 42
+    }
+  ]
+}

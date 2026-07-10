@@ -1,0 +1,42 @@
+{
+  "id": 873,
+  "name": "frosmoth",
+  "height": 1.3,
+  "weight": 42.0,
+  "baseExperience": 166,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/873.png",
+  "types": [
+    "ice",
+    "bug"
+  ],
+  "abilities": [
+    "shield-dust",
+    "ice-scales"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 70
+    },
+    {
+      "name": "attack",
+      "value": 65
+    },
+    {
+      "name": "defense",
+      "value": 60
+    },
+    {
+      "name": "special-attack",
+      "value": 125
+    },
+    {
+      "name": "special-defense",
+      "value": 90
+    },
+    {
+      "name": "speed",
+      "value": 65
+    }
+  ]
+}

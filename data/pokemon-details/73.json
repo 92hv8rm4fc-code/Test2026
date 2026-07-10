@@ -1,0 +1,43 @@
+{
+  "id": 73,
+  "name": "tentacruel",
+  "height": 1.6,
+  "weight": 55.0,
+  "baseExperience": 180,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/73.png",
+  "types": [
+    "water",
+    "poison"
+  ],
+  "abilities": [
+    "clear-body",
+    "liquid-ooze",
+    "rain-dish"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 80
+    },
+    {
+      "name": "attack",
+      "value": 70
+    },
+    {
+      "name": "defense",
+      "value": 65
+    },
+    {
+      "name": "special-attack",
+      "value": 80
+    },
+    {
+      "name": "special-defense",
+      "value": 120
+    },
+    {
+      "name": "speed",
+      "value": 100
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 588,
+  "name": "karrablast",
+  "height": 0.5,
+  "weight": 5.9,
+  "baseExperience": 63,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/588.png",
+  "types": [
+    "bug"
+  ],
+  "abilities": [
+    "swarm",
+    "shed-skin",
+    "no-guard"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 75
+    },
+    {
+      "name": "defense",
+      "value": 45
+    },
+    {
+      "name": "special-attack",
+      "value": 40
+    },
+    {
+      "name": "special-defense",
+      "value": 45
+    },
+    {
+      "name": "speed",
+      "value": 60
+    }
+  ]
+}

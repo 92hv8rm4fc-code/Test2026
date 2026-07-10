@@ -1,0 +1,43 @@
+{
+  "id": 694,
+  "name": "helioptile",
+  "height": 0.5,
+  "weight": 6.0,
+  "baseExperience": 58,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/694.png",
+  "types": [
+    "electric",
+    "normal"
+  ],
+  "abilities": [
+    "dry-skin",
+    "sand-veil",
+    "solar-power"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 44
+    },
+    {
+      "name": "attack",
+      "value": 38
+    },
+    {
+      "name": "defense",
+      "value": 33
+    },
+    {
+      "name": "special-attack",
+      "value": 61
+    },
+    {
+      "name": "special-defense",
+      "value": 43
+    },
+    {
+      "name": "speed",
+      "value": 70
+    }
+  ]
+}

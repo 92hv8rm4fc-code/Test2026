@@ -1,0 +1,43 @@
+{
+  "id": 686,
+  "name": "inkay",
+  "height": 0.4,
+  "weight": 3.5,
+  "baseExperience": 58,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/686.png",
+  "types": [
+    "dark",
+    "psychic"
+  ],
+  "abilities": [
+    "contrary",
+    "suction-cups",
+    "infiltrator"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 53
+    },
+    {
+      "name": "attack",
+      "value": 54
+    },
+    {
+      "name": "defense",
+      "value": 53
+    },
+    {
+      "name": "special-attack",
+      "value": 37
+    },
+    {
+      "name": "special-defense",
+      "value": 46
+    },
+    {
+      "name": "speed",
+      "value": 45
+    }
+  ]
+}

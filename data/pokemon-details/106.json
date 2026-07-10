@@ -1,0 +1,42 @@
+{
+  "id": 106,
+  "name": "hitmonlee",
+  "height": 1.5,
+  "weight": 49.8,
+  "baseExperience": 159,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/106.png",
+  "types": [
+    "fighting"
+  ],
+  "abilities": [
+    "limber",
+    "reckless",
+    "unburden"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 50
+    },
+    {
+      "name": "attack",
+      "value": 120
+    },
+    {
+      "name": "defense",
+      "value": 53
+    },
+    {
+      "name": "special-attack",
+      "value": 35
+    },
+    {
+      "name": "special-defense",
+      "value": 110
+    },
+    {
+      "name": "speed",
+      "value": 87
+    }
+  ]
+}

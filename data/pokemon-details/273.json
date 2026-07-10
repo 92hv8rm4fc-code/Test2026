@@ -1,0 +1,42 @@
+{
+  "id": 273,
+  "name": "seedot",
+  "height": 0.5,
+  "weight": 4.0,
+  "baseExperience": 44,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/273.png",
+  "types": [
+    "grass"
+  ],
+  "abilities": [
+    "chlorophyll",
+    "early-bird",
+    "pickpocket"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 40
+    },
+    {
+      "name": "attack",
+      "value": 40
+    },
+    {
+      "name": "defense",
+      "value": 50
+    },
+    {
+      "name": "special-attack",
+      "value": 30
+    },
+    {
+      "name": "special-defense",
+      "value": 30
+    },
+    {
+      "name": "speed",
+      "value": 30
+    }
+  ]
+}

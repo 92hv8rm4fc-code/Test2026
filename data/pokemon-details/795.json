@@ -1,0 +1,41 @@
+{
+  "id": 795,
+  "name": "pheromosa",
+  "height": 1.8,
+  "weight": 25.0,
+  "baseExperience": 257,
+  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/795.png",
+  "types": [
+    "bug",
+    "fighting"
+  ],
+  "abilities": [
+    "beast-boost"
+  ],
+  "stats": [
+    {
+      "name": "hp",
+      "value": 71
+    },
+    {
+      "name": "attack",
+      "value": 137
+    },
+    {
+      "name": "defense",
+      "value": 37
+    },
+    {
+      "name": "special-attack",
+      "value": 137
+    },
+    {
+      "name": "special-defense",
+      "value": 37
+    },
+    {
+      "name": "speed",
+      "value": 151
+    }
+  ]
+}
