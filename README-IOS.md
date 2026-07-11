@@ -1,70 +1,80 @@
-# Pokemon Binder Pokedex — iOS (режим разработчика)
+# Pokemon Binder Pokedex — iOS (офлайн)
 
-Отдельная ветка `ios-app` и папка для сборки iPhone-приложения через **Capacitor**.
+iPhone-приложение на **Capacitor**. Все данные **внутри приложения** — интернет не нужен.
 
-## Что уже сделано
+## Что внутри приложения
 
-- Все данные (спрайты, детали, эволюции) **внутри приложения** — Python-сервер на iPhone не нужен.
-- `mobile-api.js` перехватывает `/api/*` и читает локальные JSON + `localStorage`.
-- Коллекция хранится на устройстве.
+| Данные | Где лежит | Размер |
+|--------|-----------|--------|
+| 1025 покемонов (имя, типы, статы) | `data/pokemon-details/` | в бандле |
+| Спрайты artwork | `data/sprites/` | в бандле |
+| Цепочки эволюций | `data/evolution-chains/` | в бандле |
+| Индекс National Dex | `data/pokemon-index.json` | в бандле |
+| Коллекция, wishlist, настройки | `localStorage` на iPhone | на устройстве |
 
-## Структура
+Python-сервер и PokeAPI **не используются**. `mobile-api.js` перехватывает `/api/*` и читает локальные JSON.
 
-| Папка / файл | Назначение |
-|--------------|------------|
-| `index.html`, `app.js`, `styles.css` | UI приложения |
-| `mobile-api.js` | Офлайн-API для iOS |
-| `data/` | Кеш покемонов, спрайты, эволюции |
-| `ios/` | Xcode-проект (создаётся на Mac) |
-| `capacitor.config.json` | Настройки Capacitor |
-
-## На Windows (подготовка)
-
-```powershell
-cd C:\Users\user\Documents\work\Cursor\pokemon-binder-pokedex-ios
-npm install
-```
-
-Сборка `.ipa` / установка на iPhone **только на Mac** (нужен Xcode).
-
-## На MacBook (первая сборка)
+## Быстрый старт на Mac (Xcode)
 
 ```bash
 git clone -b ios-app https://github.com/92hv8rm4fc-code/Test2026.git pokemon-binder-ios
 cd pokemon-binder-ios
 npm install
-npx cap add ios
-npx cap sync ios
-npx cap open ios
+npm run ios:open
 ```
 
-В Xcode:
+Команда `npm run ios:open`:
+1. Собирает папку `www/` со всеми данными
+2. Копирует в Xcode-проект (`cap sync ios`)
+3. Открывает `ios/App/App.xcworkspace` в Xcode
 
-1. Выбери target **App** → **Signing & Capabilities**
-2. Укажи свой **Apple ID** (Team) — Personal Team для режима разработчика
-3. Подключи iPhone по USB
-4. Выбери iPhone как destination
-5. Нажми **Run** (▶)
+### В Xcode
 
-На iPhone: **Настройки → Основные → VPN и управление устройством** → доверь разработчику.
+1. Target **App** → **Signing & Capabilities**
+2. Укажи свой **Apple ID** (Personal Team) — для режима разработчика
+3. Подключи iPhone по USB (или выбери симулятор)
+4. Нажми **Run** ▶
+
+На iPhone после первой установки:
+**Настройки → Основные → VPN и управление устройством** → доверь разработчику.
 
 ## Обновление после изменений в коде
 
-На Mac:
-
 ```bash
 git pull
-npm install
-npx cap sync ios
+npm run ios:open
 ```
 
 Затем снова Run в Xcode.
 
-## Wi‑Fi тест без Xcode (Safari)
+## Структура проекта
 
-Если нужен только браузер, а не нативное приложение — запусти `python3 server.py` на Mac и открой с iPhone (отдельная инструкция, ветка `main`).
+| Путь | Назначение |
+|------|------------|
+| `index.html`, `app.js`, `styles.css` | UI |
+| `mobile-api.js` | Офлайн-API (без сети) |
+| `data/` | Встроенная база покемонов |
+| `www/` | Сборка для Capacitor (генерируется) |
+| `ios/App/` | Xcode-проект |
+| `scripts/prepare-www.sh` | Копирует файлы в `www/` |
 
 ## App ID
 
-По умолчанию: `com.pokemonbinder.pokedex`.  
-Если Apple ругается на занятый ID — поменяй `appId` в `capacitor.config.json` и Bundle Identifier в Xcode.
+По умолчанию: `com.pokemonbinder.pokedex`
+
+Если Apple ругается на занятый Bundle ID — поменяй `appId` в `capacitor.config.json` и Bundle Identifier в Xcode.
+
+## Размер приложения
+
+~130–150 МБ из-за 1025 спрайтов. Это нормально для полностью офлайн Pokédex.
+
+## Windows
+
+Сборка `.ipa` возможна **только на Mac** с Xcode. На Windows можно править код и пушить в ветку `ios-app`, а собирать на MacBook.
+
+## Ветки
+
+| Ветка | Назначение |
+|-------|------------|
+| `main` | Веб + Python-сервер |
+| `ios-app` | iPhone-приложение (этот README) |

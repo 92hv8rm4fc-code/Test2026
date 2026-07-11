@@ -387,7 +387,11 @@ async function fetchPokemonIndex() {
       }
     }
   } catch {
-    // Fall back to the public API when the local index is not available.
+    // Local index is required for offline iOS builds.
+  }
+
+  if (window.PB_IS_MOBILE_APP) {
+    throw new Error("Локальный индекс покемонов недоступен. Переустанови приложение.");
   }
 
   const response = await fetchWithTimeout(

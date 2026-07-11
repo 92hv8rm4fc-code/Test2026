@@ -4,9 +4,11 @@
   "private": true,
   "description": "Pokemon Binder Pokedex — iOS app (Capacitor)",
   "scripts": {
-    "cap:sync": "npx cap sync ios",
+    "prepare:www": "bash scripts/prepare-www.sh",
+    "cap:sync": "npm run prepare:www && npx cap sync ios",
     "cap:open": "npx cap open ios",
-    "ios:prepare": "npx cap sync ios"
+    "ios:prepare": "npm install && npm run cap:sync",
+    "ios:open": "npm run ios:prepare && npx cap open ios"
   },
   "dependencies": {
     "@capacitor/core": "^7.4.2",

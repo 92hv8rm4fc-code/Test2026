@@ -163,6 +163,23 @@ h2 {
   line-height: 1.6;
 }
 
+.mobile-app .offline-badge {
+  display: inline-flex;
+}
+
+.offline-badge {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  color: var(--success);
+  background: rgba(33, 140, 116, 0.1);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
 .capacity-card,
 .panel {
   border: 1px solid rgba(219, 226, 239, 0.9);

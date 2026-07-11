@@ -190,9 +190,16 @@
   const nativeFetch = window.fetch.bind(window);
   window.fetch = function mobileFetch(url, options) {
     const requestUrl = typeof url === "string" ? url : url.url;
+
+    if (/^https?:\/\//i.test(requestUrl) && !requestUrl.startsWith(window.location.origin)) {
+      return Promise.reject(new Error("Offline mode: external network requests are disabled."));
+    }
+
     if (requestUrl.includes("/api/")) {
       return handleMobileApi(requestUrl, options || {});
     }
     return nativeFetch(url, options);
   };
+
+  document.documentElement.classList.add("mobile-app");
 })();

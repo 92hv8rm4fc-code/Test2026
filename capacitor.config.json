@@ -1,7 +1,7 @@
 {
   "appId": "com.pokemonbinder.pokedex",
   "appName": "Pokemon Binder",
-  "webDir": ".",
+  "webDir": "www",
   "server": {
     "androidScheme": "https",
     "iosScheme": "capacitor"
