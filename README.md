@@ -2,6 +2,8 @@
 
 Статическое MVP-приложение для учёта карточек Pokemon TCG в биндерах.
 
+> **iPhone / iOS:** см. ветку [`ios-app`](https://github.com/92hv8rm4fc-code/Test2026/tree/ios-app) и [README-IOS.md](./README-IOS.md).
+
 ## Что умеет
 
 - искать покемона по английскому имени или номеру через локальный кеш, а при отсутствии кеша догружать из [PokeAPI](https://pokeapi.co/);

@@ -5,3 +5,10 @@ __pycache__/
 .DS_Store
 Thumbs.db
 *.log
+
+node_modules/
+ios/App/App/public/
+ios/App/Pods/
+ios/DerivedData/
+*.xcuserstate
+*.xcworkspace/xcuserdata/
