@@ -1,0 +1,17 @@
+{
+  "currentId": 94,
+  "chain": [
+    {
+      "id": 92,
+      "name": "gastly"
+    },
+    {
+      "id": 93,
+      "name": "haunter"
+    },
+    {
+      "id": 94,
+      "name": "gengar"
+    }
+  ]
+}

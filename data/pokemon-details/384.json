@@ -4,7 +4,7 @@
   "height": 7.0,
   "weight": 206.5,
   "baseExperience": 306,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png",
+  "sprite": "./data/sprites/384.png",
   "types": [
     "dragon",
     "flying"

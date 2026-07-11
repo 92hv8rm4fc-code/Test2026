@@ -1,0 +1,17 @@
+{
+  "currentId": 256,
+  "chain": [
+    {
+      "id": 255,
+      "name": "torchic"
+    },
+    {
+      "id": 256,
+      "name": "combusken"
+    },
+    {
+      "id": 257,
+      "name": "blaziken"
+    }
+  ]
+}

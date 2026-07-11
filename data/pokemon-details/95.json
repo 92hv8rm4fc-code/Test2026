@@ -4,7 +4,7 @@
   "height": 8.8,
   "weight": 210.0,
   "baseExperience": 77,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/95.png",
+  "sprite": "./data/sprites/95.png",
   "types": [
     "rock",
     "ground"

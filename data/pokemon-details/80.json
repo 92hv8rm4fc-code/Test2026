@@ -4,7 +4,7 @@
   "height": 1.6,
   "weight": 78.5,
   "baseExperience": 172,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png",
+  "sprite": "./data/sprites/80.png",
   "types": [
     "water",
     "psychic"

@@ -1,0 +1,17 @@
+{
+  "currentId": 75,
+  "chain": [
+    {
+      "id": 74,
+      "name": "geodude"
+    },
+    {
+      "id": 75,
+      "name": "graveler"
+    },
+    {
+      "id": 76,
+      "name": "golem"
+    }
+  ]
+}

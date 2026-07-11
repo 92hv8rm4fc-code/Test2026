@@ -4,7 +4,7 @@
   "height": 1.2,
   "weight": 18.6,
   "baseExperience": 221,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/45.png",
+  "sprite": "./data/sprites/45.png",
   "types": [
     "grass",
     "poison"

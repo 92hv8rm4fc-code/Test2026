@@ -1,0 +1,17 @@
+{
+  "currentId": 33,
+  "chain": [
+    {
+      "id": 32,
+      "name": "nidoran-m"
+    },
+    {
+      "id": 33,
+      "name": "nidorino"
+    },
+    {
+      "id": 34,
+      "name": "nidoking"
+    }
+  ]
+}

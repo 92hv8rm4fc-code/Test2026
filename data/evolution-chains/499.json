@@ -1,0 +1,17 @@
+{
+  "currentId": 499,
+  "chain": [
+    {
+      "id": 498,
+      "name": "tepig"
+    },
+    {
+      "id": 499,
+      "name": "pignite"
+    },
+    {
+      "id": 500,
+      "name": "emboar"
+    }
+  ]
+}

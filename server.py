@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data"
 DETAILS_DIR = DATA_DIR / "pokemon-details"
 EVOLUTION_DIR = DATA_DIR / "evolution-chains"
+SPRITES_DIR = DATA_DIR / "sprites"
 DB_PATH = DATA_DIR / "pokedex.sqlite"
 INDEX_PATH = DATA_DIR / "pokemon-index.json"
 OFFICIAL_DEX_MAX = 1025
@@ -52,15 +53,24 @@ def pokemon_id_from_query(query):
     return None
 
 
+def local_sprite_path(pokemon_id):
+    return f"./data/sprites/{pokemon_id}.png"
+
+
+def apply_local_sprite(pokemon):
+    if not pokemon or not pokemon.get("id"):
+        return pokemon
+    return {**pokemon, "sprite": local_sprite_path(pokemon["id"])}
+
+
 def normalize_pokemon(data):
-    official_artwork = data.get("sprites", {}).get("other", {}).get("official-artwork", {})
     return {
         "id": data["id"],
         "name": data["name"],
         "height": data["height"] / 10,
         "weight": data["weight"] / 10,
         "baseExperience": data.get("base_experience") or "n/a",
-        "sprite": official_artwork.get("front_default") or data.get("sprites", {}).get("front_default") or "",
+        "sprite": local_sprite_path(data["id"]),
         "types": [entry["type"]["name"] for entry in data.get("types", [])],
         "abilities": [entry["ability"]["name"] for entry in data.get("abilities", [])],
         "stats": [
@@ -74,7 +84,7 @@ def read_cached_pokemon(pokemon_id):
     path = DETAILS_DIR / f"{pokemon_id}.json"
     if not path.exists():
         return None
-    return json.loads(path.read_text(encoding="utf-8"))
+    return apply_local_sprite(json.loads(path.read_text(encoding="utf-8")))
 
 
 def fetch_and_cache_pokemon(pokemon_id):
@@ -164,7 +174,11 @@ def fetch_and_cache_evolution_chain(pokemon_id):
 
 
 def get_evolution_chain(pokemon_id):
-    return read_cached_evolution_chain(pokemon_id) or fetch_and_cache_evolution_chain(pokemon_id)
+    cached = read_cached_evolution_chain(pokemon_id)
+    if cached is not None:
+        return cached
+
+    return {"currentId": pokemon_id, "chain": []}
 
 
 class PokedexHandler(SimpleHTTPRequestHandler):
@@ -211,6 +225,7 @@ class PokedexHandler(SimpleHTTPRequestHandler):
                 self.send_json({"error": "Invalid pokemon payload"}, HTTPStatus.BAD_REQUEST)
                 return
 
+            pokemon = apply_local_sprite(pokemon)
             added_at = datetime.now(timezone.utc).isoformat()
             with sqlite3.connect(DB_PATH) as connection:
                 connection.execute(
@@ -250,7 +265,7 @@ class PokedexHandler(SimpleHTTPRequestHandler):
         return [
             {
                 "key": str(pokemon_id),
-                "pokemon": json.loads(pokemon_json),
+                "pokemon": apply_local_sprite(json.loads(pokemon_json)),
                 "addedAt": added_at,
             }
             for pokemon_id, pokemon_json, added_at in rows

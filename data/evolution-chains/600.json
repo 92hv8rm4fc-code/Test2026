@@ -1,0 +1,17 @@
+{
+  "currentId": 600,
+  "chain": [
+    {
+      "id": 599,
+      "name": "klink"
+    },
+    {
+      "id": 600,
+      "name": "klang"
+    },
+    {
+      "id": 601,
+      "name": "klinklang"
+    }
+  ]
+}

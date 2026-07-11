@@ -4,7 +4,7 @@
   "height": 1.2,
   "weight": 58.5,
   "baseExperience": 126,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/544.png",
+  "sprite": "./data/sprites/544.png",
   "types": [
     "bug",
     "poison"

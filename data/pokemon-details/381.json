@@ -4,7 +4,7 @@
   "height": 2.0,
   "weight": 60.0,
   "baseExperience": 270,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/381.png",
+  "sprite": "./data/sprites/381.png",
   "types": [
     "dragon",
     "psychic"

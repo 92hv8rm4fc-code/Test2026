@@ -4,7 +4,7 @@
   "height": 2.6,
   "weight": 260.0,
   "baseExperience": 177,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/614.png",
+  "sprite": "./data/sprites/614.png",
   "types": [
     "ice"
   ],

@@ -1,0 +1,13 @@
+{
+  "currentId": 101,
+  "chain": [
+    {
+      "id": 100,
+      "name": "voltorb"
+    },
+    {
+      "id": 101,
+      "name": "electrode"
+    }
+  ]
+}

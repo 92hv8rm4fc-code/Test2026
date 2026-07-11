@@ -17,10 +17,17 @@
             в свободную ячейку своего биндера.
           </p>
         </div>
-        <div class="capacity-card" aria-live="polite">
-          <span>Свободно</span>
-          <strong id="freeSlots">0</strong>
-          <small id="capacityText">Настрой параметры биндера</small>
+        <div class="hero-stats">
+          <div class="capacity-card" aria-live="polite">
+            <span>Собрано</span>
+            <strong id="collectionCount">0</strong>
+            <small id="collectionProgress">из 1025</small>
+          </div>
+          <div class="trainer-card" aria-live="polite">
+            <span>Ранг тренера</span>
+            <strong id="trainerRank">Новичок</strong>
+            <small id="trainerRankHint">Добавь первого покемона</small>
+          </div>
         </div>
       </header>
 
@@ -33,6 +40,9 @@
         </button>
         <button class="tab-button" type="button" data-tab-target="wishlistTab">
           Wishlist
+        </button>
+        <button class="tab-button" type="button" data-tab-target="achievementsTab">
+          Достижения
         </button>
       </nav>
 
@@ -104,35 +114,25 @@
             </div>
             <button id="clearCollection" class="danger-button" type="button">Очистить список</button>
           </div>
-          <div class="filter-bar" aria-label="Фильтры и сортировка биндера">
-            <label>
-              Поиск по имени
-              <input id="collectionSearch" type="search" placeholder="Например: char" autocomplete="off" />
+          <div class="list-toolbar" aria-label="Поиск, сортировка и фильтры биндера">
+            <label class="list-toolbar__search">
+              <span class="visually-hidden">Поиск по имени</span>
+              <input id="collectionSearch" type="search" placeholder="Поиск по имени" autocomplete="off" />
             </label>
-            <label>
-              Тип
-              <select id="collectionTypeFilter">
-                <option value="">Все типы</option>
-              </select>
-            </label>
-            <label>
-              Сортировка 1
-              <select id="collectionSortPrimary">
-                <option value="type">По типу</option>
-                <option value="name">По имени</option>
-                <option value="number">По номеру</option>
-                <option value="binder">По позиции в биндере</option>
-              </select>
-            </label>
-            <label>
-              Сортировка 2
-              <select id="collectionSortSecondary">
-                <option value="name">По имени</option>
-                <option value="type">По типу</option>
-                <option value="number">По номеру</option>
-                <option value="none">Без второй сортировки</option>
-              </select>
-            </label>
+            <div class="list-toolbar__controls">
+              <div class="dropdown" id="collectionSortDropdown">
+                <button type="button" class="ghost-button dropdown__toggle" aria-haspopup="menu" aria-expanded="false">
+                  Сортировка
+                </button>
+                <div class="dropdown__menu" role="menu"></div>
+              </div>
+              <div class="dropdown" id="collectionFilterDropdown">
+                <button type="button" class="ghost-button dropdown__toggle" aria-haspopup="menu" aria-expanded="false">
+                  Фильтры
+                </button>
+                <div class="dropdown__menu dropdown__menu--filters" role="menu"></div>
+              </div>
+            </div>
           </div>
           <div id="collectionList" class="collection-list"></div>
         </section>
@@ -153,34 +153,25 @@
               <button id="refreshPokedex" class="ghost-button" type="button">Обновить</button>
             </div>
           </div>
-          <div class="filter-bar pokedex-filter-bar" aria-label="Фильтры и сортировка Pokedex">
-            <label>
-              Поиск по имени
-              <input id="pokedexSearch" type="search" placeholder="Например: pika" autocomplete="off" />
+          <div class="list-toolbar pokedex-toolbar" aria-label="Поиск, сортировка и фильтры Pokedex">
+            <label class="list-toolbar__search">
+              <span class="visually-hidden">Поиск по имени</span>
+              <input id="pokedexSearch" type="search" placeholder="Поиск по имени" autocomplete="off" />
             </label>
-            <label>
-              Тип
-              <select id="pokedexTypeFilter">
-                <option value="">Все типы</option>
-              </select>
-            </label>
-            <label>
-              Сортировка 1
-              <select id="pokedexSortPrimary">
-                <option value="number">По номеру</option>
-                <option value="type">По типу</option>
-                <option value="name">По имени</option>
-              </select>
-            </label>
-            <label>
-              Сортировка 2
-              <select id="pokedexSortSecondary">
-                <option value="name">По имени</option>
-                <option value="type">По типу</option>
-                <option value="number">По номеру</option>
-                <option value="none">Без второй сортировки</option>
-              </select>
-            </label>
+            <div class="list-toolbar__controls">
+              <div class="dropdown" id="pokedexSortDropdown">
+                <button type="button" class="ghost-button dropdown__toggle" aria-haspopup="menu" aria-expanded="false">
+                  Сортировка
+                </button>
+                <div class="dropdown__menu" role="menu"></div>
+              </div>
+              <div class="dropdown" id="pokedexFilterDropdown">
+                <button type="button" class="ghost-button dropdown__toggle" aria-haspopup="menu" aria-expanded="false">
+                  Фильтры
+                </button>
+                <div class="dropdown__menu dropdown__menu--filters" role="menu"></div>
+              </div>
+            </div>
           </div>
           <p id="pokedexStatus" class="status" role="status"></p>
           <div id="pokedexGrid" class="pokedex-grid"></div>
@@ -207,11 +198,23 @@
           <div id="wishlistList" class="collection-list wishlist-list"></div>
         </section>
       </section>
+
+      <section id="achievementsTab" class="tab-panel">
+        <section class="panel achievements-panel">
+          <div class="section-heading">
+            <div>
+              <h2>Достижения и ранг</h2>
+              <p id="achievementsSummary">Открывай награды, собирая покемонов в биндер.</p>
+            </div>
+          </div>
+          <article class="trainer-rank-card" id="trainerRankCard"></article>
+          <div id="achievementsList" class="achievements-grid"></div>
+        </section>
+      </section>
     </main>
 
     <template id="pokemonTemplate">
       <div class="pokemon-card">
-        <div class="evolution-strip-wrap"></div>
         <div class="pokemon-card__body">
           <div class="pokemon-art-wrap">
             <img class="pokemon-art" alt="" />
@@ -222,11 +225,15 @@
             <div class="type-list"></div>
             <dl class="facts"></dl>
             <div class="pokemon-actions">
-              <button class="add-button" type="button">Добавить в биндер</button>
+              <button class="add-button binder-action-button" type="button" aria-label="Добавить в биндер">
+                <span class="binder-action-icon binder-action-icon--add" aria-hidden="true">+</span>
+                <span>В биндер</span>
+              </button>
               <button class="wishlist-button" type="button">В wishlist</button>
             </div>
           </div>
         </div>
+        <div class="evolution-strip-wrap"></div>
       </div>
     </template>
 

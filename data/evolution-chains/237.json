@@ -1,0 +1,21 @@
+{
+  "currentId": 237,
+  "chain": [
+    {
+      "id": 236,
+      "name": "tyrogue"
+    },
+    {
+      "id": 106,
+      "name": "hitmonlee"
+    },
+    {
+      "id": 107,
+      "name": "hitmonchan"
+    },
+    {
+      "id": 237,
+      "name": "hitmontop"
+    }
+  ]
+}

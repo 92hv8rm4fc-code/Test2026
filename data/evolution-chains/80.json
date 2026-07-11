@@ -1,0 +1,17 @@
+{
+  "currentId": 80,
+  "chain": [
+    {
+      "id": 79,
+      "name": "slowpoke"
+    },
+    {
+      "id": 80,
+      "name": "slowbro"
+    },
+    {
+      "id": 199,
+      "name": "slowking"
+    }
+  ]
+}

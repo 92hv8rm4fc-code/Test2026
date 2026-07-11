@@ -1,0 +1,17 @@
+{
+  "currentId": 5,
+  "chain": [
+    {
+      "id": 4,
+      "name": "charmander"
+    },
+    {
+      "id": 5,
+      "name": "charmeleon"
+    },
+    {
+      "id": 6,
+      "name": "charizard"
+    }
+  ]
+}

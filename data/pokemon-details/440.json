@@ -4,7 +4,7 @@
   "height": 0.6,
   "weight": 24.4,
   "baseExperience": 110,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/440.png",
+  "sprite": "./data/sprites/440.png",
   "types": [
     "normal"
   ],

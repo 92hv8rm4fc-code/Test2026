@@ -4,7 +4,7 @@
   "height": 1.6,
   "weight": 36.6,
   "baseExperience": 239,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/724.png",
+  "sprite": "./data/sprites/724.png",
   "types": [
     "grass",
     "ghost"

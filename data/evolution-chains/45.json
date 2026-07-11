@@ -1,0 +1,21 @@
+{
+  "currentId": 45,
+  "chain": [
+    {
+      "id": 43,
+      "name": "oddish"
+    },
+    {
+      "id": 44,
+      "name": "gloom"
+    },
+    {
+      "id": 45,
+      "name": "vileplume"
+    },
+    {
+      "id": 182,
+      "name": "bellossom"
+    }
+  ]
+}

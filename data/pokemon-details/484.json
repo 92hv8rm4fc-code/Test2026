@@ -4,7 +4,7 @@
   "height": 4.2,
   "weight": 336.0,
   "baseExperience": 306,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/484.png",
+  "sprite": "./data/sprites/484.png",
   "types": [
     "water",
     "dragon"

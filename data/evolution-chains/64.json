@@ -1,0 +1,17 @@
+{
+  "currentId": 64,
+  "chain": [
+    {
+      "id": 63,
+      "name": "abra"
+    },
+    {
+      "id": 64,
+      "name": "kadabra"
+    },
+    {
+      "id": 65,
+      "name": "alakazam"
+    }
+  ]
+}

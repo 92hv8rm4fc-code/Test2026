@@ -4,7 +4,7 @@
   "height": 1.5,
   "weight": 85.0,
   "baseExperience": 263,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/936.png",
+  "sprite": "./data/sprites/936.png",
   "types": [
     "fire",
     "psychic"

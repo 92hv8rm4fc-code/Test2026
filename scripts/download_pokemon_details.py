@@ -51,10 +51,7 @@ def normalize_pokemon(data):
         "height": data["height"] / 10,
         "weight": data["weight"] / 10,
         "baseExperience": data.get("base_experience") or "n/a",
-        "sprite": (
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/"
-            f"sprites/pokemon/other/official-artwork/{data['id']}.png"
-        ),
+        "sprite": f"./data/sprites/{data['id']}.png",
         "types": [
             entry["pokemon_v2_type"]["name"]
             for entry in data.get("pokemon_v2_pokemontypes", [])

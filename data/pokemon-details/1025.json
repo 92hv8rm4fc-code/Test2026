@@ -4,7 +4,7 @@
   "height": 0.3,
   "weight": 0.3,
   "baseExperience": 300,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1025.png",
+  "sprite": "./data/sprites/1025.png",
   "types": [
     "poison",
     "ghost"

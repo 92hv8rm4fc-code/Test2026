@@ -4,7 +4,7 @@
   "height": 1.4,
   "weight": 11.0,
   "baseExperience": 144,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/886.png",
+  "sprite": "./data/sprites/886.png",
   "types": [
     "dragon",
     "ghost"

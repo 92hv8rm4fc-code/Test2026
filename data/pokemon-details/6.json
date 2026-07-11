@@ -4,7 +4,7 @@
   "height": 1.7,
   "weight": 90.5,
   "baseExperience": 240,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+  "sprite": "./data/sprites/6.png",
   "types": [
     "fire",
     "flying"

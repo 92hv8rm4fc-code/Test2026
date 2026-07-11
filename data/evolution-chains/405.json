@@ -1,0 +1,17 @@
+{
+  "currentId": 405,
+  "chain": [
+    {
+      "id": 403,
+      "name": "shinx"
+    },
+    {
+      "id": 404,
+      "name": "luxio"
+    },
+    {
+      "id": 405,
+      "name": "luxray"
+    }
+  ]
+}

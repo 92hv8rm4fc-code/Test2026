@@ -26,16 +26,35 @@ const POKEDEX_FALLBACK_LIMIT = OFFICIAL_DEX_SIZE;
 const DEFAULT_COLLECTION_FILTERS = {
   search: "",
   type: "",
-  sortPrimary: "type",
-  sortSecondary: "name",
+  generation: "",
+  sort: "number-asc",
 };
 
 const DEFAULT_POKEDEX_FILTERS = {
   search: "",
   type: "",
-  sortPrimary: "number",
-  sortSecondary: "name",
+  generation: "",
+  sort: "number-asc",
 };
+
+const SORT_LABELS = {
+  "name-asc": "Имя A → Z",
+  "name-desc": "Имя Z → A",
+  "number-asc": "Номер ↑",
+  "number-desc": "Номер ↓",
+};
+
+const GENERATIONS = [
+  { id: 1, label: "Поколение I", min: 1, max: 151 },
+  { id: 2, label: "Поколение II", min: 152, max: 251 },
+  { id: 3, label: "Поколение III", min: 252, max: 386 },
+  { id: 4, label: "Поколение IV", min: 387, max: 493 },
+  { id: 5, label: "Поколение V", min: 494, max: 649 },
+  { id: 6, label: "Поколение VI", min: 650, max: 721 },
+  { id: 7, label: "Поколение VII", min: 722, max: 809 },
+  { id: 8, label: "Поколение VIII", min: 810, max: 905 },
+  { id: 9, label: "Поколение IX", min: 906, max: 1025 },
+];
 
 const ALL_TYPES = [
   "bug",
@@ -100,6 +119,92 @@ const TYPE_TILE_COLORS = {
   water: { bg: "#e8f2fa", border: "#b8d4ec", collectedBg: "#d8e8f4" },
 };
 
+const TRAINER_RANKS = [
+  { id: "rookie", name: "Новичок", min: 0, lore: "Лига", hint: "Добавь первого покемона в биндер" },
+  { id: "beginner", name: "Начинающий тренер", min: 1, lore: "Лига", hint: "Путь коллекционера начался" },
+  { id: "badge", name: "Значок", min: 10, lore: "Лига", hint: "Как первый значок Гима" },
+  { id: "skilled", name: "Умелый", min: 35, lore: "Лига", hint: "Несколько значков в кармане" },
+  { id: "league", name: "Участник Лиги", min: 80, lore: "Лига", hint: "Серьёзный претендент" },
+  { id: "gym_leader", name: "Гим-лидер", min: 150, lore: "Лига", hint: "Сила своего типа" },
+  { id: "elite_four", name: "Элитная четвёрка", min: 300, lore: "Лига", hint: "Вершина региональной Лиги" },
+  { id: "champion", name: "Чемпион Лиги", min: 500, lore: "Лига", hint: "Сильнейший в регионе" },
+  { id: "normal", name: "Нормальный класс", min: 600, lore: "Мировой рейтинг", hint: "Вход в World Coronation Series" },
+  { id: "great", name: "Великий класс", min: 750, lore: "Мировой рейтинг", hint: "Покеболл-ранг" },
+  { id: "ultra", name: "Ультра класс", min: 900, lore: "Мировой рейтинг", hint: "Ультраболл-ранг" },
+  { id: "master", name: "Мастер-класс", min: 1000, lore: "Мировой рейтинг", hint: "Топ-8 мира" },
+  { id: "monarch", name: "Монарх", min: 1025, lore: "Мировой рейтинг", hint: "Полный National Dex" },
+];
+
+const COLLECTION_ACHIEVEMENTS = [
+  { id: "catch_1", title: "Первый партнёр", description: "Добавь первого покемона в биндер", goal: 1 },
+  { id: "catch_10", title: "Начинающий коллекционер", description: "Собери 10 покемонов", goal: 10 },
+  { id: "catch_25", title: "Покедекс оживает", description: "Собери 25 покемонов", goal: 25 },
+  { id: "catch_50", title: "Полка заполняется", description: "Собери 50 покемонов", goal: 50 },
+  { id: "catch_100", title: "Серьёзная коллекция", description: "Собери 100 покемонов", goal: 100 },
+  { id: "catch_250", title: "Охотник за редкостями", description: "Собери 250 покемонов", goal: 250 },
+  { id: "catch_500", title: "Чемпионский запас", description: "Собери 500 покемонов", goal: 500 },
+  { id: "catch_1025", title: "Полный National Dex", description: "Собери всех 1025 покемонов", goal: 1025 },
+];
+
+const TYPE_ACHIEVEMENTS = ALL_TYPES.flatMap((type) => [
+  {
+    id: `type_${type}_1`,
+    title: `Знакомство: ${type}`,
+    description: `Добавь хотя бы одного покемона типа ${type}`,
+    type,
+    goal: 1,
+  },
+  {
+    id: `type_${type}_5`,
+    title: `Поклонник ${type}`,
+    description: `Собери 5 покемонов типа ${type}`,
+    type,
+    goal: 5,
+  },
+]);
+
+const GENERATION_ACHIEVEMENTS = GENERATIONS.flatMap((generation) => {
+  const total = generation.max - generation.min + 1;
+  return [
+    {
+      id: `gen_${generation.id}_1`,
+      title: `${generation.label}: старт`,
+      description: `Добавь первого покемона из ${generation.label}`,
+      generation: generation.id,
+      goal: 1,
+    },
+    {
+      id: `gen_${generation.id}_half`,
+      title: `${generation.label}: исследователь`,
+      description: `Собери половину покемонов ${generation.label}`,
+      generation: generation.id,
+      goal: Math.ceil(total / 2),
+    },
+    {
+      id: `gen_${generation.id}_complete`,
+      title: `${generation.label}: чемпион`,
+      description: `Собери всех покемонов ${generation.label}`,
+      generation: generation.id,
+      goal: total,
+    },
+  ];
+});
+
+const SPECIAL_ACHIEVEMENTS = [
+  {
+    id: "all_types",
+    title: "Мастер стихий",
+    description: "Собери хотя бы по одному покемону каждого типа",
+    check: (stats) => ALL_TYPES.every((type) => (stats.byType[type] || 0) >= 1),
+  },
+  {
+    id: "wishlist",
+    title: "Список мечты",
+    description: "Добавь покемона в wishlist",
+    check: (stats) => stats.wishlistCount >= 1,
+  },
+];
+
 const elements = {
   tabButtons: document.querySelectorAll(".tab-button"),
   tabPanels: document.querySelectorAll(".tab-panel"),
@@ -119,17 +224,20 @@ const elements = {
   collectionList: document.querySelector("#collectionList"),
   collectionSummary: document.querySelector("#collectionSummary"),
   collectionSearch: document.querySelector("#collectionSearch"),
-  collectionTypeFilter: document.querySelector("#collectionTypeFilter"),
-  collectionSortPrimary: document.querySelector("#collectionSortPrimary"),
-  collectionSortSecondary: document.querySelector("#collectionSortSecondary"),
-  capacityText: document.querySelector("#capacityText"),
-  freeSlots: document.querySelector("#freeSlots"),
+  collectionSortDropdown: document.querySelector("#collectionSortDropdown"),
+  collectionFilterDropdown: document.querySelector("#collectionFilterDropdown"),
+  collectionCount: document.querySelector("#collectionCount"),
+  collectionProgress: document.querySelector("#collectionProgress"),
+  trainerRank: document.querySelector("#trainerRank"),
+  trainerRankHint: document.querySelector("#trainerRankHint"),
+  trainerRankCard: document.querySelector("#trainerRankCard"),
+  achievementsSummary: document.querySelector("#achievementsSummary"),
+  achievementsList: document.querySelector("#achievementsList"),
   refreshPokedex: document.querySelector("#refreshPokedex"),
   showUncollectedPokemon: document.querySelector("#showUncollectedPokemon"),
   pokedexSearch: document.querySelector("#pokedexSearch"),
-  pokedexTypeFilter: document.querySelector("#pokedexTypeFilter"),
-  pokedexSortPrimary: document.querySelector("#pokedexSortPrimary"),
-  pokedexSortSecondary: document.querySelector("#pokedexSortSecondary"),
+  pokedexSortDropdown: document.querySelector("#pokedexSortDropdown"),
+  pokedexFilterDropdown: document.querySelector("#pokedexFilterDropdown"),
   pokedexGrid: document.querySelector("#pokedexGrid"),
   pokedexStatus: document.querySelector("#pokedexStatus"),
   pokedexSummary: document.querySelector("#pokedexSummary"),
@@ -157,12 +265,12 @@ init();
 
 function init() {
   hydrateSettingsForm();
-  populateTypeFilterOptions();
+  setupListToolbars();
   hydrateCollectionFiltersForm();
   hydratePokedexFiltersForm();
   renderCollection();
   renderWishlist();
-  updateCapacity();
+  updateProgressHeader();
   renderPokemonSuggestions();
   loadPokemonIndex();
   loadCollectionFromServer();
@@ -175,13 +283,7 @@ function init() {
   elements.showUncollectedPokemon.checked = showUncollectedPokemon;
   elements.showUncollectedPokemon.addEventListener("change", handlePokedexFilterChange);
   elements.collectionSearch.addEventListener("input", handleCollectionFiltersChange);
-  elements.collectionTypeFilter.addEventListener("change", handleCollectionFiltersChange);
-  elements.collectionSortPrimary.addEventListener("change", handleCollectionFiltersChange);
-  elements.collectionSortSecondary.addEventListener("change", handleCollectionFiltersChange);
   elements.pokedexSearch.addEventListener("input", handlePokedexFiltersChange);
-  elements.pokedexTypeFilter.addEventListener("change", handlePokedexFiltersChange);
-  elements.pokedexSortPrimary.addEventListener("change", handlePokedexFiltersChange);
-  elements.pokedexSortSecondary.addEventListener("change", handlePokedexFiltersChange);
   elements.copyWishlist.addEventListener("click", copyWishlistToClipboard);
   elements.clearWishlist.addEventListener("click", clearWishlist);
 
@@ -200,6 +302,10 @@ function switchTab(targetId) {
 
   if (targetId === "pokedexTab" && !pokedexEntries.length) {
     loadPokedex();
+  }
+
+  if (targetId === "achievementsTab") {
+    renderAchievements();
   }
 }
 
@@ -338,37 +444,199 @@ function renderPokemonSuggestions() {
   elements.pokemonSuggestions.replaceChildren(...options);
 }
 
-function populateTypeFilterOptions() {
-  [elements.collectionTypeFilter, elements.pokedexTypeFilter].forEach((select) => {
-    ALL_TYPES.forEach((type) => {
-      const option = document.createElement("option");
-      option.value = type;
-      option.textContent = type;
-      select.append(option);
-    });
+function getPokemonGeneration(pokemonId) {
+  const generation = GENERATIONS.find(
+    (entry) => pokemonId >= entry.min && pokemonId <= entry.max,
+  );
+  return generation ? generation.id : null;
+}
+
+function setupListToolbars() {
+  setupListToolbar({
+    sortDropdown: elements.collectionSortDropdown,
+    filterDropdown: elements.collectionFilterDropdown,
+    getFilters: () => collectionFilters,
+    setSort: (sort) => {
+      collectionFilters = { ...collectionFilters, sort };
+      saveCollectionFilters();
+      renderCollection();
+    },
+    setFilter: (key, value) => {
+      collectionFilters = { ...collectionFilters, [key]: value };
+      saveCollectionFilters();
+      renderCollection();
+    },
+  });
+
+  setupListToolbar({
+    sortDropdown: elements.pokedexSortDropdown,
+    filterDropdown: elements.pokedexFilterDropdown,
+    getFilters: () => pokedexFilters,
+    setSort: (sort) => {
+      pokedexFilters = { ...pokedexFilters, sort };
+      savePokedexFilters();
+      renderPokedexGrid();
+    },
+    setFilter: (key, value) => {
+      pokedexFilters = { ...pokedexFilters, [key]: value };
+      savePokedexFilters();
+      renderPokedexGrid();
+    },
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".dropdown")) {
+      closeAllDropdowns();
+    }
+  });
+}
+
+function setupListToolbar({ sortDropdown, filterDropdown, getFilters, setSort, setFilter }) {
+  const sortMenu = sortDropdown.querySelector(".dropdown__menu");
+  sortMenu.replaceChildren(
+    ...Object.entries(SORT_LABELS).map(([value, label]) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "dropdown__item";
+      button.dataset.sort = value;
+      button.setAttribute("role", "menuitem");
+      button.textContent = label;
+      button.addEventListener("click", () => {
+        setSort(value);
+        updateDropdownLabels(sortDropdown, filterDropdown, getFilters());
+        closeAllDropdowns();
+      });
+      return button;
+    }),
+  );
+
+  const filterMenu = filterDropdown.querySelector(".dropdown__menu");
+  const typeHeading = document.createElement("p");
+  typeHeading.className = "dropdown__heading";
+  typeHeading.textContent = "Тип";
+
+  const typeGroup = document.createElement("div");
+  typeGroup.className = "dropdown__group";
+  typeGroup.append(
+    createFilterOption("Все типы", "type", "", setFilter, sortDropdown, filterDropdown, getFilters),
+    ...ALL_TYPES.map((type) =>
+      createFilterOption(type, "type", type, setFilter, sortDropdown, filterDropdown, getFilters),
+    ),
+  );
+
+  const generationHeading = document.createElement("p");
+  generationHeading.className = "dropdown__heading";
+  generationHeading.textContent = "Поколение";
+
+  const generationGroup = document.createElement("div");
+  generationGroup.className = "dropdown__group";
+  generationGroup.append(
+    createFilterOption(
+      "Все поколения",
+      "generation",
+      "",
+      setFilter,
+      sortDropdown,
+      filterDropdown,
+      getFilters,
+    ),
+    ...GENERATIONS.map((generation) =>
+      createFilterOption(
+        generation.label,
+        "generation",
+        String(generation.id),
+        setFilter,
+        sortDropdown,
+        filterDropdown,
+        getFilters,
+      ),
+    ),
+  );
+
+  filterMenu.append(typeHeading, typeGroup, generationHeading, generationGroup);
+
+  sortDropdown.querySelector(".dropdown__toggle").addEventListener("click", (event) => {
+    event.stopPropagation();
+    toggleDropdown(sortDropdown);
+  });
+
+  filterDropdown.querySelector(".dropdown__toggle").addEventListener("click", (event) => {
+    event.stopPropagation();
+    toggleDropdown(filterDropdown);
+  });
+
+  updateDropdownLabels(sortDropdown, filterDropdown, getFilters());
+}
+
+function createFilterOption(label, key, value, setFilter, sortDropdown, filterDropdown, getFilters) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "dropdown__item";
+  button.dataset.filterKey = key;
+  button.dataset.filterValue = value;
+  button.setAttribute("role", "menuitem");
+  button.textContent = label;
+  button.addEventListener("click", () => {
+    setFilter(key, value);
+    updateDropdownLabels(sortDropdown, filterDropdown, getFilters());
+    closeAllDropdowns();
+  });
+  return button;
+}
+
+function toggleDropdown(dropdown) {
+  const isOpen = dropdown.classList.contains("open");
+  closeAllDropdowns();
+  if (!isOpen) {
+    dropdown.classList.add("open");
+    dropdown.querySelector(".dropdown__toggle").setAttribute("aria-expanded", "true");
+  }
+}
+
+function closeAllDropdowns() {
+  document.querySelectorAll(".dropdown.open").forEach((dropdown) => {
+    dropdown.classList.remove("open");
+    dropdown.querySelector(".dropdown__toggle").setAttribute("aria-expanded", "false");
+  });
+}
+
+function updateDropdownLabels(sortDropdown, filterDropdown, filters) {
+  const sortToggle = sortDropdown.querySelector(".dropdown__toggle");
+  sortToggle.textContent = `Сортировка: ${SORT_LABELS[filters.sort] || SORT_LABELS["number-asc"]}`;
+
+  sortDropdown.querySelectorAll("[data-sort]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.sort === filters.sort);
+  });
+
+  const activeFilters = [filters.type, filters.generation].filter(Boolean).length;
+  const filterToggle = filterDropdown.querySelector(".dropdown__toggle");
+  filterToggle.textContent = activeFilters ? `Фильтры (${activeFilters})` : "Фильтры";
+
+  filterDropdown.querySelectorAll("[data-filter-key]").forEach((button) => {
+    const key = button.dataset.filterKey;
+    const value = button.dataset.filterValue;
+    button.classList.toggle("active", String(filters[key] || "") === value);
   });
 }
 
 function hydrateCollectionFiltersForm() {
   elements.collectionSearch.value = collectionFilters.search;
-  elements.collectionTypeFilter.value = collectionFilters.type;
-  elements.collectionSortPrimary.value = collectionFilters.sortPrimary;
-  elements.collectionSortSecondary.value = collectionFilters.sortSecondary;
+  updateDropdownLabels(
+    elements.collectionSortDropdown,
+    elements.collectionFilterDropdown,
+    collectionFilters,
+  );
 }
 
 function hydratePokedexFiltersForm() {
   elements.pokedexSearch.value = pokedexFilters.search;
-  elements.pokedexTypeFilter.value = pokedexFilters.type;
-  elements.pokedexSortPrimary.value = pokedexFilters.sortPrimary;
-  elements.pokedexSortSecondary.value = pokedexFilters.sortSecondary;
+  updateDropdownLabels(elements.pokedexSortDropdown, elements.pokedexFilterDropdown, pokedexFilters);
 }
 
 function handleCollectionFiltersChange() {
   collectionFilters = {
+    ...collectionFilters,
     search: elements.collectionSearch.value.trim().toLowerCase(),
-    type: elements.collectionTypeFilter.value,
-    sortPrimary: elements.collectionSortPrimary.value,
-    sortSecondary: elements.collectionSortSecondary.value,
   };
   saveCollectionFilters();
   renderCollection();
@@ -376,10 +644,8 @@ function handleCollectionFiltersChange() {
 
 function handlePokedexFiltersChange() {
   pokedexFilters = {
+    ...pokedexFilters,
     search: elements.pokedexSearch.value.trim().toLowerCase(),
-    type: elements.pokedexTypeFilter.value,
-    sortPrimary: elements.pokedexSortPrimary.value,
-    sortSecondary: elements.pokedexSortSecondary.value,
   };
   savePokedexFilters();
   renderPokedexGrid();
@@ -408,32 +674,27 @@ function matchesTypeFilter(subject, typeFilter) {
   return types.includes(typeFilter);
 }
 
-function compareBySortKey(left, right, key) {
-  switch (key) {
-    case "type":
-      return getPrimaryType(left).localeCompare(getPrimaryType(right));
-    case "name": {
-      const leftName = left.pokemon?.name || left.name || "";
-      const rightName = right.pokemon?.name || right.name || "";
-      return leftName.localeCompare(rightName);
-    }
-    case "number":
-      return (left.pokemon?.id || left.id) - (right.pokemon?.id || right.id);
-    case "binder":
-      return (left.pokemon?.id || left.id) - (right.pokemon?.id || right.id);
-    default:
-      return 0;
+function matchesGenerationFilter(subject, generationFilter) {
+  if (!generationFilter) {
+    return true;
   }
+
+  const pokemonId = subject.pokemon?.id || subject.id;
+  return String(getPokemonGeneration(pokemonId)) === String(generationFilter);
 }
 
-function sortEntries(entries, primary, secondary) {
+function sortEntries(entries, sortKey) {
+  const [key, direction] = sortKey.split("-");
+  const factor = direction === "desc" ? -1 : 1;
+
   return [...entries].sort((left, right) => {
-    const primaryDiff = compareBySortKey(left, right, primary);
-    if (primaryDiff !== 0 || secondary === "none") {
-      return primaryDiff;
+    if (key === "name") {
+      const leftName = left.pokemon?.name || left.name || "";
+      const rightName = right.pokemon?.name || right.name || "";
+      return leftName.localeCompare(rightName) * factor;
     }
 
-    return compareBySortKey(left, right, secondary);
+    return ((left.pokemon?.id || left.id) - (right.pokemon?.id || right.id)) * factor;
   });
 }
 
@@ -475,12 +736,23 @@ async function enrichPokedexWithTypes() {
 }
 
 async function fetchEvolutionChain(pokemonId) {
-  const response = await fetchWithTimeout(`${EVOLUTION_API_URL}/${pokemonId}`, 45000);
+  const response = await fetchWithTimeout(`${EVOLUTION_API_URL}/${pokemonId}`, 8000);
   if (!response.ok) {
     throw new Error("Evolution chain is unavailable");
   }
 
   return response.json();
+}
+
+function createEvolutionSection(evolutionData, currentId, onSelect) {
+  const section = document.createElement("section");
+  section.className = "evolution-section";
+
+  const heading = document.createElement("h4");
+  heading.className = "evolution-heading";
+  heading.textContent = "Эволюции";
+  section.append(heading, buildEvolutionStrip(evolutionData, currentId, onSelect));
+  return section;
 }
 
 function buildEvolutionStrip(evolutionData, currentId, onSelect) {
@@ -531,7 +803,7 @@ async function renderEvolutionStrip(container, pokemon, onSelect) {
       return;
     }
 
-    container.replaceChildren(buildEvolutionStrip(evolutionData, pokemon.id, onSelect));
+    container.replaceChildren(createEvolutionSection(evolutionData, pokemon.id, onSelect));
   } catch (error) {
     console.warn("Evolution chain was not loaded:", error);
     container.replaceChildren();
@@ -613,13 +885,12 @@ function renderPokedexGrid() {
     : pokedexEntries.filter((entry) => collectedIds.has(entry.id));
 
   visibleEntries = visibleEntries.filter(
-    (entry) => matchesSearchQuery(entry, pokedexFilters.search) && matchesTypeFilter(entry, pokedexFilters.type),
+    (entry) =>
+      matchesSearchQuery(entry, pokedexFilters.search) &&
+      matchesTypeFilter(entry, pokedexFilters.type) &&
+      matchesGenerationFilter(entry, pokedexFilters.generation),
   );
-  visibleEntries = sortEntries(
-    visibleEntries,
-    pokedexFilters.sortPrimary,
-    pokedexFilters.sortSecondary,
-  );
+  visibleEntries = sortEntries(visibleEntries, pokedexFilters.sort);
 
   elements.pokedexSummary.textContent = showUncollectedPokemon
     ? `Собрано ${collectedIds.size} из ${pokedexEntries.length} покемонов. Показано ${visibleEntries.length}.`
@@ -673,7 +944,31 @@ function getPokemonIdFromUrl(url) {
 }
 
 function getPokemonArtworkUrl(id) {
-  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+  return `./data/sprites/${id}.png`;
+}
+
+function resolvePokemonSprite(pokemonOrId) {
+  const id = typeof pokemonOrId === "number" ? pokemonOrId : pokemonOrId?.id;
+  return Number.isFinite(id) ? getPokemonArtworkUrl(id) : "";
+}
+
+function configureAddBinderButton(button, pokemon) {
+  button.className = "add-button binder-action-button";
+  button.innerHTML =
+    '<span class="binder-action-icon binder-action-icon--add" aria-hidden="true">+</span><span>В биндер</span>';
+  button.setAttribute("aria-label", "Добавить в биндер");
+  button.disabled = !canPokemonFitInBinder(pokemon.id);
+}
+
+function createRemoveBinderButton(onClick) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "remove-from-binder-button binder-action-button";
+  button.innerHTML =
+    '<span class="binder-action-icon binder-action-icon--remove" aria-hidden="true"></span><span>Из биндера</span>';
+  button.setAttribute("aria-label", "Убрать из биндера");
+  button.addEventListener("click", onClick);
+  return button;
 }
 
 function normalizePokemon(data) {
@@ -684,7 +979,7 @@ function normalizePokemon(data) {
       height: data.height,
       weight: data.weight,
       baseExperience: data.baseExperience ?? "n/a",
-      sprite: data.sprite || "",
+      sprite: getPokemonArtworkUrl(data.id),
       types: data.types,
       abilities: data.abilities || [],
       stats: data.stats || [],
@@ -697,10 +992,7 @@ function normalizePokemon(data) {
     height: data.height / 10,
     weight: data.weight / 10,
     baseExperience: data.base_experience ?? "n/a",
-    sprite:
-      data.sprites.other?.["official-artwork"]?.front_default ||
-      data.sprites.front_default ||
-      "",
+    sprite: getPokemonArtworkUrl(data.id),
     types: data.types.map((typeEntry) => typeEntry.type.name),
     abilities: data.abilities.map((abilityEntry) => abilityEntry.ability.name),
     stats: data.stats.map((statEntry) => ({
@@ -720,8 +1012,10 @@ function renderPokemon(pokemon) {
   const facts = fragment.querySelector(".facts");
   const addButton = fragment.querySelector(".add-button");
   const wishlistButton = fragment.querySelector(".wishlist-button");
+  const actions = fragment.querySelector(".pokemon-actions");
+  const collectionEntry = collection.find((entry) => entry.pokemon.id === pokemon.id);
 
-  image.src = pokemon.sprite;
+  image.src = resolvePokemonSprite(pokemon);
   image.alt = `${pokemon.name} artwork`;
   number.textContent = `#${pokemon.id.toString().padStart(4, "0")}`;
   title.textContent = pokemon.name;
@@ -745,12 +1039,27 @@ function renderPokemon(pokemon) {
     facts.append(item);
   });
 
-  const placement = createPlacementPreview(pokemon);
-  addButton.disabled = !canPokemonFitInBinder(pokemon.id);
-  addButton.addEventListener("click", () => addPokemonToBinder(pokemon));
+  if (collectionEntry) {
+    addButton.remove();
+    actions.insertBefore(
+      createRemoveBinderButton(() => {
+        removeEntry(collectionEntry.key);
+        renderPokemon(pokemon);
+        setStatus(`${pokemon.name} убран из биндера.`);
+      }),
+      wishlistButton,
+    );
+  } else {
+    configureAddBinderButton(addButton, pokemon);
+    addButton.addEventListener("click", () => addPokemonToBinder(pokemon));
+  }
+
   updateWishlistButton(wishlistButton, pokemon);
   wishlistButton.addEventListener("click", () => toggleWishlistPokemon(pokemon, wishlistButton));
-  fragment.querySelector(".pokemon-details").insertBefore(placement, fragment.querySelector(".pokemon-actions"));
+  fragment.querySelector(".pokemon-details").insertBefore(
+    createPlacementSection(pokemon),
+    fragment.querySelector(".pokemon-actions"),
+  );
   elements.pokemonResult.className = "pokemon-result";
   elements.pokemonResult.replaceChildren(card);
 
@@ -798,7 +1107,7 @@ function renderPokedexDetails(pokemon) {
   card.className = "pokedex-details-card";
 
   const image = document.createElement("img");
-  image.src = pokemon.sprite;
+  image.src = resolvePokemonSprite(pokemon);
   image.alt = `${pokemon.name} artwork`;
 
   const body = document.createElement("div");
@@ -842,17 +1151,23 @@ function renderPokedexDetails(pokemon) {
   actions.className = "pokemon-actions";
 
   if (!collectionEntry) {
-    const placement = createPlacementPreview(pokemon);
+    body.append(createPlacementSection(pokemon));
     const addButton = document.createElement("button");
     addButton.type = "button";
-    addButton.textContent = "Добавить в биндер";
-    addButton.disabled = !canPokemonFitInBinder(pokemon.id);
+    configureAddBinderButton(addButton, pokemon);
     addButton.addEventListener("click", () => {
       addPokemonToBinder(pokemon);
       renderPokedexDetails(pokemon);
     });
-    body.append(placement);
     actions.append(addButton);
+  } else {
+    actions.append(
+      createRemoveBinderButton(() => {
+        removeEntry(collectionEntry.key);
+        renderPokedexDetails(pokemon);
+        setPokedexStatus(`${pokemon.name} убран из биндера.`);
+      }),
+    );
   }
 
   const wishlistButton = document.createElement("button");
@@ -866,7 +1181,7 @@ function renderPokedexDetails(pokemon) {
   body.append(actions);
 
   card.append(image, body);
-  wrapper.append(evolutionWrap, card);
+  wrapper.append(card, evolutionWrap);
   elements.pokedexDetails.className = "panel pokedex-details";
   elements.pokedexDetails.replaceChildren(wrapper);
 }
@@ -899,7 +1214,7 @@ async function loadCollectionFromServer() {
       saveCollection();
       renderCollection();
       refreshPokedexView();
-      updateCapacity();
+      updateProgressHeader();
       return;
     }
 
@@ -948,7 +1263,7 @@ async function addPokemonToBinder(pokemon) {
   saveCollection();
   renderCollection();
   refreshPokedexView();
-  updateCapacity();
+  updateProgressHeader();
   setStatus(`${pokemon.name} добавлен: ${formatSlot(slot)}.`);
 
   try {
@@ -1003,6 +1318,187 @@ function getSlotByPokemonNumber(pokemonId, currentSettings) {
 
 function canPokemonFitInBinder(pokemonId) {
   return pokemonId <= getCapacity(settings);
+}
+
+function createPlacementSection(pokemon) {
+  const details = document.createElement("details");
+  details.className = "placement-toggle";
+
+  const summary = document.createElement("summary");
+  summary.textContent = "Место в биндере";
+
+  details.append(summary, createPlacementPreview(pokemon));
+
+  if (!canPokemonFitInBinder(pokemon.id)) {
+    details.classList.add("placement-toggle--disabled");
+    summary.textContent = "Не помещается в биндер";
+  }
+
+  return details;
+}
+
+function getCollectionStats() {
+  const byType = Object.fromEntries(ALL_TYPES.map((type) => [type, 0]));
+  const byGeneration = Object.fromEntries(GENERATIONS.map((generation) => [generation.id, 0]));
+
+  collection.forEach((entry) => {
+    (entry.pokemon.types || []).forEach((type) => {
+      if (byType[type] !== undefined) {
+        byType[type] += 1;
+      }
+    });
+
+    const generationId = getPokemonGeneration(entry.pokemon.id);
+    if (generationId) {
+      byGeneration[generationId] += 1;
+    }
+  });
+
+  return {
+    total: collection.length,
+    byType,
+    byGeneration,
+    wishlistCount: wishlist.length,
+  };
+}
+
+function getTrainerRankState(stats) {
+  let current = TRAINER_RANKS[0];
+  let next = TRAINER_RANKS[1] || null;
+
+  for (const rank of TRAINER_RANKS) {
+    if (stats.total >= rank.min) {
+      current = rank;
+    }
+  }
+
+  const currentIndex = TRAINER_RANKS.findIndex((rank) => rank.id === current.id);
+  next = TRAINER_RANKS[currentIndex + 1] || null;
+  return { current, next };
+}
+
+function getAchievementEntries(stats) {
+  const collectionAchievements = COLLECTION_ACHIEVEMENTS.map((achievement) => ({
+    ...achievement,
+    category: "collection",
+    unlocked: stats.total >= achievement.goal,
+    progress: Math.min(stats.total, achievement.goal),
+  }));
+
+  const typeAchievements = TYPE_ACHIEVEMENTS.map((achievement) => {
+    const progress = stats.byType[achievement.type] || 0;
+    return {
+      ...achievement,
+      category: "type",
+      unlocked: progress >= achievement.goal,
+      progress: Math.min(progress, achievement.goal),
+    };
+  });
+
+  const generationAchievements = GENERATION_ACHIEVEMENTS.map((achievement) => {
+    const progress = stats.byGeneration[achievement.generation] || 0;
+    return {
+      ...achievement,
+      category: "generation",
+      unlocked: progress >= achievement.goal,
+      progress: Math.min(progress, achievement.goal),
+    };
+  });
+
+  const specialAchievements = SPECIAL_ACHIEVEMENTS.map((achievement) => ({
+    ...achievement,
+    category: "special",
+    unlocked: achievement.check(stats),
+    progress: achievement.check(stats) ? 1 : 0,
+    goal: 1,
+  }));
+
+  return [...collectionAchievements, ...typeAchievements, ...generationAchievements, ...specialAchievements];
+}
+
+function updateTrainerCard() {
+  const stats = getCollectionStats();
+  const { current, next } = getTrainerRankState(stats);
+
+  elements.trainerRank.textContent = current.name;
+  elements.trainerRankHint.textContent = next
+    ? `До «${next.name}»: ещё ${next.min - stats.total}`
+    : current.hint;
+}
+
+function renderAchievements() {
+  const stats = getCollectionStats();
+  const { current, next } = getTrainerRankState(stats);
+  const achievements = getAchievementEntries(stats);
+  const unlockedCount = achievements.filter((achievement) => achievement.unlocked).length;
+
+  elements.achievementsSummary.textContent = `Открыто ${unlockedCount} из ${achievements.length} достижений.`;
+
+  const rankCard = elements.trainerRankCard;
+  rankCard.replaceChildren();
+
+  const lore = document.createElement("p");
+  lore.className = "eyebrow";
+  lore.textContent = current.lore;
+
+  const title = document.createElement("h3");
+  title.textContent = current.name;
+
+  const hint = document.createElement("p");
+  hint.textContent = current.hint;
+
+  rankCard.append(lore, title, hint);
+
+  if (next) {
+    const progress = document.createElement("div");
+    progress.className = "rank-progress";
+    const range = next.min - current.min;
+    const value = stats.total - current.min;
+    const percent = range > 0 ? Math.round((value / range) * 100) : 100;
+
+    progress.innerHTML = `
+      <div class="rank-progress__bar" aria-hidden="true">
+        <div class="rank-progress__fill" style="width: ${percent}%"></div>
+      </div>
+      <small>До ранга «${next.name}»: ${stats.total} / ${next.min}</small>
+    `;
+    rankCard.append(progress);
+  }
+
+  elements.achievementsList.replaceChildren(
+    ...achievements.map((achievement) => {
+      const card = document.createElement("article");
+      card.className = `achievement-card${achievement.unlocked ? " unlocked" : " locked"}`;
+
+      const badge = document.createElement("span");
+      badge.className = "achievement-card__badge";
+      badge.textContent = achievement.unlocked ? "Получено" : "Закрыто";
+
+      const achievementTitle = document.createElement("h4");
+      achievementTitle.textContent = achievement.title;
+
+      const description = document.createElement("p");
+      description.textContent = achievement.description;
+
+      card.append(badge, achievementTitle, description);
+
+      if (achievement.goal && achievement.goal > 1) {
+        const progressNote = document.createElement("p");
+        progressNote.textContent = `Прогресс: ${achievement.progress ?? 0} / ${achievement.goal}`;
+        card.append(progressNote);
+      }
+
+      return card;
+    }),
+  );
+
+  updateTrainerCard();
+}
+
+function updateProgressHeader() {
+  elements.collectionCount.textContent = collection.length.toString();
+  elements.collectionProgress.textContent = `из ${OFFICIAL_DEX_SIZE}`;
+  updateTrainerCard();
 }
 
 function createPlacementPreview(pokemon) {
@@ -1109,6 +1605,11 @@ function toggleWishlistPokemon(pokemon, button = null) {
   if (button) {
     updateWishlistButton(button, pokemon);
   }
+
+  updateProgressHeader();
+  if (document.querySelector("#achievementsTab")?.classList.contains("active")) {
+    renderAchievements();
+  }
 }
 
 function formatWishlistLine(pokemon) {
@@ -1192,7 +1693,7 @@ function renderWishlist() {
     item.style.borderColor = colors.border;
 
     const image = document.createElement("img");
-    image.src = entry.pokemon.sprite || getPokemonArtworkUrl(entry.pokemon.id);
+    image.src = resolvePokemonSprite(entry.pokemon);
     image.alt = entry.pokemon.name;
 
     const info = document.createElement("div");
@@ -1203,18 +1704,30 @@ function renderWishlist() {
     line.textContent = formatWishlistLine(entry.pokemon);
     info.append(title, line);
 
-    const remove = document.createElement("button");
-    remove.className = "remove-button";
-    remove.type = "button";
-    remove.textContent = "x";
-    remove.ariaLabel = `Убрать ${entry.pokemon.name} из wishlist`;
-    remove.addEventListener("click", () => removeFromWishlist(entry.pokemon.id));
+    const remove = createRemoveIconButton(
+      `Убрать ${entry.pokemon.name} из wishlist`,
+      () => removeFromWishlist(entry.pokemon.id),
+    );
 
     item.append(image, info, remove);
     return item;
   });
 
   elements.wishlistList.replaceChildren(...items);
+}
+
+function createRemoveIconButton(ariaLabel, onClick) {
+  const button = document.createElement("button");
+  button.className = "remove-button";
+  button.type = "button";
+  button.setAttribute("aria-label", ariaLabel);
+
+  const icon = document.createElement("span");
+  icon.className = "remove-button__icon";
+  icon.setAttribute("aria-hidden", "true");
+  button.append(icon);
+  button.addEventListener("click", onClick);
+  return button;
 }
 
 function setWishlistStatus(message, isError = false) {
@@ -1228,10 +1741,10 @@ function renderCollection() {
     collection.filter(
       (entry) =>
         matchesSearchQuery(entry, collectionFilters.search) &&
-        matchesTypeFilter(entry, collectionFilters.type),
+        matchesTypeFilter(entry, collectionFilters.type) &&
+        matchesGenerationFilter(entry, collectionFilters.generation),
     ),
-    collectionFilters.sortPrimary,
-    collectionFilters.sortSecondary,
+    collectionFilters.sort,
   );
 
   elements.collectionSummary.textContent = collection.length
@@ -1263,7 +1776,7 @@ function renderCollection() {
     item.style.borderColor = colors.border;
 
     const image = document.createElement("img");
-    image.src = entry.pokemon.sprite;
+    image.src = resolvePokemonSprite(entry.pokemon);
     image.alt = entry.pokemon.name;
 
     const info = document.createElement("div");
@@ -1274,12 +1787,9 @@ function renderCollection() {
     slot.textContent = formatSlot(entry.slot);
     info.append(title, slot);
 
-    const remove = document.createElement("button");
-    remove.className = "remove-button";
-    remove.type = "button";
-    remove.textContent = "x";
-    remove.ariaLabel = `Убрать ${entry.pokemon.name}`;
-    remove.addEventListener("click", () => removeEntry(entry.key));
+    const remove = createRemoveIconButton(`Убрать ${entry.pokemon.name}`, () =>
+      removeEntry(entry.key),
+    );
 
     item.append(image, info, remove);
     return item;
@@ -1294,7 +1804,7 @@ function removeEntry(key) {
   recalculateSlots();
   renderCollection();
   refreshPokedexView();
-  updateCapacity();
+  updateProgressHeader();
 
   if (removedEntry) {
     deleteCollectionEntry(removedEntry.pokemon.id).catch((error) => {
@@ -1338,7 +1848,7 @@ function handleSettingsSave(event) {
   recalculateSlots();
   renderCollection();
   refreshPokedexView();
-  updateCapacity();
+  updateProgressHeader();
   setStatus("Настройки биндера сохранены.");
 }
 
@@ -1353,7 +1863,7 @@ function resetSettings() {
   recalculateSlots();
   renderCollection();
   refreshPokedexView();
-  updateCapacity();
+  updateProgressHeader();
   setStatus("Настройки сброшены к варианту 2 x 30 x 2 x 9.");
 }
 
@@ -1371,7 +1881,7 @@ function clearCollection() {
   saveCollection();
   renderCollection();
   refreshPokedexView();
-  updateCapacity();
+  updateProgressHeader();
   setStatus("Список биндера очищен.");
 
   clearCollectionOnServer().catch((error) => {
@@ -1393,13 +1903,6 @@ function refreshPokedexView() {
   if (pokedexEntries.length) {
     renderPokedexGrid();
   }
-}
-
-function updateCapacity() {
-  const capacity = getCapacity(settings);
-  const free = Math.max(0, capacity - collection.length);
-  elements.freeSlots.textContent = free.toString();
-  elements.capacityText.textContent = `${collection.length}/${capacity} занято`;
 }
 
 function hydrateSettingsForm() {
@@ -1470,23 +1973,52 @@ function savePokemonIndexCache() {
 function loadCollectionFilters() {
   try {
     const parsed = JSON.parse(localStorage.getItem(STORAGE_KEYS.collectionFilters));
-    return { ...DEFAULT_COLLECTION_FILTERS, ...parsed };
+    return normalizeListFilters(parsed, DEFAULT_COLLECTION_FILTERS);
   } catch {
     return { ...DEFAULT_COLLECTION_FILTERS };
   }
 }
 
-function saveCollectionFilters() {
-  localStorage.setItem(STORAGE_KEYS.collectionFilters, JSON.stringify(collectionFilters));
-}
-
 function loadPokedexFilters() {
   try {
     const parsed = JSON.parse(localStorage.getItem(STORAGE_KEYS.pokedexFilters));
-    return { ...DEFAULT_POKEDEX_FILTERS, ...parsed };
+    return normalizeListFilters(parsed, DEFAULT_POKEDEX_FILTERS);
   } catch {
     return { ...DEFAULT_POKEDEX_FILTERS };
   }
+}
+
+function normalizeListFilters(parsed, defaults) {
+  if (!parsed || typeof parsed !== "object") {
+    return { ...defaults };
+  }
+
+  if (parsed.sort) {
+    return {
+      search: parsed.search || "",
+      type: parsed.type || "",
+      generation: parsed.generation || "",
+      sort: SORT_LABELS[parsed.sort] ? parsed.sort : defaults.sort,
+    };
+  }
+
+  let sort = defaults.sort;
+  if (parsed.sortPrimary === "name") {
+    sort = "name-asc";
+  } else if (parsed.sortPrimary === "number" || parsed.sortPrimary === "binder") {
+    sort = "number-asc";
+  }
+
+  return {
+    search: parsed.search || "",
+    type: parsed.type || "",
+    generation: "",
+    sort,
+  };
+}
+
+function saveCollectionFilters() {
+  localStorage.setItem(STORAGE_KEYS.collectionFilters, JSON.stringify(collectionFilters));
 }
 
 function savePokedexFilters() {

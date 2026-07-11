@@ -1,0 +1,17 @@
+{
+  "currentId": 1,
+  "chain": [
+    {
+      "id": 1,
+      "name": "bulbasaur"
+    },
+    {
+      "id": 2,
+      "name": "ivysaur"
+    },
+    {
+      "id": 3,
+      "name": "venusaur"
+    }
+  ]
+}

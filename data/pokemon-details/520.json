@@ -4,7 +4,7 @@
   "height": 0.6,
   "weight": 15.0,
   "baseExperience": 125,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/520.png",
+  "sprite": "./data/sprites/520.png",
   "types": [
     "normal",
     "flying"

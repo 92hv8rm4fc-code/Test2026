@@ -4,7 +4,7 @@
   "height": 0.4,
   "weight": 1.9,
   "baseExperience": 58,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/339.png",
+  "sprite": "./data/sprites/339.png",
   "types": [
     "water",
     "ground"

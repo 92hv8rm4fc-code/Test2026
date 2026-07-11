@@ -4,7 +4,7 @@
   "height": 0.7,
   "weight": 20.5,
   "baseExperience": 60,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/443.png",
+  "sprite": "./data/sprites/443.png",
   "types": [
     "dragon",
     "ground"

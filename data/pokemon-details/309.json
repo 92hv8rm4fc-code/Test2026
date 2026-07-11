@@ -4,7 +4,7 @@
   "height": 0.6,
   "weight": 15.2,
   "baseExperience": 59,
-  "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/309.png",
+  "sprite": "./data/sprites/309.png",
   "types": [
     "electric"
   ],
