@@ -122,6 +122,30 @@
     };
   }
 
+  function installZoomPrevention() {
+    let lastTouchEnd = 0;
+
+    document.addEventListener(
+      "touchend",
+      (event) => {
+        const now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      },
+      { passive: false },
+    );
+
+    document.addEventListener(
+      "gesturestart",
+      (event) => {
+        event.preventDefault();
+      },
+      { passive: false },
+    );
+  }
+
   function installLifecycleFlush() {
     const App = getAppPlugin();
     if (App && typeof App.addListener === "function") {
@@ -148,6 +172,7 @@
 
     document.documentElement.classList.add("mobile-app");
     installStoragePersistence();
+    installZoomPrevention();
     await restoreStorageFromPreferences();
     installLifecycleFlush();
   })();
