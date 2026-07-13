@@ -58,18 +58,28 @@
             <h2>Поиск покемона</h2>
             <form id="searchForm" class="search-form">
               <label for="pokemonQuery">Имя или номер</label>
-              <div class="input-row">
-                <input
-                  id="pokemonQuery"
-                  name="pokemonQuery"
-                  type="search"
-                  list="pokemonSuggestions"
-                  placeholder="Например: pikachu или 25"
-                  autocomplete="off"
-                  required
-                />
-                <datalist id="pokemonSuggestions"></datalist>
-                <button type="submit">Найти</button>
+              <div class="search-autocomplete">
+                <div class="input-row">
+                  <input
+                    id="pokemonQuery"
+                    name="pokemonQuery"
+                    type="search"
+                    placeholder="Например: pikachu или 25"
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                    required
+                  />
+                  <button type="submit">Найти</button>
+                </div>
+                <div
+                  id="pokemonSuggestionList"
+                  class="search-suggestions"
+                  role="listbox"
+                  aria-label="Подсказки покемонов"
+                  hidden
+                ></div>
               </div>
             </form>
             <p id="searchStatus" class="status" role="status"></p>

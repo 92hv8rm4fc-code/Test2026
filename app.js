@@ -212,7 +212,7 @@ const elements = {
   pokemonQuery: document.querySelector("#pokemonQuery"),
   searchStatus: document.querySelector("#searchStatus"),
   pokemonResult: document.querySelector("#pokemonResult"),
-  pokemonSuggestions: document.querySelector("#pokemonSuggestions"),
+  pokemonSuggestionList: document.querySelector("#pokemonSuggestionList"),
   pokemonTemplate: document.querySelector("#pokemonTemplate"),
   settingsForm: document.querySelector("#settingsForm"),
   binderCount: document.querySelector("#binderCount"),
@@ -260,6 +260,8 @@ let pokedexEntries = [];
 let showUncollectedPokemon = true;
 let isPokemonIndexLoading = false;
 let isPokedexLoading = false;
+let selectedPokedexId = null;
+let hideSuggestionListTimeout = null;
 
 function bootstrapApp() {
   settings = loadSettings();
@@ -293,10 +295,12 @@ function init() {
   renderWishlist();
   updateProgressHeader();
   renderPokemonSuggestions();
+  setupPokemonAutocomplete();
   loadPokemonIndex();
   loadCollectionFromServer();
 
   elements.searchForm.addEventListener("submit", handleSearch);
+  elements.searchForm.addEventListener("submit", hidePokemonSuggestions);
   elements.settingsForm.addEventListener("submit", handleSettingsSave);
   elements.resetSettings.addEventListener("click", resetSettings);
   elements.clearCollection.addEventListener("click", clearCollection);
@@ -455,18 +459,99 @@ function isOfficialDexIndex(index) {
 }
 
 function renderPokemonSuggestions() {
-  if (!pokemonIndex.length) {
+  updatePokemonAutocomplete(elements.pokemonQuery.value);
+}
+
+function setupPokemonAutocomplete() {
+  elements.pokemonQuery.addEventListener("input", () => {
+    updatePokemonAutocomplete(elements.pokemonQuery.value);
+  });
+
+  elements.pokemonQuery.addEventListener("focus", () => {
+    updatePokemonAutocomplete(elements.pokemonQuery.value);
+  });
+
+  elements.pokemonQuery.addEventListener("blur", () => {
+    hideSuggestionListTimeout = window.setTimeout(() => {
+      hidePokemonSuggestions();
+    }, 180);
+  });
+
+  elements.pokemonQuery.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      hidePokemonSuggestions();
+    }
+  });
+}
+
+function hidePokemonSuggestions() {
+  elements.pokemonSuggestionList.hidden = true;
+  elements.pokemonSuggestionList.replaceChildren();
+}
+
+function updatePokemonAutocomplete(rawQuery) {
+  if (hideSuggestionListTimeout) {
+    window.clearTimeout(hideSuggestionListTimeout);
+    hideSuggestionListTimeout = null;
+  }
+
+  const query = rawQuery.trim().toLowerCase();
+  if (!query || !pokemonIndex.length) {
+    hidePokemonSuggestions();
     return;
   }
 
-  const options = pokemonIndex.map((entry) => {
-    const option = document.createElement("option");
-    option.value = entry.name;
-    option.label = `#${entry.id.toString().padStart(4, "0")}`;
-    return option;
+  const matches = pokemonIndex
+    .filter((entry) => {
+      const idText = String(entry.id);
+      return entry.name.startsWith(query) || idText.startsWith(query);
+    })
+    .slice(0, 10);
+
+  if (!matches.length) {
+    hidePokemonSuggestions();
+    return;
+  }
+
+  const items = matches.map((entry) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "search-suggestion";
+    button.setAttribute("role", "option");
+
+    const image = document.createElement("img");
+    image.src = entry.sprite || getPokemonArtworkUrl(entry.id);
+    image.alt = "";
+
+    const name = document.createElement("strong");
+    name.textContent = entry.name;
+
+    const number = document.createElement("span");
+    number.textContent = `#${entry.id.toString().padStart(4, "0")}`;
+
+    button.append(image, name, number);
+    button.addEventListener("mousedown", (event) => {
+      event.preventDefault();
+    });
+    button.addEventListener("click", () => {
+      elements.pokemonQuery.value = entry.name;
+      hidePokemonSuggestions();
+      elements.searchForm.requestSubmit();
+    });
+    return button;
   });
 
-  elements.pokemonSuggestions.replaceChildren(...options);
+  elements.pokemonSuggestionList.replaceChildren(...items);
+  elements.pokemonSuggestionList.hidden = false;
+}
+
+function scrollPokedexDetailsIntoView() {
+  window.requestAnimationFrame(() => {
+    elements.pokedexDetails.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
 }
 
 function getPokemonGeneration(pokemonId) {
@@ -934,9 +1019,10 @@ function renderPokedexGrid() {
 
   const tiles = visibleEntries.map((entry) => {
     const isCollected = collectedIds.has(entry.id);
+    const isSelected = selectedPokedexId === entry.id;
     const tile = document.createElement("button");
     tile.type = "button";
-    tile.className = `pokedex-tile${isCollected ? " collected" : ""}`;
+    tile.className = `pokedex-tile${isCollected ? " collected" : ""}${isSelected ? " selected" : ""}`;
     tile.ariaLabel = `${entry.name}, номер ${entry.id}${isCollected ? ", собран" : ", не собран"}`;
 
     const image = document.createElement("img");
@@ -1076,7 +1162,10 @@ function renderPokemon(pokemon) {
     );
   } else {
     configureAddBinderButton(addButton, pokemon);
-    addButton.addEventListener("click", () => addPokemonToBinder(pokemon));
+    addButton.addEventListener("click", async () => {
+      await addPokemonToBinder(pokemon);
+      renderPokemon(pokemon);
+    });
   }
 
   updateWishlistButton(wishlistButton, pokemon);
@@ -1093,6 +1182,8 @@ function renderPokemon(pokemon) {
 }
 
 async function showPokedexDetails(entry) {
+  selectedPokedexId = entry.id;
+  renderPokedexGrid();
   elements.pokedexDetails.className = "panel pokedex-details empty";
   elements.pokedexDetails.replaceChildren(makeParagraph(`Загружаю #${entry.id} ${entry.name}...`));
 
@@ -1209,6 +1300,7 @@ function renderPokedexDetails(pokemon) {
   wrapper.append(card, evolutionWrap);
   elements.pokedexDetails.className = "panel pokedex-details";
   elements.pokedexDetails.replaceChildren(wrapper);
+  scrollPokedexDetailsIntoView();
 }
 
 function makeParagraph(text) {
@@ -1290,6 +1382,10 @@ async function addPokemonToBinder(pokemon) {
   refreshPokedexView();
   updateProgressHeader();
   setStatus(`${pokemon.name} добавлен: ${formatSlot(slot)}.`);
+
+  if (currentPokemon?.id === pokemon.id) {
+    renderPokemon(pokemon);
+  }
 
   try {
     await persistCollectionEntry(entry);
