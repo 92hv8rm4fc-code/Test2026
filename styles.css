@@ -265,10 +265,52 @@ h2 {
   gap: 0.75rem;
 }
 
-.status {
-  min-height: 1.4rem;
-  margin: 1rem 0 0;
+.search-field {
+  position: relative;
+  display: grid;
+  align-items: center;
+}
+
+.search-field input {
+  padding-right: 2.6rem;
+}
+
+.search-clear {
+  position: absolute;
+  top: 50%;
+  right: 0.45rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 999px;
   color: var(--muted);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+  background: #eef1f6;
+  box-shadow: none;
+  transform: translateY(-50%);
+}
+
+.search-clear:hover {
+  color: #ffffff;
+  background: var(--brand);
+  transform: translateY(-50%);
+  box-shadow: none;
+}
+
+.search-clear[hidden] {
+  display: none !important;
+}
+
+.status {
+  min-height: 0;
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
+.status[hidden] {
+  display: none !important;
 }
 
 .status.error {
@@ -314,12 +356,7 @@ h2 {
 }
 
 .evolution-heading {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  display: none;
 }
 
 .remove-from-binder-button {

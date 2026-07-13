@@ -57,20 +57,32 @@
           <article class="panel search-panel">
             <h2>Поиск покемона</h2>
             <form id="searchForm" class="search-form">
-              <label for="pokemonQuery">Имя или номер</label>
+              <label class="visually-hidden" for="pokemonQuery">Имя или номер покемона</label>
               <div class="search-autocomplete">
                 <div class="input-row">
-                  <input
-                    id="pokemonQuery"
-                    name="pokemonQuery"
-                    type="search"
-                    placeholder="Например: pikachu или 25"
-                    autocomplete="off"
-                    autocorrect="off"
-                    autocapitalize="off"
-                    spellcheck="false"
-                    required
-                  />
+                  <div class="search-field">
+                    <input
+                      id="pokemonQuery"
+                      name="pokemonQuery"
+                      type="text"
+                      inputmode="search"
+                      placeholder="Например: pikachu или 25"
+                      autocomplete="off"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      spellcheck="false"
+                      required
+                    />
+                    <button
+                      id="clearPokemonQuery"
+                      class="search-clear"
+                      type="button"
+                      aria-label="Очистить поиск"
+                      hidden
+                    >
+                      ×
+                    </button>
+                  </div>
                   <button type="submit">Найти</button>
                 </div>
                 <div
@@ -82,7 +94,7 @@
                 ></div>
               </div>
             </form>
-            <p id="searchStatus" class="status" role="status"></p>
+            <p id="searchStatus" class="status" role="status" hidden></p>
             <div id="pokemonResult" class="pokemon-result empty">
               <p>Здесь появится найденный покемон.</p>
             </div>

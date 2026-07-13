@@ -210,6 +210,7 @@ const elements = {
   tabPanels: document.querySelectorAll(".tab-panel"),
   searchForm: document.querySelector("#searchForm"),
   pokemonQuery: document.querySelector("#pokemonQuery"),
+  clearPokemonQuery: document.querySelector("#clearPokemonQuery"),
   searchStatus: document.querySelector("#searchStatus"),
   pokemonResult: document.querySelector("#pokemonResult"),
   pokemonSuggestionList: document.querySelector("#pokemonSuggestionList"),
@@ -301,6 +302,9 @@ function init() {
 
   elements.searchForm.addEventListener("submit", handleSearch);
   elements.searchForm.addEventListener("submit", hidePokemonSuggestions);
+  elements.clearPokemonQuery.addEventListener("click", clearPokemonQuery);
+  elements.pokemonQuery.addEventListener("input", updateClearPokemonQueryButton);
+  updateClearPokemonQueryButton();
   elements.settingsForm.addEventListener("submit", handleSettingsSave);
   elements.resetSettings.addEventListener("click", resetSettings);
   elements.clearCollection.addEventListener("click", clearCollection);
@@ -342,7 +346,7 @@ async function handleSearch(event) {
     return;
   }
 
-  setStatus("Ищу покемона...");
+  setStatus("");
   elements.searchForm.querySelector("button").disabled = true;
 
   try {
@@ -358,7 +362,6 @@ async function handleSearch(event) {
     const pokemon = normalizePokemon(await response.json());
     currentPokemon = pokemon;
     renderPokemon(pokemon);
-    setStatus(`Нашёл #${pokemon.id} ${pokemon.name}.`);
   } catch (error) {
     currentPokemon = null;
     const message =
@@ -494,6 +497,8 @@ function updatePokemonAutocomplete(rawQuery) {
     window.clearTimeout(hideSuggestionListTimeout);
     hideSuggestionListTimeout = null;
   }
+
+  updateClearPokemonQueryButton();
 
   const query = rawQuery.trim().toLowerCase();
   if (!query || !pokemonIndex.length) {
@@ -857,11 +862,7 @@ async function fetchEvolutionChain(pokemonId) {
 function createEvolutionSection(evolutionData, currentId, onSelect) {
   const section = document.createElement("section");
   section.className = "evolution-section";
-
-  const heading = document.createElement("h4");
-  heading.className = "evolution-heading";
-  heading.textContent = "Эволюции";
-  section.append(heading, buildEvolutionStrip(evolutionData, currentId, onSelect));
+  section.append(buildEvolutionStrip(evolutionData, currentId, onSelect));
   return section;
 }
 
@@ -936,8 +937,9 @@ async function openPokemonFromEvolution(stage) {
     const pokemon = normalizePokemon(await response.json());
     currentPokemon = pokemon;
     elements.pokemonQuery.value = pokemon.name;
+    updateClearPokemonQueryButton();
     renderPokemon(pokemon);
-    setStatus(`Нашёл #${pokemon.id} ${pokemon.name}.`);
+    setStatus("");
   } catch (error) {
     setStatus(error.message, true);
   }
@@ -1547,13 +1549,47 @@ function updateTrainerCard() {
     : current.hint;
 }
 
+function getVisibleAchievements(stats) {
+  const unlocked = getAchievementEntries(stats).filter((achievement) => achievement.unlocked);
+  const bestByFamily = new Map();
+
+  unlocked.forEach((achievement) => {
+    const familyKey = getAchievementFamilyKey(achievement);
+    const currentBest = bestByFamily.get(familyKey);
+    if (!currentBest || (achievement.goal || 0) > (currentBest.goal || 0)) {
+      bestByFamily.set(familyKey, achievement);
+    }
+  });
+
+  return [...bestByFamily.values()];
+}
+
+function getAchievementFamilyKey(achievement) {
+  if (achievement.category === "collection") {
+    return "collection";
+  }
+
+  if (achievement.category === "type") {
+    return `type:${achievement.type}`;
+  }
+
+  if (achievement.category === "generation") {
+    return `generation:${achievement.generation}`;
+  }
+
+  return `special:${achievement.id}`;
+}
+
 function renderAchievements() {
   const stats = getCollectionStats();
   const { current, next } = getTrainerRankState(stats);
-  const achievements = getAchievementEntries(stats);
-  const unlockedCount = achievements.filter((achievement) => achievement.unlocked).length;
+  const allAchievements = getAchievementEntries(stats);
+  const visibleAchievements = getVisibleAchievements(stats);
+  const unlockedCount = allAchievements.filter((achievement) => achievement.unlocked).length;
 
-  elements.achievementsSummary.textContent = `Открыто ${unlockedCount} из ${achievements.length} достижений.`;
+  elements.achievementsSummary.textContent = visibleAchievements.length
+    ? `Получено ${unlockedCount} достижений · показано лучшее в каждой серии`
+    : "Пока нет полученных достижений — добавь покемонов в биндер.";
 
   const rankCard = elements.trainerRankCard;
   rankCard.replaceChildren();
@@ -1586,14 +1622,22 @@ function renderAchievements() {
     rankCard.append(progress);
   }
 
+  if (!visibleAchievements.length) {
+    elements.achievementsList.replaceChildren(
+      makeParagraph("Полученные достижения появятся здесь."),
+    );
+    updateTrainerCard();
+    return;
+  }
+
   elements.achievementsList.replaceChildren(
-    ...achievements.map((achievement) => {
+    ...visibleAchievements.map((achievement) => {
       const card = document.createElement("article");
-      card.className = `achievement-card${achievement.unlocked ? " unlocked" : " locked"}`;
+      card.className = "achievement-card unlocked";
 
       const badge = document.createElement("span");
       badge.className = "achievement-card__badge";
-      badge.textContent = achievement.unlocked ? "Получено" : "Закрыто";
+      badge.textContent = "Получено";
 
       const achievementTitle = document.createElement("h4");
       achievementTitle.textContent = achievement.title;
@@ -1602,13 +1646,6 @@ function renderAchievements() {
       description.textContent = achievement.description;
 
       card.append(badge, achievementTitle, description);
-
-      if (achievement.goal && achievement.goal > 1) {
-        const progressNote = document.createElement("p");
-        progressNote.textContent = `Прогресс: ${achievement.progress ?? 0} / ${achievement.goal}`;
-        card.append(progressNote);
-      }
-
       return card;
     }),
   );
@@ -1820,10 +1857,7 @@ function renderWishlist() {
     const info = document.createElement("div");
     const title = document.createElement("h3");
     title.textContent = `#${entry.pokemon.id} ${entry.pokemon.name}`;
-    const line = document.createElement("p");
-    line.className = "slot";
-    line.textContent = formatWishlistLine(entry.pokemon);
-    info.append(title, line);
+    info.append(title);
 
     const remove = createRemoveIconButton(
       `Убрать ${entry.pokemon.name} из wishlist`,
@@ -1903,10 +1937,7 @@ function renderCollection() {
     const info = document.createElement("div");
     const title = document.createElement("h3");
     title.textContent = `#${entry.pokemon.id} ${entry.pokemon.name}`;
-    const slot = document.createElement("p");
-    slot.className = "slot";
-    slot.textContent = formatSlot(entry.slot);
-    info.append(title, slot);
+    info.append(title);
 
     const remove = createRemoveIconButton(`Убрать ${entry.pokemon.name}`, () =>
       removeEntry(entry.key),
@@ -2033,9 +2064,23 @@ function hydrateSettingsForm() {
   elements.slotsPerSide.value = settings.slotsPerSide;
 }
 
+function clearPokemonQuery() {
+  elements.pokemonQuery.value = "";
+  hidePokemonSuggestions();
+  updateClearPokemonQueryButton();
+  setStatus("");
+  elements.pokemonQuery.focus();
+}
+
+function updateClearPokemonQueryButton() {
+  elements.clearPokemonQuery.hidden = !elements.pokemonQuery.value.trim();
+}
+
 function setStatus(message, isError = false) {
-  elements.searchStatus.textContent = message;
-  elements.searchStatus.classList.toggle("error", isError);
+  const text = message?.trim() || "";
+  elements.searchStatus.hidden = !text;
+  elements.searchStatus.textContent = text;
+  elements.searchStatus.classList.toggle("error", Boolean(text && isError));
 }
 
 function setPokedexStatus(message, isError = false) {
