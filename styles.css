@@ -134,6 +134,25 @@ label {
   line-height: 1.15;
 }
 
+.brand-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.65rem;
+}
+
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 10px 24px rgba(30, 45, 80, 0.14);
+}
+
+.brand-row .eyebrow {
+  margin: 0;
+}
+
 .eyebrow {
   margin: 0 0 0.65rem;
   color: var(--brand);
@@ -1172,12 +1191,30 @@ h2 {
   border-width: 1.5px;
 }
 
+.pokedex-tile.uncollected {
+  color: rgba(100, 112, 138, 0.45);
+  opacity: 0.38;
+  filter: saturate(0.2);
+}
+
+.pokedex-tile.uncollected:hover {
+  opacity: 0.58;
+  color: rgba(100, 112, 138, 0.7);
+}
+
+.pokedex-tile__silhouette {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.55), transparent 45%),
+    linear-gradient(145deg, rgba(148, 160, 178, 0.35), rgba(120, 132, 152, 0.18));
+}
+
 .pokedex-tile img {
   width: 82px;
   height: 82px;
   object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.5;
 }
 
 .pokedex-tile.collected img {

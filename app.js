@@ -297,8 +297,11 @@ function init() {
   updateProgressHeader();
   renderPokemonSuggestions();
   setupPokemonAutocomplete();
-  loadPokemonIndex();
-  loadCollectionFromServer();
+
+  window.requestAnimationFrame(() => {
+    loadPokemonIndex();
+    loadCollectionFromServer();
+  });
 
   elements.searchForm.addEventListener("submit", handleSearch);
   elements.searchForm.addEventListener("submit", hidePokemonSuggestions);
@@ -443,6 +446,7 @@ function normalizePokemonIndex(entries) {
         id,
         name: entry.name,
         sprite: getPokemonArtworkUrl(id),
+        types: Array.isArray(entry.types) ? entry.types : [],
       };
     })
     .filter((entry) => isOfficialDexPokemon(entry.id))
@@ -457,7 +461,8 @@ function isOfficialDexIndex(index) {
   return (
     index.length === OFFICIAL_DEX_SIZE &&
     index[0]?.id === 1 &&
-    index[index.length - 1]?.id === OFFICIAL_DEX_SIZE
+    index[index.length - 1]?.id === OFFICIAL_DEX_SIZE &&
+    index.every((entry) => Array.isArray(entry.types))
   );
 }
 
@@ -818,35 +823,37 @@ function getTypeTileColors(types) {
 }
 
 function applyTypeTileColors(tile, types, isCollected) {
+  if (!isCollected) {
+    tile.style.background = "rgba(236, 239, 245, 0.42)";
+    tile.style.borderColor = "rgba(200, 208, 222, 0.35)";
+    return;
+  }
+
   const colors = getTypeTileColors(types);
-  tile.style.background = isCollected ? colors.collectedBg : colors.bg;
+  tile.style.background = colors.collectedBg;
   tile.style.borderColor = colors.border;
 }
 
 async function enrichPokedexWithTypes() {
-  const batchSize = 80;
+  const missing = pokedexEntries.filter((entry) => !entry.types?.length);
+  if (!missing.length) {
+    return;
+  }
 
-  for (let index = 0; index < pokedexEntries.length; index += batchSize) {
-    const batch = pokedexEntries.slice(index, index + batchSize);
-    await Promise.all(
-      batch.map(async (entry) => {
-        if (entry.types?.length) {
-          return;
-        }
+  try {
+    const response = await fetchWithTimeout("./data/pokemon-types.json", 8000);
+    if (!response.ok) {
+      return;
+    }
 
-        try {
-          const response = await fetchWithTimeout(`${POKEMON_DETAILS_URL}/${entry.id}.json`, 5000);
-          if (!response.ok) {
-            return;
-          }
-
-          const details = await response.json();
-          entry.types = details.types || [];
-        } catch {
-          entry.types = [];
-        }
-      }),
-    );
+    const typesMap = await response.json();
+    pokedexEntries.forEach((entry) => {
+      if (!entry.types?.length) {
+        entry.types = typesMap[String(entry.id)] || [];
+      }
+    });
+  } catch {
+    // Keep whatever types are already present.
   }
 }
 
@@ -984,6 +991,40 @@ function handlePokedexFilterChange(event) {
   renderPokedexGrid();
 }
 
+function createPokedexTile(entry, collectedIds) {
+  const isCollected = collectedIds.has(entry.id);
+  const isSelected = selectedPokedexId === entry.id;
+  const tile = document.createElement("button");
+  tile.type = "button";
+  tile.className = `pokedex-tile${isCollected ? " collected" : " uncollected"}${isSelected ? " selected" : ""}`;
+  tile.ariaLabel = `${entry.name}, номер ${entry.id}${isCollected ? ", собран" : ", не собран"}`;
+
+  if (isCollected) {
+    const image = document.createElement("img");
+    image.src = entry.sprite || getPokemonArtworkUrl(entry.id);
+    image.alt = "";
+    image.loading = "lazy";
+    image.decoding = "async";
+    tile.append(image);
+  } else {
+    const silhouette = document.createElement("span");
+    silhouette.className = "pokedex-tile__silhouette";
+    silhouette.setAttribute("aria-hidden", "true");
+    tile.append(silhouette);
+  }
+
+  const number = document.createElement("span");
+  number.textContent = `#${entry.id.toString().padStart(4, "0")}`;
+
+  const name = document.createElement("strong");
+  name.textContent = isCollected ? entry.name : "???";
+
+  applyTypeTileColors(tile, entry.types || [], isCollected);
+  tile.append(number, name);
+  tile.addEventListener("click", () => showPokedexDetails(entry));
+  return tile;
+}
+
 function renderPokedexGrid() {
   if (!pokedexEntries.length) {
     elements.pokedexSummary.textContent = "Список Pokedex ещё не загружен.";
@@ -1019,32 +1060,38 @@ function renderPokedexGrid() {
     return;
   }
 
-  const tiles = visibleEntries.map((entry) => {
-    const isCollected = collectedIds.has(entry.id);
-    const isSelected = selectedPokedexId === entry.id;
-    const tile = document.createElement("button");
-    tile.type = "button";
-    tile.className = `pokedex-tile${isCollected ? " collected" : ""}${isSelected ? " selected" : ""}`;
-    tile.ariaLabel = `${entry.name}, номер ${entry.id}${isCollected ? ", собран" : ", не собран"}`;
+  const fragment = document.createDocumentFragment();
+  const firstBatchSize = Math.min(visibleEntries.length, 60);
 
-    const image = document.createElement("img");
-    image.src = entry.sprite || getPokemonArtworkUrl(entry.id);
-    image.alt = "";
-    image.loading = "lazy";
+  for (let index = 0; index < firstBatchSize; index += 1) {
+    fragment.append(createPokedexTile(visibleEntries[index], collectedIds));
+  }
 
-    const number = document.createElement("span");
-    number.textContent = `#${entry.id.toString().padStart(4, "0")}`;
+  elements.pokedexGrid.replaceChildren(fragment);
 
-    const name = document.createElement("strong");
-    name.textContent = entry.name;
+  if (firstBatchSize >= visibleEntries.length) {
+    return;
+  }
 
-    applyTypeTileColors(tile, entry.types || [], isCollected);
-    tile.append(image, number, name);
-    tile.addEventListener("click", () => showPokedexDetails(entry));
-    return tile;
-  });
+  let nextIndex = firstBatchSize;
+  const appendBatch = () => {
+    if (!elements.pokedexGrid.isConnected) {
+      return;
+    }
 
-  elements.pokedexGrid.replaceChildren(...tiles);
+    const batchFragment = document.createDocumentFragment();
+    const limit = Math.min(nextIndex + 80, visibleEntries.length);
+    for (; nextIndex < limit; nextIndex += 1) {
+      batchFragment.append(createPokedexTile(visibleEntries[nextIndex], collectedIds));
+    }
+    elements.pokedexGrid.append(batchFragment);
+
+    if (nextIndex < visibleEntries.length) {
+      window.requestAnimationFrame(appendBatch);
+    }
+  };
+
+  window.requestAnimationFrame(appendBatch);
 }
 
 function getCollectedPokemonIds() {
@@ -2133,6 +2180,10 @@ function loadPokemonIndexCache() {
 }
 
 function savePokemonIndexCache() {
+  if (window.PB_IS_MOBILE_APP) {
+    return;
+  }
+
   localStorage.setItem(STORAGE_KEYS.pokemonIndex, JSON.stringify(pokemonIndex));
 }
 
