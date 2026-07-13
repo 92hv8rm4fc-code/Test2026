@@ -2,7 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover, user-scalable=no"
+    />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <title>Pokemon Binder Pokedex</title>
@@ -12,12 +15,16 @@
     <main class="app">
       <header class="hero">
         <div>
-          <p class="eyebrow">Pokemon TCG binder helper</p>
+          <div class="brand-row">
+            <img class="brand-logo" src="./assets/AppIcon-1024.png" alt="" width="56" height="56" />
+            <p class="eyebrow">Pokemon TCG binder helper</p>
+          </div>
           <h1>Твой живой Pokedex для карточек</h1>
           <p class="hero__text">
-            Найди покемона по имени или номеру, посмотри данные из PokeAPI и добавь его
-            в свободную ячейку своего биндера.
+            Найди покемона по имени или номеру, посмотри данные и добавь его
+            в свободную ячейку своего биндера. Все данные хранятся в приложении — интернет не нужен.
           </p>
+          <p class="offline-badge" aria-label="Приложение работает без интернета">● Офлайн · 1025 покемонов внутри</p>
         </div>
         <div class="hero-stats">
           <div class="capacity-card" aria-live="polite">
@@ -32,6 +39,14 @@
           </div>
         </div>
       </header>
+
+      <aside class="legal-notice" aria-label="Правовая информация">
+        <strong>Неофициальное независимое фан-приложение.</strong>
+        <span>
+          Не связано с Nintendo, Creatures Inc., GAME FREAK inc. или The Pokémon Company
+          и не одобрено ими.
+        </span>
+      </aside>
 
       <nav class="tabs" aria-label="Разделы приложения">
         <button class="tab-button active" type="button" data-tab-target="binderTab">
@@ -53,22 +68,44 @@
           <article class="panel search-panel">
             <h2>Поиск покемона</h2>
             <form id="searchForm" class="search-form">
-              <label for="pokemonQuery">Имя или номер</label>
-              <div class="input-row">
-                <input
-                  id="pokemonQuery"
-                  name="pokemonQuery"
-                  type="search"
-                  list="pokemonSuggestions"
-                  placeholder="Например: pikachu или 25"
-                  autocomplete="off"
-                  required
-                />
-                <datalist id="pokemonSuggestions"></datalist>
-                <button type="submit">Найти</button>
+              <label class="visually-hidden" for="pokemonQuery">Имя или номер покемона</label>
+              <div class="search-autocomplete">
+                <div class="input-row">
+                  <div class="search-field">
+                    <input
+                      id="pokemonQuery"
+                      name="pokemonQuery"
+                      type="text"
+                      inputmode="search"
+                      placeholder="Например: pikachu или 25"
+                      autocomplete="off"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      spellcheck="false"
+                      required
+                    />
+                    <button
+                      id="clearPokemonQuery"
+                      class="search-clear"
+                      type="button"
+                      aria-label="Очистить поиск"
+                      hidden
+                    >
+                      ×
+                    </button>
+                  </div>
+                  <button type="submit">Найти</button>
+                </div>
+                <div
+                  id="pokemonSuggestionList"
+                  class="search-suggestions"
+                  role="listbox"
+                  aria-label="Подсказки покемонов"
+                  hidden
+                ></div>
               </div>
             </form>
-            <p id="searchStatus" class="status" role="status"></p>
+            <p id="searchStatus" class="status" role="status" hidden></p>
             <div id="pokemonResult" class="pokemon-result empty">
               <p>Здесь появится найденный покемон.</p>
             </div>
@@ -213,6 +250,18 @@
           <div id="achievementsList" class="achievements-grid"></div>
         </section>
       </section>
+
+      <footer class="legal-footer">
+        <p>
+          Это независимое неофициальное фан-приложение не связано с Nintendo,
+          Creatures Inc., GAME FREAK inc. или The Pokémon Company и не одобрено ими.
+        </p>
+        <p>
+          Pokémon, названия персонажей, изображения и связанные товарные знаки
+          принадлежат соответствующим правообладателям. Приложение не претендует
+          на какие-либо права на интеллектуальную собственность Pokémon.
+        </p>
+      </footer>
     </main>
 
     <template id="pokemonTemplate">

@@ -1,0 +1,16 @@
+node_modules/
+.git/
+scripts/
+server.py
+README.md
+README-IOS.md
+package.json
+package-lock.json
+capacitor.config.json
+.gitignore
+.capacitorignore
+__pycache__/
+*.py
+*.py[cod]
+.env
+.env.*

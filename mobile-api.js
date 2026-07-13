@@ -1,11 +1,182 @@
 (function initMobileApi() {
+  const STORAGE_PREFIX = "pokemonBinder.";
+
   const isCapacitor =
+    (window.Capacitor &&
+      typeof window.Capacitor.isNativePlatform === "function" &&
+      window.Capacitor.isNativePlatform()) ||
     window.location.protocol === "capacitor:" ||
-    window.location.protocol === "ionic:" ||
-    (window.Capacitor && typeof window.Capacitor.isNativePlatform === "function" &&
-      window.Capacitor.isNativePlatform());
+    window.location.protocol === "ionic:";
 
   window.PB_IS_MOBILE_APP = isCapacitor;
+
+  function isPersistedKey(key) {
+    return typeof key === "string" && key.startsWith(STORAGE_PREFIX);
+  }
+
+  function getPreferencesPlugin() {
+    if (!window.Capacitor) {
+      return null;
+    }
+
+    return (
+      window.Capacitor.Plugins?.Preferences ||
+      window.Capacitor.registerPlugin("Preferences")
+    );
+  }
+
+  function getAppPlugin() {
+    if (!window.Capacitor) {
+      return null;
+    }
+
+    return window.Capacitor.Plugins?.App || window.Capacitor.registerPlugin("App");
+  }
+
+  async function persistKey(key, value) {
+    const Preferences = getPreferencesPlugin();
+    if (!Preferences) {
+      return;
+    }
+
+    await Preferences.set({ key, value });
+  }
+
+  async function restoreStorageFromPreferences() {
+    const Preferences = getPreferencesPlugin();
+    if (!Preferences) {
+      return;
+    }
+
+    const { keys } = await Preferences.keys();
+    const persistedKeys = keys.filter((key) => isPersistedKey(key));
+
+    for (const key of persistedKeys) {
+      const { value } = await Preferences.get({ key });
+      if (value !== null && value !== undefined) {
+        localStorage.setItem(key, value);
+      }
+    }
+
+    for (const key of Object.keys(localStorage)) {
+      if (!isPersistedKey(key)) {
+        continue;
+      }
+
+      const localValue = localStorage.getItem(key);
+      if (!localValue) {
+        continue;
+      }
+
+      const { value: storedValue } = await Preferences.get({ key });
+      if (storedValue === null || storedValue === undefined) {
+        await Preferences.set({ key, value: localValue });
+      }
+    }
+  }
+
+  async function flushStorageToPreferences() {
+    const Preferences = getPreferencesPlugin();
+    if (!Preferences) {
+      return;
+    }
+
+    await Promise.all(
+      Object.keys(localStorage)
+        .filter(isPersistedKey)
+        .map((key) => Preferences.set({ key, value: localStorage.getItem(key) })),
+    );
+  }
+
+  function installStoragePersistence() {
+    const originalSetItem = localStorage.setItem.bind(localStorage);
+    const originalRemoveItem = localStorage.removeItem.bind(localStorage);
+    const originalClear = localStorage.clear.bind(localStorage);
+
+    localStorage.setItem = function patchedSetItem(key, value) {
+      originalSetItem(key, value);
+      if (isPersistedKey(key)) {
+        persistKey(key, value).catch((error) => {
+          console.warn("Preferences set failed:", error);
+        });
+      }
+    };
+
+    localStorage.removeItem = function patchedRemoveItem(key) {
+      originalRemoveItem(key);
+      if (isPersistedKey(key)) {
+        getPreferencesPlugin()
+          ?.remove({ key })
+          .catch((error) => console.warn("Preferences remove failed:", error));
+      }
+    };
+
+    localStorage.clear = function patchedClear() {
+      const keys = Object.keys(localStorage).filter(isPersistedKey);
+      originalClear();
+      keys.forEach((key) => {
+        getPreferencesPlugin()
+          ?.remove({ key })
+          .catch((error) => console.warn("Preferences remove failed:", error));
+      });
+    };
+  }
+
+  function installZoomPrevention() {
+    let lastTouchEnd = 0;
+
+    document.addEventListener(
+      "touchend",
+      (event) => {
+        const now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+          event.preventDefault();
+        }
+        lastTouchEnd = now;
+      },
+      { passive: false },
+    );
+
+    document.addEventListener(
+      "gesturestart",
+      (event) => {
+        event.preventDefault();
+      },
+      { passive: false },
+    );
+  }
+
+  function installLifecycleFlush() {
+    const App = getAppPlugin();
+    if (App && typeof App.addListener === "function") {
+      App.addListener("pause", () => {
+        flushStorageToPreferences().catch((error) => {
+          console.warn("Preferences flush failed:", error);
+        });
+      });
+    }
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "hidden") {
+        flushStorageToPreferences().catch((error) => {
+          console.warn("Preferences flush failed:", error);
+        });
+      }
+    });
+  }
+
+  window.PB_storageReady = (async () => {
+    if (!isCapacitor) {
+      return;
+    }
+
+    document.documentElement.classList.add("mobile-app");
+    installStoragePersistence();
+    installZoomPrevention();
+    await restoreStorageFromPreferences();
+    installLifecycleFlush();
+  })();
+
   if (!isCapacitor) {
     return;
   }
@@ -88,6 +259,7 @@
       return parsed.map((entry) => ({
         key: entry.key || String(entry.pokemon.id),
         pokemon: entry.pokemon,
+        slot: entry.slot,
         addedAt: entry.addedAt || new Date().toISOString(),
       }));
     } catch {
@@ -190,6 +362,11 @@
   const nativeFetch = window.fetch.bind(window);
   window.fetch = function mobileFetch(url, options) {
     const requestUrl = typeof url === "string" ? url : url.url;
+
+    if (/^https?:\/\//i.test(requestUrl) && !requestUrl.startsWith(window.location.origin)) {
+      return Promise.reject(new Error("Offline mode: external network requests are disabled."));
+    }
+
     if (requestUrl.includes("/api/")) {
       return handleMobileApi(requestUrl, options || {});
     }
