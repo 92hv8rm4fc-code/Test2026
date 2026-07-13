@@ -206,6 +206,43 @@ h2 {
   font-weight: 700;
 }
 
+.legal-notice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.55rem;
+  align-items: baseline;
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(122, 91, 18, 0.2);
+  border-radius: 1rem;
+  color: #65563b;
+  background: rgba(255, 248, 224, 0.88);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.legal-notice strong {
+  color: #7a5b12;
+}
+
+.legal-footer {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.legal-footer p {
+  margin: 0;
+}
+
+.legal-footer p + p {
+  margin-top: 0.4rem;
+}
+
 .capacity-card,
 .panel {
   border: 1px solid rgba(219, 226, 239, 0.9);
