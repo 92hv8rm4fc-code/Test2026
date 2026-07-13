@@ -249,19 +249,40 @@ const elements = {
   clearWishlist: document.querySelector("#clearWishlist"),
 };
 
-let settings = loadSettings();
-let collection = loadCollection();
-let collectionFilters = loadCollectionFilters();
-let pokedexFilters = loadPokedexFilters();
-let wishlist = loadWishlist();
+let settings = { ...DEFAULT_SETTINGS };
+let collection = [];
+let collectionFilters = { ...DEFAULT_COLLECTION_FILTERS };
+let pokedexFilters = { ...DEFAULT_POKEDEX_FILTERS };
+let wishlist = [];
 let currentPokemon = null;
-let pokemonIndex = loadPokemonIndexCache();
+let pokemonIndex = [];
 let pokedexEntries = [];
-let showUncollectedPokemon = loadPokedexShowUncollected();
+let showUncollectedPokemon = true;
 let isPokemonIndexLoading = false;
 let isPokedexLoading = false;
 
-init();
+function bootstrapApp() {
+  settings = loadSettings();
+  collection = loadCollection().map((entry) => ({
+    ...entry,
+    slot: entry.slot || getSlotByPokemonNumber(entry.pokemon.id, settings),
+  }));
+  collectionFilters = loadCollectionFilters();
+  pokedexFilters = loadPokedexFilters();
+  wishlist = loadWishlist();
+  pokemonIndex = loadPokemonIndexCache();
+  showUncollectedPokemon = loadPokedexShowUncollected();
+  init();
+}
+
+if (window.PB_storageReady) {
+  window.PB_storageReady.then(bootstrapApp).catch((error) => {
+    console.warn("Storage bootstrap failed:", error);
+    bootstrapApp();
+  });
+} else {
+  bootstrapApp();
+}
 
 function init() {
   hydrateSettingsForm();

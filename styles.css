@@ -1132,20 +1132,42 @@ h2 {
 }
 
 @media (max-width: 820px) {
-  .hero,
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .grid,
   .pokemon-card__body,
-  .pokedex-details-card,
+  .pokedex-details-card {
+    grid-template-columns: 1fr;
+  }
+
+  .list-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .list-toolbar__search {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
   .list-toolbar__controls {
     width: 100%;
   }
 
   .dropdown {
-    flex: 1 1 100%;
+    flex: 1 1 calc(50% - 0.35rem);
+    min-width: 0;
   }
 
   .dropdown__toggle {
     width: 100%;
+    min-width: 0;
   }
 
   .input-row {
@@ -1155,16 +1177,55 @@ h2 {
   .section-heading {
     display: grid;
   }
+
+  .section-heading-actions {
+    justify-content: stretch;
+  }
+
+  .section-heading-actions > * {
+    flex: 1 1 auto;
+  }
 }
 
 @media (max-width: 520px) {
   .app {
-    width: min(100% - 1rem, 1180px);
-    padding-top: 1rem;
+    width: 100%;
+    padding:
+      calc(0.75rem + env(safe-area-inset-top, 0))
+      calc(0.75rem + env(safe-area-inset-right, 0))
+      calc(1.5rem + env(safe-area-inset-bottom, 0))
+      calc(0.75rem + env(safe-area-inset-left, 0));
+  }
+
+  h1 {
+    font-size: 1.9rem;
+    line-height: 1.05;
+  }
+
+  .hero__text {
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+  }
+
+  .tab-button {
+    width: 100%;
+    padding: 0.72rem 0.8rem;
+    font-size: 0.86rem;
   }
 
   .panel,
-  .capacity-card {
+  .capacity-card,
+  .trainer-card {
     border-radius: 1.1rem;
     padding: 1rem;
   }
@@ -1184,6 +1245,7 @@ h2 {
 
   .pokedex-grid {
     grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+    max-height: none;
   }
 
   .pokedex-tile {
@@ -1195,4 +1257,40 @@ h2 {
     width: 68px;
     height: 68px;
   }
+
+  .dropdown {
+    flex: 1 1 100%;
+  }
+
+  .pokemon-actions {
+    flex-direction: column;
+  }
+
+  .pokemon-actions > button {
+    width: 100%;
+  }
+}
+
+.mobile-app .hero {
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-app .tabs {
+  margin-bottom: 1rem;
+}
+
+.mobile-app .grid {
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-app .panel {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.mobile-app .search-panel,
+.mobile-app .settings-panel {
+  width: 100%;
 }
