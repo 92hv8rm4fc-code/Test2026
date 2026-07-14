@@ -1,0 +1,25 @@
+{
+  "name": "foliogrid-card-binder",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Offline universal collectible-card binder for iPhone",
+  "scripts": {
+    "prepare:www": "bash scripts/prepare-www.sh",
+    "serve": "npm run prepare:www && npx http-server www -p 5174 -c-1",
+    "test:smoke": "node scripts/smoke-test.mjs",
+    "cap:sync": "npm run prepare:www && npx cap sync ios",
+    "ios:add": "npm run prepare:www && npx cap add ios",
+    "ios:open": "npm run cap:sync && npx cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/core": "^7.6.8",
+    "@capacitor/ios": "^7.6.8",
+    "read-excel-file": "^9.3.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.6.8",
+    "esbuild": "^0.28.1",
+    "http-server": "^14.1.1",
+    "playwright-core": "^1.61.1"
+  }
+}
