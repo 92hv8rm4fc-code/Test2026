@@ -42,6 +42,25 @@ try {
 
   await page.reload({ waitUntil: "networkidle" });
   await page.waitForFunction(() => document.querySelector("#headerProgress")?.textContent === "1 / 3");
+
+  await page.locator("[data-open-import]:visible").first().click();
+  await page.fill("#importListName", "Custom Separator");
+  await page.fill("#importPaste", "First card|Second card|Third card");
+  await page.selectOption("#pasteSeparatorMode", "custom");
+  await page.fill("#customSeparator", "|");
+  await page.click("#parseImport");
+  await page.waitForSelector('.wizard-step[data-step="2"].active');
+  await page.click("#buildPreview");
+  await page.waitForSelector('.wizard-step[data-step="3"].active');
+  await page.click("#finishImport");
+  await page.waitForFunction(
+    () => document.querySelector("#collectionTitle")?.textContent === "Custom Separator",
+  );
+  const customCount = await page.locator(".card-tile").count();
+  if (customCount !== 3) {
+    throw new Error(`Expected 3 custom-separated cards, received ${customCount}`);
+  }
+
   console.log("FolioGrid smoke test passed");
 } finally {
   await browser.close();

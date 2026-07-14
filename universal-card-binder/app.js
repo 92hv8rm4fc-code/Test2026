@@ -49,6 +49,10 @@ const elements = {
   importDialog: document.querySelector("#importDialog"),
   importListName: document.querySelector("#importListName"),
   importPaste: document.querySelector("#importPaste"),
+  pasteSeparatorMode: document.querySelector("#pasteSeparatorMode"),
+  customSeparatorWrap: document.querySelector("#customSeparatorWrap"),
+  customSeparator: document.querySelector("#customSeparator"),
+  separatorHint: document.querySelector("#separatorHint"),
   importFile: document.querySelector("#importFile"),
   importHasHeaders: document.querySelector("#importHasHeaders"),
   pasteSource: document.querySelector("#pasteSource"),
@@ -116,6 +120,7 @@ function bindEvents() {
   document.querySelectorAll('input[name="sourceType"]').forEach((radio) => {
     radio.addEventListener("change", handleSourceTypeChange);
   });
+  elements.pasteSeparatorMode.addEventListener("change", updateSeparatorControls);
   elements.parseImport.addEventListener("click", parseImportSource);
   elements.orderMode.addEventListener("change", updateOrderControls);
   elements.numberingMode.addEventListener("change", updateOrderControls);
@@ -600,12 +605,15 @@ function resetWizard() {
   };
   elements.importListName.value = "";
   elements.importPaste.value = "";
+  elements.pasteSeparatorMode.value = "auto";
+  elements.customSeparator.value = "";
   elements.importFile.value = "";
   elements.importHasHeaders.checked = false;
   elements.importSourceStatus.textContent = "";
   document.querySelector('input[name="sourceType"][value="paste"]').checked = true;
   elements.pasteSource.hidden = false;
   elements.fileSource.hidden = true;
+  updateSeparatorControls();
   showWizardStep(1);
 }
 
@@ -616,6 +624,19 @@ function handleSourceTypeChange(event) {
   elements.fileSource.hidden = isPaste;
   elements.importHasHeaders.checked = !isPaste;
   elements.importFile.accept = state.wizard.sourceType === "xlsx" ? ".xlsx" : ".csv";
+}
+
+function updateSeparatorControls() {
+  const mode = elements.pasteSeparatorMode.value;
+  elements.customSeparatorWrap.hidden = mode !== "custom";
+  const hints = {
+    auto: "Авто распознаёт строки, CSV и таблицы, скопированные из Excel/Numbers.",
+    newline: "Всё между переводами строки считается названием одной карточки.",
+    space: "Каждая группа символов между пробелами станет отдельной карточкой.",
+    tab: "Каждый фрагмент между нажатиями Tab станет отдельной карточкой.",
+    custom: "Укажи символ или короткую последовательность, например |, / или ::.",
+  };
+  elements.separatorHint.textContent = hints[mode];
 }
 
 async function parseImportSource() {
@@ -633,7 +654,7 @@ async function parseImportSource() {
       if (!text) {
         throw new Error("Вставь список или таблицу.");
       }
-      matrix = parseDelimitedText(text);
+      matrix = parsePastedText(text);
       state.wizard.sourceFileName = null;
     } else {
       const file = elements.importFile.files?.[0];
@@ -657,6 +678,47 @@ async function parseImportSource() {
   } catch (error) {
     elements.importSourceStatus.textContent = error.message;
   }
+}
+
+function parsePastedText(text) {
+  const mode = elements.pasteSeparatorMode.value;
+  if (mode === "auto") {
+    return parseDelimitedText(text);
+  }
+
+  const normalized = text.replace(/\r\n?/g, "\n").trim();
+  let separator;
+  if (mode === "newline") {
+    separator = /\n+/;
+  } else if (mode === "space") {
+    separator = / +/;
+  } else if (mode === "tab") {
+    separator = /\t+/;
+  } else {
+    separator = decodeCustomSeparator(elements.customSeparator.value);
+    if (!separator) {
+      throw new Error("Укажи свой символ-разделитель.");
+    }
+  }
+
+  return normalized
+    .split(separator)
+    .map(cleanCell)
+    .filter(Boolean)
+    .map((value) => [value]);
+}
+
+function decodeCustomSeparator(value) {
+  if (value === "\\t") {
+    return "\t";
+  }
+  if (value === "\\n") {
+    return "\n";
+  }
+  if (value === "\\s") {
+    return " ";
+  }
+  return value;
 }
 
 function parseDelimitedText(text) {

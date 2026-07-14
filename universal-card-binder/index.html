@@ -179,6 +179,32 @@
               placeholder="Можно вставить названия по одному в строке или таблицу из Excel/Numbers"
             ></textarea>
           </label>
+          <div class="separator-config">
+            <label>
+              Как разделены карточки
+              <select id="pasteSeparatorMode">
+                <option value="auto">Определить автоматически</option>
+                <option value="newline">Каждая с новой строки</option>
+                <option value="space">Пробелом</option>
+                <option value="tab">Табуляцией</option>
+                <option value="custom">Своим символом</option>
+              </select>
+            </label>
+            <label id="customSeparatorWrap" hidden>
+              Свой разделитель
+              <input
+                id="customSeparator"
+                type="text"
+                maxlength="8"
+                placeholder="Например: |"
+                autocapitalize="off"
+                autocomplete="off"
+              />
+            </label>
+          </div>
+          <p id="separatorHint" class="field-hint">
+            Авто распознаёт строки, CSV и таблицы, скопированные из Excel/Numbers.
+          </p>
         </div>
         <div id="fileSource" hidden>
           <label>

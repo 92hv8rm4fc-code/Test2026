@@ -549,6 +549,24 @@ legend {
   width: auto;
 }
 
+.separator-config {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: var(--surface-soft);
+}
+
+.field-hint {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
 .sort-rules {
   display: grid;
   gap: 0.65rem;
@@ -695,6 +713,10 @@ th {
   }
 
   .form-grid.two-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .separator-config {
     grid-template-columns: 1fr;
   }
 
