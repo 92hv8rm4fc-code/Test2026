@@ -1,0 +1,8 @@
+{
+  "appId": "app.foliogrid.binder",
+  "appName": "FolioGrid",
+  "webDir": "www",
+  "ios": {
+    "contentInset": "automatic"
+  }
+}

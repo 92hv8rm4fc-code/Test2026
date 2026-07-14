@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>FolioGrid — Card Binder</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="app-header">
+        <div class="brand">
+          <img src="./assets/foliogrid-icon.png" alt="" width="56" height="56" />
+          <div>
+            <p class="eyebrow">UNIVERSAL CARD BINDER</p>
+            <h1>FolioGrid</h1>
+          </div>
+        </div>
+        <div class="progress-card" aria-live="polite">
+          <span>Собрано</span>
+          <strong id="headerProgress">0 / 0</strong>
+          <div class="progress-bar"><i id="headerProgressBar"></i></div>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="Разделы">
+        <button class="tab-button active" data-tab="collectionPanel" type="button">
+          Моя коллекция
+        </button>
+        <button class="tab-button" data-tab="wishlistPanel" type="button">Wishlist</button>
+        <button class="tab-button" data-tab="listsPanel" type="button">Списки и биндер</button>
+      </nav>
+
+      <section id="emptyState" class="panel empty-state" hidden>
+        <img src="./assets/foliogrid-icon.png" alt="" width="96" height="96" />
+        <h2>Создай первую коллекцию</h2>
+        <p>
+          Вставь список названий или импортируй CSV/XLSX. FolioGrid не содержит
+          чужих каталогов — только данные, которые добавляешь ты.
+        </p>
+        <div class="empty-actions">
+          <button class="primary-button" data-open-import type="button">
+            Запустить мастер загрузки
+          </button>
+          <button class="secondary-button" data-open-restore type="button">
+            Восстановить backup
+          </button>
+        </div>
+      </section>
+
+      <section id="collectionPanel" class="tab-panel active">
+        <section class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">ТЕКУЩИЙ СПИСОК</p>
+              <h2 id="collectionTitle">Моя коллекция</h2>
+              <p id="collectionSummary" class="muted">Выбери или создай список.</p>
+            </div>
+            <button class="primary-button" data-open-import type="button">+ Новый список</button>
+          </div>
+
+          <div class="toolbar">
+            <label class="search-field">
+              <span class="visually-hidden">Поиск по карточкам</span>
+              <input id="cardSearch" type="search" placeholder="Поиск по названию или полям" />
+            </label>
+            <select id="collectionFilter" aria-label="Фильтр статуса">
+              <option value="all">Все карточки</option>
+              <option value="collected">Только собранные</option>
+              <option value="missing">Только отсутствующие</option>
+            </select>
+            <select id="collectionSort" aria-label="Сортировка">
+              <option value="sequence">Порядок списка</option>
+              <option value="title-asc">Название A → Z</option>
+              <option value="title-desc">Название Z → A</option>
+              <option value="number">Номер</option>
+            </select>
+          </div>
+
+          <div id="cardGrid" class="card-grid"></div>
+          <button id="loadMoreCards" class="secondary-button load-more" type="button" hidden>
+            Показать ещё
+          </button>
+        </section>
+      </section>
+
+      <section id="wishlistPanel" class="tab-panel">
+        <section class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">СПИСОК ЖЕЛАНИЙ</p>
+              <h2>Wishlist</h2>
+              <p id="wishlistSummary" class="muted">Пока пусто.</p>
+            </div>
+            <button id="copyWishlist" class="secondary-button" type="button">
+              Скопировать
+            </button>
+          </div>
+          <div id="wishlistGrid" class="card-grid compact"></div>
+          <p id="wishlistCopyStatus" class="inline-status" role="status"></p>
+        </section>
+      </section>
+
+      <section id="listsPanel" class="tab-panel">
+        <section class="settings-grid">
+          <article class="panel">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">КОЛЛЕКЦИИ</p>
+                <h2>Мои списки</h2>
+              </div>
+              <button class="primary-button" data-open-import type="button">+ Импорт</button>
+            </div>
+            <div id="listCards" class="list-cards"></div>
+          </article>
+
+          <article class="panel">
+            <p class="eyebrow">ФИЗИЧЕСКОЕ ХРАНЕНИЕ</p>
+            <h2>Настройки биндера</h2>
+            <p class="muted">Позиция считается по порядку карточки в активном списке.</p>
+            <form id="binderForm" class="form-grid">
+              <label>Биндеров <input id="binderCount" type="number" min="1" max="100" required /></label>
+              <label>Листов в биндере <input id="sheetsPerBinder" type="number" min="1" max="500" required /></label>
+              <label>
+                Сторон у листа
+                <select id="sidesPerSheet">
+                  <option value="2">Две</option>
+                  <option value="1">Одна</option>
+                </select>
+              </label>
+              <label>Ячеек на сторону <input id="slotsPerSide" type="number" min="1" max="100" required /></label>
+              <button class="primary-button" type="submit">Сохранить настройки</button>
+            </form>
+            <p id="binderStatus" class="inline-status" role="status"></p>
+          </article>
+
+          <article class="panel backup-panel">
+            <div>
+              <p class="eyebrow">РЕЗЕРВНАЯ КОПИЯ</p>
+              <h2>Защити свои данные</h2>
+              <p class="muted">
+                Экспорт сохраняет все списки, отметки, wishlist, настройки биндера
+                и добавленные фотографии в один файл.
+              </p>
+            </div>
+            <div class="backup-actions">
+              <button id="exportBackup" class="secondary-button" type="button">
+                Экспортировать backup
+              </button>
+              <label class="primary-button file-button">
+                Восстановить из файла
+                <input id="restoreBackupFile" type="file" accept=".json,application/json" />
+              </label>
+            </div>
+            <p id="backupStatus" class="inline-status" role="status"></p>
+          </article>
+        </section>
+      </section>
+
+      <footer class="app-footer">
+        <strong>FolioGrid — пустой универсальный инструмент.</strong>
+        В приложении нет встроенных каталогов, изображений или товарных знаков
+        коллекционных брендов. Ответственность за добавляемые данные и фотографии
+        несёт пользователь.
+      </footer>
+    </main>
+
+    <dialog id="importDialog" class="modal import-modal">
+      <form method="dialog" class="modal-head">
+        <div>
+          <p class="eyebrow">МАСТЕР ЗАГРУЗКИ</p>
+          <h2>Новая коллекция</h2>
+        </div>
+        <button class="icon-button" value="cancel" aria-label="Закрыть" type="submit">×</button>
+      </form>
+
+      <div class="steps" aria-label="Шаги импорта">
+        <span class="active" data-step-dot="1">1. Источник</span>
+        <span data-step-dot="2">2. Настройка</span>
+        <span data-step-dot="3">3. Проверка</span>
+      </div>
+
+      <section class="wizard-step active" data-step="1">
+        <label>
+          Название списка
+          <input id="importListName" type="text" placeholder="Например: Карточки сезона 2026" />
+        </label>
+
+        <fieldset class="source-tabs">
+          <legend>Источник данных</legend>
+          <label><input type="radio" name="sourceType" value="paste" checked /> Вставить таблицу</label>
+          <label><input type="radio" name="sourceType" value="csv" /> CSV</label>
+          <label><input type="radio" name="sourceType" value="xlsx" /> XLSX</label>
+        </fieldset>
+
+        <div id="pasteSource">
+          <label>
+            Список или таблица
+            <textarea
+              id="importPaste"
+              rows="9"
+              placeholder="Можно вставить названия по одному в строке или таблицу из Excel/Numbers"
+            ></textarea>
+          </label>
+          <div class="separator-config">
+            <label>
+              Разделитель столбцов
+              <select id="pasteColumnSeparator">
+                <option value="auto">Определить автоматически</option>
+                <option value="tab">Табуляция</option>
+                <option value="comma">Запятая</option>
+                <option value="semicolon">Точка с запятой</option>
+                <option value="space">Пробел</option>
+                <option value="custom">Свой символ</option>
+              </select>
+            </label>
+            <label id="customColumnSeparatorWrap" hidden>
+              Свой символ
+              <input
+                id="customColumnSeparator"
+                type="text"
+                maxlength="1"
+                placeholder="Например: |"
+                autocapitalize="off"
+                autocomplete="off"
+              />
+            </label>
+          </div>
+          <p id="columnSeparatorHint" class="field-hint">
+            Каждая новая строка — отдельная карточка. Авто определит, чем разделены
+            столбцы внутри строки.
+          </p>
+        </div>
+        <div id="fileSource" hidden>
+          <label>
+            Файл
+            <input id="importFile" type="file" accept=".csv,.xlsx" />
+          </label>
+        </div>
+        <label class="check-row">
+          <input id="importHasHeaders" type="checkbox" />
+          Первая строка содержит названия столбцов
+        </label>
+        <p id="importSourceStatus" class="inline-status error" role="status"></p>
+        <div class="wizard-actions end">
+          <button id="parseImport" class="primary-button" type="button">Продолжить</button>
+        </div>
+      </section>
+
+      <section class="wizard-step" data-step="2">
+        <div class="form-grid two-columns">
+          <label>
+            Столбец с названием карточки
+            <select id="titleColumn"></select>
+          </label>
+          <label>
+            Порядок карточек
+            <select id="orderMode">
+              <option value="source">Как в исходном списке</option>
+              <option value="alphabetical">По названию A → Z</option>
+              <option value="custom">По нескольким столбцам</option>
+            </select>
+          </label>
+          <label>
+            Нумерация
+            <select id="numberingMode">
+              <option value="sequential">Присвоить 1, 2, 3… после сортировки</option>
+              <option value="existing">Взять номер из столбца</option>
+            </select>
+          </label>
+          <label id="numberColumnWrap" hidden>
+            Столбец с номером
+            <select id="numberColumn"></select>
+          </label>
+        </div>
+
+        <fieldset id="sortRulesFieldset" class="sort-rules" hidden>
+          <legend>Сортировка по столбцам (до трёх уровней)</legend>
+          <div id="sortRules"></div>
+          <button id="addSortRule" class="secondary-button" type="button">+ Добавить правило</button>
+        </fieldset>
+
+        <div class="wizard-actions">
+          <button class="secondary-button" data-back-step="1" type="button">Назад</button>
+          <button id="buildPreview" class="primary-button" type="button">Предпросмотр</button>
+        </div>
+      </section>
+
+      <section class="wizard-step" data-step="3">
+        <p id="previewSummary" class="muted"></p>
+        <div class="table-wrap">
+          <table>
+            <thead id="previewHead"></thead>
+            <tbody id="previewBody"></tbody>
+          </table>
+        </div>
+        <p class="muted small">Показаны первые 20 строк.</p>
+        <div class="wizard-actions">
+          <button class="secondary-button" data-back-step="2" type="button">Назад</button>
+          <button id="finishImport" class="primary-button" type="button">Создать коллекцию</button>
+        </div>
+      </section>
+    </dialog>
+
+    <dialog id="cardDialog" class="modal card-modal">
+      <form method="dialog" class="modal-head">
+        <div>
+          <p id="cardDialogNumber" class="eyebrow"></p>
+          <h2 id="cardDialogTitle"></h2>
+        </div>
+        <button class="icon-button" value="cancel" aria-label="Закрыть" type="submit">×</button>
+      </form>
+      <div class="card-detail-grid">
+        <div>
+          <div id="cardPhotoPreview" class="photo-preview"></div>
+          <label class="secondary-button file-button">
+            Добавить своё фото
+            <input id="cardPhotoInput" type="file" accept="image/*" capture="environment" />
+          </label>
+          <button id="removeCardPhoto" class="text-button danger-text" type="button">
+            Удалить фото
+          </button>
+        </div>
+        <div>
+          <div id="cardFields" class="detail-fields"></div>
+          <p id="cardSlot" class="slot-note"></p>
+          <div class="card-actions">
+            <button id="toggleCollected" class="primary-button" type="button"></button>
+            <button id="toggleWishlist" class="secondary-button" type="button"></button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="./vendor/xlsx-reader.min.js"></script>
+    <script src="./storage.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
