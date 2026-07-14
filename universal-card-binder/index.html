@@ -43,7 +43,14 @@
           Вставь список названий или импортируй CSV/XLSX. FolioGrid не содержит
           чужих каталогов — только данные, которые добавляешь ты.
         </p>
-        <button class="primary-button" data-open-import type="button">Запустить мастер загрузки</button>
+        <div class="empty-actions">
+          <button class="primary-button" data-open-import type="button">
+            Запустить мастер загрузки
+          </button>
+          <button class="secondary-button" data-open-restore type="button">
+            Восстановить backup
+          </button>
+        </div>
       </section>
 
       <section id="collectionPanel" class="tab-panel active">
@@ -131,6 +138,27 @@
             </form>
             <p id="binderStatus" class="inline-status" role="status"></p>
           </article>
+
+          <article class="panel backup-panel">
+            <div>
+              <p class="eyebrow">РЕЗЕРВНАЯ КОПИЯ</p>
+              <h2>Защити свои данные</h2>
+              <p class="muted">
+                Экспорт сохраняет все списки, отметки, wishlist, настройки биндера
+                и добавленные фотографии в один файл.
+              </p>
+            </div>
+            <div class="backup-actions">
+              <button id="exportBackup" class="secondary-button" type="button">
+                Экспортировать backup
+              </button>
+              <label class="primary-button file-button">
+                Восстановить из файла
+                <input id="restoreBackupFile" type="file" accept=".json,application/json" />
+              </label>
+            </div>
+            <p id="backupStatus" class="inline-status" role="status"></p>
+          </article>
         </section>
       </section>
 
@@ -181,29 +209,31 @@
           </label>
           <div class="separator-config">
             <label>
-              Как разделены карточки
-              <select id="pasteSeparatorMode">
+              Разделитель столбцов
+              <select id="pasteColumnSeparator">
                 <option value="auto">Определить автоматически</option>
-                <option value="newline">Каждая с новой строки</option>
-                <option value="space">Пробелом</option>
-                <option value="tab">Табуляцией</option>
-                <option value="custom">Своим символом</option>
+                <option value="tab">Табуляция</option>
+                <option value="comma">Запятая</option>
+                <option value="semicolon">Точка с запятой</option>
+                <option value="space">Пробел</option>
+                <option value="custom">Свой символ</option>
               </select>
             </label>
-            <label id="customSeparatorWrap" hidden>
-              Свой разделитель
+            <label id="customColumnSeparatorWrap" hidden>
+              Свой символ
               <input
-                id="customSeparator"
+                id="customColumnSeparator"
                 type="text"
-                maxlength="8"
+                maxlength="1"
                 placeholder="Например: |"
                 autocapitalize="off"
                 autocomplete="off"
               />
             </label>
           </div>
-          <p id="separatorHint" class="field-hint">
-            Авто распознаёт строки, CSV и таблицы, скопированные из Excel/Numbers.
+          <p id="columnSeparatorHint" class="field-hint">
+            Каждая новая строка — отдельная карточка. Авто определит, чем разделены
+            столбцы внутри строки.
           </p>
         </div>
         <div id="fileSource" hidden>

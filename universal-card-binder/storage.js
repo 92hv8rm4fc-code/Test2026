@@ -113,6 +113,30 @@
     await transactionAsPromise(transaction);
   }
 
+  async function exportAll() {
+    const database = await openDatabase();
+    const transaction = database.transaction([LISTS_STORE, CARDS_STORE], "readonly");
+    const listsRequest = transaction.objectStore(LISTS_STORE).getAll();
+    const cardsRequest = transaction.objectStore(CARDS_STORE).getAll();
+    const [lists, cards] = await Promise.all([
+      requestAsPromise(listsRequest),
+      requestAsPromise(cardsRequest),
+    ]);
+    return { lists, cards };
+  }
+
+  async function replaceAll(lists, cards) {
+    const database = await openDatabase();
+    const transaction = database.transaction([LISTS_STORE, CARDS_STORE], "readwrite");
+    const listStore = transaction.objectStore(LISTS_STORE);
+    const cardStore = transaction.objectStore(CARDS_STORE);
+    listStore.clear();
+    cardStore.clear();
+    lists.forEach((list) => listStore.put(list));
+    cards.forEach((card) => cardStore.put(card));
+    await transactionAsPromise(transaction);
+  }
+
   window.FolioGridStorage = {
     getLists,
     getList,
@@ -121,5 +145,7 @@
     putList,
     putCard,
     deleteList,
+    exportAll,
+    replaceAll,
   };
 })();

@@ -26,6 +26,7 @@ const elements = {
   panels: document.querySelectorAll(".tab-panel"),
   emptyState: document.querySelector("#emptyState"),
   openImportButtons: document.querySelectorAll("[data-open-import]"),
+  openRestoreButtons: document.querySelectorAll("[data-open-restore]"),
   headerProgress: document.querySelector("#headerProgress"),
   headerProgressBar: document.querySelector("#headerProgressBar"),
   collectionTitle: document.querySelector("#collectionTitle"),
@@ -46,13 +47,16 @@ const elements = {
   sidesPerSheet: document.querySelector("#sidesPerSheet"),
   slotsPerSide: document.querySelector("#slotsPerSide"),
   binderStatus: document.querySelector("#binderStatus"),
+  exportBackup: document.querySelector("#exportBackup"),
+  restoreBackupFile: document.querySelector("#restoreBackupFile"),
+  backupStatus: document.querySelector("#backupStatus"),
   importDialog: document.querySelector("#importDialog"),
   importListName: document.querySelector("#importListName"),
   importPaste: document.querySelector("#importPaste"),
-  pasteSeparatorMode: document.querySelector("#pasteSeparatorMode"),
-  customSeparatorWrap: document.querySelector("#customSeparatorWrap"),
-  customSeparator: document.querySelector("#customSeparator"),
-  separatorHint: document.querySelector("#separatorHint"),
+  pasteColumnSeparator: document.querySelector("#pasteColumnSeparator"),
+  customColumnSeparatorWrap: document.querySelector("#customColumnSeparatorWrap"),
+  customColumnSeparator: document.querySelector("#customColumnSeparator"),
+  columnSeparatorHint: document.querySelector("#columnSeparatorHint"),
   importFile: document.querySelector("#importFile"),
   importHasHeaders: document.querySelector("#importHasHeaders"),
   pasteSource: document.querySelector("#pasteSource"),
@@ -99,6 +103,9 @@ function bindEvents() {
   elements.openImportButtons.forEach((button) => {
     button.addEventListener("click", openImportWizard);
   });
+  elements.openRestoreButtons.forEach((button) => {
+    button.addEventListener("click", () => elements.restoreBackupFile.click());
+  });
 
   elements.cardSearch.addEventListener("input", () => {
     state.renderedLimit = 80;
@@ -120,7 +127,7 @@ function bindEvents() {
   document.querySelectorAll('input[name="sourceType"]').forEach((radio) => {
     radio.addEventListener("change", handleSourceTypeChange);
   });
-  elements.pasteSeparatorMode.addEventListener("change", updateSeparatorControls);
+  elements.pasteColumnSeparator.addEventListener("change", updateColumnSeparatorControls);
   elements.parseImport.addEventListener("click", parseImportSource);
   elements.orderMode.addEventListener("change", updateOrderControls);
   elements.numberingMode.addEventListener("change", updateOrderControls);
@@ -132,6 +139,8 @@ function bindEvents() {
   });
 
   elements.binderForm.addEventListener("submit", saveBinderSettings);
+  elements.exportBackup.addEventListener("click", exportBackup);
+  elements.restoreBackupFile.addEventListener("change", restoreBackup);
   elements.copyWishlist.addEventListener("click", copyWishlist);
   elements.cardPhotoInput.addEventListener("change", handleCardPhoto);
   elements.removeCardPhoto.addEventListener("click", removeCardPhoto);
@@ -338,6 +347,7 @@ function renderWishlist() {
 }
 
 function renderLists() {
+  elements.exportBackup.disabled = !state.lists.length;
   const fragment = document.createDocumentFragment();
   state.lists.forEach((list) => {
     const item = document.createElement("article");
@@ -589,6 +599,125 @@ async function copyWishlist() {
   }
 }
 
+async function exportBackup() {
+  elements.backupStatus.classList.remove("error");
+  elements.backupStatus.textContent = "Подготавливаю резервную копию…";
+
+  try {
+    const data = await FolioGridStorage.exportAll();
+    const payload = {
+      format: "foliogrid-backup",
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      lists: data.lists,
+      cards: data.cards,
+    };
+    const filename = `foliogrid-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    const file = new File([JSON.stringify(payload)], filename, {
+      type: "application/json",
+    });
+
+    if (navigator.canShare?.({ files: [file] })) {
+      await navigator.share({
+        title: "Резервная копия FolioGrid",
+        files: [file],
+      });
+    } else {
+      downloadFile(file, filename);
+    }
+    elements.backupStatus.textContent = "Резервная копия готова.";
+  } catch (error) {
+    if (error.name === "AbortError") {
+      elements.backupStatus.textContent = "";
+      return;
+    }
+    elements.backupStatus.textContent = `Не удалось создать backup: ${error.message}`;
+    elements.backupStatus.classList.add("error");
+  }
+}
+
+function downloadFile(file, filename) {
+  const url = URL.createObjectURL(file);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+async function restoreBackup(event) {
+  const file = event.target.files?.[0];
+  event.target.value = "";
+  if (!file) {
+    return;
+  }
+
+  elements.backupStatus.classList.remove("error");
+  elements.backupStatus.textContent = "Проверяю резервную копию…";
+
+  try {
+    const payload = JSON.parse(await file.text());
+    validateBackup(payload);
+    const photoCount = payload.cards.filter((card) => Boolean(card.photo)).length;
+    const confirmed = window.confirm(
+      `Заменить текущие данные? В backup: ${payload.lists.length} списков, ` +
+        `${payload.cards.length} карточек и ${photoCount} фотографий.`,
+    );
+    if (!confirmed) {
+      elements.backupStatus.textContent = "Восстановление отменено.";
+      return;
+    }
+
+    await FolioGridStorage.replaceAll(payload.lists, payload.cards);
+    localStorage.removeItem("foliogrid.activeListId");
+    await refreshLists(payload.lists[0]?.id);
+    elements.backupStatus.textContent =
+      `Восстановлено: ${payload.lists.length} списков и ${payload.cards.length} карточек.`;
+  } catch (error) {
+    elements.backupStatus.textContent = `Не удалось восстановить backup: ${error.message}`;
+    elements.backupStatus.classList.add("error");
+  }
+}
+
+function validateBackup(payload) {
+  if (
+    payload?.format !== "foliogrid-backup" ||
+    payload.version !== 1 ||
+    !Array.isArray(payload.lists) ||
+    !Array.isArray(payload.cards)
+  ) {
+    throw new Error("это не резервная копия FolioGrid");
+  }
+
+  const listIds = new Set();
+  payload.lists.forEach((list) => {
+    if (
+      !list ||
+      typeof list.id !== "string" ||
+      typeof list.name !== "string" ||
+      !Array.isArray(list.columns)
+    ) {
+      throw new Error("повреждены данные списка");
+    }
+    listIds.add(list.id);
+  });
+
+  payload.cards.forEach((card) => {
+    if (
+      !card ||
+      typeof card.id !== "string" ||
+      typeof card.listId !== "string" ||
+      !listIds.has(card.listId) ||
+      typeof card.title !== "string" ||
+      typeof card.fields !== "object"
+    ) {
+      throw new Error("повреждены данные карточек");
+    }
+  });
+}
+
 function openImportWizard() {
   resetWizard();
   elements.importDialog.showModal();
@@ -605,15 +734,15 @@ function resetWizard() {
   };
   elements.importListName.value = "";
   elements.importPaste.value = "";
-  elements.pasteSeparatorMode.value = "auto";
-  elements.customSeparator.value = "";
+  elements.pasteColumnSeparator.value = "auto";
+  elements.customColumnSeparator.value = "";
   elements.importFile.value = "";
   elements.importHasHeaders.checked = false;
   elements.importSourceStatus.textContent = "";
   document.querySelector('input[name="sourceType"][value="paste"]').checked = true;
   elements.pasteSource.hidden = false;
   elements.fileSource.hidden = true;
-  updateSeparatorControls();
+  updateColumnSeparatorControls();
   showWizardStep(1);
 }
 
@@ -626,17 +755,19 @@ function handleSourceTypeChange(event) {
   elements.importFile.accept = state.wizard.sourceType === "xlsx" ? ".xlsx" : ".csv";
 }
 
-function updateSeparatorControls() {
-  const mode = elements.pasteSeparatorMode.value;
-  elements.customSeparatorWrap.hidden = mode !== "custom";
+function updateColumnSeparatorControls() {
+  const mode = elements.pasteColumnSeparator.value;
+  elements.customColumnSeparatorWrap.hidden = mode !== "custom";
   const hints = {
-    auto: "Авто распознаёт строки, CSV и таблицы, скопированные из Excel/Numbers.",
-    newline: "Всё между переводами строки считается названием одной карточки.",
-    space: "Каждая группа символов между пробелами станет отдельной карточкой.",
-    tab: "Каждый фрагмент между нажатиями Tab станет отдельной карточкой.",
-    custom: "Укажи символ или короткую последовательность, например |, / или ::.",
+    auto:
+      "Каждая новая строка — карточка. Авто распознаёт CSV и таблицы из Excel/Numbers.",
+    tab: "Каждая новая строка — карточка, а табуляция разделяет её столбцы.",
+    comma: "Каждая новая строка — карточка, а запятая разделяет её столбцы.",
+    semicolon: "Каждая новая строка — карточка, а точка с запятой разделяет её столбцы.",
+    space: "Каждая новая строка — карточка, а пробелы разделяют её столбцы.",
+    custom: "Каждая новая строка — карточка. Укажи символ между столбцами, например |.",
   };
-  elements.separatorHint.textContent = hints[mode];
+  elements.columnSeparatorHint.textContent = hints[mode];
 }
 
 async function parseImportSource() {
@@ -681,44 +812,30 @@ async function parseImportSource() {
 }
 
 function parsePastedText(text) {
-  const mode = elements.pasteSeparatorMode.value;
+  const mode = elements.pasteColumnSeparator.value;
   if (mode === "auto") {
     return parseDelimitedText(text);
   }
 
   const normalized = text.replace(/\r\n?/g, "\n").trim();
-  let separator;
-  if (mode === "newline") {
-    separator = /\n+/;
-  } else if (mode === "space") {
-    separator = / +/;
-  } else if (mode === "tab") {
-    separator = /\t+/;
-  } else {
-    separator = decodeCustomSeparator(elements.customSeparator.value);
-    if (!separator) {
-      throw new Error("Укажи свой символ-разделитель.");
-    }
+  const separators = {
+    tab: "\t",
+    comma: ",",
+    semicolon: ";",
+    space: " ",
+  };
+  const separator =
+    mode === "custom" ? elements.customColumnSeparator.value : separators[mode];
+
+  if (!separator) {
+    throw new Error("Укажи символ, который разделяет столбцы.");
   }
 
-  return normalized
-    .split(separator)
-    .map(cleanCell)
-    .filter(Boolean)
-    .map((value) => [value]);
-}
-
-function decodeCustomSeparator(value) {
-  if (value === "\\t") {
-    return "\t";
+  const rows = parseCsv(normalized, separator);
+  if (mode === "space") {
+    return rows.map((row) => row.filter((value) => value !== ""));
   }
-  if (value === "\\n") {
-    return "\n";
-  }
-  if (value === "\\s") {
-    return " ";
-  }
-  return value;
+  return rows;
 }
 
 function parseDelimitedText(text) {

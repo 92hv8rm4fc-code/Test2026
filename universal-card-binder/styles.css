@@ -247,6 +247,13 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: center;
+}
+
 .toolbar {
   display: grid;
   grid-template-columns: minmax(220px, 1fr) minmax(170px, auto) minmax(170px, auto);
@@ -385,6 +392,26 @@ label {
   display: grid;
   grid-template-columns: 1fr minmax(300px, 0.8fr);
   gap: 1rem;
+}
+
+.backup-panel {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.backup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: flex-end;
+}
+
+.backup-panel .inline-status {
+  grid-column: 1 / -1;
+  margin: 0;
 }
 
 .list-cards {
@@ -704,8 +731,17 @@ th {
 @media (max-width: 760px) {
   .app-header,
   .settings-grid,
-  .card-detail-grid {
+  .card-detail-grid,
+  .backup-panel {
     grid-template-columns: 1fr;
+  }
+
+  .backup-actions {
+    justify-content: stretch;
+  }
+
+  .backup-actions > * {
+    flex: 1 1 auto;
   }
 
   .toolbar {

@@ -45,11 +45,19 @@ try {
 
   await page.locator("[data-open-import]:visible").first().click();
   await page.fill("#importListName", "Custom Separator");
-  await page.fill("#importPaste", "First card|Second card|Third card");
-  await page.selectOption("#pasteSeparatorMode", "custom");
-  await page.fill("#customSeparator", "|");
+  await page.fill(
+    "#importPaste",
+    "Name|Group\nFirst card|A\nSecond card|B\nThird card|A",
+  );
+  await page.selectOption("#pasteColumnSeparator", "custom");
+  await page.fill("#customColumnSeparator", "|");
+  await page.check("#importHasHeaders");
   await page.click("#parseImport");
   await page.waitForSelector('.wizard-step[data-step="2"].active');
+  const mappedColumns = await page.locator("#titleColumn option").count();
+  if (mappedColumns !== 2) {
+    throw new Error(`Expected 2 custom-separated columns, received ${mappedColumns}`);
+  }
   await page.click("#buildPreview");
   await page.waitForSelector('.wizard-step[data-step="3"].active');
   await page.click("#finishImport");
@@ -60,6 +68,28 @@ try {
   if (customCount !== 3) {
     throw new Error(`Expected 3 custom-separated cards, received ${customCount}`);
   }
+
+  await page.locator('.tab-button[data-tab="listsPanel"]').click();
+  const downloadPromise = page.waitForEvent("download");
+  await page.click("#exportBackup");
+  const download = await downloadPromise;
+  const backupPath = await download.path();
+  if (!backupPath) {
+    throw new Error("Backup file was not downloaded");
+  }
+
+  await page.evaluate(async () => {
+    await window.FolioGridStorage.replaceAll([], []);
+    localStorage.removeItem("foliogrid.activeListId");
+  });
+  await page.reload({ waitUntil: "networkidle" });
+  await page.waitForSelector("body.has-no-lists");
+
+  page.once("dialog", (dialog) => dialog.accept());
+  await page.setInputFiles("#restoreBackupFile", backupPath);
+  await page.waitForFunction(
+    () => document.querySelectorAll("#listCards .list-card").length === 2,
+  );
 
   console.log("FolioGrid smoke test passed");
 } finally {
