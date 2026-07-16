@@ -46,6 +46,10 @@ const browser = await chromium.launch({
 try {
   const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
   await page.addInitScript(() => {
+    if (sessionStorage.getItem("pokedex-test-seeded")) {
+      return;
+    }
+    sessionStorage.setItem("pokedex-test-seeded", "true");
     const collection = Array.from({ length: 18 }, (_, index) => ({
       key: String(index + 1),
       pokemon: {
