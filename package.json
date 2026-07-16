@@ -8,15 +8,20 @@
     "cap:sync": "npm run prepare:www && npx cap sync ios",
     "cap:open": "npx cap open ios",
     "ios:prepare": "npm install && npm run cap:sync",
-    "ios:open": "npm run ios:prepare && npx cap open ios"
+    "ios:open": "npm run ios:prepare && npx cap open ios",
+    "test:persistence": "node scripts/test-mobile-persistence.mjs",
+    "test:backup": "node scripts/test-backup.mjs"
   },
   "dependencies": {
     "@capacitor/app": "^7.1.2",
     "@capacitor/core": "^7.4.2",
+    "@capacitor/filesystem": "^7.1.8",
     "@capacitor/ios": "^7.4.2",
-    "@capacitor/preferences": "^7.0.4"
+    "@capacitor/preferences": "^7.0.4",
+    "@capacitor/share": "^7.0.4"
   },
   "devDependencies": {
-    "@capacitor/cli": "^7.4.2"
+    "@capacitor/cli": "^7.4.2",
+    "playwright-core": "^1.61.1"
   }
 }

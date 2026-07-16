@@ -175,6 +175,30 @@
           </div>
           <div id="collectionList" class="collection-list"></div>
         </section>
+
+        <section class="panel backup-panel">
+          <div>
+            <h2>Резервная копия</h2>
+            <p>
+              Перенеси коллекцию, wishlist и настройки на другое устройство или
+              сохрани их перед переустановкой приложения.
+            </p>
+          </div>
+          <div class="backup-actions">
+            <button id="exportPokedexBackup" class="ghost-button" type="button">
+              Сохранить в файл
+            </button>
+            <label class="backup-file-button">
+              Восстановить из файла
+              <input
+                id="restorePokedexBackup"
+                type="file"
+                accept=".json,application/json"
+              />
+            </label>
+          </div>
+          <p id="backupStatus" class="status" role="status"></p>
+        </section>
       </section>
 
       <section id="pokedexTab" class="tab-panel">
