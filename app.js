@@ -248,6 +248,9 @@ const elements = {
   wishlistStatus: document.querySelector("#wishlistStatus"),
   copyWishlist: document.querySelector("#copyWishlist"),
   clearWishlist: document.querySelector("#clearWishlist"),
+  exportPokedexBackup: document.querySelector("#exportPokedexBackup"),
+  restorePokedexBackup: document.querySelector("#restorePokedexBackup"),
+  backupStatus: document.querySelector("#backupStatus"),
 };
 
 let settings = { ...DEFAULT_SETTINGS };
@@ -318,6 +321,8 @@ function init() {
   elements.pokedexSearch.addEventListener("input", handlePokedexFiltersChange);
   elements.copyWishlist.addEventListener("click", copyWishlistToClipboard);
   elements.clearWishlist.addEventListener("click", clearWishlist);
+  elements.exportPokedexBackup.addEventListener("click", exportPokedexBackup);
+  elements.restorePokedexBackup.addEventListener("change", restorePokedexBackup);
 
   elements.tabButtons.forEach((button) => {
     button.addEventListener("click", () => switchTab(button.dataset.tabTarget));
@@ -1377,7 +1382,7 @@ async function loadCollectionFromServer() {
     const serverCollection = await response.json();
     if (serverCollection.length) {
       collection = hydrateCollection(serverCollection);
-      saveCollection();
+      await saveCollection();
       renderCollection();
       refreshPokedexView();
       updateProgressHeader();
@@ -1426,7 +1431,7 @@ async function addPokemonToBinder(pokemon) {
   };
 
   collection = [...collection, entry];
-  saveCollection();
+  await saveCollection();
   renderCollection();
   refreshPokedexView();
   updateProgressHeader();
@@ -1751,7 +1756,7 @@ function recalculateSlots() {
     ...entry,
     slot: getSlotByPokemonNumber(entry.pokemon.id, settings),
   }));
-  saveCollection();
+  return saveCollection();
 }
 
 function formatSlot(slot) {
@@ -1769,7 +1774,7 @@ function updateWishlistButton(button, pokemon) {
   button.setAttribute("aria-pressed", String(inWishlist));
 }
 
-function addToWishlist(pokemon) {
+async function addToWishlist(pokemon) {
   if (isInWishlist(pokemon.id)) {
     setWishlistStatus(`${pokemon.name} уже в wishlist.`, true);
     return;
@@ -1784,15 +1789,15 @@ function addToWishlist(pokemon) {
     },
   ].sort((left, right) => left.pokemon.id - right.pokemon.id);
 
-  saveWishlist();
+  await saveWishlist();
   renderWishlist();
   setWishlistStatus(`${pokemon.name} добавлен в wishlist.`);
 }
 
-function removeFromWishlist(pokemonId) {
+async function removeFromWishlist(pokemonId) {
   const removedEntry = wishlist.find((entry) => entry.pokemon.id === pokemonId);
   wishlist = wishlist.filter((entry) => entry.pokemon.id !== pokemonId);
-  saveWishlist();
+  await saveWishlist();
   renderWishlist();
 
   if (removedEntry) {
@@ -1800,11 +1805,11 @@ function removeFromWishlist(pokemonId) {
   }
 }
 
-function toggleWishlistPokemon(pokemon, button = null) {
+async function toggleWishlistPokemon(pokemon, button = null) {
   if (isInWishlist(pokemon.id)) {
-    removeFromWishlist(pokemon.id);
+    await removeFromWishlist(pokemon.id);
   } else {
-    addToWishlist(pokemon);
+    await addToWishlist(pokemon);
   }
 
   if (button) {
@@ -1857,7 +1862,176 @@ async function copyWishlistToClipboard() {
   }
 }
 
-function clearWishlist() {
+async function exportPokedexBackup() {
+  setBackupStatus("Подготавливаю файл…");
+  await persistAppStorage();
+
+  try {
+    const payload = {
+      format: "pokemon-binder-pokedex-backup",
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      collection,
+      wishlist,
+      settings,
+      preferences: {
+        showUncollectedPokemon,
+        collectionFilters,
+        pokedexFilters,
+      },
+    };
+    const content = JSON.stringify(payload);
+    const filename = `pokemon-binder-backup-${new Date().toISOString().slice(0, 10)}.json`;
+
+    if (window.PB_shareFile) {
+      const shared = await window.PB_shareFile({
+        filename,
+        content,
+        mimeType: "application/json",
+      });
+      if (shared) {
+        setBackupStatus("Файл готов. Сохрани его в Files/iCloud или отправь на другое устройство.");
+        return;
+      }
+    }
+
+    const file = new File([content], filename, { type: "application/json" });
+    if (navigator.canShare?.({ files: [file] })) {
+      await navigator.share({
+        title: "Резервная копия Pokemon Binder Pokedex",
+        files: [file],
+      });
+    } else {
+      downloadBackupFile(file, filename);
+    }
+    setBackupStatus("Резервная копия сохранена.");
+  } catch (error) {
+    if (error.name === "AbortError") {
+      setBackupStatus("");
+      return;
+    }
+    setBackupStatus(`Не удалось сохранить файл: ${error.message}`, true);
+  }
+}
+
+function downloadBackupFile(file, filename) {
+  const url = URL.createObjectURL(file);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+async function restorePokedexBackup(event) {
+  const file = event.target.files?.[0];
+  event.target.value = "";
+  if (!file) {
+    return;
+  }
+
+  setBackupStatus("Проверяю файл…");
+
+  try {
+    const payload = JSON.parse(await file.text());
+    validatePokedexBackup(payload);
+    const shouldRestore = window.confirm(
+      `Заменить текущие данные? В файле: ${payload.collection.length} собранных ` +
+        `и ${payload.wishlist.length} желаемых покемонов.`,
+    );
+    if (!shouldRestore) {
+      setBackupStatus("Восстановление отменено.");
+      return;
+    }
+
+    settings = { ...DEFAULT_SETTINGS, ...payload.settings };
+    collection = payload.collection.map((entry) => ({
+      ...entry,
+      key: entry.key || String(entry.pokemon.id),
+      slot: getSlotByPokemonNumber(entry.pokemon.id, settings),
+    }));
+    wishlist = payload.wishlist.map((entry) => ({
+      ...entry,
+      key: entry.key || String(entry.pokemon.id),
+    }));
+    showUncollectedPokemon = payload.preferences?.showUncollectedPokemon ?? true;
+    collectionFilters = normalizeListFilters(
+      payload.preferences?.collectionFilters,
+      DEFAULT_COLLECTION_FILTERS,
+    );
+    pokedexFilters = normalizeListFilters(
+      payload.preferences?.pokedexFilters,
+      DEFAULT_POKEDEX_FILTERS,
+    );
+
+    localStorage.setItem(STORAGE_KEYS.settings, JSON.stringify(settings));
+    localStorage.setItem(STORAGE_KEYS.collection, JSON.stringify(collection));
+    localStorage.setItem(STORAGE_KEYS.wishlist, JSON.stringify(wishlist));
+    localStorage.setItem(
+      STORAGE_KEYS.pokedexShowUncollected,
+      String(showUncollectedPokemon),
+    );
+    localStorage.setItem(
+      STORAGE_KEYS.collectionFilters,
+      JSON.stringify(collectionFilters),
+    );
+    localStorage.setItem(STORAGE_KEYS.pokedexFilters, JSON.stringify(pokedexFilters));
+    await persistAppStorage();
+
+    if (!window.PB_IS_MOBILE_APP) {
+      await replaceServerCollection();
+    }
+
+    hydrateSettingsForm();
+    hydrateCollectionFiltersForm();
+    hydratePokedexFiltersForm();
+    elements.showUncollectedPokemon.checked = showUncollectedPokemon;
+    renderCollection();
+    renderWishlist();
+    refreshPokedexView();
+    updateProgressHeader();
+    setBackupStatus(
+      `Восстановлено: ${collection.length} собранных и ${wishlist.length} желаемых покемонов.`,
+    );
+  } catch (error) {
+    setBackupStatus(`Не удалось восстановить файл: ${error.message}`, true);
+  }
+}
+
+function validatePokedexBackup(payload) {
+  if (
+    payload?.format !== "pokemon-binder-pokedex-backup" ||
+    payload.version !== 1 ||
+    !Array.isArray(payload.collection) ||
+    !Array.isArray(payload.wishlist) ||
+    !payload.settings
+  ) {
+    throw new Error("это не резервная копия Pokemon Binder Pokedex");
+  }
+
+  [...payload.collection, ...payload.wishlist].forEach((entry) => {
+    const pokemonId = entry?.pokemon?.id;
+    if (!Number.isInteger(pokemonId) || pokemonId < 1 || pokemonId > OFFICIAL_DEX_SIZE) {
+      throw new Error("файл содержит повреждённые данные");
+    }
+  });
+}
+
+async function replaceServerCollection() {
+  await clearCollectionOnServer();
+  for (const entry of collection) {
+    await persistCollectionEntry(entry);
+  }
+}
+
+function setBackupStatus(message, isError = false) {
+  elements.backupStatus.textContent = message;
+  elements.backupStatus.classList.toggle("error", isError);
+}
+
+async function clearWishlist() {
   if (!wishlist.length) {
     return;
   }
@@ -1868,7 +2042,7 @@ function clearWishlist() {
   }
 
   wishlist = [];
-  saveWishlist();
+  await saveWishlist();
   renderWishlist();
   setWishlistStatus("Wishlist очищен.");
 }
@@ -1997,10 +2171,10 @@ function renderCollection() {
   elements.collectionList.replaceChildren(...items);
 }
 
-function removeEntry(key) {
+async function removeEntry(key) {
   const removedEntry = collection.find((entry) => entry.key === key);
   collection = collection.filter((entry) => entry.key !== key);
-  recalculateSlots();
+  await recalculateSlots();
   renderCollection();
   refreshPokedexView();
   updateProgressHeader();
@@ -2022,7 +2196,7 @@ async function deleteCollectionEntry(pokemonId) {
   }
 }
 
-function handleSettingsSave(event) {
+async function handleSettingsSave(event) {
   event.preventDefault();
 
   const nextSettings = {
@@ -2043,8 +2217,8 @@ function handleSettingsSave(event) {
   }
 
   settings = nextSettings;
-  saveSettings();
-  recalculateSlots();
+  await saveSettings();
+  await recalculateSlots();
   renderCollection();
   refreshPokedexView();
   updateProgressHeader();
@@ -2055,18 +2229,18 @@ function readPositiveNumber(input) {
   return Math.max(1, Number(input.value));
 }
 
-function resetSettings() {
+async function resetSettings() {
   settings = { ...DEFAULT_SETTINGS };
-  saveSettings();
+  await saveSettings();
   hydrateSettingsForm();
-  recalculateSlots();
+  await recalculateSlots();
   renderCollection();
   refreshPokedexView();
   updateProgressHeader();
   setStatus("Настройки сброшены к варианту 2 x 30 x 2 x 9.");
 }
 
-function clearCollection() {
+async function clearCollection() {
   if (!collection.length) {
     return;
   }
@@ -2077,7 +2251,7 @@ function clearCollection() {
   }
 
   collection = [];
-  saveCollection();
+  await saveCollection();
   renderCollection();
   refreshPokedexView();
   updateProgressHeader();
@@ -2146,6 +2320,7 @@ function loadSettings() {
 
 function saveSettings() {
   localStorage.setItem(STORAGE_KEYS.settings, JSON.stringify(settings));
+  return persistAppStorage();
 }
 
 function loadPokedexShowUncollected() {
@@ -2155,6 +2330,7 @@ function loadPokedexShowUncollected() {
 
 function savePokedexShowUncollected() {
   localStorage.setItem(STORAGE_KEYS.pokedexShowUncollected, String(showUncollectedPokemon));
+  return persistAppStorage();
 }
 
 function loadCollection() {
@@ -2168,6 +2344,7 @@ function loadCollection() {
 
 function saveCollection() {
   localStorage.setItem(STORAGE_KEYS.collection, JSON.stringify(collection));
+  return persistAppStorage();
 }
 
 function loadPokemonIndexCache() {
@@ -2236,10 +2413,12 @@ function normalizeListFilters(parsed, defaults) {
 
 function saveCollectionFilters() {
   localStorage.setItem(STORAGE_KEYS.collectionFilters, JSON.stringify(collectionFilters));
+  return persistAppStorage();
 }
 
 function savePokedexFilters() {
   localStorage.setItem(STORAGE_KEYS.pokedexFilters, JSON.stringify(pokedexFilters));
+  return persistAppStorage();
 }
 
 function loadWishlist() {
@@ -2253,4 +2432,9 @@ function loadWishlist() {
 
 function saveWishlist() {
   localStorage.setItem(STORAGE_KEYS.wishlist, JSON.stringify(wishlist));
+  return persistAppStorage();
+}
+
+function persistAppStorage() {
+  return window.PB_persistNow ? window.PB_persistNow() : Promise.resolve();
 }
