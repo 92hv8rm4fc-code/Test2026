@@ -229,6 +229,7 @@ const elements = {
   collectionFilterDropdown: document.querySelector("#collectionFilterDropdown"),
   collectionCount: document.querySelector("#collectionCount"),
   collectionProgress: document.querySelector("#collectionProgress"),
+  lastAddedPokemon: document.querySelector("#lastAddedPokemon"),
   trainerRank: document.querySelector("#trainerRank"),
   trainerRankHint: document.querySelector("#trainerRankHint"),
   trainerRankCard: document.querySelector("#trainerRankCard"),
@@ -1700,9 +1701,65 @@ function renderAchievements() {
   updateTrainerCard();
 }
 
+function getLastAddedEntry() {
+  if (!collection.length) {
+    return null;
+  }
+
+  return collection.reduce((latest, entry) => {
+    if (!latest) {
+      return entry;
+    }
+
+    const entryTime = entry.addedAt || "";
+    const latestTime = latest.addedAt || "";
+    if (entryTime && latestTime) {
+      return entryTime > latestTime ? entry : latest;
+    }
+
+    if (entryTime && !latestTime) {
+      return entry;
+    }
+
+    return latest;
+  }, null);
+}
+
+function renderLastAddedPokemon() {
+  const entry = getLastAddedEntry();
+
+  if (!entry) {
+    const empty = document.createElement("p");
+    empty.className = "last-added-card__empty";
+    empty.textContent = "Пока никого нет";
+    elements.lastAddedPokemon.replaceChildren(empty);
+    return;
+  }
+
+  const item = document.createElement("article");
+  item.className = "collection-item last-added-card__item";
+
+  const colors = getTypeTileColors(entry.pokemon.types || []);
+  item.style.background = colors.collectedBg;
+  item.style.borderColor = colors.border;
+
+  const image = document.createElement("img");
+  image.src = resolvePokemonSprite(entry.pokemon);
+  image.alt = entry.pokemon.name;
+
+  const info = document.createElement("div");
+  const title = document.createElement("h3");
+  title.textContent = `#${entry.pokemon.id} ${entry.pokemon.name}`;
+  info.append(title);
+
+  item.append(image, info);
+  elements.lastAddedPokemon.replaceChildren(item);
+}
+
 function updateProgressHeader() {
   elements.collectionCount.textContent = collection.length.toString();
   elements.collectionProgress.textContent = `из ${OFFICIAL_DEX_SIZE}`;
+  renderLastAddedPokemon();
   updateTrainerCard();
 }
 
