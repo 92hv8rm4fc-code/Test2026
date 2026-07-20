@@ -10,9 +10,16 @@ const STORAGE_KEYS = {
   collection: "pokemonBinder.collection",
   pokemonIndex: "pokemonBinder.pokemonIndex",
   pokedexShowUncollected: "pokemonBinder.pokedexShowUncollected",
+  pokedexViewMode: "pokemonBinder.pokedexViewMode",
   collectionFilters: "pokemonBinder.collectionFilters",
   pokedexFilters: "pokemonBinder.pokedexFilters",
   wishlist: "pokemonBinder.wishlist",
+};
+
+const POKEDEX_VIEW_MODES = {
+  ALL: "all",
+  COLLECTED: "collected",
+  MISSING: "missing",
 };
 
 const POKEMON_INDEX_URL = "./data/pokemon-index.json";
@@ -236,7 +243,8 @@ const elements = {
   achievementsSummary: document.querySelector("#achievementsSummary"),
   achievementsList: document.querySelector("#achievementsList"),
   refreshPokedex: document.querySelector("#refreshPokedex"),
-  showUncollectedPokemon: document.querySelector("#showUncollectedPokemon"),
+  pokedexViewMode: document.querySelector("#pokedexViewMode"),
+  copyMissingPokemon: document.querySelector("#copyMissingPokemon"),
   pokedexSearch: document.querySelector("#pokedexSearch"),
   pokedexSortDropdown: document.querySelector("#pokedexSortDropdown"),
   pokedexFilterDropdown: document.querySelector("#pokedexFilterDropdown"),
@@ -262,7 +270,7 @@ let wishlist = [];
 let currentPokemon = null;
 let pokemonIndex = [];
 let pokedexEntries = [];
-let showUncollectedPokemon = true;
+let pokedexViewMode = POKEDEX_VIEW_MODES.ALL;
 let isPokemonIndexLoading = false;
 let isPokedexLoading = false;
 let selectedPokedexId = null;
@@ -278,7 +286,7 @@ function bootstrapApp() {
   pokedexFilters = loadPokedexFilters();
   wishlist = loadWishlist();
   pokemonIndex = loadPokemonIndexCache();
-  showUncollectedPokemon = loadPokedexShowUncollected();
+  pokedexViewMode = loadPokedexViewMode();
   init();
 }
 
@@ -316,8 +324,10 @@ function init() {
   elements.resetSettings.addEventListener("click", resetSettings);
   elements.clearCollection.addEventListener("click", clearCollection);
   elements.refreshPokedex.addEventListener("click", () => loadPokedex(true));
-  elements.showUncollectedPokemon.checked = showUncollectedPokemon;
-  elements.showUncollectedPokemon.addEventListener("change", handlePokedexFilterChange);
+  elements.pokedexViewMode.value = pokedexViewMode;
+  elements.pokedexViewMode.addEventListener("change", handlePokedexViewModeChange);
+  elements.copyMissingPokemon.addEventListener("click", copyMissingPokemonToClipboard);
+  updateCopyMissingPokemonButton();
   elements.collectionSearch.addEventListener("input", handleCollectionFiltersChange);
   elements.pokedexSearch.addEventListener("input", handlePokedexFiltersChange);
   elements.copyWishlist.addEventListener("click", copyWishlistToClipboard);
@@ -991,21 +1001,23 @@ async function loadPokedex(forceRefresh = false) {
   }
 }
 
-function handlePokedexFilterChange(event) {
-  showUncollectedPokemon = event.target.checked;
-  savePokedexShowUncollected();
+function handlePokedexViewModeChange(event) {
+  pokedexViewMode = normalizePokedexViewMode(event.target.value);
+  savePokedexViewMode();
+  updateCopyMissingPokemonButton();
   renderPokedexGrid();
 }
 
 function createPokedexTile(entry, collectedIds) {
   const isCollected = collectedIds.has(entry.id);
+  const revealIdentity = isCollected || pokedexViewMode === POKEDEX_VIEW_MODES.MISSING;
   const isSelected = selectedPokedexId === entry.id;
   const tile = document.createElement("button");
   tile.type = "button";
   tile.className = `pokedex-tile${isCollected ? " collected" : " uncollected"}${isSelected ? " selected" : ""}`;
   tile.ariaLabel = `${entry.name}, номер ${entry.id}${isCollected ? ", собран" : ", не собран"}`;
 
-  if (isCollected) {
+  if (revealIdentity) {
     const image = document.createElement("img");
     image.src = entry.sprite || getPokemonArtworkUrl(entry.id);
     image.alt = "";
@@ -1023,46 +1035,66 @@ function createPokedexTile(entry, collectedIds) {
   number.textContent = `#${entry.id.toString().padStart(4, "0")}`;
 
   const name = document.createElement("strong");
-  name.textContent = isCollected ? entry.name : "???";
+  name.textContent = revealIdentity ? entry.name : "???";
 
-  applyTypeTileColors(tile, entry.types || [], isCollected);
+  applyTypeTileColors(tile, entry.types || [], revealIdentity);
   tile.append(number, name);
   tile.addEventListener("click", () => showPokedexDetails(entry));
   return tile;
+}
+
+function getPokedexEntriesForView(collectedIds = getCollectedPokemonIds()) {
+  if (pokedexViewMode === POKEDEX_VIEW_MODES.COLLECTED) {
+    return pokedexEntries.filter((entry) => collectedIds.has(entry.id));
+  }
+
+  if (pokedexViewMode === POKEDEX_VIEW_MODES.MISSING) {
+    return pokedexEntries.filter((entry) => !collectedIds.has(entry.id));
+  }
+
+  return pokedexEntries;
+}
+
+function getFilteredPokedexEntries(entries = pokedexEntries) {
+  const filtered = entries.filter(
+    (entry) =>
+      matchesSearchQuery(entry, pokedexFilters.search) &&
+      matchesTypeFilter(entry, pokedexFilters.type) &&
+      matchesGenerationFilter(entry, pokedexFilters.generation),
+  );
+  return sortEntries(filtered, pokedexFilters.sort);
 }
 
 function renderPokedexGrid() {
   if (!pokedexEntries.length) {
     elements.pokedexSummary.textContent = "Список Pokedex ещё не загружен.";
     elements.pokedexGrid.replaceChildren();
+    updateCopyMissingPokemonButton();
     return;
   }
 
   const collectedIds = getCollectedPokemonIds();
-  let visibleEntries = showUncollectedPokemon
-    ? pokedexEntries
-    : pokedexEntries.filter((entry) => collectedIds.has(entry.id));
+  const visibleEntries = getFilteredPokedexEntries(getPokedexEntriesForView(collectedIds));
+  const missingCount = pokedexEntries.length - collectedIds.size;
 
-  visibleEntries = visibleEntries.filter(
-    (entry) =>
-      matchesSearchQuery(entry, pokedexFilters.search) &&
-      matchesTypeFilter(entry, pokedexFilters.type) &&
-      matchesGenerationFilter(entry, pokedexFilters.generation),
-  );
-  visibleEntries = sortEntries(visibleEntries, pokedexFilters.sort);
+  if (pokedexViewMode === POKEDEX_VIEW_MODES.COLLECTED) {
+    elements.pokedexSummary.textContent = `Показано ${visibleEntries.length} собранных покемонов.`;
+  } else if (pokedexViewMode === POKEDEX_VIEW_MODES.MISSING) {
+    elements.pokedexSummary.textContent = `Не собрано ${missingCount} из ${pokedexEntries.length}. Показано ${visibleEntries.length}.`;
+  } else {
+    elements.pokedexSummary.textContent = `Собрано ${collectedIds.size} из ${pokedexEntries.length} покемонов. Показано ${visibleEntries.length}.`;
+  }
 
-  elements.pokedexSummary.textContent = showUncollectedPokemon
-    ? `Собрано ${collectedIds.size} из ${pokedexEntries.length} покемонов. Показано ${visibleEntries.length}.`
-    : `Показано ${visibleEntries.length} собранных покемонов.`;
+  updateCopyMissingPokemonButton();
 
   if (!visibleEntries.length) {
-    elements.pokedexGrid.replaceChildren(
-      makeParagraph(
-        showUncollectedPokemon
-          ? "Список пуст."
-          : "Пока нет собранных покемонов. Включи «Показывать не собранных», чтобы увидеть весь список.",
-      ),
-    );
+    const emptyMessage =
+      pokedexViewMode === POKEDEX_VIEW_MODES.COLLECTED
+        ? "Пока нет собранных покемонов. Выбери «Всех» или «Только несобранных», чтобы увидеть остальной список."
+        : pokedexViewMode === POKEDEX_VIEW_MODES.MISSING
+          ? "Несобранных покемонов по текущим фильтрам нет."
+          : "Список пуст.";
+    elements.pokedexGrid.replaceChildren(makeParagraph(emptyMessage));
     return;
   }
 
@@ -1890,32 +1922,73 @@ function buildWishlistClipboardText() {
     .join("\n");
 }
 
+async function copyTextToClipboard(text) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "absolute";
+  textarea.style.left = "-9999px";
+  document.body.append(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+}
+
 async function copyWishlistToClipboard() {
   if (!wishlist.length) {
     setWishlistStatus("Wishlist пуст — нечего копировать.", true);
     return;
   }
 
-  const text = buildWishlistClipboardText();
-
   try {
-    if (navigator.clipboard?.writeText) {
-      await navigator.clipboard.writeText(text);
-    } else {
-      const textarea = document.createElement("textarea");
-      textarea.value = text;
-      textarea.setAttribute("readonly", "");
-      textarea.style.position = "absolute";
-      textarea.style.left = "-9999px";
-      document.body.append(textarea);
-      textarea.select();
-      document.execCommand("copy");
-      textarea.remove();
-    }
-
+    await copyTextToClipboard(buildWishlistClipboardText());
     setWishlistStatus(`Скопировано ${wishlist.length} покемонов в буфер обмена.`);
   } catch {
     setWishlistStatus("Не удалось скопировать список. Попробуй ещё раз.", true);
+  }
+}
+
+function getMissingPokemonForCopy() {
+  const collectedIds = getCollectedPokemonIds();
+  return getFilteredPokedexEntries(
+    pokedexEntries.filter((entry) => !collectedIds.has(entry.id)),
+  );
+}
+
+function buildMissingClipboardText(entries) {
+  return [...entries]
+    .sort((left, right) => left.id - right.id)
+    .map((entry) => formatWishlistLine(entry))
+    .join("\n");
+}
+
+function updateCopyMissingPokemonButton() {
+  if (!elements.copyMissingPokemon) {
+    return;
+  }
+
+  const missingEntries = getMissingPokemonForCopy();
+  elements.copyMissingPokemon.disabled = missingEntries.length === 0;
+  elements.copyMissingPokemon.title = "Скопировать список несобранных (с учётом фильтров)";
+}
+
+async function copyMissingPokemonToClipboard() {
+  const missingEntries = getMissingPokemonForCopy();
+  if (!missingEntries.length) {
+    setPokedexStatus("Несобранных покемонов нет — нечего копировать.", true);
+    return;
+  }
+
+  try {
+    await copyTextToClipboard(buildMissingClipboardText(missingEntries));
+    setPokedexStatus(`Скопировано ${missingEntries.length} несобранных покемонов в буфер обмена.`);
+  } catch {
+    setPokedexStatus("Не удалось скопировать список. Попробуй ещё раз.", true);
   }
 }
 
@@ -1932,7 +2005,8 @@ async function exportPokedexBackup() {
       wishlist,
       settings,
       preferences: {
-        showUncollectedPokemon,
+        pokedexViewMode,
+        showUncollectedPokemon: pokedexViewMode !== POKEDEX_VIEW_MODES.COLLECTED,
         collectionFilters,
         pokedexFilters,
       },
@@ -2013,7 +2087,7 @@ async function restorePokedexBackup(event) {
       ...entry,
       key: entry.key || String(entry.pokemon.id),
     }));
-    showUncollectedPokemon = payload.preferences?.showUncollectedPokemon ?? true;
+    pokedexViewMode = resolvePokedexViewMode(payload.preferences);
     collectionFilters = normalizeListFilters(
       payload.preferences?.collectionFilters,
       DEFAULT_COLLECTION_FILTERS,
@@ -2026,9 +2100,10 @@ async function restorePokedexBackup(event) {
     localStorage.setItem(STORAGE_KEYS.settings, JSON.stringify(settings));
     localStorage.setItem(STORAGE_KEYS.collection, JSON.stringify(collection));
     localStorage.setItem(STORAGE_KEYS.wishlist, JSON.stringify(wishlist));
+    localStorage.setItem(STORAGE_KEYS.pokedexViewMode, pokedexViewMode);
     localStorage.setItem(
       STORAGE_KEYS.pokedexShowUncollected,
-      String(showUncollectedPokemon),
+      String(pokedexViewMode !== POKEDEX_VIEW_MODES.COLLECTED),
     );
     localStorage.setItem(
       STORAGE_KEYS.collectionFilters,
@@ -2044,7 +2119,8 @@ async function restorePokedexBackup(event) {
     hydrateSettingsForm();
     hydrateCollectionFiltersForm();
     hydratePokedexFiltersForm();
-    elements.showUncollectedPokemon.checked = showUncollectedPokemon;
+    elements.pokedexViewMode.value = pokedexViewMode;
+    updateCopyMissingPokemonButton();
     renderCollection();
     renderWishlist();
     refreshPokedexView();
@@ -2380,13 +2456,54 @@ function saveSettings() {
   return persistAppStorage();
 }
 
-function loadPokedexShowUncollected() {
-  const stored = localStorage.getItem(STORAGE_KEYS.pokedexShowUncollected);
-  return stored === null ? true : stored === "true";
+function loadPokedexViewMode() {
+  const storedMode = localStorage.getItem(STORAGE_KEYS.pokedexViewMode);
+  if (storedMode) {
+    return normalizePokedexViewMode(storedMode);
+  }
+
+  const legacyShowUncollected = localStorage.getItem(STORAGE_KEYS.pokedexShowUncollected);
+  if (legacyShowUncollected === null) {
+    return POKEDEX_VIEW_MODES.ALL;
+  }
+
+  return legacyShowUncollected === "true"
+    ? POKEDEX_VIEW_MODES.ALL
+    : POKEDEX_VIEW_MODES.COLLECTED;
 }
 
-function savePokedexShowUncollected() {
-  localStorage.setItem(STORAGE_KEYS.pokedexShowUncollected, String(showUncollectedPokemon));
+function resolvePokedexViewMode(preferences = {}) {
+  if (preferences?.pokedexViewMode) {
+    return normalizePokedexViewMode(preferences.pokedexViewMode);
+  }
+
+  if (typeof preferences?.showUncollectedPokemon === "boolean") {
+    return preferences.showUncollectedPokemon
+      ? POKEDEX_VIEW_MODES.ALL
+      : POKEDEX_VIEW_MODES.COLLECTED;
+  }
+
+  return POKEDEX_VIEW_MODES.ALL;
+}
+
+function normalizePokedexViewMode(value) {
+  if (
+    value === POKEDEX_VIEW_MODES.COLLECTED ||
+    value === POKEDEX_VIEW_MODES.MISSING ||
+    value === POKEDEX_VIEW_MODES.ALL
+  ) {
+    return value;
+  }
+
+  return POKEDEX_VIEW_MODES.ALL;
+}
+
+function savePokedexViewMode() {
+  localStorage.setItem(STORAGE_KEYS.pokedexViewMode, pokedexViewMode);
+  localStorage.setItem(
+    STORAGE_KEYS.pokedexShowUncollected,
+    String(pokedexViewMode !== POKEDEX_VIEW_MODES.COLLECTED),
+  );
   return persistAppStorage();
 }
 

@@ -213,10 +213,17 @@
               <p id="pokedexSummary">Здесь будет общий список покемонов и твой прогресс.</p>
             </div>
             <div class="section-heading-actions">
-              <label class="pokedex-filter">
-                <input id="showUncollectedPokemon" type="checkbox" checked />
-                <span>Показывать не собранных</span>
+              <label class="pokedex-filter pokedex-view-mode">
+                <span>Показывать</span>
+                <select id="pokedexViewMode" aria-label="Каких покемонов показывать в Pokedex">
+                  <option value="all">Всех</option>
+                  <option value="collected">Только собранных</option>
+                  <option value="missing">Только несобранных</option>
+                </select>
               </label>
+              <button id="copyMissingPokemon" class="ghost-button" type="button">
+                Скопировать список
+              </button>
               <button id="refreshPokedex" class="ghost-button" type="button">Обновить</button>
             </div>
           </div>

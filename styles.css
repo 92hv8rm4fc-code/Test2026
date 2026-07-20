@@ -859,11 +859,23 @@ h2 {
   user-select: none;
 }
 
-.pokedex-filter input {
+.pokedex-filter input,
+.pokedex-filter select {
   width: auto;
   margin: 0;
   accent-color: var(--brand);
   cursor: pointer;
+}
+
+.pokedex-view-mode select {
+  min-width: 11.5rem;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  background: #f7f9fc;
 }
 
 .ghost-button {
@@ -1327,9 +1339,20 @@ h2 {
   filter: saturate(0.2);
 }
 
+.pokedex-tile.uncollected.revealed {
+  color: var(--text);
+  opacity: 1;
+  filter: none;
+}
+
 .pokedex-tile.uncollected:hover {
   opacity: 0.58;
   color: rgba(100, 112, 138, 0.7);
+}
+
+.pokedex-tile.uncollected.revealed:hover {
+  opacity: 1;
+  color: var(--text);
 }
 
 .pokedex-tile__silhouette {
