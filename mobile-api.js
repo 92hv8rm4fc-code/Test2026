@@ -9,6 +9,10 @@
     window.location.protocol === "ionic:";
 
   window.PB_IS_MOBILE_APP = isCapacitor;
+  const nativeStorageSetItem = localStorage.setItem.bind(localStorage);
+  const nativeStorageRemoveItem = localStorage.removeItem.bind(localStorage);
+  const nativeStorageClear = localStorage.clear.bind(localStorage);
+  let preferenceWriteQueue = Promise.resolve();
 
   function isPersistedKey(key) {
     return typeof key === "string" && key.startsWith(STORAGE_PREFIX);
@@ -33,13 +37,29 @@
     return window.Capacitor.Plugins?.App || window.Capacitor.registerPlugin("App");
   }
 
-  async function persistKey(key, value) {
+  function getNativePlugin(name) {
+    if (!window.Capacitor) {
+      return null;
+    }
+    return window.Capacitor.Plugins?.[name] || window.Capacitor.registerPlugin(name);
+  }
+
+  function enqueuePreferenceWrite(operation) {
+    preferenceWriteQueue = preferenceWriteQueue
+      .catch((error) => {
+        console.warn("Previous Preferences write failed:", error);
+      })
+      .then(operation);
+    return preferenceWriteQueue;
+  }
+
+  function persistKey(key, value) {
     const Preferences = getPreferencesPlugin();
     if (!Preferences) {
-      return;
+      return Promise.resolve();
     }
 
-    await Preferences.set({ key, value });
+    return enqueuePreferenceWrite(() => Preferences.set({ key, value }));
   }
 
   async function restoreStorageFromPreferences() {
@@ -54,7 +74,7 @@
     for (const key of persistedKeys) {
       const { value } = await Preferences.get({ key });
       if (value !== null && value !== undefined) {
-        localStorage.setItem(key, value);
+        nativeStorageSetItem(key, value);
       }
     }
 
@@ -75,26 +95,24 @@
     }
   }
 
-  async function flushStorageToPreferences() {
+  function flushStorageToPreferences() {
     const Preferences = getPreferencesPlugin();
     if (!Preferences) {
-      return;
+      return Promise.resolve();
     }
 
-    await Promise.all(
-      Object.keys(localStorage)
-        .filter(isPersistedKey)
-        .map((key) => Preferences.set({ key, value: localStorage.getItem(key) })),
+    const snapshot = Object.keys(localStorage)
+      .filter(isPersistedKey)
+      .map((key) => ({ key, value: localStorage.getItem(key) }));
+
+    return enqueuePreferenceWrite(() =>
+      Promise.all(snapshot.map(({ key, value }) => Preferences.set({ key, value }))),
     );
   }
 
   function installStoragePersistence() {
-    const originalSetItem = localStorage.setItem.bind(localStorage);
-    const originalRemoveItem = localStorage.removeItem.bind(localStorage);
-    const originalClear = localStorage.clear.bind(localStorage);
-
     localStorage.setItem = function patchedSetItem(key, value) {
-      originalSetItem(key, value);
+      nativeStorageSetItem(key, value);
       if (isPersistedKey(key)) {
         persistKey(key, value).catch((error) => {
           console.warn("Preferences set failed:", error);
@@ -103,24 +121,58 @@
     };
 
     localStorage.removeItem = function patchedRemoveItem(key) {
-      originalRemoveItem(key);
+      nativeStorageRemoveItem(key);
       if (isPersistedKey(key)) {
-        getPreferencesPlugin()
-          ?.remove({ key })
+        enqueuePreferenceWrite(() => getPreferencesPlugin()?.remove({ key }))
           .catch((error) => console.warn("Preferences remove failed:", error));
       }
     };
 
     localStorage.clear = function patchedClear() {
       const keys = Object.keys(localStorage).filter(isPersistedKey);
-      originalClear();
+      nativeStorageClear();
       keys.forEach((key) => {
-        getPreferencesPlugin()
-          ?.remove({ key })
+        enqueuePreferenceWrite(() => getPreferencesPlugin()?.remove({ key }))
           .catch((error) => console.warn("Preferences remove failed:", error));
       });
     };
   }
+
+  window.PB_persistNow = () => flushStorageToPreferences();
+
+  window.PB_shareFile = async ({ filename, content, mimeType }) => {
+    if (!isCapacitor) {
+      return false;
+    }
+
+    const Filesystem = getNativePlugin("Filesystem");
+    const Share = getNativePlugin("Share");
+    if (!Filesystem || !Share) {
+      return false;
+    }
+
+    await Filesystem.writeFile({
+      path: filename,
+      data: content,
+      directory: "CACHE",
+      encoding: "utf8",
+    });
+    const { uri } = await Filesystem.getUri({
+      path: filename,
+      directory: "CACHE",
+    });
+
+    try {
+      await Share.share({
+        title: "Резервная копия Pokemon Binder Pokedex",
+        dialogTitle: "Сохранить или отправить резервную копию",
+        files: [uri],
+      });
+    } finally {
+      Filesystem.deleteFile({ path: filename, directory: "CACHE" }).catch(() => {});
+    }
+    return true;
+  };
 
   function installZoomPrevention() {
     let lastTouchEnd = 0;
@@ -269,6 +321,7 @@
 
   function writeLocalCollection(entries) {
     localStorage.setItem("pokemonBinder.collection", JSON.stringify(entries));
+    return flushStorageToPreferences();
   }
 
   async function handleCollectionRequest(url, options = {}) {
@@ -297,7 +350,7 @@
         pokemon,
         addedAt: new Date().toISOString(),
       });
-      writeLocalCollection(entries);
+      await writeLocalCollection(entries);
 
       return new Response(JSON.stringify({ ok: true }), {
         status: 200,
@@ -306,7 +359,7 @@
     }
 
     if (method === "DELETE" && url.endsWith("/api/collection")) {
-      writeLocalCollection([]);
+      await writeLocalCollection([]);
       return new Response(JSON.stringify({ ok: true }), {
         status: 200,
         headers: { "Content-Type": "application/json" },
@@ -317,7 +370,7 @@
     if (method === "DELETE" && deleteMatch) {
       const pokemonId = Number(deleteMatch[1]);
       const entries = readLocalCollection().filter((entry) => entry.pokemon.id !== pokemonId);
-      writeLocalCollection(entries);
+      await writeLocalCollection(entries);
       return new Response(JSON.stringify({ ok: true }), {
         status: 200,
         headers: { "Content-Type": "application/json" },

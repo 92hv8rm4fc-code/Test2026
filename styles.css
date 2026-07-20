@@ -111,6 +111,50 @@ label {
   align-content: start;
 }
 
+.last-added-card {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid rgba(219, 226, 239, 0.9);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.last-added-card > span {
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.last-added-card__body {
+  min-width: 0;
+}
+
+.last-added-card__empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.last-added-card__item {
+  grid-template-columns: 56px 1fr;
+  padding: 0.65rem;
+  box-shadow: none;
+}
+
+.last-added-card__item img {
+  width: 56px;
+  height: 56px;
+}
+
+.last-added-card__item h3 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
 .trainer-card {
   display: grid;
   align-content: center;
@@ -848,6 +892,55 @@ h2 {
   gap: 1rem;
 }
 
+.collection-panel .collection-list {
+  max-height: 36vh;
+  overflow: auto;
+  padding-right: 0.35rem;
+  align-content: start;
+  -webkit-overflow-scrolling: touch;
+}
+
+.backup-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.backup-panel p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.backup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  justify-content: flex-end;
+}
+
+.backup-file-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.9rem;
+  padding: 0.85rem 1.1rem;
+  color: #ffffff;
+  background: var(--brand);
+  cursor: pointer;
+}
+
+.backup-file-button input {
+  display: none;
+}
+
+.backup-panel .status {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
 .collection-empty {
   border: 1px dashed var(--line);
   border-radius: 1.1rem;
@@ -1329,6 +1422,10 @@ h2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .last-added-card {
+    grid-column: 1 / -1;
+  }
+
   .grid,
   .pokemon-card__body,
   .pokedex-details-card {
@@ -1372,6 +1469,18 @@ h2 {
   }
 
   .section-heading-actions > * {
+    flex: 1 1 auto;
+  }
+
+  .backup-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .backup-actions {
+    justify-content: stretch;
+  }
+
+  .backup-actions > * {
     flex: 1 1 auto;
   }
 }
@@ -1436,6 +1545,10 @@ h2 {
     max-height: 32vh;
   }
 
+  .collection-panel .collection-list {
+    max-height: 32vh;
+  }
+
   .pokedex-tile {
     min-height: 136px;
     padding: 0.65rem;
@@ -1479,6 +1592,10 @@ h2 {
 }
 
 .mobile-app .pokedex-grid {
+  max-height: 30vh;
+}
+
+.mobile-app .collection-panel .collection-list {
   max-height: 30vh;
 }
 

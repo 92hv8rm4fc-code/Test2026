@@ -37,6 +37,10 @@
             <strong id="trainerRank">Новичок</strong>
             <small id="trainerRankHint">Добавь первого покемона</small>
           </div>
+          <div class="last-added-card" aria-live="polite">
+            <span>Последний добавленный</span>
+            <div id="lastAddedPokemon" class="last-added-card__body"></div>
+          </div>
         </div>
       </header>
 
@@ -174,6 +178,30 @@
             </div>
           </div>
           <div id="collectionList" class="collection-list"></div>
+        </section>
+
+        <section class="panel backup-panel">
+          <div>
+            <h2>Резервная копия</h2>
+            <p>
+              Перенеси коллекцию, wishlist и настройки на другое устройство или
+              сохрани их перед переустановкой приложения.
+            </p>
+          </div>
+          <div class="backup-actions">
+            <button id="exportPokedexBackup" class="ghost-button" type="button">
+              Сохранить в файл
+            </button>
+            <label class="backup-file-button">
+              Восстановить из файла
+              <input
+                id="restorePokedexBackup"
+                type="file"
+                accept=".json,application/json"
+              />
+            </label>
+          </div>
+          <p id="backupStatus" class="status" role="status"></p>
         </section>
       </section>
 
