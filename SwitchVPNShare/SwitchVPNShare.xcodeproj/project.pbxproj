@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DCE61B8A3627474E94E75DA8 /* SwitchBridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCECE6ED43634FD78CB4DDBF /* SwitchBridgeApp.swift */; };
+		05A6348FEE864404A7A01BCF /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98176E969B6B406A91622ABB /* AppModel.swift */; };
+		43807177E3954DB19C324016 /* VPNConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8697D985DE89422D899BD4DB /* VPNConfiguration.swift */; };
+		50A7A398D0EA4B34A5929C3A /* VPNManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B7165062544778DD45BC4 /* VPNManager.swift */; };
+		107FCF4F4EC8410FA201F462 /* HTTPProxyServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F70B29CF947358159516F /* HTTPProxyServer.swift */; };
+		EB05289C5F8B4203B3E2FD98 /* NetworkInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC717920FBF47D799DC5FF7 /* NetworkInfoService.swift */; };
+		57CDB36906004D4E83B25D73 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7B06AC59B149E9AD80269E /* Brand.swift */; };
+		CC60AC30CC5C405BAD589F0F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2CB9D870AD431582084A4E /* RootView.swift */; };
+		37966F0E733F4F7EA27A3D1F /* BridgeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DCF67C361F427593F3758B /* BridgeHomeView.swift */; };
+		DFA5B73B49FF4376A5C941B9 /* VPNSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA718202F5D64F4EAB0C3BDF /* VPNSetupView.swift */; };
+		11F6389B19264B19B4A83DA8 /* SwitchGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFE6D9144AE4957AABBB78A /* SwitchGuideView.swift */; };
+		218ACE21E6254C81873FE18B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3F314099A874E8BA5FB112B /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CCECE6ED43634FD78CB4DDBF /* SwitchBridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchBridgeApp.swift; sourceTree = "<group>"; };
+		98176E969B6B406A91622ABB /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		8697D985DE89422D899BD4DB /* VPNConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNConfiguration.swift; sourceTree = "<group>"; };
+		822B7165062544778DD45BC4 /* VPNManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNManager.swift; sourceTree = "<group>"; };
+		CE6F70B29CF947358159516F /* HTTPProxyServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPProxyServer.swift; sourceTree = "<group>"; };
+		0EC717920FBF47D799DC5FF7 /* NetworkInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInfoService.swift; sourceTree = "<group>"; };
+		3C7B06AC59B149E9AD80269E /* Brand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		4A2CB9D870AD431582084A4E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		E2DCF67C361F427593F3758B /* BridgeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeHomeView.swift; sourceTree = "<group>"; };
+		CA718202F5D64F4EAB0C3BDF /* VPNSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNSetupView.swift; sourceTree = "<group>"; };
+		4BFE6D9144AE4957AABBB78A /* SwitchGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchGuideView.swift; sourceTree = "<group>"; };
+		C3F314099A874E8BA5FB112B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A9923DDC5E6D4948A326EFA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEB82398B0FA49CBB1F28D47 /* SwitchBridge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwitchBridge.entitlements; sourceTree = "<group>"; };
+		C3F67C4570A845D3A1E0F4BC /* SwitchBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwitchBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A694592BD9874A42A70E0D5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B468923418942E69EB940E2 = {
+			isa = PBXGroup;
+			children = (
+				0F1FA6BB43374AF9BE3B3C95 /* SwitchVPNShare */,
+				C3F67C4570A845D3A1E0F4BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C3F67C4570A845D3A1E0F4BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3F67C4570A845D3A1E0F4BC /* SwitchBridge.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0F1FA6BB43374AF9BE3B3C95 /* SwitchVPNShare */ = {
+			isa = PBXGroup;
+			children = (
+				CCECE6ED43634FD78CB4DDBF /* SwitchBridgeApp.swift */,
+				AE80E606E28D415B9F919EEB /* Models */,
+				C0533656DFBA4740B9834427 /* Services */,
+				BF4682E5338545F18AE1A179 /* Resources */,
+				B4D7A5E86B9C4558BFAB111E /* Views */,
+				C3F314099A874E8BA5FB112B /* Assets.xcassets */,
+				A9923DDC5E6D4948A326EFA4 /* Info.plist */,
+				BEB82398B0FA49CBB1F28D47 /* SwitchBridge.entitlements */,
+			);
+			path = SwitchVPNShare;
+			sourceTree = "<group>";
+		};
+		AE80E606E28D415B9F919EEB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				98176E969B6B406A91622ABB /* AppModel.swift */,
+				8697D985DE89422D899BD4DB /* VPNConfiguration.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C0533656DFBA4740B9834427 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				822B7165062544778DD45BC4 /* VPNManager.swift */,
+				CE6F70B29CF947358159516F /* HTTPProxyServer.swift */,
+				0EC717920FBF47D799DC5FF7 /* NetworkInfoService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BF4682E5338545F18AE1A179 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3C7B06AC59B149E9AD80269E /* Brand.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B4D7A5E86B9C4558BFAB111E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A2CB9D870AD431582084A4E /* RootView.swift */,
+				E2DCF67C361F427593F3758B /* BridgeHomeView.swift */,
+				CA718202F5D64F4EAB0C3BDF /* VPNSetupView.swift */,
+				4BFE6D9144AE4957AABBB78A /* SwitchGuideView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E40D55A44B4B4222B45EE0BE /* SwitchBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFF1FE7EF7FF4BB099833F64 /* Build configuration list for PBXNativeTarget "SwitchBridge" */;
+			buildPhases = (
+				36AEFD1CCF2E4825B513A85F /* Sources */,
+				A694592BD9874A42A70E0D5E /* Frameworks */,
+				7E4B7777115544EBB89DFE5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwitchBridge;
+			productName = SwitchBridge;
+			productReference = C3F67C4570A845D3A1E0F4BC /* SwitchBridge.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0259350F8AF641B3A81F5ECB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = E4ECD504CA2C466D9DD9DFD0 /* Build configuration list for PBXProject "SwitchBridge" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ru;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				ru,
+				Base,
+			);
+			mainGroup = 3B468923418942E69EB940E2;
+			productRefGroup = C3F67C4570A845D3A1E0F4BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E40D55A44B4B4222B45EE0BE /* SwitchBridge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E4B7777115544EBB89DFE5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				218ACE21E6254C81873FE18B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36AEFD1CCF2E4825B513A85F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCE61B8A3627474E94E75DA8 /* SwitchBridgeApp.swift in Sources */,
+				05A6348FEE864404A7A01BCF /* AppModel.swift in Sources */,
+				43807177E3954DB19C324016 /* VPNConfiguration.swift in Sources */,
+				50A7A398D0EA4B34A5929C3A /* VPNManager.swift in Sources */,
+				107FCF4F4EC8410FA201F462 /* HTTPProxyServer.swift in Sources */,
+				EB05289C5F8B4203B3E2FD98 /* NetworkInfoService.swift in Sources */,
+				57CDB36906004D4E83B25D73 /* Brand.swift in Sources */,
+				CC60AC30CC5C405BAD589F0F /* RootView.swift in Sources */,
+				37966F0E733F4F7EA27A3D1F /* BridgeHomeView.swift in Sources */,
+				DFA5B73B49FF4376A5C941B9 /* VPNSetupView.swift in Sources */,
+				11F6389B19264B19B4A83DA8 /* SwitchGuideView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		03044A21E6FA43BD842A39E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B9BD2839FB884BF3B5A02288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F9AF3F9DA264C6DA5FE4467 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwitchVPNShare/SwitchBridge.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SwitchVPNShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.switchbridge.app;
+				PRODUCT_NAME = SwitchBridge;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		080C0AD589E74C97A77917CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SwitchVPNShare/SwitchBridge.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SwitchVPNShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.switchbridge.app;
+				PRODUCT_NAME = SwitchBridge;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4ECD504CA2C466D9DD9DFD0 /* Build configuration list for PBXProject "SwitchBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03044A21E6FA43BD842A39E0 /* Debug */,
+				B9BD2839FB884BF3B5A02288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DFF1FE7EF7FF4BB099833F64 /* Build configuration list for PBXNativeTarget "SwitchBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F9AF3F9DA264C6DA5FE4467 /* Debug */,
+				080C0AD589E74C97A77917CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0259350F8AF641B3A81F5ECB /* Project object */;
+}
