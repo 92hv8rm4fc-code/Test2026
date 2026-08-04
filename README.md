@@ -45,6 +45,12 @@ py -3 scripts\download_pokemon_index.py
 py -3 scripts\download_pokemon_details.py
 ```
 
+## SwitchBridge (iPhone → Switch 2 VPN)
+
+Отдельное нативное iOS‑приложение для раздачи VPN с iPhone на Nintendo Switch 2 лежит в [`SwitchVPNShare/`](SwitchVPNShare/README.md).
+
+Кратко: IKEv2 VPN на телефоне + локальный HTTP‑прокси + Режим модема; на консоли указывается прокси `IP:порт` из приложения.
+
 ## Дальше
 
 Хорошие следующие шаги:

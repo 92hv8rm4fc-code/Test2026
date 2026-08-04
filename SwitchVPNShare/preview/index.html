@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SwitchBridge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0a171f;
+      --panel: #12242e;
+      --line: #2e525c;
+      --mist: #b8dbd6;
+      --accent: #38eb9e;
+      --warn: #fab848;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Manrope, "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--mist);
+      background:
+        radial-gradient(900px 500px at 10% -10%, rgba(20, 72, 77, 0.85), transparent 60%),
+        radial-gradient(700px 480px at 100% 100%, rgba(13, 89, 56, 0.4), transparent 55%),
+        var(--ink);
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .phone {
+      width: min(390px, 100%);
+      min-height: 740px;
+      border: 1px solid rgba(46, 82, 92, 0.8);
+      border-radius: 36px;
+      padding: 22px 18px 16px;
+      background: linear-gradient(180deg, rgba(18, 36, 46, 0.55), rgba(10, 23, 31, 0.2));
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+      overflow: hidden;
+      animation: rise 0.7s ease both;
+    }
+    .phone::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(184, 219, 214, 0.12) 1px, transparent 1.5px);
+      background-size: 42px 42px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      position: relative;
+    }
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    .sub {
+      margin: 4px 0 0;
+      font-size: 13px;
+      opacity: 0.7;
+    }
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 10px;
+      animation: pulse 1.2s ease-in-out infinite alternate;
+    }
+    .chips {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      position: relative;
+    }
+    .chip, .panel {
+      background: rgba(18, 36, 46, 0.88);
+      border: 1px solid rgba(56, 235, 158, 0.28);
+      border-radius: 18px;
+      padding: 14px;
+      position: relative;
+    }
+    .chip { border-color: rgba(46, 82, 92, 0.7); }
+    .label {
+      font-size: 12px;
+      opacity: 0.55;
+      margin-bottom: 6px;
+    }
+    .value { font-size: 16px; font-weight: 600; color: var(--accent); }
+    .mono {
+      font-family: "IBM Plex Mono", Menlo, monospace;
+      font-size: 16px;
+      color: var(--accent);
+      margin: 8px 0 14px;
+    }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; }
+    button {
+      font: inherit;
+      border: 0;
+      cursor: pointer;
+      border-radius: 14px;
+      padding: 12px 14px;
+      color: var(--ink);
+      background: var(--accent);
+      font-weight: 600;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+    button.ghost {
+      background: transparent;
+      color: var(--mist);
+      border: 1px solid var(--line);
+    }
+    button:active { transform: scale(0.98); }
+    .actions { display: grid; gap: 10px; position: relative; }
+    .actions button {
+      width: 100%;
+      background: rgba(56, 235, 158, 0.14);
+      color: var(--accent);
+      border: 1px solid rgba(56, 235, 158, 0.45);
+    }
+    .actions button.filled {
+      background: var(--accent);
+      color: var(--ink);
+    }
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      font-size: 14px;
+    }
+    .stats .label { margin-bottom: 4px; }
+    .tip {
+      font-size: 13px;
+      opacity: 0.6;
+      line-height: 1.45;
+      position: relative;
+    }
+    nav {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 8px;
+      border-radius: 18px;
+      background: rgba(18, 36, 46, 0.92);
+      border: 1px solid rgba(46, 82, 92, 0.7);
+      position: relative;
+    }
+    nav button {
+      background: transparent;
+      color: rgba(184, 219, 214, 0.7);
+      border: 0;
+      padding: 12px 8px;
+    }
+    nav button.active {
+      background: rgba(56, 235, 158, 0.18);
+      color: var(--accent);
+    }
+    .screen { display: none; position: relative; animation: fade 0.35s ease; }
+    .screen.active { display: block; }
+    .step {
+      display: flex;
+      gap: 12px;
+      margin: 12px 0;
+      align-items: flex-start;
+    }
+    .badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--ink);
+      display: grid;
+      place-items: center;
+      font-family: "IBM Plex Mono", monospace;
+      flex: 0 0 auto;
+    }
+    .field {
+      margin: 10px 0;
+    }
+    .field input {
+      width: 100%;
+      margin-top: 6px;
+      border-radius: 14px;
+      border: 1px solid rgba(46, 82, 92, 0.7);
+      background: rgba(18, 36, 46, 0.8);
+      color: var(--mist);
+      padding: 14px;
+      font: inherit;
+    }
+    .warn {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(18, 36, 46, 0.75);
+      color: var(--warn);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    @keyframes pulse {
+      from { transform: scale(1); opacity: 1; }
+      to { transform: scale(1.25); opacity: 0.7; }
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="phone" aria-label="SwitchBridge preview">
+    <header>
+      <div>
+        <h1>SwitchBridge</h1>
+        <p class="sub">VPN с iPhone → Nintendo Switch 2</p>
+      </div>
+      <div class="dot" aria-hidden="true"></div>
+    </header>
+
+    <section id="bridge" class="screen active">
+      <div class="chips">
+        <div class="chip"><div class="label">VPN</div><div class="value">Подключён</div></div>
+        <div class="chip"><div class="label">Прокси</div><div class="value">Онлайн</div></div>
+      </div>
+      <div class="panel" style="margin-top:14px">
+        <div class="label">Адрес для Switch 2</div>
+        <div class="mono" id="addr">172.20.10.1:8888</div>
+        <div class="row">
+          <button type="button" id="copy">Скопировать</button>
+          <button type="button" class="ghost" id="refresh">Обновить IP</button>
+        </div>
+      </div>
+      <div class="actions" style="margin-top:14px">
+        <button type="button" class="filled">Отключить VPN</button>
+        <button type="button">Остановить прокси</button>
+      </div>
+      <div class="stats" style="margin-top:18px">
+        <div><div class="label">Сессии</div><strong>2</strong></div>
+        <div><div class="label">Трафик</div><strong>1.4 MB</strong></div>
+        <div><div class="label">Порт</div><strong>8888</strong></div>
+      </div>
+      <p class="tip">Сначала включите Режим модема, подключите Switch 2 к хотспоту, затем введите этот адрес как прокси.</p>
+    </section>
+
+    <section id="vpn" class="screen">
+      <h2 style="margin:0 0 8px;font-size:22px">IKEv2 профиль</h2>
+      <p class="tip">Встроенный клиент iOS. Система попросит разрешение на VPN‑конфигурацию.</p>
+      <div class="field"><div class="label">Сервер</div><input value="vpn.example.com" readonly /></div>
+      <div class="field"><div class="label">Remote ID</div><input value="vpn.example.com" readonly /></div>
+      <div class="field"><div class="label">Логин</div><input value="player" readonly /></div>
+      <div class="warn">Трафик Режим модема сам по себе не идёт через VPN — поэтому Switch указывает HTTP‑прокси на iPhone.</div>
+    </section>
+
+    <section id="guide" class="screen">
+      <h2 style="margin:0 0 8px;font-size:22px">Подключение Switch 2</h2>
+      <div class="step"><div class="badge">1</div><div>Включите VPN и дождитесь статуса «Подключён».</div></div>
+      <div class="step"><div class="badge">2</div><div>Запустите прокси и скопируйте адрес.</div></div>
+      <div class="step"><div class="badge">3</div><div>Включите Режим модема на iPhone.</div></div>
+      <div class="step"><div class="badge">4</div><div>Подключите Switch 2 к хотспоту и укажите прокси.</div></div>
+    </section>
+
+    <nav>
+      <button type="button" class="active" data-tab="bridge">Мост</button>
+      <button type="button" data-tab="vpn">VPN</button>
+      <button type="button" data-tab="guide">Switch</button>
+    </nav>
+  </main>
+  <script>
+    const screens = [...document.querySelectorAll(".screen")];
+    const buttons = [...document.querySelectorAll("nav button")];
+    buttons.forEach((btn) => btn.addEventListener("click", () => {
+      buttons.forEach((b) => b.classList.remove("active"));
+      screens.forEach((s) => s.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById(btn.dataset.tab).classList.add("active");
+    }));
+    document.getElementById("copy").addEventListener("click", async () => {
+      const text = document.getElementById("addr").textContent;
+      try { await navigator.clipboard.writeText(text); } catch (_) {}
+      document.getElementById("copy").textContent = "Скопировано";
+      setTimeout(() => document.getElementById("copy").textContent = "Скопировать", 1200);
+    });
+  </script>
+</body>
+</html>
