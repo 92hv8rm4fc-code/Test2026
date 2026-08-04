@@ -211,7 +211,16 @@
       background: rgba(18, 36, 46, 0.75);
       color: var(--warn);
       font-size: 13px;
-      line-height: 1.45;
+      line-height: 1.55;
+    }
+    .field input {
+      opacity: 1;
+    }
+    .field input,
+    .field input:focus {
+      color: #dff7f2;
+      border-color: rgba(56, 235, 158, 0.35);
+      outline: none;
     }
     @keyframes pulse {
       from { transform: scale(1); opacity: 1; }
